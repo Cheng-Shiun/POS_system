@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;         /*sans-seri 無襯線字體*/
+    font-size: 20px;
+}
+
+.drink-section {
+    display: flex;
+    flex-wrap: wrap;                            /*內容超過容器寬度時，會換行排列*/
+    justify-content:  space-around;      /*容器裡的項目水平方向上均勻分配空間*/
+    margin-bottom: 20px;
+    width: 100%;
+}
+.wintermelon-section {
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: flex-start;            !*容器的項目靠著容器的開頭（左邊）對齊*!*/
+    margin-bottom: 20px;
+    justify-content:  space-around;
+    width: 100%;
+}
+.drink-category {
+    margin-bottom: 20px;                    /* 調整每個飲品分類之間的垂直間距 */
+    width: 28%;
+    box-sizing: border-box;
+}
+.drink-category01 {
+    margin-bottom: 20px;                    /* 調整每個飲品分類之間的垂直間距 */
+    width: 28%;
+    box-sizing: border-box;
+}
+.drink-category02 {
+     margin-bottom: 20px;                    /* 調整每個飲品分類之間的垂直間距 */
+     width: 61%;
+    box-sizing: border-box;
+
+ }
+.tdprice::before {
+    content: "..................";
+    margin-right: 16px;                             /* 在圓點後加入一些間距 */
+    color:	#E0E0E0;
+}
+td.tdprice {
+    text-align: right;
+}
+table {
+    width: 100%;
+}
+h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+tr{
+    text-align: left;
+}
+.drink-category02 table {
+    width: 50%;
+}
+.drink-category02 td {
+    width:100%;
+    box-sizing: border-box;
+}
+#icesugar{
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 1rem;
+    background: 	#E0E0E0;
+    height: 170px;
+    display: flex;
+    flex-wrap: wrap;                            /*內容超過容器寬度時，會換行排列*/
+    justify-content:  space-around;      /*容器裡的項目水平方向上均勻分配空間*/
+}
+#icesugar .iceArea, #icesugar .sugarArea{
+    width: 45%;
+}
+#icesugar .ice, #icesugar .sugar{
+    font-size: 1rem;
+    padding: 2rem 0 2rem 0;
+}
+
+#headnav{
+    height: 80px;
+    background: 	#E0E0E0;
+    margin-bottom: 3rem;
+    padding-top: 1.3rem;
+}
+#headnav .nav-item a{
+    color: #000000;
+    font-weight: bold;
+}
+#footernav{
+    clear: both;
+    height: 80px;
+    background: 	#E0E0E0;
+    margin-top: 3rem;
+    padding-top: 1.3rem;
+}
+#footernav .nav-item a{
+    color: #000000;
+    font-weight: bold;
+}
+
+.drink-category02 .add-table {
+    display: flex;
+}
+
+.drink-category02 table {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.drink-category02 td {
+    white-space: nowrap;
+}
