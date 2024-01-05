@@ -38,15 +38,14 @@
             </li>
         </ul>
     </div>
-
 </header>
 
 <main>
 <div class="drink-section" style="width: 80%; margin-left: auto; margin-right: auto">
     <div class="drink-category">
+        <h2>原味茶</h2>
+        <hr>
         <table>
-            <h2>原味茶</h2>
-            <hr>
             <tr th:each=" original:${originals}">
                 <td th:text="${original.getName()}"></td>
                 <td class="tdprice" th:text="${original.getPrice()}"></td>
@@ -123,16 +122,16 @@
         <h2>加好料</h2>
         <hr>
         <div class="add-table">
-            <table class="add01">
+            <table class="add01" >
                 <tr th:each="material : ${materials.subList(0, 3)}"> <!--subList(0, 3)從materials的陣列裡去抓出索引值0,1,2的資料-->
-                    <td th:text="${material.getName()}"></td>
-                    <td th:text="${material.getPrice()}"></td>
+                    <td  th:text="${material.getName()}"></td>
+                    <td class="tdprice" th:text="${material.getPrice()}"></td>
                 </tr>
             </table>
             <table class="add02">
                 <tr th:each="material : ${materials.subList(3, 6)}"> <!--subList(0, 3)從materials的陣列裡去抓出索引值3,4,5的資料-->
                     <td th:text="${material.getName()}"></td>
-                    <td th:text="${material.getPrice()}"></td>
+                    <td class="tdprice" th:text="${material.getPrice()}"></td>
                 </tr>
             </table>
         </div>
@@ -142,13 +141,13 @@
 <div id="icesugar">
         <div class="iceArea">
             <h4>冰量-660ml</h4>
-                    <p><span class="ice">正常冰</span></td>
+                    <p><span class="ice">正常冰</span></p>
             <h4>熱飲-600ml</h4>
         </div>
 
         <div class="sugarArea">
             <h4>甜度</h4>
-                <p><span class="sugar">正常甜</span></td>
+                <p><span class="sugar">正常甜</span></p>
             <h6>無咖啡因飲品請諮詢店員/買10送1、買20送3</h6>
         </div>
 </div>

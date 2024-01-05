@@ -2,7 +2,6 @@ body {
     font-family: Arial, sans-serif;         /*sans-seri 無襯線字體*/
     font-size: 20px;
 }
-
 .drink-section {
     display: flex;
     flex-wrap: wrap;                            /*內容超過容器寬度時，會換行排列*/
@@ -32,10 +31,9 @@ body {
      margin-bottom: 20px;                    /* 調整每個飲品分類之間的垂直間距 */
      width: 61%;
     box-sizing: border-box;
-
  }
 .tdprice::before {
-    content: "..................";
+    content: ".............................";
     margin-right: 16px;                             /* 在圓點後加入一些間距 */
     color:	#E0E0E0;
 }
@@ -45,21 +43,20 @@ td.tdprice {
 table {
     width: 100%;
 }
-h2 {
-    margin-bottom: 10px;
+.drink-section h2,
+.wintermelon-section h2{
     font-size: 28px;
-    max-width: 100%;
+    width: 100%;
     text-overflow: ellipsis;
     white-space: nowrap;
+    padding-bottom: 0;
+    font-weight: bold;
 }
 tr{
     text-align: left;
 }
-.drink-category02 table {
-    width: 50%;
-}
 .drink-category02 td {
-    width:100%;
+    /*width:100%;*/
     box-sizing: border-box;
 }
 #icesugar{
@@ -105,13 +102,48 @@ tr{
 
 .drink-category02 .add-table {
     display: flex;
+    justify-content: space-between;
 }
 
 .drink-category02 table {
     width: 50%;
     box-sizing: border-box;
 }
+.drink-category02 .add01{
+    margin: 0 30px 0 0;
+}
+.drink-category02 .add02{
+    margin: 0 0 0 30px;
+}
 
-.drink-category02 td {
-    white-space: nowrap;
+@media only screen and (max-width: 768px) {
+    /* 在螢幕寬度小於768px時應用的樣式 */
+    .drink-category,
+    .drink-category01,
+    .drink-category02 .add01,
+    .drink-category02 .add02{
+        width: 80%; /* 使所有飲品分類佔據整個寬度 */
+    }
+    .drink-category,
+    .drink-category01,
+    .drink-category02 .add-table{
+        flex-direction: column; /* 在小螢幕上將.add-table切換為垂直方向 */
+    }
+    .drink-section h2,
+    .wintermelon-section h2{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .drink-section td,
+    .wintermelon-section td{
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    #headnav, #footernav {
+        text-align: center; /* 在小螢幕上將文字置中 */
+    }
+    #headnav .nav-item a, #footernav .nav-item a {
+        font-size: 12px;    /* 調整文字大小 */
+    }
 }
