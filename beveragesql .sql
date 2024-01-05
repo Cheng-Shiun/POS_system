@@ -2,7 +2,7 @@
 -- 主機:                           127.0.0.1
 -- 伺服器版本:                        11.2.2-MariaDB - mariadb.org binary distribution
 -- 伺服器作業系統:                      Win64
--- HeidiSQL 版本:                  12.3.0.6589
+-- HeidiSQL 版本:                  12.6.0.6765
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `member` (
 CREATE TABLE IF NOT EXISTS `menu_cheese` (
   `name` varchar(10) NOT NULL,
   `price` int(10) unsigned NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='芝士奶蓋系列';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- 正在傾印表格  beverage.menu_cheese 的資料：~4 rows (近似值)
 INSERT INTO `menu_cheese` (`name`, `price`) VALUES
@@ -73,7 +73,7 @@ INSERT INTO `menu_cheese` (`name`, `price`) VALUES
 CREATE TABLE IF NOT EXISTS `menu_flavor` (
   `name` varchar(10) NOT NULL,
   `price` int(10) unsigned NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='風味茶系列';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- 正在傾印表格  beverage.menu_flavor 的資料：~6 rows (近似值)
 INSERT INTO `menu_flavor` (`name`, `price`) VALUES
@@ -88,7 +88,7 @@ INSERT INTO `menu_flavor` (`name`, `price`) VALUES
 CREATE TABLE IF NOT EXISTS `menu_freshmilk` (
   `name` varchar(10) NOT NULL,
   `price` int(10) unsigned NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='鮮奶茶系列';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- 正在傾印表格  beverage.menu_freshmilk 的資料：~5 rows (近似值)
 INSERT INTO `menu_freshmilk` (`name`, `price`) VALUES
@@ -102,7 +102,7 @@ INSERT INTO `menu_freshmilk` (`name`, `price`) VALUES
 CREATE TABLE IF NOT EXISTS `menu_milk` (
   `name` varchar(10) NOT NULL,
   `price` int(10) unsigned NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='香醇奶茶系列';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- 正在傾印表格  beverage.menu_milk 的資料：~7 rows (近似值)
 INSERT INTO `menu_milk` (`name`, `price`) VALUES
@@ -118,7 +118,7 @@ INSERT INTO `menu_milk` (`name`, `price`) VALUES
 CREATE TABLE IF NOT EXISTS `menu_original` (
   `name` varchar(10) NOT NULL,
   `price` int(10) unsigned NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='原味茶系列';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- 正在傾印表格  beverage.menu_original 的資料：~5 rows (近似值)
 INSERT INTO `menu_original` (`name`, `price`) VALUES
@@ -132,7 +132,7 @@ INSERT INTO `menu_original` (`name`, `price`) VALUES
 CREATE TABLE IF NOT EXISTS `menu_taste` (
   `name` varchar(10) NOT NULL,
   `price` int(10) unsigned NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='滋味茶系列';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- 正在傾印表格  beverage.menu_taste 的資料：~5 rows (近似值)
 INSERT INTO `menu_taste` (`name`, `price`) VALUES
@@ -146,7 +146,7 @@ INSERT INTO `menu_taste` (`name`, `price`) VALUES
 CREATE TABLE IF NOT EXISTS `menu_wintermelon` (
   `name` varchar(10) NOT NULL,
   `price` int(10) unsigned NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='冬瓜茶系列';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- 正在傾印表格  beverage.menu_wintermelon 的資料：~4 rows (近似值)
 INSERT INTO `menu_wintermelon` (`name`, `price`) VALUES
@@ -183,6 +183,35 @@ INSERT INTO `orderlist` (`bid`, `bname`, `price`, `container`, `btype`, `isaddMa
 	(8, '烏龍拿鐵', 70, '大', '自然系列', '否', '', 0, '熱', '正常', '0988253401'),
 	(9, '奶蓋竹香茶', 65, '中', '濃郁系列', '是', '粉粿', 10, '熱', '微糖', '0975085417'),
 	(10, '冬瓜青茶', 45, '大', '堅持系列', '是', '珍珠', 5, '少冰', '微糖', '0986410412');
+
+-- 傾印  資料表 beverage.store 結構
+CREATE TABLE IF NOT EXISTS `store` (
+  `sid` int(11) NOT NULL AUTO_INCREMENT,
+  `s_name` varchar(15) NOT NULL,
+  `s_area` varchar(50) NOT NULL,
+  `s_addr` varchar(50) NOT NULL,
+  `s_tel` varchar(11) NOT NULL,
+  `opentime` varchar(50) NOT NULL,
+  PRIMARY KEY (`sid`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='各地店舖';
+
+-- 正在傾印表格  beverage.store 的資料：~15 rows (近似值)
+INSERT INTO `store` (`sid`, `s_name`, `s_area`, `s_addr`, `s_tel`, `opentime`) VALUES
+	(1, '一沐日 新竹光復店', '北部', '新竹市東區光復路一段319號', '03-5790006', '11:00~21:00 週一~週日'),
+	(2, '一沐日 汐止建成店', '北部', '新北市汐止區建成路52號', '02-26475366', '10:00~21:00 週一~週日'),
+	(3, '一沐日 中壢日新店', '北部', '桃園市中壢區日新路42號', '03-4668890', '11:00~20:00 週一~週日'),
+	(4, '一沐日 內湖江南店', '北部', '台北市內湖區江南街75號', '02-26275998', '10:00~20:00 週一~週五 11:00~20:00 週六~週日'),
+	(5, '一沐日 板橋三民店', '北部', '新北市板橋區三民路二段19號', '02-29551219', '10:00~20:00 週一~週日'),
+	(6, '一沐日 台中昌平店', '中部', '台中市北屯區昌平路1段238號', '04-22377888', '10:30~23:30 週一~週日'),
+	(7, '一沐日 台中健行店', '中部', '台中市北區健行路514號', '04-22069199', '10:00~21:00 週一~週日'),
+	(8, '一沐日 員林中山店', '中部', '彰化縣員林市中山路一段818號', '048-360818', '09:30~21:00 週一~週日'),
+	(9, '一沐日 鹿港中山店', '中部', '彰化縣鹿港鎮中山路192號1樓', '047-788077', '10:00~21:00 週一~週日'),
+	(10, '一沐日 台中太平店', '中部', '台中市東區精武東路184號', '04-22155119', '10:00~23:00 週一~週日'),
+	(11, '一沐日 高雄壽豐店', '南部', '高雄市楠梓區壽豐路316號', '07-3656363', '09:00~21:00 週一~週日'),
+	(12, '一沐日 嘉義民族店', '南部', '喜義市西區民族路709號', '05-2227700', '10:00~21:00 週一~週日'),
+	(13, '一沐日 虎尾光復店', '南部', '雲林縣虎尾鎮光復路323號1樓', '05-6335885', '10:00~22:00 週一~週日'),
+	(14, '一沐日 屏東廣東店', '南部', '屏東縣屏東市廣東路608號', '08-7351080', '10:00~21:00 週一~週日'),
+	(15, '一沐日 善化大成店', '南部', '台南市善化區大成路354號', '06-5831300', '10:00~21:00 週一~週日');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
