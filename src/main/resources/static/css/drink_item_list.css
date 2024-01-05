@@ -116,7 +116,7 @@ tr{
     margin: 0 0 0 30px;
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
     /* 在螢幕寬度小於768px時應用的樣式 */
     .drink-category,
     .drink-category01,
@@ -139,7 +139,7 @@ tr{
         font-size: 15px;
     }
 }
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
     #headnav, #footernav {
         text-align: center; /* 在小螢幕上將文字置中 */
     }
