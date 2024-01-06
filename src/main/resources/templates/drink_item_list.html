@@ -19,14 +19,12 @@
 <style>
 
 
-
-
     @media only screen and (max-width: 600px) {
-        body
+        .nav-item a
         {
 
 
-            font-size: 12px;
+            font-size:  15px ;
 
         }
     }
@@ -36,6 +34,26 @@
         background-color: red ;
         border: solid red 10px ;
         border-radius: 3%;
+    }
+
+
+    #footernav
+    {
+
+        background:lightgray;
+        width: 100%;
+        height: 20%;
+
+        align-content: center;
+        color: #000000;
+
+
+    }
+
+    .nav-item a
+    {
+        color: #000000;
+        font-weight: bold;
     }
 
 
@@ -69,18 +87,23 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="LatestNews.html">最新消息LATEST NEWS</a>
+                        <a class="nav-link active" aria-current="page" href="/latestnews">最新消息LATEST NEWS</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="Member.html">會員專區MEMBER</a>
+                        <a class="nav-link" href="/member">會員專區MEMBER</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="Coordinates.html">門市據點COORDINATES</a>
+                        <a class="nav-link" href="/drink_item">飲品資訊 MENU</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/coordinates">門市據點COORDINATES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="AboutUs.html">關於我們ABOUT US</a>
+                        <a class="nav-link" href="/aboutus">關於我們ABOUT US</a>
                     </li>
 
 
@@ -90,9 +113,9 @@
                         </a>
 
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="QandA.html">常見問題Q&A</a></li>
-                            <li><a class="dropdown-item" href="Franchise.html">加盟專區FRANCISE</a></li>
-                            <li><a class="dropdown-item" href="ContactUs.html">聯絡我們CONTACT US</a></li>
+                            <li><a class="dropdown-item" href="/qna">常見問題Q&A</a></li>
+                            <li><a class="dropdown-item" href="/franchise">加盟專區FRANCISE</a></li>
+                            <li><a class="dropdown-item" href="/contactus">聯絡我們CONTACT US</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -224,28 +247,28 @@
     <div id="footernav">
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                <a class="nav-link active" aria-current="page" href="/Homepage">首頁</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">最新消息News</a>
+                <a class="nav-link" href="latestnews">最新消息News</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">飲品資訊Menu</a>
+                <a class="nav-link" href="/drink_item">飲品資訊Menu</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">關於我們About</a>
+                <a class="nav-link" href="/aboutus">關於我們About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">常見問答Q&A</a>
+                <a class="nav-link" href="/qna">常見問答Q&A</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">加盟專區</a>
+                <a class="nav-link" href="/franchise">加盟專區</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">門市據點</a>
+                <a class="nav-link" href="/coordinates">門市據點</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">品牌會員/網路點餐</a>
+                <a class="nav-link" href="/member">品牌會員/網路點餐</a>
             </li>
         </ul>
     </div>
