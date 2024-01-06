@@ -56,7 +56,7 @@ public class WebController
     @GetMapping("/qna")
     public String getQnA()
     {
-        return"Main";
+        return"QandA";
     }
 
 
