@@ -11,10 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class OrderItemController {
     @Autowired
     DrinkItemService drinkItemService;
+    @Autowired
     OrderItemService orderItemService;
 
     @GetMapping("/order_item")
-    public String getDrinkItem(Model model){
+    public String getOrderItem(Model model){
         model.addAttribute ("originals", drinkItemService.getAllOriginal ());
         model.addAttribute ("flavors", drinkItemService.getAllFlavor ());
         model.addAttribute ("tastes",drinkItemService.getAllTaste());
@@ -24,6 +25,7 @@ public class OrderItemController {
         model.addAttribute ("wintermelons", drinkItemService.getAllWiterMelon ());
         model.addAttribute ("materials",drinkItemService.getAllMaterials ());
 //        model.addAttribute ("types",orderItemService.getAllTypes());
+        model.addAttribute ("products",orderItemService.getAllProduct());
         return "order_item_list";
     }
 }

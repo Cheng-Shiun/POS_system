@@ -14,7 +14,11 @@ import java.util.List;
 public class OrderItemService {
     @Autowired
     JdbcTemplate jdbcTemplate;
-    public  List<OrderItemModel> getAllTypes(){
-        return jdbcTemplate.query ("SELECT type FROM javateamenu GROUP BY TYPE", new OrderItemMapper());
+//    public List<OrderItemModel> getAllTypes(){
+//        return jdbcTemplate.query ("SELECT type FROM javateamenu GROUP BY TYPE", new OrderItemMapper());
+//    }
+
+    public List<OrderItemModel> getAllProduct(){
+        return jdbcTemplate.query ("select product from javateamenu WHERE TYPE='type'", new OrderItemMapper());
     }
 }

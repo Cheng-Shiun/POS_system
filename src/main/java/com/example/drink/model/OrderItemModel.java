@@ -10,5 +10,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class OrderItemModel {
-    private String type;
+    private String product;
+//    private  int price;
+//    private String type;
 }

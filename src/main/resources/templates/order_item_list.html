@@ -22,9 +22,12 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
         $( function() {
-            $( "#speed" ).selectmenu();
+            $( "#type" )
+                .selectmenu()
+                .selectmenu( "menuWidget" )
+                .addClass( "overflow" );
 
-            $( "#files" )
+            $( "#product" )
                 .selectmenu()
                 .selectmenu( "menuWidget" )
                 .addClass( "overflow" );
@@ -34,12 +37,14 @@
                 .selectmenu( "menuWidget" )
                 .addClass( "overflow" );
 
-            $( "#number" )
+            $( "#qty" )
                 .selectmenu()
                 .selectmenu( "menuWidget" )
                 .addClass( "overflow" );
 
-            $( "#salutation" ).selectmenu();
+            $( "#states" ).selectmenu();
+
+            $( ".widget input[type=submit], .widget a, .widget button" ).button();
         } );
     </script>
 </head>
@@ -47,19 +52,18 @@
 
 <div class="demo">
 
-    <form action="#">
+    <form action="#" method="get">
 
         <fieldset>
-            <label for="speed">選擇種類</label>
-            <select name="speed" id="speed">
-                <option selected="selected">Medium</option>
+            <label for="type">選擇種類</label>
+            <select name="type" id="type">
+                <option disabled selected>請選擇種類</option>
+                <option th:each=" product:${products}" th:text="${product.getProduct()}"></option>
             </select>
 
-            <label for="files">選擇飲料</label>
-            <select name="files" id="files">
-                <optgroup th:each=" type:${types}"  label="種類">
-                    <option th:text="${type.getType()}"></option>
-                </optgroup>
+            <label for="product">選擇產品</label>
+            <select name="product" id="product">
+                <option disabled selected>請選擇產品</option>
                 <optgroup th:each=" original:${originals}" label="原味茶">
                     <option th:text="${original.getName()}"></option>
                 </optgroup>
@@ -76,28 +80,26 @@
 
             <label for="material">選擇加料</label>
             <select name="material" id="material">
-                <optgroup th:each="material : ${materials}"  label="加料">
-                    <option th:text="${material.getName()}"></option>
-                </optgroup>
+                <option disabled selected>請選擇加料</option>
+                <option th:each="material : ${materials}" th:text="${material.getName()}"></option>
             </select>
 
-            <label for="number">選擇數量</label>
-            <select name="number" id="number">
+            <label for="qty">選擇數量</label>
+            <select name="qty" id="qty">
                 <option disabled selected>請選擇數量</option>
                 <option th:each="number : ${#numbers.sequence(1, 10)}" th:text="${number}"></option>
             </select>
 
-            <label for="salutation">Select a title</label>
-            <select name="salutation" id="salutation">
-                <option disabled selected>Please pick one</option>
-                <option>Mr.</option>
-                <option>Mrs.</option>
-                <option>Dr.</option>
-                <option>Prof.</option>
-                <option>Other</option>
+            <label for="states">冷熱飲</label>
+            <select name="states" id="states">
+                <option disabled selected>請選擇冷熱飲</option>
+                <option>冷飲</option>
+                <option>熱飲</option>
             </select>
         </fieldset>
-
+        <div class="widget">
+            <input type="submit" value="送出訂單">
+        </div>
     </form>
 
 </div>
