@@ -10,6 +10,8 @@ import lombok.Setter;
 @Setter
 @Getter
 public class DrinkItemModel {
-    private String name;
+    private String product;
     private  int price;
+    private  String type;
+
 }

@@ -6,182 +6,227 @@
     <link rel="stylesheet"  th:href="@{/css/drink_item_list.css}" type="text/css" >
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/drink.js"></script>
 </head>
 <body>
-<header>
-    <div id="headnav">
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">首頁</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">最新消息News</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">飲品資訊Menu</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">關於我們About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">常見問答Q&A</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">加盟專區</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">門市據點</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">品牌會員/網路點餐</a>
-            </li>
-        </ul>
+    <!-- banner-menu-->
+    <div id="topArea" >
+        <h1><span>Menu</span></h1>
+        <img class="imgArea" src="image/2.webp" alt="banner-menu"/>
     </div>
-</header>
+    <!--頁首nav-->
+    <header id="header">
 
-<main>
-<div class="drink-section" style="width: 80%; margin-left: auto; margin-right: auto">
-    <div class="drink-category">
-        <h2>原味茶</h2>
-        <hr>
-        <table>
-            <tr th:each=" original:${originals}">
-                <td th:text="${original.getName()}"></td>
-                <td class="tdprice" th:text="${original.getPrice()}"></td>
-            </tr>
-        </table>
-    </div>
-    <div  class="drink-category">
-        <h2>風味茶</h2>
-        <hr>
-        <table>
-            <tr th:each="flavor :${flavors}">
-                <td th:text="${flavor.getName()}"></td>
-                <td class="tdprice" th:text="${flavor.getPrice()}"></td>
-            </tr>
-        </table>
-    </div>
-    <div class="drink-category">
-        <h2>滋味茶</h2>
-        <hr>
-        <table>
-            <tr th:each="taste :${tastes}">
-                <td th:text="${taste.getName()}"></td>
-                <td class="tdprice" th:text="${taste.getPrice()}"></td>
-            </tr>
-        </table>
-    </div>
-</div>
-
-<div class="drink-section" style="width: 80%; margin-left: auto; margin-right: auto">
-    <div class="drink-category">
-        <h2>香醇奶茶</h2>
-        <hr>
-        <table>
-            <tr th:each="milk :${milks}">
-                <td th:text="${milk.getName()}"></td>
-                <td class="tdprice" th:text="${milk.getPrice()}"></td>
-            </tr>
-        </table>
-    </div>
-    <div class="drink-category">
-        <h2>芝士奶蓋</h2>
-        <hr>
-        <table>
-            <tr th:each="cheese :${cheeses}">
-                <td th:text="${cheese.getName()}"></td>
-                <td class="tdprice" th:text="${cheese.getPrice()}"></td>
-            </tr>
-        </table>
-    </div>
-    <div class="drink-category">
-        <h2>鮮奶茶</h2>
-        <hr>
-        <table>
-            <tr th:each="freshmilk :${freshmilks}">
-                <td th:text="${freshmilk.getName()}"></td>
-                <td class="tdprice" th:text="${freshmilk.getPrice()}"></td>
-            </tr>
-        </table>
-    </div>
-</div>
-
-<div  class="wintermelon-section" style="width: 80%; margin-left: auto; margin-right: auto">
-    <div class="drink-category01 ">
-        <h2>冬瓜茶系列</h2>
-        <hr>
-            <table>
-                <tr th:each="wintermelon :${wintermelons}">
-                    <td th:text="${wintermelon.getName()}"></td>
-                    <td class="tdprice" th:text="${wintermelon.getPrice()}"></td>
-                </tr>
-            </table>
-    </div>
-    <div class="drink-category02">
-        <h2>加好料</h2>
-        <hr>
-        <div class="add-table">
-            <table class="add01" >
-                <tr th:each="material : ${materials.subList(0, 3)}"> <!--subList(0, 3)從materials的陣列裡去抓出索引值0,1,2的資料-->
-                    <td  th:text="${material.getName()}"></td>
-                    <td class="tdprice" th:text="${material.getPrice()}"></td>
-                </tr>
-            </table>
-            <table class="add02">
-                <tr th:each="material : ${materials.subList(3, 6)}"> <!--subList(0, 3)從materials的陣列裡去抓出索引值3,4,5的資料-->
-                    <td th:text="${material.getName()}"></td>
-                    <td class="tdprice" th:text="${material.getPrice()}"></td>
-                </tr>
-            </table>
+        <img class="logoimg" src="image/Logo-110.svg" alt="">
+        <div id="headnav">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">最新消息News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">飲品資訊Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">關於我們About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">常見問答Q&A</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">加盟專區</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">門市據點</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">品牌會員/網路點餐</a>
+                </li>
+            </ul>
         </div>
-    </div>
-</div>
+    </header>
+    <!--頁首nav End-->
 
-<div id="icesugar">
-        <div class="iceArea">
-            <h4>冰量-660ml</h4>
-                    <p><span class="ice">正常冰</span></p>
-            <h4>熱飲-600ml</h4>
+
+
+    <!--茶飲品項 與 加料品項-->
+    <main>
+    <div class="drink-section" >
+            <div class="drink-category">
+                <h2>原味茶</h2>
+                <hr>
+                <table class="original" th:each="item :${originals}" th:if="${item.type=='original'}" >
+                    <tr >
+                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                        <td class="tdprice" th:text="${item.getPrice()}"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div  class="drink-category">
+                <h2>風味茶</h2>
+                <hr>
+                <table class="flavor" th:each="item :${flavors}" th:if="${item.type=='flavor'}">
+                    <tr>
+                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                        <td class="tdprice" th:text="${item.getPrice()}"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="drink-category">
+                <h2>滋味茶</h2>
+                <hr>
+                <table class="taste" th:each="item :${tastes}" th:if="${item.type=='taste'}">
+                    <tr>
+                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                        <td class="tdprice" th:text="${item.getPrice()}"></td>
+                    </tr>
+                </table>
+            </div>
+    </div>
+
+    <div class="drink-section" >
+            <div class="drink-category">
+                <h2>香醇奶茶</h2>
+                <hr>
+                <table class="milk" th:each="item :${milks}" th:if="${item.type=='milk'}">
+                    <tr>
+                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                        <td class="tdprice" th:text="${item.getPrice()}"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="drink-category">
+                <h2>芝士奶蓋</h2>
+                <hr>
+                <table class="cheese"  th:each="item :${cheeses}" th:if="${item.type=='cheese'}">
+                    <tr>
+                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                        <td class="tdprice" th:text="${item.getPrice()}"></td>
+                    </tr>
+                </table>
+            </div >
+
+            <div class="drink-category">
+                <h2>鮮奶茶</h2>
+                <hr>
+                <table class="freshMilk"  th:each="item :${freshmilks}" th:if="${item.type=='freshMilk'}">
+                    <tr>
+                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                        <td class="tdprice" th:text="${item.getPrice()}"></td>
+                    </tr>
+                </table>
+            </div>
+    </div>
+
+    <div  class="wintermelon-section">
+            <div class="drink-category01" >
+                <h2>冬瓜茶系列</h2>
+                <hr>
+                    <table class="wintermelo" th:each="item :${wintermelons}" th:if="${item.type=='winterMelo'}">
+                        <tr>
+                            <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                            <td class="tdprice" th:text="${item.getPrice()}"></td>
+                        </tr>
+                    </table>
+            </div>
+
+            <div class="drink-category02">
+                <h2>加好料</h2>
+                <hr>
+                <div class="addsection"style="">
+                    <div class="addMateria add01">
+                        <table>
+                            <tr  th:each="item :${materials.subList(0,3)}" th:if="${item.type=='addMateria'}"><!--subList(0,3)從materials的陣列裡去抓出索引值0,1,2的資料-->
+                                <td class="tdproduct"  th:text="${item.getProduct()}"></td>
+                                <td class="tdprice" th:text="${item.getPrice()}"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="addMateria add02">
+                        <table>
+                            <tr  th:each="item :${materials.subList(3,6)}" th:if="${item.type=='addMateria'}"><!--subList(3,6)從materials的陣列裡去抓出索引值3,4,5的資料-->
+                                <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                                <td class="tdprice" th:text="${item.getPrice()}"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div id="icesugar">
+            <div class="iceArea">
+                <h5>冰量：</h5>
+                    <div class="ice">
+                        <p>正常冰</p>
+                        <p>少    冰</p>
+                        <p>微    冰</p>
+                        <p>去冰(小碎冰)</p>
+                        <p>完全去冰</p>
+                    </div>
+                <h6 >冰飲-660ml / 熱飲-600ml</h6>
+            </div>
+
+            <div class="sugarArea">
+                <h5>甜度：</h5>
+                <div class="sugar">
+                    <p>正常甜</p>
+                    <p>七分甜</p>
+                    <p>五分甜</p>
+                    <p>三分甜</p>
+                    <p>無   糖</p>
+                </div>
+                <h6>無咖啡因飲品請諮詢店員/買10送1、買20送3</h6>
+            </div>
+    </div>
+
+    <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
+    </main>
+
+    <!--茶飲品項 與 加料品項 End-->
+
+    <!--頁尾nav-->
+    <footer id="footer">
+        <img class="logoimg" src="image/Logo-150.svg" alt="">
+        <div id="footernav">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">最新消息News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">飲品資訊Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">關於我們About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">常見問答Q&A</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">加盟專區</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">門市據點</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">品牌會員/網路點餐</a>
+                </li>
+            </ul>
         </div>
 
-        <div class="sugarArea">
-            <h4>甜度</h4>
-                <p><span class="sugar">正常甜</span></p>
-            <h6>無咖啡因飲品請諮詢店員/買10送1、買20送3</h6>
-        </div>
-</div>
-</main>
+        <p><span>© 2023 爪蛙茶飲</span></p>
+    </footer>
+    <!--頁尾nav End-->
 
-<footer>
-    <div id="footernav">
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">首頁</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">最新消息News</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">飲品資訊Menu</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">關於我們About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">常見問答Q&A</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">加盟專區</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">門市據點</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">品牌會員/網路點餐</a>
-            </li>
-        </ul>
-    </div>
-</footer>
 </body>
 </html>

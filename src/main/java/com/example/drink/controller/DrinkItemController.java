@@ -13,14 +13,14 @@ public class DrinkItemController {
 
     @GetMapping("/drink_item")
     public String getDrinkItem(Model model){
-        model.addAttribute ("originals", drinkItemService.getAllOriginal ());
-        model.addAttribute ("flavors", drinkItemService.getAllFlavor ());
-        model.addAttribute ("tastes",drinkItemService.getAllTaste());
-        model.addAttribute ("milks", drinkItemService.getAllMilk ());
-        model.addAttribute ("freshmilks", drinkItemService.getAllFreshMilk ());
-        model.addAttribute ("cheeses", drinkItemService.getAllCheese ());
-        model.addAttribute ("wintermelons", drinkItemService.getAllWiterMelon ());
-        model.addAttribute ("materials",drinkItemService.getAllMaterials ());
+        model.addAttribute ("originals", drinkItemService.getAllByType ("original"));
+        model.addAttribute ("flavors", drinkItemService.getAllByType ("flavor"));
+        model.addAttribute ("tastes",drinkItemService.getAllByType ("taste"));
+        model.addAttribute ("milks", drinkItemService.getAllByType ("milk"));
+        model.addAttribute ("freshmilks", drinkItemService.getAllByType ("freshMilk"));
+        model.addAttribute ("cheeses", drinkItemService.getAllByType ("cheese"));
+        model.addAttribute ("wintermelons", drinkItemService.getAllByType ("winterMelo"));
+        model.addAttribute ("materials",drinkItemService.getAllByType ("addMateria"));
         return "drink_item_list";
     }
 }

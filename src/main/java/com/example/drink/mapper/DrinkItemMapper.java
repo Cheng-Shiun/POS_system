@@ -10,8 +10,9 @@ public class DrinkItemMapper implements RowMapper<DrinkItemModel> {
     @Override
     public DrinkItemModel mapRow (ResultSet rs, int rowNum) throws SQLException {
         DrinkItemModel drinkItemModel = new DrinkItemModel ();
-        drinkItemModel.setName (rs.getNString ("name"));
+        drinkItemModel.setProduct (rs.getNString ("product"));
         drinkItemModel.setPrice (rs.getInt ("price"));
+        drinkItemModel.setType (rs.getNString ("type"));
         return drinkItemModel;
     }
 }
