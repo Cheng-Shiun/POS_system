@@ -25,8 +25,14 @@ CREATE TABLE IF NOT EXISTS `add_materials` (
   `price` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='加料區';
 
--- 正在傾印表格  beverage.add_materials 的資料：~6 rows (近似值)
+-- 正在傾印表格  beverage.add_materials 的資料：~12 rows (近似值)
 INSERT INTO `add_materials` (`name`, `price`) VALUES
+	('草仔粿', 15),
+	('琥珀粉圓', 10),
+	('雙粉(粉粿+粉圓)', 10),
+	('招牌粉粿', 10),
+	('蘆薈', 10),
+	('嫩仙草', 10),
 	('草仔粿', 15),
 	('琥珀粉圓', 10),
 	('雙粉(粉粿+粉圓)', 10),
@@ -36,11 +42,81 @@ INSERT INTO `add_materials` (`name`, `price`) VALUES
 
 -- 傾印  資料表 beverage.franchise 結構
 CREATE TABLE IF NOT EXISTS `franchise` (
-  `principal` varchar(50) NOT NULL,
-  `gender` char(1) NOT NULL DEFAULT '' COMMENT '男M/女F'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='加盟專區使用之加盟基本資料';
+  `fid` int(10) NOT NULL AUTO_INCREMENT,
+  `fname` varchar(50) NOT NULL DEFAULT '0',
+  `gender` char(1) NOT NULL DEFAULT '0',
+  `age` int(3) NOT NULL DEFAULT 0,
+  `country` varchar(50) NOT NULL DEFAULT '0',
+  `phone` varchar(50) NOT NULL DEFAULT '0',
+  `area` varchar(50) DEFAULT '0',
+  `experience` char(1) DEFAULT NULL,
+  `operators` char(1) DEFAULT NULL,
+  `shareholder` char(1) DEFAULT NULL,
+  `budget` int(10) DEFAULT NULL,
+  `other` varchar(100) DEFAULT '0',
+  `store` char(1) DEFAULT NULL,
+  PRIMARY KEY (`fid`),
+  KEY `索引 2` (`phone`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- 正在傾印表格  beverage.franchise 的資料：~0 rows (近似值)
+
+-- 傾印  資料表 beverage.javateamenu 結構
+CREATE TABLE IF NOT EXISTS `javateamenu` (
+  `pn` char(3) NOT NULL,
+  `typeCode` char(2) NOT NULL DEFAULT '',
+  `productCode` int(3) NOT NULL DEFAULT 0,
+  `type` varchar(20) NOT NULL DEFAULT '0',
+  `product` varchar(20) NOT NULL DEFAULT '',
+  `price` int(3) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`pn`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- 正在傾印表格  beverage.javateamenu 的資料：~43 rows (近似值)
+INSERT INTO `javateamenu` (`pn`, `typeCode`, `productCode`, `type`, `product`, `price`) VALUES
+	('am1', 'am', 1, 'addMaterials', '草仔粿', 15),
+	('am2', 'am', 2, 'addMaterials', '琥珀粉圓', 10),
+	('am3', 'am', 3, 'addMaterials', '雙粉(粉粿+粉圓)', 10),
+	('am4', 'am', 4, 'addMaterials', '蘆薈', 10),
+	('am5', 'am', 5, 'addMaterials', '招牌粉粿', 10),
+	('am6', 'am', 6, 'addMaterials', '嫩仙草', 10),
+	('c1', 'c', 1, 'cheese', '奶蓋招牌紅', 50),
+	('c2', 'c', 2, 'cheese', '奶蓋竹香茶', 60),
+	('c3', 'c', 3, 'cheese', '奶蓋烏龍茶', 60),
+	('c4', 'c', 4, 'cheese', '奶蓋蕎麥茶', 65),
+	('f1', 'f', 1, 'flavor', '梅果招牌紅', 55),
+	('f2', 'f', 2, 'flavor', '荔枝蘆薈', 60),
+	('f3', 'f', 3, 'flavor', '鮮葡萄柚青茶', 65),
+	('f4', 'f', 4, 'flavor', '養樂多青菜', 55),
+	('f5', 'f', 5, 'flavor', '檸檬高山青', 60),
+	('f6', 'f', 6, 'flavor', '粉粿柚香307', 79),
+	('fm1', 'fm', 1, 'freshMilk', '招牌紅拿鐵', 70),
+	('fm2', 'fm', 2, 'freshMilk', '烏龍拿鐵', 70),
+	('fm3', 'fm', 3, 'freshMilk', '黃金蕎麥拿鐵', 70),
+	('fm4', 'fm', 4, 'freshMilk', '竹香翡翠拿鐵', 70),
+	('fm5', 'fm', 5, 'freshMilk', '極黑芝麻拿鐵', 80),
+	('m1', 'm', 1, 'milk', '招牌紅奶茶', 50),
+	('m2', 'm', 2, 'milk', '粉粿黑糖奶茶	', 60),
+	('m3', 'm', 3, 'milk', '黃金蕎麥奶茶	', 60),
+	('m4', 'm', 4, 'milk', '逮丸奶茶	', 65),
+	('m5', 'm', 5, 'milk', '極黑芝麻奶茶	', 65),
+	('m6', 'm', 6, 'milk', '竹香翡翠奶茶', 50),
+	('m7', 'm', 7, 'milk', '粉粿舞伎406奶茶', 79),
+	('o1', 'o', 1, 'original', '竹香翡翠', 40),
+	('o2', 'o', 2, 'original', '招牌紅茶', 35),
+	('o3', 'o', 3, 'original', '炭培烏龍', 35),
+	('o4', 'o', 4, 'original', '油切蕎麥茶', 35),
+	('o5', 'o', 5, 'original', '手採高山青', 35),
+	('t1', 't', 1, 'taste', '粉粿桂花檸檬', 60),
+	('t2', 't', 2, 'taste', '粉粿黑糖檸檬', 60),
+	('t3', 't', 3, 'taste', '荔枝烏龍', 55),
+	('t4', 't', 4, 'taste', '桂花蕎麥茶', 55),
+	('t5', 't', 5, 'taste', '柚子烏龍', 65),
+	('ty1', 'ty', 1, 'type', 'addMaterials', 0),
+	('wm1', 'wm', 1, 'winterMelon', '招牌冬瓜紅', 45),
+	('wm2', 'wm', 2, 'winterMelon', '冬瓜青茶', 45),
+	('wm3', 'wm', 3, 'winterMelon', '冬瓜檸檬', 50),
+	('wm4', 'wm', 4, 'winterMelon', '冬瓜仙茶蜜', 50);
 
 -- 傾印  資料表 beverage.member 結構
 CREATE TABLE IF NOT EXISTS `member` (
@@ -52,9 +128,18 @@ CREATE TABLE IF NOT EXISTS `member` (
   `gender` char(1) NOT NULL DEFAULT '0',
   `email` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`mid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- 正在傾印表格  beverage.member 的資料：~0 rows (近似值)
+-- 正在傾印表格  beverage.member 的資料：~8 rows (近似值)
+INSERT INTO `member` (`mid`, `memberName`, `memberPhone`, `memberAddress`, `birthday`, `gender`, `email`) VALUES
+	(1, 'Sean', '0921324600', '台中市北區漢口路一段100號', '2003-01-06', '男', 'sean@gmail.com'),
+	(2, 'Joy', '0921730887', '台中市北區漢口路二段200號', '1983-12-09', '女', 'joy@gmail.com'),
+	(3, 'Justin', '0921748596', '台中市大雅區神林路一段100號', '1983-01-06', '男', 'justin@gmail.com'),
+	(6, 'Wayne', '0921748596', '台中市大雅區神林路二段200號', '1983-01-02', '男', 'wayne@gmail.com'),
+	(7, 'Ben', '0921968574', '台中市大雅區神林路三段300號', '1979-01-03', '男', 'ben@yahoo.com'),
+	(8, 'Alex', '0921968574', '台中市西屯區中港路一段100號', '1982-01-03', '男', 'alex@yahoo.com'),
+	(9, 'Bob', '0921748596', '台中市西屯區中港路一段100號', '1979-02-02', '男', 'bob@yahoo.com'),
+	(10, 'Molly', '0921748596', '台中市西屯區中港路二段200號', '1979-02-02', '女', 'molly@yahoo.com');
 
 -- 傾印  資料表 beverage.menu_cheese 結構
 CREATE TABLE IF NOT EXISTS `menu_cheese` (
@@ -62,8 +147,12 @@ CREATE TABLE IF NOT EXISTS `menu_cheese` (
   `price` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='芝士奶蓋系列';
 
--- 正在傾印表格  beverage.menu_cheese 的資料：~4 rows (近似值)
+-- 正在傾印表格  beverage.menu_cheese 的資料：~8 rows (近似值)
 INSERT INTO `menu_cheese` (`name`, `price`) VALUES
+	('奶蓋招牌紅', 50),
+	('奶蓋竹香茶', 60),
+	('奶蓋烏龍茶', 60),
+	('奶蓋蕎麥茶', 65),
 	('奶蓋招牌紅', 50),
 	('奶蓋竹香茶', 60),
 	('奶蓋烏龍茶', 60),
@@ -75,8 +164,14 @@ CREATE TABLE IF NOT EXISTS `menu_flavor` (
   `price` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='風味茶系列';
 
--- 正在傾印表格  beverage.menu_flavor 的資料：~6 rows (近似值)
+-- 正在傾印表格  beverage.menu_flavor 的資料：~12 rows (近似值)
 INSERT INTO `menu_flavor` (`name`, `price`) VALUES
+	('梅果招牌紅', 55),
+	('荔枝蘆薈', 60),
+	('鮮葡萄柚青茶', 65),
+	('養樂多青菜', 55),
+	('檸檬高山青', 60),
+	('粉粿柚香307', 79),
 	('梅果招牌紅', 55),
 	('荔枝蘆薈', 60),
 	('鮮葡萄柚青茶', 65),
@@ -90,8 +185,13 @@ CREATE TABLE IF NOT EXISTS `menu_freshmilk` (
   `price` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='鮮奶茶系列';
 
--- 正在傾印表格  beverage.menu_freshmilk 的資料：~5 rows (近似值)
+-- 正在傾印表格  beverage.menu_freshmilk 的資料：~10 rows (近似值)
 INSERT INTO `menu_freshmilk` (`name`, `price`) VALUES
+	('招牌紅拿鐵', 70),
+	('烏龍拿鐵', 70),
+	('黃金蕎麥拿鐵', 70),
+	('竹香翡翠拿鐵', 70),
+	('極黑芝麻拿鐵', 80),
 	('招牌紅拿鐵', 70),
 	('烏龍拿鐵', 70),
 	('黃金蕎麥拿鐵', 70),
@@ -104,8 +204,15 @@ CREATE TABLE IF NOT EXISTS `menu_milk` (
   `price` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='香醇奶茶系列';
 
--- 正在傾印表格  beverage.menu_milk 的資料：~7 rows (近似值)
+-- 正在傾印表格  beverage.menu_milk 的資料：~14 rows (近似值)
 INSERT INTO `menu_milk` (`name`, `price`) VALUES
+	('招牌紅奶茶', 50),
+	('粉粿黑糖奶茶', 60),
+	('黃金蕎麥奶茶', 60),
+	('逮丸奶茶', 65),
+	('極黑芝麻奶茶', 65),
+	('竹香翡翠奶茶', 50),
+	('粉粿舞伎406奶茶', 79),
 	('招牌紅奶茶', 50),
 	('粉粿黑糖奶茶', 60),
 	('黃金蕎麥奶茶', 60),
@@ -120,8 +227,13 @@ CREATE TABLE IF NOT EXISTS `menu_original` (
   `price` int(10) unsigned NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='原味茶系列';
 
--- 正在傾印表格  beverage.menu_original 的資料：~5 rows (近似值)
+-- 正在傾印表格  beverage.menu_original 的資料：~10 rows (近似值)
 INSERT INTO `menu_original` (`name`, `price`) VALUES
+	('竹香翡翠', 40),
+	('招牌紅茶', 35),
+	('炭培烏龍', 35),
+	('油切蕎麥茶', 35),
+	('手採高山青', 35),
 	('竹香翡翠', 40),
 	('招牌紅茶', 35),
 	('炭培烏龍', 35),
@@ -134,8 +246,13 @@ CREATE TABLE IF NOT EXISTS `menu_taste` (
   `price` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='滋味茶系列';
 
--- 正在傾印表格  beverage.menu_taste 的資料：~5 rows (近似值)
+-- 正在傾印表格  beverage.menu_taste 的資料：~10 rows (近似值)
 INSERT INTO `menu_taste` (`name`, `price`) VALUES
+	('粉粿桂花檸檬', 60),
+	('粉粿黑糖檸檬', 60),
+	('荔枝烏龍', 55),
+	('桂花蕎麥茶', 55),
+	('柚子烏龍', 65),
 	('粉粿桂花檸檬', 60),
 	('粉粿黑糖檸檬', 60),
 	('荔枝烏龍', 55),
@@ -148,8 +265,12 @@ CREATE TABLE IF NOT EXISTS `menu_wintermelon` (
   `price` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='冬瓜茶系列';
 
--- 正在傾印表格  beverage.menu_wintermelon 的資料：~4 rows (近似值)
+-- 正在傾印表格  beverage.menu_wintermelon 的資料：~8 rows (近似值)
 INSERT INTO `menu_wintermelon` (`name`, `price`) VALUES
+	('招牌冬瓜紅', 45),
+	('冬瓜青茶', 45),
+	('冬瓜檸檬', 50),
+	('冬瓜仙茶蜜', 50),
 	('招牌冬瓜紅', 45),
 	('冬瓜青茶', 45),
 	('冬瓜檸檬', 50),

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Selectmenu - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        fieldset {
+            border: 0;
+        }
+        label {
+            display: block;
+            margin: 30px 0 0 0;
+        }
+        .overflow {
+            height: 200px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#speed" ).selectmenu();
+
+            $( "#files" )
+                .selectmenu()
+                .selectmenu( "menuWidget" )
+                .addClass( "overflow" );
+
+            $( "#material" )
+                .selectmenu()
+                .selectmenu( "menuWidget" )
+                .addClass( "overflow" );
+
+            $( "#number" )
+                .selectmenu()
+                .selectmenu( "menuWidget" )
+                .addClass( "overflow" );
+
+            $( "#salutation" ).selectmenu();
+        } );
+    </script>
+</head>
+<body>
+
+<div class="demo">
+
+    <form action="#">
+
+        <fieldset>
+            <label for="speed">選擇種類</label>
+            <select name="speed" id="speed">
+                <option selected="selected">Medium</option>
+            </select>
+
+            <label for="files">選擇飲料</label>
+            <select name="files" id="files">
+                <optgroup th:each=" type:${types}"  label="種類">
+                    <option th:text="${type.getType()}"></option>
+                </optgroup>
+                <optgroup th:each=" original:${originals}" label="原味茶">
+                    <option th:text="${original.getName()}"></option>
+                </optgroup>
+                <optgroup th:each="flavor :${flavors}" label="風味茶">
+                    <option th:text="${flavor.getName()}"></option>
+                </optgroup>
+                <optgroup th:each="taste :${tastes}" label="滋味茶">
+                    <option th:text="${taste.getName()}"></option>
+                </optgroup>
+                <optgroup th:each="milk :${milks}" label="香醇奶茶">
+                    <option th:text="${milk.getName()}"></option>
+                </optgroup>
+            </select>
+
+            <label for="material">選擇加料</label>
+            <select name="material" id="material">
+                <optgroup th:each="material : ${materials}"  label="加料">
+                    <option th:text="${material.getName()}"></option>
+                </optgroup>
+            </select>
+
+            <label for="number">選擇數量</label>
+            <select name="number" id="number">
+                <option disabled selected>請選擇數量</option>
+                <option th:each="number : ${#numbers.sequence(1, 50)}" th:text="${number}"></option>
+            </select>
+
+            <label for="salutation">Select a title</label>
+            <select name="salutation" id="salutation">
+                <option disabled selected>Please pick one</option>
+                <option>Mr.</option>
+                <option>Mrs.</option>
+                <option>Dr.</option>
+                <option>Prof.</option>
+                <option>Other</option>
+            </select>
+        </fieldset>
+
+    </form>
+
+</div>
+
+
+</body>
+</html>

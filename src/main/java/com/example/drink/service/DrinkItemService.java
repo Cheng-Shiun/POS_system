@@ -37,4 +37,7 @@ public class DrinkItemService {
     public  List<DrinkItemModel> getAllMaterials(){
         return jdbcTemplate.query ("select product,price from javateamenu WHERE TYPE='addMaterials'", new DrinkItemMapper ());
     }
+//    public  List<DrinkItemModel> getAllTypes(){
+//        return jdbcTemplate.query ("select product,price from javateamenu WHERE type='type'", new DrinkItemMapper ());
+//    }
 }
