@@ -7,10 +7,12 @@ import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
 @Getter
-public class DrinkItemModel {
-    private String product;
-    private  int price;
-    private  String type;
+@Setter
+public class StoreModel {
+    private String s_name;
+    private String s_area;
+    private String s_addr;
+    private String s_tel;
+    private String opentime;
 }
