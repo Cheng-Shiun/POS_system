@@ -84,7 +84,7 @@
             <label for="number">選擇數量</label>
             <select name="number" id="number">
                 <option disabled selected>請選擇數量</option>
-                <option th:each="number : ${#numbers.sequence(1, 50)}" th:text="${number}"></option>
+                <option th:each="number : ${#numbers.sequence(1, 10)}" th:text="${number}"></option>
             </select>
 
             <label for="salutation">Select a title</label>
