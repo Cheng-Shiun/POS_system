@@ -1,6 +1,6 @@
 package com.example.drink.service;
 
-import com.example.drink.mapper.DrinkItemMapper;
+import com.example.drink.Dao.mapper.DrinkItemMapper;
 import com.example.drink.model.DrinkItemModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
