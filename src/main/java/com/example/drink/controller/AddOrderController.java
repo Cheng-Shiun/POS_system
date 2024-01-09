@@ -29,10 +29,10 @@ public class AddOrderController {
 
         switch (result) {
             case 0:
-                msg = "新增失敗";
+                msg = "訂單失敗";
                 break;
             case 1:
-                msg = "註冊完畢";
+                msg = "訂單完成";
                 break;
             default:
                 msg = "其它原因";
