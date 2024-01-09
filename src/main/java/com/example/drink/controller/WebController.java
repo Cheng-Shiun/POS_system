@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class WebController
 {
 
-    @GetMapping("/index")
+    @GetMapping("/Homepage")
     public String getHomePage()
     {
-        return "index";
+        return "HomePage";
     }
     @GetMapping("/menu")
     public String getMenu()
