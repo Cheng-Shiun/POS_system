@@ -52,17 +52,17 @@
 
 <div class="demo">
 
-    <form action="/addOrder" method="post">
+    <form th:object="${addOrderModel}" action="/addOrder" method="post">
 
         <fieldset>
             <label for="type">選擇種類</label>
-            <select name="type" id="type">
+            <select th:field="*{type}" name="type" id="type">
                 <option disabled selected>請選擇種類</option>
                 <option th:each=" product:${products}" th:text="${product.getProduct()}"></option>
             </select>
 
             <label for="product">選擇產品</label>
-            <select name="product" id="product">
+            <select th:field="*{product}" name="product" id="product">
                 <option disabled selected>請選擇產品</option>
                 <optgroup th:each=" original:${originals}" label="原味茶">
                     <option th:text="${original.getName()}"></option>
@@ -79,19 +79,19 @@
             </select>
 
             <label for="material">選擇加料</label>
-            <select name="material" id="material">
+            <select th:field="*{material}" name="material" id="material">
                 <option disabled selected>請選擇加料</option>
                 <option th:each="material : ${materials}" th:text="${material.getName()}"></option>
             </select>
 
             <label for="qty">選擇數量</label>
-            <select name="qty" id="qty">
+            <select th:field="*{qty}" name="qty" id="qty">
                 <option disabled selected>請選擇數量</option>
                 <option th:each="number : ${#numbers.sequence(1, 10)}" th:text="${number}"></option>
             </select>
 
             <label for="states">選擇冷熱飲</label>
-            <select name="states" id="states">
+            <select th:field="*{states}" name="states" id="states">
                 <option disabled selected>請選擇冷熱飲</option>
                 <option>冷飲</option>
                 <option>熱飲</option>
