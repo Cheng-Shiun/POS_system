@@ -27,3 +27,4 @@ function scrollToTop() {
     //將頁面的滾動位置移動到頂部 及 速度設定
     $('html, body').animate({scrollTop : 0}, 0);
 }
+

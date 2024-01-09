@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>各地分店資訊</title>
@@ -15,79 +15,83 @@
 </head>
 <body>
 <header>
-<!-- banner-menu-->
-<div id="topArea" >
-    <h1><span>STORE</span></h1>
-    <img class="imgArea" src="image/2.webp" alt="banner-menu"/>
-</div>
-
-<!--頁首nav-->
-<header id="header">
-
-    <img class="logoimg" src="image/Logo-110.svg" alt="">
-    <div id="headnav">
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">首頁</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">最新消息News</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">飲品資訊Menu</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">關於我們About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">常見問答Q&A</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">加盟專區</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">門市據點STORE</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">品牌會員/網路點餐</a>
-            </li>
-        </ul>
+    <!-- banner-menu-->
+    <div id="topArea" >
+        <h1><span>STORE</span></h1>
+        <img class="imgArea" src="image/2.webp" alt="banner-menu"/>
     </div>
-</header>
+
+    <!--頁首nav-->
+    <header id="header">
+
+        <img class="logoimg" src="image/Logo-110.svg" alt="">
+        <div id="headnav">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">最新消息News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">飲品資訊Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">關於我們About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">常見問答Q&A</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">加盟專區</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">門市據點STORE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">品牌會員/網路點餐</a>
+                </li>
+            </ul>
+        </div>
+    </header>
 
 </header>
 <!--頁首nav End-->
 
 <!--分店資訊-->
 <main>
-    <!--左邊 下拉選單-->
-    <select id="countrySelect" onchange="countrySelect()">
-        <option th:each="c:${country}" th:value="${c}" th:text="${c}">全球門市地區</option>
-    </select>
-    <!--右邊 下拉選單-->
-    <select>
-        <option th:each="r:${regions['台灣']}" th:value="${r}" th:text="${r}">分店門市資訊</option>
-    </select>
+    <div id="selectArea">
+        <!-- 左邊下拉選單 選單預設是"台灣" -->
+        <select id="countrySelect" onchange="rightDropdown()">
+            <option value="台灣" selected>台灣</option>
+            <option value="日本">日本</option>
+            <option value="中國">中國</option>
+        </select>
 
+        <!-- 右邊下拉選單 -->
+        <select id="regionsSelect" ></select>
 
-    <div id="nblock">
-    <div class="nArea" style="width: 50%" th:each="n:${north}" th:if="${n.s_area =='北部'}">
-        <table class="north" >
-            <ul>
-                <div class="ulArea">
-                <li class="liName" th:text="${n.getS_name()}">分店名稱</li>
-                    <i class="fa-solid fa-location-dot"></i><span th:text="${n.getS_addr()}">分店地址</span><br>
-                    <i class="fa-solid fa-phone"></i><span th:text="${n.getS_tel()}">分店電話</span><br>
-                    <i class="fa-solid fa-clock"></i><span th:text="${n.getOpentime()}">營業時間</span>
-                </div>
-            </ul>
-        </table>
     </div>
+
+
+    <!--分店-->
+    <div id="nblock">
+        <div class="nArea" style="width: 50%" th:each="n:${north}" th:if="${n.s_area =='北部'}">
+            <table class="north" >
+                <ul>
+                    <div class="ulArea">
+                        <li class="liName" th:text="${n.getS_name()}">分店名稱</li>
+                        <i class="fa-solid fa-location-dot"></i><span th:text="${n.getS_addr()}">分店地址</span><br>
+                        <i class="fa-solid fa-phone"></i><span th:text="${n.getS_tel()}">分店電話</span><br>
+                        <i class="fa-solid fa-clock"></i><span th:text="${n.getOpentime()}">營業時間</span>
+                    </div>
+                </ul>
+            </table>
+        </div>
     </div>
 
     <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
 </main>
-
 
 <!--頁尾nav-->
 <footer id="footer">

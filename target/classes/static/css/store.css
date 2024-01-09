@@ -47,6 +47,27 @@ body {
     font-size: 56px;
 }
 
+/*下拉選單'*/
+#selectArea{
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    padding-left: 20%;
+}
+
+#countrySelect, #regionsSelect {
+    font-size: 22px;
+    text-align: center;
+    border: 1px solid rgba(119, 95, 70, 0.2); /* 修改邊框寬度和邊框顏色 */
+    border-radius: 18px; /* 修改邊框圓角 */
+    width: 200px;
+    height: 40px;
+    color: #775F46;
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+
 /*main*/
 #nblock{
     width: 70%;
@@ -58,6 +79,7 @@ body {
     justify-content: flex-start;
     margin-top: 50px;
 }
+
 .nArea{
     width: 40%;
     margin-bottom: 30px;

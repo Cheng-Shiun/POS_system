@@ -14,5 +14,4 @@ public class StoreService {
     public List<StoreModel> getByAll(String s_area){
         return jdbcTemplate.query("select * from store where s_area=?", new StoreMapper(), s_area);
     }
-
 }
