@@ -1,0 +1,559 @@
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+header {
+  background-color: #faeee4;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0px 5px 5px -5px #777;
+}
+header section.logo {
+  margin-left: 5rem;
+  flex: 1 1 300px;
+}
+header section.logo img {
+  width: 8vw;
+  height: 8vw;
+}
+
+nav {
+  flex: 4 1 800px;
+  position: relative;
+}
+nav div.social-icons {
+  position: absolute;
+  top: -150%;
+  right: 5%;
+}
+nav div.social-icons a.icon-link i.fa-brands {
+  color: #b2a55b;
+  margin: 0 0.8rem;
+}
+nav div.social-icons a.icon-link i.fa-brands:hover {
+  color: #52764f;
+}
+
+ul.drop-down-menu {
+  display: inline-block;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1rem;
+}
+ul.drop-down-menu li {
+  position: relative;
+  white-space: nowrap;
+  float: left; /* 只有第一層是靠左對齊*/
+  list-style: none;
+}
+ul.drop-down-menu li:last-child {
+  border-right: none;
+}
+ul.drop-down-menu a {
+  background-color: #846950;
+  color: #ffffff;
+  display: block;
+  padding: 0 1.5rem;
+  margin-right: 1.5rem;
+  text-decoration: none;
+  line-height: 2rem;
+  border-radius: 5px;
+}
+
+ul.drop-down-menu a {
+  background-color: #846950;
+  color: #ffffff;
+  display: block;
+  padding: 0 1.5rem;
+  text-decoration: none;
+  line-height: 2rem;
+  border-radius: 5px;
+}
+
+ul.drop-down-menu a:hover {
+  /* 滑鼠滑入按鈕變色*/
+  background-color: #ffffff;
+  color: #846950;
+}
+
+ul.drop-down-menu li:hover > a {
+  /* 滑鼠移入次選單上層按鈕保持變色*/
+  background-color: #ffffff;
+  color: #846950;
+}
+
+ul.drop-down-menu ul {
+  position: absolute;
+  z-index: 99;
+  top: 100%;
+}
+
+ul.drop-down-menu ul li:last-child {
+  list-style: none;
+  border-bottom: none;
+}
+
+ul.drop-down-menu ul ul {
+  /*第三層以後的選單出現位置與第二層不同*/
+  z-index: 999;
+  top: 10px;
+  left: 90%;
+}
+
+ul.drop-down-menu ul {
+  /*隱藏次選單*/
+  display: none;
+}
+
+ul.drop-down-menu li:hover > ul {
+  /* 滑鼠滑入展開次選單*/
+  display: block;
+  list-style: none;
+}
+
+#member {
+  background: #8e822e;
+  color: #ffffff;
+}
+#member:hover {
+  color: #8e822e;
+  background: #ffffff;
+}
+
+main div.fixed-menu {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+main div.fixed-menu div.store-menu {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  height: 35vh; /* 100%螢幕高度 */
+  width: 100px; /* 菜單欄寬度 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 999; /* 使其浮於内容之上-> 目前是最高的按鈕 */
+}
+main div.fixed-menu div.store-menu .triangle {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent; /* 左邊透明 -> 做出梯形*/
+  border-right: 30px solid red; /* 右邊红色 */
+  border-bottom: 75px solid red; /* 底部红色 */
+  transition: margin-left 0.3s; /* 添加過渡效果 */
+}
+main div.fixed-menu div.store-menu .triangle:hover {
+  margin-left: -20px;
+}
+main div.fixed-menu div.store-menu .triangle a {
+  font-size: 1rem;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #ffffff;
+}
+main div.fixed-menu div.store-menu .triangle a span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e5c045;
+}
+main section.background-image {
+  min-height: 70vh;
+  background-image: url(../images/dessert.jpg);
+  background-size: cover;
+  background-position: center;
+  transition: all 0.75s ease;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main section.background-image div.filter {
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 100%;
+  min-height: 70vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+main section.background-image h3 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+}
+main section.background-image span {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+main section.news div {
+  margin: 1rem;
+}
+main section.news h1 {
+  margin-left: 3rem;
+  border-left: #846950 solid 1rem;
+  padding: 0.8rem 1rem;
+  color: #846950;
+}
+main section.news div.rectangles {
+  background: #ffffff;
+  padding: 0rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+main section.news div.rectangles div.rectangle {
+  padding: 0.5rem;
+  flex: 0 1 333px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main section.news div.rectangles div.rectangle img {
+  width: 90%;
+  transition: all 0.1s ease-in;
+  padding: 0.3rem;
+}
+main section.news div.rectangles div.rectangle img:hover {
+  border: #846950 2px solid;
+}
+main section.news div.rectangles div.rectangle p a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: "Times New Roman", Times, serif;
+  color: #8e822e;
+}
+main section.new-product {
+  min-height: 30vh;
+  background: rgba(143, 143, 143, 0.5);
+  display: flex;
+  position: relative;
+}
+main section.new-product img.fixed-image {
+  width: 100%;
+  z-index: -5;
+}
+main section.new-product div.circles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 50px; /* 調整您需要的上移距離 */
+  left: 50%; /* 調整水平位置，可以根據需要調整 */
+  transform: translateX(-50%);
+  z-index: 1; /* 使 .circles 在圖片上方 */
+  background: rgba(255, 255, 255, 0.5);
+}
+main section.new-product div.circles div.circle {
+  display: flex;
+  width: 50%;
+  height: 100%;
+}
+main section.new-product div.circles div.circle div {
+  flex: 1 1 200px;
+  position: relative;
+}
+main section.new-product div.circles div.circle div img {
+  max-width: 90%; /* 圖片的最大寬度設為父元素的90% */
+  height: 100%;
+  border: #ffffff 5px solid;
+}
+main section.new-product div.circles div.circle div h3 {
+  font-size: 2rem;
+  color: #846950;
+  font-weight: 800;
+}
+main section.new-product div.circles div.circle div p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+main section.new-product div.circles div.circle div a {
+  position: absolute;
+  top: 80%;
+  text-decoration: none;
+  color: #846950;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border: #846950 1px solid;
+  transition: all 0.2s ease-in;
+}
+main section.new-product div.circles div.circle div a:hover {
+  color: #ffffff;
+  background: #846950;
+}
+main section.new-product div.circles div.circle div.content {
+  padding: 1rem;
+}
+main section.info-right {
+  flex: 1 1 600px;
+}
+main section.info-right ul {
+  display: flex;
+}
+main section.info-right ul li {
+  list-style-type: none;
+  margin: 0 0.5rem;
+  border: #ffffff 0.1rem none;
+}
+main section.info-right ul li a {
+  font-size: 1rem;
+  color: antiquewhite;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: all 0.2s ease-in;
+}
+main section.info-right ul li a:hover {
+  border: #ffffff 0.1rem solid;
+  color: #ffe760;
+}
+main section.info-right p {
+  margin-left: 28%;
+  margin-top: 1rem;
+}
+main section.rank {
+  position: relative;
+  text-align: center;
+}
+main section.rank h1 {
+  font-size: 2.5rem;
+  margin-top: 2rem;
+}
+main section.rank h3 {
+  font-size: 2rem;
+  font-family: "Times New Roman", Times, serif;
+  color: #cfb80e;
+}
+main section.rank .swiper-container {
+  width: 100%;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+main section.rank .swiper-container .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+}
+main section.rank .swiper-container .swiper-slide .pic {
+  width: 60%;
+  object-fit: cover;
+}
+main section.rank .swiper-container .swiper-slide a {
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #846950;
+}
+main section.rank .swiper-container .swiper-slide p {
+  font-family: "Times New Roman", Times, serif;
+  color: #cfb80e;
+}
+main section.rank div.swiper-button-next, main section.rank swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  z-index: 1000;
+}
+main section.location {
+  display: flex;
+  flex-wrap: wrap;
+}
+main section.location div.pic {
+  flex: 2;
+}
+main section.location div.pic img {
+  width: 100%;
+  height: 100%;
+}
+main section.location div.location-info {
+  flex: 3;
+  background: #e6e3ca;
+  padding: 5rem;
+  background-image: url("/images/taiwan.png"); /* 台灣底圖路徑 */
+  background-size: 50%; /* 調整背景圖片大小以覆蓋整個 div */
+  background-position: 80% 20%;
+  background-repeat: no-repeat;
+}
+main section.location div.location-info h1 {
+  font-size: 3rem;
+  font-family: "Times New Roman", Times, serif;
+  color: #846950;
+}
+main section.location div.location-info h2 {
+  font-size: 2rem;
+  font-weight: 200;
+  color: #9f856a;
+}
+main section.location div.location-info p {
+  font-size: 1.2rem;
+  color: #8f7a66;
+  line-height: 2rem;
+  font-weight: 100;
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+}
+main section.location div.location-info a {
+  text-decoration: none;
+  font-weight: 300;
+  color: #846950;
+  padding: 0.5rem 2rem;
+  border: #846950 0.01rem solid;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in;
+}
+main section.location div.location-info a:hover {
+  color: #ffffff;
+  background: #846950;
+}
+main section.about {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background: #edede7;
+}
+main section.about div.about-info {
+  flex: 3;
+  padding: 5rem;
+}
+main section.about div.about-info h1 {
+  font-size: 3rem;
+  font-family: "Times New Roman", Times, serif;
+  color: #846950;
+}
+main section.about div.about-info h2 {
+  font-size: 2rem;
+  font-weight: 200;
+  color: #9f856a;
+}
+main section.about div.about-info p {
+  font-size: 1.2rem;
+  color: #8f7a66;
+  line-height: 2rem;
+  font-weight: 100;
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+}
+main section.about div.about-info a {
+  text-decoration: none;
+  font-weight: 300;
+  color: #846950;
+  padding: 0.5rem 2rem;
+  border: #846950 0.01rem solid;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in;
+}
+main section.about div.about-info a:hover {
+  color: #ffffff;
+  background: #846950;
+}
+main section.about div.pic {
+  flex: 2;
+  position: relative;
+}
+main section.about div.pic #tea1 {
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+}
+main section.about div.pic #tea2 {
+  width: 20vw;
+  height: 20vw;
+  position: absolute;
+  top: 45%;
+  right: 60%;
+}
+
+footer {
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  color: #ffffff;
+  background-color: #846950;
+}
+footer section.logo {
+  width: 8vw;
+}
+footer section.info-left {
+  flex: 1 1 400px;
+  margin-left: 1rem;
+}
+footer section.info-left a img {
+  width: 5vh;
+  margin: 0rem 1rem;
+}
+footer section.info-right ul {
+  display: flex;
+}
+footer section.info-right ul li {
+  list-style-type: none;
+  margin-bottom: 1rem;
+}
+footer section.info-right ul li a {
+  color: #ffffff;
+  padding: 0.5rem;
+  margin-right: 1.5rem;
+  text-decoration: none;
+  transition: all 0.5s ease-in;
+}
+footer section.info-right ul li a:hover {
+  border: #f1f1f1 0.01rem solid;
+  color: #ffe760;
+}
+footer section.info-right p {
+  margin-left: 33%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #846950;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9f856a;
+}
+
+/*RWD開始*/
+@media screen and (max-width: 1370px) {
+  header section.logo {
+    width: 100%;
+  }
+  header nav ul.drop-down-menu {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1080px) {
+  main section.new-product div.circles {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
