@@ -2,7 +2,7 @@
 -- 主機:                           127.0.0.1
 -- 伺服器版本:                        11.2.2-MariaDB - mariadb.org binary distribution
 -- 伺服器作業系統:                      Win64
--- HeidiSQL 版本:                  12.3.0.6589
+-- HeidiSQL 版本:                  12.6.0.6765
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -16,19 +16,17 @@
 
 
 -- 傾印 beverage 的資料庫結構
-DROP DATABASE IF EXISTS `beverage`;
 CREATE DATABASE IF NOT EXISTS `beverage` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
 USE `beverage`;
 
 -- 傾印  資料表 beverage.add_materials 結構
-DROP TABLE IF EXISTS `add_materials`;
 CREATE TABLE IF NOT EXISTS `add_materials` (
   `name` varchar(15) NOT NULL,
   `price` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='加料區';
 
 -- 正在傾印表格  beverage.add_materials 的資料：~12 rows (近似值)
-REPLACE INTO `add_materials` (`name`, `price`) VALUES
+INSERT INTO `add_materials` (`name`, `price`) VALUES
 	('草仔粿', 15),
 	('琥珀粉圓', 10),
 	('雙粉(粉粿+粉圓)', 10),
@@ -43,7 +41,6 @@ REPLACE INTO `add_materials` (`name`, `price`) VALUES
 	('嫩仙草', 10);
 
 -- 傾印  資料表 beverage.franchise 結構
-DROP TABLE IF EXISTS `franchise`;
 CREATE TABLE IF NOT EXISTS `franchise` (
   `principal` varchar(50) NOT NULL,
   `gender` char(1) NOT NULL DEFAULT '' COMMENT '男M/女F'
@@ -52,7 +49,6 @@ CREATE TABLE IF NOT EXISTS `franchise` (
 -- 正在傾印表格  beverage.franchise 的資料：~0 rows (近似值)
 
 -- 傾印  資料表 beverage.javateamenu 結構
-DROP TABLE IF EXISTS `javateamenu`;
 CREATE TABLE IF NOT EXISTS `javateamenu` (
   `pn` char(3) NOT NULL,
   `typeCode` char(2) NOT NULL DEFAULT '',
@@ -64,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `javateamenu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- 正在傾印表格  beverage.javateamenu 的資料：~42 rows (近似值)
-REPLACE INTO `javateamenu` (`pn`, `typeCode`, `productCode`, `type`, `product`, `price`) VALUES
+INSERT INTO `javateamenu` (`pn`, `typeCode`, `productCode`, `type`, `product`, `price`) VALUES
 	('am1', 'am', 1, 'addMateria', '草仔粿', 15),
 	('am2', 'am', 2, 'addMateria', '琥珀粉圓', 10),
 	('am3', 'am', 3, 'addMateria', '雙粉(粉粿+粉圓)', 10),
@@ -103,13 +99,13 @@ REPLACE INTO `javateamenu` (`pn`, `typeCode`, `productCode`, `type`, `product`, 
 	('t3', 't', 3, 'taste', '荔枝烏龍', 55),
 	('t4', 't', 4, 'taste', '桂花蕎麥茶', 55),
 	('t5', 't', 5, 'taste', '柚子烏龍', 65),
+	('t6', 't', 6, 'taste', '覆盆子氣泡冰茶', 75),
 	('wm1', 'wm', 1, 'winterMelo', '招牌冬瓜紅', 45),
 	('wm2', 'wm', 2, 'winterMelo', '冬瓜青茶', 45),
 	('wm3', 'wm', 3, 'winterMelo', '冬瓜檸檬', 50),
 	('wm4', 'wm', 4, 'winterMelo', '冬瓜仙茶蜜', 50);
 
 -- 傾印  資料表 beverage.orderlist 結構
-DROP TABLE IF EXISTS `orderlist`;
 CREATE TABLE IF NOT EXISTS `orderlist` (
   `bid` int(11) NOT NULL AUTO_INCREMENT,
   `bname` varchar(50) NOT NULL DEFAULT '0',
@@ -126,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `orderlist` (
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- 正在傾印表格  beverage.orderlist 的資料：~10 rows (近似值)
-REPLACE INTO `orderlist` (`bid`, `bname`, `price`, `container`, `btype`, `isaddMaterial`, `material`, `mprice`, `ice`, `sugar`, `phone`) VALUES
+INSERT INTO `orderlist` (`bid`, `bname`, `price`, `container`, `btype`, `isaddMaterial`, `material`, `mprice`, `ice`, `sugar`, `phone`) VALUES
 	(1, '翡翠檸檬', 40, '中', '茶人系列', '否', '', 0, '去冰', '微糖', '0975348123'),
 	(2, '招牌紅茶', 35, '中', '茶人系列', '否', '', 0, '熱', '微糖', '0923417582'),
 	(3, '荔枝蘆薈', 60, '大', '講究系列', '是', '珍珠', 5, '少冰', '半糖', '0912047583'),
@@ -139,7 +135,6 @@ REPLACE INTO `orderlist` (`bid`, `bname`, `price`, `container`, `btype`, `isaddM
 	(10, '冬瓜青茶', 45, '大', '堅持系列', '是', '珍珠', 5, '少冰', '微糖', '0986410412');
 
 -- 傾印  資料表 beverage.store 結構
-DROP TABLE IF EXISTS `store`;
 CREATE TABLE IF NOT EXISTS `store` (
   `sid` int(11) NOT NULL AUTO_INCREMENT,
   `s_name` varchar(15) NOT NULL,
@@ -148,25 +143,26 @@ CREATE TABLE IF NOT EXISTS `store` (
   `s_tel` varchar(11) NOT NULL,
   `opentime` varchar(50) NOT NULL,
   PRIMARY KEY (`sid`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='各地店舖';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='各地店舖';
 
--- 正在傾印表格  beverage.store 的資料：~15 rows (近似值)
-REPLACE INTO `store` (`sid`, `s_name`, `s_area`, `s_addr`, `s_tel`, `opentime`) VALUES
-	(1, '一沐日 新竹光復店', '北部', '新竹市東區光復路一段319號', '03-5790006', '11:00~21:00 週一~週日'),
-	(2, '一沐日 汐止建成店', '北部', '新北市汐止區建成路52號', '02-26475366', '10:00~21:00 週一~週日'),
-	(3, '一沐日 中壢日新店', '北部', '桃園市中壢區日新路42號', '03-4668890', '11:00~20:00 週一~週日'),
-	(4, '一沐日 內湖江南店', '北部', '台北市內湖區江南街75號', '02-26275998', '10:00~20:00 週一~週五 11:00~20:00 週六~週日'),
-	(5, '一沐日 板橋三民店', '北部', '新北市板橋區三民路二段19號', '02-29551219', '10:00~20:00 週一~週日'),
-	(6, '一沐日 台中昌平店', '中部', '台中市北屯區昌平路1段238號', '04-22377888', '10:30~23:30 週一~週日'),
-	(7, '一沐日 台中健行店', '中部', '台中市北區健行路514號', '04-22069199', '10:00~21:00 週一~週日'),
-	(8, '一沐日 員林中山店', '中部', '彰化縣員林市中山路一段818號', '048-360818', '09:30~21:00 週一~週日'),
-	(9, '一沐日 鹿港中山店', '中部', '彰化縣鹿港鎮中山路192號1樓', '047-788077', '10:00~21:00 週一~週日'),
-	(10, '一沐日 台中太平店', '中部', '台中市東區精武東路184號', '04-22155119', '10:00~23:00 週一~週日'),
-	(11, '一沐日 高雄壽豐店', '南部', '高雄市楠梓區壽豐路316號', '07-3656363', '09:00~21:00 週一~週日'),
-	(12, '一沐日 嘉義民族店', '南部', '喜義市西區民族路709號', '05-2227700', '10:00~21:00 週一~週日'),
-	(13, '一沐日 虎尾光復店', '南部', '雲林縣虎尾鎮光復路323號1樓', '05-6335885', '10:00~22:00 週一~週日'),
-	(14, '一沐日 屏東廣東店', '南部', '屏東縣屏東市廣東路608號', '08-7351080', '10:00~21:00 週一~週日'),
-	(15, '一沐日 善化大成店', '南部', '台南市善化區大成路354號', '06-5831300', '10:00~21:00 週一~週日');
+-- 正在傾印表格  beverage.store 的資料：~16 rows (近似值)
+INSERT INTO `store` (`sid`, `s_name`, `s_area`, `s_addr`, `s_tel`, `opentime`) VALUES
+	(1, '爪蛙.tea 新竹光復店', '北部', '新竹市東區光復路一段319號', '03-5790006', '11:00~21:00 週一~週日'),
+	(2, '爪蛙.tea 汐止建成店', '北部', '新北市汐止區建成路52號', '02-26475366', '10:00~21:00 週一~週日'),
+	(3, '爪蛙.tea 中壢日新店', '北部', '桃園市中壢區日新路42號', '03-4668890', '11:00~20:00 週一~週日'),
+	(4, '爪蛙.tea 內湖江南店', '北部', '台北市內湖區江南街75號', '02-26275998', '10:00~20:00 週一~週五 11:00~20:00 週六~週日'),
+	(5, '爪蛙.tea 板橋三民店', '北部', '新北市板橋區三民路二段19號', '02-29551219', '10:00~20:00 週一~週日'),
+	(6, '爪蛙.tea 頭份建國店', '北部', '苗栗縣頭份市建國路185號', '037-670262', '10:00~21:00 週一~週日'),
+	(7, '爪蛙.tea 台中昌平店', '中部', '台中市北屯區昌平路1段238號', '04-22377888', '10:30~23:30 週一~週日'),
+	(8, '爪蛙.tea 台中健行店', '中部', '台中市北區健行路514號', '04-22069199', '10:00~21:00 週一~週日'),
+	(9, '爪蛙.tea 員林中山店', '中部', '彰化縣員林市中山路一段818號', '048-360818', '09:30~21:00 週一~週日'),
+	(10, '爪蛙.tea 鹿港中山店', '中部', '彰化縣鹿港鎮中山路192號1樓', '047-788077', '10:00~21:00 週一~週日'),
+	(11, '爪蛙.tea 台中太平店', '中部', '台中市東區精武東路184號', '04-22155119', '10:00~23:00 週一~週日'),
+	(12, '爪蛙.tea 高雄壽豐店', '南部', '高雄市楠梓區壽豐路316號', '07-3656363', '09:00~21:00 週一~週日'),
+	(13, '爪蛙.tea 嘉義民族店', '南部', '喜義市西區民族路709號', '05-2227700', '10:00~21:00 週一~週日'),
+	(14, '爪蛙.tea 虎尾光復店', '南部', '雲林縣虎尾鎮光復路323號1樓', '05-6335885', '10:00~22:00 週一~週日'),
+	(15, '爪蛙.tea 屏東廣東店', '南部', '屏東縣屏東市廣東路608號', '08-7351080', '10:00~21:00 週一~週日'),
+	(16, '爪蛙.tea 善化大成店', '南部', '台南市善化區大成路354號', '06-5831300', '10:00~21:00 週一~週日');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
