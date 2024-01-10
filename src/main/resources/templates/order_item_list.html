@@ -105,9 +105,41 @@
             <input type="reset" value="重選訂單">
         </div>
     </form>
-
 </div>
+<!--<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>-->
+<!--<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>-->
+<!--<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>-->
+<script>
+    // $(document).foundation();
+    $(document).ready(function(){
+        $("#type").change(function(){
+            var selectedValue = $(this).val();
+            addOrderById(selectedValue);
+        });
+    });
 
+    function addOrderById() {
+        let type = $('#type').val();
+        // alert("搜尋產品: " + pcode);
+        $.get( '/api/addOrderByType/' + type,
+            function (data , status) {
+                console.log("發出 ajax .get 到 springboot api server 取資料結果:")
+                let type = data[0];
+                console.log( JSON.stringify(type));
+                console.log(type.product);
+                $('#p_name').html(product.name)
+                console.log(product.description)
+                $('#p_desc').html(product.description)
+                console.log(product.code)
+                $('#img').attr('src','/img/product/'+p.code+'/1.jpg')
+                $('#img1').attr('src','/img/product/'+p.code+'/1.jpg')
+                $('#img2').attr('src','/img/product/'+p.code+'/2.jpg')
+                $('#img3').attr('src','/img/product/'+p.code+'/3.jpg')
+                $('#img4').attr('src','/img/product/'+p.code+'/4.jpg')
+            }
+        )
+    }
+</script>
 
 </body>
 </html>
