@@ -1,0 +1,219 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/*Top指標*/
+#scrollToTopBtn {
+    display: none;          /*初始的畫面先隱藏按鈕*/
+    position: fixed;        /*固定按鈕在畫面上方*/
+    bottom: 150px;
+    right: 20px;
+    background-color: #70bf2d;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius:15px;     /*邊框弧度*/
+    padding: 10px;
+    cursor: pointer;            /*滑鼠指標 變成手指形狀*/
+    box-shadow: 2px 5px 5px #005707;
+}
+
+header {
+    background-color: #faeee4;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0px 5px 5px -5px #777;
+}
+header section.logo {
+    margin-left: 5rem;
+    flex: 1 1 300px;
+}
+header section.logo img {
+    width: 8vw;
+    height: 8vw;
+}
+
+nav {
+    flex: 4 1 800px;
+    position: relative;
+}
+nav div.social-icons {
+    position: absolute;
+    top: -150%;
+    left: 75%;
+}
+nav div.social-icons a.icon-link i.fa-brands {
+    color: #b2a55b;
+    margin: 0 0.8rem;
+}
+nav div.social-icons a.icon-link i.fa-brands:hover {
+    color: #52764f;
+}
+/*導覽頁*/
+ul.drop-down-menu {
+    display: inline-block;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 1rem;
+}
+ul.drop-down-menu li {
+    position: relative;
+    white-space: nowrap;
+    float: left; /* 只有第一層是靠左對齊*/
+    list-style: none;
+}
+ul.drop-down-menu li:last-child {
+    border-right: none;
+}
+ul.drop-down-menu a {
+    background-color: #846950;
+    color: #ffffff;
+    display: block;
+    padding: 0 1.5rem;
+    margin-right: 1.5rem;
+    text-decoration: none;
+    line-height: 2rem;
+    border-radius: 5px;
+}
+
+ul.drop-down-menu a:hover {
+    /* 滑鼠滑入按鈕變色*/
+    background-color: #ffffff;
+    color: #846950;
+}
+
+ul.drop-down-menu li:hover > a {
+    /* 滑鼠移入次選單上層按鈕保持變色*/
+    background-color: #ffffff;
+    color: #846950;
+}
+
+ul.drop-down-menu ul {
+    position: absolute;
+    z-index: 99;
+    top: 100%;
+}
+
+ul.drop-down-menu ul li:last-child {
+    list-style: none;
+    border-bottom: none;
+}
+
+ul.drop-down-menu ul ul {
+    /*第三層以後的選單出現位置與第二層不同*/
+    z-index: 999;
+    top: 10px;
+    left: 100px;
+}
+
+ul.drop-down-menu ul {
+    /*隱藏次選單*/
+    display: none;
+}
+
+ul.drop-down-menu li:hover > ul {
+    /* 滑鼠滑入展開次選單*/
+    display: block;
+    list-style: none;
+}
+
+#member {
+    background: #8e822e;
+    color: #ffffff;
+}
+#member:hover {
+    color: #8e822e;
+    background: #ffffff;
+}
+/*側邊點餐選單*/
+main div.fixed-menu {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+main div.fixed-menu div.store-menu {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    height: 35vh; /* 100%螢幕高度 */
+    width: 100px; /* 菜單欄寬度 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 999; /* 使其浮於内容之上-> 目前是最高的按鈕 */
+}
+
+
+
+/*footer*/
+footer {
+    display: flex;
+    padding: 2rem;
+    align-items: center;
+    color: #ffffff;
+    background-color: #846950;
+}
+footer section.logo {
+    width: 8vw;
+}
+footer section.info-left {
+    flex: 1 1 400px;
+    margin-left: 1rem;
+}
+footer section.info-left a img {
+    width: 5vh;
+    margin: 0rem 1rem;
+}
+footer section.info-right ul {
+    display: flex;
+}
+footer section.info-right ul li {
+    list-style-type: none;
+    margin-bottom: 1rem;
+}
+footer section.info-right ul li a {
+    color: #ffffff;
+    padding: 0.5rem;
+    margin-right: 1.5rem;
+    text-decoration: none;
+    transition: all 0.5s ease-in;
+}
+footer section.info-right ul li a:hover {
+    border: #f1f1f1 0.01rem solid;
+    color: #ffe760;
+}
+footer section.info-right p {
+    margin-left: 33%;
+}
+/*scrollbar*/
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #846950;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #9f856a;
+}
+
+
+
+
+

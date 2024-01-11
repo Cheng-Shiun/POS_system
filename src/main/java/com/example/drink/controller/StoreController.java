@@ -20,11 +20,15 @@ public class StoreController {
     @Autowired
     StoreService storeService;
 
-    @GetMapping("/store/{area}")
-    public String getStore(@PathVariable String area, Model model){
+    @GetMapping("/store")
+    public String getStoreByArea(Model model){
         //接收資料
-        List<StoreModel> stores = storeService.getStoreByArea(area);
-        model.addAttribute("stores", stores);
+        List<StoreModel> north = storeService.getStoreByArea("北部");
+        List<StoreModel> central = storeService.getStoreByArea("中部");
+        List<StoreModel> south = storeService.getStoreByArea("南部");
+        model.addAttribute("north", north);
+        model.addAttribute("central", central);
+        model.addAttribute("south", south);
         return "store";
     }
 

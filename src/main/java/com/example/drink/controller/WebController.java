@@ -10,10 +10,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class WebController
 {
 
-    @GetMapping("/Homepage")
+    @GetMapping("/index")
     public String getHomePage()
     {
-        return "HomePage";
+        return "index";
+    }
+    @GetMapping("/t")
+    public String getTest()
+    {
+        return "test";
     }
     @GetMapping("/menu")
     public String getMenu()
@@ -58,6 +63,7 @@ public class WebController
     {
         return"QandA";
     }
+
 
 
 
