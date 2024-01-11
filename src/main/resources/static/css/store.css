@@ -47,15 +47,15 @@ body {
     font-size: 56px;
 }
 
-/*下拉選單'*/
-#selectArea{
+/*button*/
+#btnArea{
     margin-right: auto;
     margin-left: auto;
     width: 80%;
-    padding-left: 20%;
+    text-align: center;
 }
 
-#countrySelect, #regionsSelect {
+#btnNorth, #btnCentral, #btnSouth {
     font-size: 22px;
     text-align: center;
     border: 1px solid rgba(119, 95, 70, 0.2); /* 修改邊框寬度和邊框顏色 */
@@ -67,7 +67,6 @@ body {
     margin-left: 15px;
 }
 
-
 /*main*/
 #nblock{
     width: 70%;
@@ -78,15 +77,11 @@ body {
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-top: 50px;
-}
-
-.nArea{
-    width: 40%;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .ulArea{
-    width: 85%;
+    width: 82%;
     margin-left: 10px;
     border-bottom: 1px solid rgba(163, 151, 90, 0.5);
 }

@@ -8,7 +8,7 @@ $(function (){
         function (){
             $(this).css('text-shadow',	'0px 0px 0px ');
             $(this).css('color','#000000')
-         }
+        }
     );
 });
 
@@ -33,55 +33,49 @@ function scrollToTop() {
     $('html, body').animate({ scrollTop: 0 }, 0);
 }
 
-
-// 頁面載入時執行
+//button觸發
 $(document).ready(function () {
-    // 初始化右邊下拉選單
-    rightDropdown();
+    // 初始隱藏中部和南部區域
+    $('.cArea').hide();
+    $('.sArea').hide();
 
-    // 地區選擇改變 而觸發的事件
-    $("#countrySelect").change(function () {
-        // 依新選的地區重新填充右邊下拉選單-->回到初始化
-        rightDropdown();
+    // 顯示北部區域
+    showNorth();
+
+    // 按鈕點擊事件
+    $('#btnNorth').click(function () {
+        showNorth();
+    });
+
+    $('#btnCentral').click(function () {
+        showCentral();
+    });
+
+    $('#btnSouth').click(function () {
+        showSouth();
     });
 });
 
-// 初始化頁面
-window.onload = function() {
-    rightDropdown();
-};
+function showNorth() {
+    // 隱藏所有區域
+    $('.cArea').hide();
+    $('.sArea').hide();
+    // 顯示北部區域
+    $('.nArea').show();
+}
 
-function rightDropdown() {
-    var countrySelect = document.getElementById('countrySelect');
-    var regionsSelect = document.getElementById('regionsSelect');
+function showCentral() {
+    // 隱藏所有區域
+    $('.nArea').hide();
+    $('.sArea').hide();
+    // 顯示中部區域
+    $('.cArea').show();
+}
 
-    // 清空右邊下拉選單的內容
-    regionsSelect.innerHTML = '';
-
-    // 根據選擇的地區動態生成選項
-    var selectedCountry = countrySelect.value;
-    var regionOptions;
-
-    switch (selectedCountry) {
-        case '台灣':
-            regionOptions = ['北部地區', '中部地區', '南部地區', '離島部地區'];
-            break;
-        case '日本':
-            regionOptions = ['北海道地區', '關東地區', '東北地區', '近畿地區'];
-            break;
-        case '中國':
-            regionOptions = ['北京地區', '上海地區', '廣東地區', '四川地區', '重慶地區'];
-            break;
-        default:
-            regionOptions = [];
-    }
-
-
-    // 將動態生成的選項加入右邊下拉選單
-    regionOptions.forEach(function (region) {
-        var option = document.createElement('option');
-        option.value = region;
-        option.text = region;
-        regionsSelect.add(option);
-    });
+function showSouth() {
+    // 隱藏所有區域
+    $('.nArea').hide();
+    $('.cArea').hide();
+    // 顯示南部區域
+    $('.sArea').show();
 }
