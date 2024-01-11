@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   `phone` varchar(10) NOT NULL DEFAULT '',
   `gender` varchar(1) NOT NULL DEFAULT '',
   `address` varchar(100) NOT NULL DEFAULT '',
-  `passwd` int(16) NOT NULL,
+  `passwd` varchar(50) NOT NULL DEFAULT '',
   `email` varchar(30) NOT NULL DEFAULT '',
   PRIMARY KEY (`mid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='會員資料\r\n';
