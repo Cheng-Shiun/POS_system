@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hants-TW" xmlns="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="工作、閒暇之餘來一杯美好的滋味，每一口都感受到甜甜的幸福滋味。品茶生活，爪蛙秉持嚴選食材，搭配傳承自家鄉的調茶技術，將茶的最高品質端上給您，歡迎細細品味。"
+    />
+    <meta name="keywords" content="爪蛙茶飲,外送,菜單,飲料外送" />
+    <title>爪蛙茶飲</title>
+    <link rel="shortcut icon" href="/images/web_Logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/fragment.css">
+  </head>
+  <body>
+    <div th:fragment="header">
+      <header>
+        <section class="logo">
+          <a href="http://localhost:8864/index"><img src="/images/web_Logo.svg" alt="爪蛙茶飲Logo"/></a>
+        </section>
+        <nav>
+          <div class="social-icons">
+            <a class="icon-link" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook fa-2xl" title="Facebook"></i></a>
+            <a class="icon-link" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram fa-2xl" title="instagram"></i></a>
+            <a class="icon-link" href="#" target="_blank"><i class="fa-brands fa-line fa-2xl" title="Line"></i></a>
+          </div>
+          <!--製作導覽頁的下拉式選單 這邊開始-->
+          <ul class="drop-down-menu">
+            <li>
+              <a href="#">最新消息</a>
+              <ul>
+                <li><a href="#">新店開幕</a></li>
+                <li><a href="#">活動優惠</a></li>
+                <li><a href="#">新品上市</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">飲品資訊</a>
+              <ul>
+                <li><a href="#">北部</a></li>
+                <li><a href="#">中部</a></li>
+                <li><a href="#">南部</a></li>
+                <li><a href="#">東部</a></li>
+                <li><a href="#">離島</a></li>
+              </ul>
+            </li>
+            <li><a href="#">關於我們</a></li>
+            <li>
+              <a href="store">門市據點</a>
+            </li>
+            <li><a href="#">常見問答</a></li>
+            <li><a href="#">加盟專區</a></li>
+            <li>
+              <a id="member" href="#">品牌會員</a>
+              <ul>
+                <li><a href="#">點 餐</a></li>
+                <li><a href="#">登入系統 </a></li>
+                <li><a href="#">註 冊</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <div th:fragment="footer">
+    <footer>
+      <section class="logo">
+        <img src="/images/web_Logo.svg" alt="爪哇茶飲Logo" />
+      </section>
+      <section class="info-left">
+        <p>地址：臺中市南屯區公益路1000號</p>
+        <p>客服專線：0800-500-8585</p>
+        <p>營業時間：週一至週六 11:00-21:00</p>
+      </section>
+      <section class="info-right">
+        <nav>
+          <ul>
+            <li><a href="#">最新消息</a></li>
+            <li><a href="#">飲品資訊</a></li>
+            <li><a href="#">關於我們</a></li>
+            <li><a href="#">門市據點</a></li>
+            <li><a href="#">常見問答</a></li>
+            <li><a href="#">加盟專區</a></li>
+            <li><a href="#">品牌會員</a></li>
+          </ul>
+        </nav>
+        <p>CopyRight &copy 2024 爪蛙茶飲有限公司 ALL RIGHTS RESERVED</p>
+      </section>
+    </footer></div>
+  </body>
+</html>
