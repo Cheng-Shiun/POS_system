@@ -105,6 +105,20 @@ INSERT INTO `javateamenu` (`pn`, `typeCode`, `productCode`, `type`, `product`, `
 	('wm3', 'wm', 3, 'winterMelo', '冬瓜檸檬', 50),
 	('wm4', 'wm', 4, 'winterMelo', '冬瓜仙茶蜜', 50);
 
+-- 傾印  資料表 beverage.member 結構
+CREATE TABLE IF NOT EXISTS `member` (
+  `mid` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(15) NOT NULL DEFAULT '',
+  `phone` varchar(10) NOT NULL DEFAULT '',
+  `gender` varchar(1) NOT NULL DEFAULT '',
+  `address` varchar(100) NOT NULL DEFAULT '',
+  `passwd` int(16) NOT NULL,
+  `email` varchar(30) NOT NULL DEFAULT '',
+  PRIMARY KEY (`mid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='會員資料\r\n';
+
+-- 正在傾印表格  beverage.member 的資料：~0 rows (近似值)
+
 -- 傾印  資料表 beverage.orderlist 結構
 CREATE TABLE IF NOT EXISTS `orderlist` (
   `bid` int(11) NOT NULL AUTO_INCREMENT,
