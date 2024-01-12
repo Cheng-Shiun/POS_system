@@ -4,18 +4,65 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jQuery UI Selectmenu - Default functionality</title>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
+<!--    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">-->
+<!--    <link rel="stylesheet" href="/resources/demos/style.css">-->
+<!--    <style>-->
+<!--        fieldset {-->
+<!--            border: 0;-->
+<!--        }-->
+<!--        label {-->
+<!--            display: block;-->
+<!--            margin: 30px 0 0 0;-->
+<!--        }-->
+<!--        .overflow {-->
+<!--            height: 200px;-->
+<!--        }-->
+<!--    </style>-->
     <style>
-        fieldset {
-            border: 0;
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
-        label {
-            display: block;
-            margin: 30px 0 0 0;
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
-        .overflow {
-            height: 200px;
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        input[type=reset] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=reset]:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
@@ -28,7 +75,7 @@
 
     <form id="order" action="/addOrder" method="post">
 
-        <fieldset>
+<!--        <fieldset>-->
             <label for="type">選擇種類</label>
             <select name="type" id="type" class="dropdown">
                 <option disabled selected>請選擇種類</option>
@@ -70,7 +117,7 @@
                 <option>冷飲</option>
                 <option>熱飲</option>
             </select>
-        </fieldset>
+<!--        </fieldset>-->
         <div class="widget">
             <input type="submit" onclick="erro()" value="送出訂單">
             <input type="reset" value="重選訂單">
