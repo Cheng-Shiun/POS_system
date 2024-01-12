@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        input[type=reset] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=reset]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<!--<form method="post" th:object="${memberParam}" action="/newMember">-->
+<!--    姓名：<input type="text" th:field="*{name}" name="name"><br>-->
+<!--    電話：<input type="text" th:field="*{phone}" name="phone"><br>-->
+<!--    地址：<input type="text" th:field="*{address}" name="address"><br>-->
+<!--    &lt;!&ndash;    生日：<input type="text" th:field="*{birthday}" name="birthday"><br/>&ndash;&gt;-->
+<!--    性別：<input type="text" th:field="*{gender}" name="gender"><br>-->
+<!--    電郵：<input type="text" th:field="*{email}" name="email"><br/>-->
+<!--    <input type="submit" value="註冊"><br>-->
+<!--    <input type="reset" value="清除"><br>-->
+<!--</form>-->
+<!--<hr>-->
+<div>
+    <form method="post" th:object="${memberParam}" action="/newMember">
+        <label for="name">姓名</label>
+        <input type="text" id="name" th:field="*{name}" name="name" placeholder="請輸入姓名…">
+        <label for="phone">電話</label>
+        <input type="text" id="phone" th:field="*{phone}" name="phone" placeholder="請輸入電話…">
+        <label for="address">地址</label>
+        <input type="text" id="address" th:field="*{address}" name="address" placeholder="請輸入地址…">
+        <label for="birthday">生日</label>
+        <input type="text" id="birthday" th:field="*{birthday}" name="birthday" placeholder="請輸入生日…">
+        <label for="gender">姓別</label>
+        <input type="text" id="gender" th:field="*{gender}" name="gender" placeholder="請輸入性別…">
+        <label for="email">電郵</label>
+        <input type="text" id="email" th:field="*{email}" name="email" placeholder="請輸入電郵…">
+        <input type="submit" value="註冊">
+        <input type="reset" value="清除"><br>
+    </form>
+</div>
+</body>
+</html>
