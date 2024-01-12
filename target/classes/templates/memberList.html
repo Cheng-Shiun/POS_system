@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers tr:hover {background-color: #93bd77;}
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #298cbb;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h1>會員清單</h1>
+
+<table id="customers">
+    <form action="/memberByNo">
+        查詢編號: <input type="text" name="mid" value="請輸入編號">
+        <input type="submit" value="送出">
+    </form><br>
+    <form action="/memberByName">
+        查詢姓名: <input type="text" name="name" value="請輸入姓名">
+        <input type="submit" value="送出">
+    </form><br>
+    <form action="/memberList">
+        <input type="submit" value="返回清單">
+    </form><br>
+    <tr>
+        <th>會員編號</th>
+        <th>會員姓名</th>
+        <th>會員電話</th>
+        <th>會員住址</th>
+        <th>會員生日</th>
+        <th>會員姓別</th>
+        <th>會員電郵</th>
+    </tr>
+    <tr th:each="member : ${ members }">
+        <td th:text="${ member.getMid() }"></td>
+        <td th:text="${ member.getName() }"></td>
+        <td th:text="${ member.getPhone() }"></td>
+        <td th:text="${ member.getAddress() }"></td>
+        <td th:text="${ member.getBirthday() }"></td>
+        <td th:text="${ member.getGender() }"></td>
+        <td th:text="${ member.getEmail() }"></td>
+    </tr>
+</table>
+</body>
+</html>
