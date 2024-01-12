@@ -65,7 +65,14 @@ body {
     font-weight: 600;
     margin-left: 15px;
 }
-
+#btnNorth:hover, #btnCentral:hover, #btnSouth:hover {
+    border: 1px solid rgba(115, 184, 108, 0.2); /* 換顏色 */
+    color: #73b86c;
+}
+#btnNorth:focus, #btnCentral:focus, #btnSouth:focus{
+    border: 1px solid rgba(115, 184, 108, 0.2); /* 維持顏色 */
+    color: #73b86c;
+}
 /*main*/
 #nblock{
     width: 70%;
