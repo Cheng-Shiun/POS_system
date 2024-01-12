@@ -9,21 +9,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class OrderItemController {
-    @Autowired
-    DrinkItemService drinkItemService;
+//    @Autowired
+//    DrinkItemService drinkItemService;
     @Autowired
     OrderItemService orderItemService;
 
     @GetMapping("/order_item")
     public String getOrderItem(Model model){
-        model.addAttribute ("originals", drinkItemService.getAllOriginal ());
-        model.addAttribute ("flavors", drinkItemService.getAllFlavor ());
-        model.addAttribute ("tastes",drinkItemService.getAllTaste());
-        model.addAttribute ("milks", drinkItemService.getAllMilk ());
-        model.addAttribute ("freshmilks", drinkItemService.getAllFreshMilk ());
-        model.addAttribute ("cheeses", drinkItemService.getAllCheese ());
-        model.addAttribute ("wintermelons", drinkItemService.getAllWiterMelon ());
-        model.addAttribute ("materials",drinkItemService.getAllMaterials ());
+        model.addAttribute ("originals", orderItemService.getAllOriginal ());
+        model.addAttribute ("flavors", orderItemService.getAllFlavor ());
+        model.addAttribute ("tastes",orderItemService.getAllTaste());
+        model.addAttribute ("milks", orderItemService.getAllMilk ());
+        model.addAttribute ("freshmilks", orderItemService.getAllFreshMilk ());
+        model.addAttribute ("cheeses", orderItemService.getAllCheese ());
+        model.addAttribute ("wintermelons", orderItemService.getAllWiterMelon ());
+        model.addAttribute ("materials",orderItemService.getAllMaterials ());
 //        model.addAttribute ("types",orderItemService.getAllTypes());
         model.addAttribute ("products",orderItemService.getAllProduct());
         return "order_item_list";

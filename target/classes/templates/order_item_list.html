@@ -102,7 +102,7 @@
             <label for="material">選擇加料</label>
             <select name="material" id="material" class="dropdown">
                 <option disabled selected>請選擇加料</option>
-                <option th:each="material : ${materials}" th:text="${material.getName()}"></option>
+                <option th:each="material : ${materials}" th:text="${material.getProduct()}"></option>
             </select>
 
             <label for="qty">選擇數量</label>

@@ -14,25 +14,25 @@ public class DrinkItemService {
     JdbcTemplate jdbcTemplate;
 
     public List<DrinkItemModel> getAllOriginal(){
-        return jdbcTemplate.query ("select product,price from javateamenu WHERE TYPE='原味茶'", new DrinkItemMapper ());
+        return jdbcTemplate.query ("select product,price from javateamenu WHERE TYPE='original'", new DrinkItemMapper ());
     }
     public List<DrinkItemModel> getAllFlavor(){
-        return jdbcTemplate.query ("select product,price from javateamenu WHERE TYPE='風味茶'", new DrinkItemMapper ());
+        return jdbcTemplate.query ("select product,price from javateamenu WHERE TYPE='flavor'", new DrinkItemMapper ());
     }
     public List<DrinkItemModel> getAllTaste(){
-        return jdbcTemplate.query ("select product,price from javateamenu WHERE TYPE='滋味茶'",new DrinkItemMapper ());
+        return jdbcTemplate.query ("select product,price from javateamenu WHERE TYPE='taste'",new DrinkItemMapper ());
     }
     public List<DrinkItemModel> getAllMilk(){
-        return jdbcTemplate.query ("select product,price from javateamenu WHERE TYPE='香醇奶茶'", new DrinkItemMapper ());
+        return jdbcTemplate.query ("select product,price from javateamenu WHERE TYPE='milk'", new DrinkItemMapper ());
     }
     public List<DrinkItemModel> getAllFreshMilk(){
         return jdbcTemplate.query ("select product,price from javateamenu WHERE TYPE='鮮奶茶'", new DrinkItemMapper ());
     }
     public List<DrinkItemModel> getAllCheese(){
-        return jdbcTemplate.query ("select product,price from javateamenu WHERE TYPE='芝士奶蓋'", new DrinkItemMapper ());
+        return jdbcTemplate.query ("select product,price from javateamenu WHERE TYPE='freshMilk'", new DrinkItemMapper ());
     }
     public List<DrinkItemModel> getAllWiterMelon(){
-        return jdbcTemplate.query ("select product,price from javateamenu WHERE TYPE='冬瓜茶系列'", new DrinkItemMapper ());
+        return jdbcTemplate.query ("select product,price from javateamenu WHERE TYPE='winterMelo'", new DrinkItemMapper ());
     }
     public  List<DrinkItemModel> getAllMaterials(){
         return jdbcTemplate.query ("select product,price from teamenu WHERE TYPE='addMaterials'", new DrinkItemMapper ());
