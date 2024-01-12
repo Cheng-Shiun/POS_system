@@ -22,6 +22,6 @@ public class AddOrderRepository {
     }
 
     public List<OrderItemModel> addOrderByType (String type) {
-        return jdbcTemplate.query("select * from javateamenu where TYPE=?", new OrderItemMapper(), type);
+        return jdbcTemplate.query("select * from teamenu where TYPE=?", new OrderItemMapper(), type);
     }
 }
