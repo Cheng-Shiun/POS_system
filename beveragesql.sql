@@ -42,8 +42,17 @@ INSERT INTO `add_materials` (`name`, `price`) VALUES
 
 -- 傾印  資料表 beverage.franchise 結構
 CREATE TABLE IF NOT EXISTS `franchise` (
-  `principal` varchar(50) NOT NULL,
-  `gender` char(1) NOT NULL DEFAULT '' COMMENT '男M/女F'
+  `fid` int(11) NOT NULL DEFAULT 0,
+  `name` varchar(15) NOT NULL DEFAULT '',
+  `gender` varchar(1) NOT NULL DEFAULT '' COMMENT '男M/女F',
+  `phone` varchar(10) NOT NULL DEFAULT '',
+  `lineID` varchar(20) NOT NULL DEFAULT '',
+  `address` varchar(30) NOT NULL DEFAULT '',
+  `budget` varchar(10) NOT NULL DEFAULT '' COMMENT '開店預算',
+  `opentime` varchar(50) NOT NULL DEFAULT '' COMMENT '預計可開店時間',
+  `contacttime` varchar(50) NOT NULL DEFAULT '' COMMENT '方便可聯繫時間',
+  `desciption` varchar(300) NOT NULL DEFAULT '' COMMENT '其他說明',
+  PRIMARY KEY (`fid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='加盟專區使用之加盟基本資料';
 
 -- 正在傾印表格  beverage.franchise 的資料：~0 rows (近似值)
