@@ -151,8 +151,6 @@ body {
     z-index: 1000; /* 提高 z-index 以確保在其他元素之上 */
 }
 
-
-
 /* RWD for #headnav, #footernav */
 @media (max-width: 768px) {
     #headnav,

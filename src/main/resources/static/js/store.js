@@ -35,10 +35,9 @@ function scrollToTop() {
 
 //button觸發
 $(document).ready(function () {
-    // 初始隱藏中部和南部區域
+    // 初始隱藏中部和南部
     $('.cArea').hide();
     $('.sArea').hide();
-
     // 顯示北部區域
     showNorth();
 

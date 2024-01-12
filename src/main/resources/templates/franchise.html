@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我要加盟</title>
+    <link rel="stylesheet"  th:href="@{/css/franchise.css}" type="text/css" >
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script th:src="@{/js/franchise.js}"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header></header>
+
+    <main>
+        <div id="formArea">
+            <div class="join">
+                <h1>JOIN US</h1>
+                <h3>我要加盟</h3>
+            </div>
+
+            <!--表頭文字-->
+            <div id="pArea">
+                <p>親愛的顧客您好，如有任何問題或需協助的部分，可使用下列方式聯繫我們，隨時歡迎您來信與我們聯繫，我們將盡快回覆您。</p>
+                <p>加盟諮詢專線：0912-345-678 / 04-2302-7166</p>
+                <p>請填妥以下資料，我們會請專人與您聯絡。</p>
+
+            </div>
+            <!--*號-->
+            <div class="info">
+                <h4 class="spanInfo"><span>*</span>加盟者姓名：</h4>
+                <input type="text" name="name" class="inputinfo">
+            </div>
+
+            <!--表單輸入項目-->
+            <div class="info">
+                <h4 class="spanInfo">生理性別：</h4>
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male">男</label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">女</label>
+            </div>
+
+            <div class="info">
+                <h4 class="spanInfo"><span>*</span>聯絡電話：</h4>
+                <input type="text" name="phone" class="inputinfo">
+            </div>
+
+            <div class="info">
+                <h4 class="spanInfo">Line ID：</h4>
+                <input type="text" name="lineid" class="inputinfo">
+            </div>
+
+            <div class="info">
+                <h4 class="spanInfo"><span>*</span>地址：</h4>
+                <input type="text" name="address" class="inputinfo">
+            </div>
+
+            <div class="info">
+                <h4 class="spanInfo"><span>*</span>開店自備款：</h4>
+                <div class="inputinfo">
+                    <input type="radio" name="budget" id="budget1">
+                    <label for="budget1"> 10萬~100萬</label>
+                    <input type="radio" name="budget" id="budget2">
+                    <label for="budget2">100萬~200萬</label>
+                    <input type="radio" name="budget" id="budget3">
+                    <label for="budget3">200萬~300萬</label>
+                    <input type="radio" name="budget" id="budget4">
+                    <label for="budget4">300萬~400萬</label>
+                    <input type="radio" name="budget" id="budget5">
+                    <label for="budget5">400萬~500萬</label>
+                    <input type="radio" name="budget" id="budget6">
+                    <label for="budget6">500萬以上</label>
+                </div>
+
+            </div>
+
+            <div class="info">
+                <h4 class="spanInfo"><span>*</span>預計可開店時間：</h4>
+                <div class="inputinfo">
+                    <input type="radio" name="opentime">
+                    <label>一個月</label>
+                    <input type="radio" name="opentime">
+                    <label>三個月</label>
+                    <input type="radio" name="opentime">
+                    <label>六個月</label>
+                    <input type="radio" name="opentime">
+                    <label>一年</label>
+                    <input type="radio" name="opentime">
+                    <label>尚未確定</label>
+                </div>
+            </div>
+
+            <div class="info">
+                <h4 class="spanInfo"><span>*</span>方便可聯繫時間：</h4>
+                <div class="inputinfo">
+                    <input type="radio" name="contact">
+                    <label>早上09:00~12:00</label>
+                    <input type="radio" name="contact">
+                    <label>下午12:00~18:00</label>
+                    <input type="radio" name="contact">
+                    <label>晚上18:00~22:00</label>
+                </div>
+            </div>
+
+            <div class="infodesc">
+                <h4 class="spanInfo">其他說明：</h4>
+                <textarea name="description" id="inputinfo" rows="10" cols="85"></textarea>
+            </div>
+        </div>
+    </main>
+
+    <header></header>
+
+</body>
+</html>

@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `javateamenu` (
   PRIMARY KEY (`pn`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- 正在傾印表格  beverage.javateamenu 的資料：~42 rows (近似值)
+-- 正在傾印表格  beverage.javateamenu 的資料：~43 rows (近似值)
 INSERT INTO `javateamenu` (`pn`, `typeCode`, `productCode`, `type`, `product`, `price`) VALUES
 	('am1', 'am', 1, 'addMateria', '草仔粿', 15),
 	('am2', 'am', 2, 'addMateria', '琥珀粉圓', 10),
@@ -168,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `store` (
   PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='各地店舖';
 
--- 正在傾印表格  beverage.store 的資料：~16 rows (近似值)
+-- 正在傾印表格  beverage.store 的資料：~18 rows (近似值)
 INSERT INTO `store` (`sid`, `s_name`, `s_area`, `s_addr`, `s_tel`, `opentime`) VALUES
 	(1, '爪蛙.tea 新竹光復店', '北部', '新竹市東區光復路一段319號', '03-5790006', '11:00~21:00 週一~週日'),
 	(2, '爪蛙.tea 汐止建成店', '北部', '新北市汐止區建成路52號', '02-26475366', '10:00~21:00 週一~週日'),
@@ -182,10 +182,12 @@ INSERT INTO `store` (`sid`, `s_name`, `s_area`, `s_addr`, `s_tel`, `opentime`) V
 	(10, '爪蛙.tea 鹿港中山店', '中部', '彰化縣鹿港鎮中山路192號1樓', '047-788077', '10:00~21:00 週一~週日'),
 	(11, '爪蛙.tea 台中太平店', '中部', '台中市東區精武東路184號', '04-22155119', '10:00~23:00 週一~週日'),
 	(12, '爪蛙.tea 高雄壽豐店', '南部', '高雄市楠梓區壽豐路316號', '07-3656363', '09:00~21:00 週一~週日'),
-	(13, '爪蛙.tea 嘉義民族店', '南部', '喜義市西區民族路709號', '05-2227700', '10:00~21:00 週一~週日'),
+	(13, '爪蛙.tea 嘉義民族店', '南部', '嘉義市西區民族路709號', '05-2227700', '10:00~21:00 週一~週日'),
 	(14, '爪蛙.tea 虎尾光復店', '南部', '雲林縣虎尾鎮光復路323號1樓', '05-6335885', '10:00~22:00 週一~週日'),
 	(15, '爪蛙.tea 屏東廣東店', '南部', '屏東縣屏東市廣東路608號', '08-7351080', '10:00~21:00 週一~週日'),
-	(16, '爪蛙.tea 善化大成店', '南部', '台南市善化區大成路354號', '06-5831300', '10:00~21:00 週一~週日');
+	(16, '爪蛙.tea 善化大成店', '南部', '台南市善化區大成路354號', '06-5831300', '10:00~21:00 週一~週日'),
+	(17, '爪蛙.tea 台中興大店', '中部', '台中市南區興大路145號', '04-22061123', '10:00~21:00 週一~週日'),
+	(18, '爪蛙.tea 屏東枋寮店', '南部', '屏東縣枋寮鄉中山路1號', '08-8706263', '10:00~21:00 週一~週日');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+#formArea{
+    width: 58%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.join{
+    width: 100%;
+    background: grey;
+    text-align: center;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+}
+h1,h3{
+    margin: 0.5rem 0;
+}
+#pArea{
+    margin-bottom: 2.5rem;
+}
+
+.info{
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+    line-height: 1.8;
+    width: 100%;
+}
+h4{
+    margin: 0;
+}
+.infodesc{
+    display: flex;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+span{
+    margin-right: 0.3rem;
+    color: #ff0000;
+}
+.spanInfo{
+    width: 25%;
+}
+.inputinfo{
+    width: 80%;
+    line-height: 2;
+    flex: 1;
+}
