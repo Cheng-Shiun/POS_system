@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>最新消息-新店開幕</title>
+    <link rel="stylesheet"  th:href="@{/css/news.css}" type="text/css" >
+    <link rel="shortcut icon" href="/images/icon_logo.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script th:src="@{/js/news.js}"></script>
+    <link rel="stylesheet" href="/css/fragment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        section.open {
+            padding: 2rem;
+            text-align: center;
+            line-height: 1.5rem;
+        }
+        section.open h1 {
+            font-size: 2rem;
+            font-family: sans-serif;
+            margin: 2rem;
+        }
+        section span {
+            color: #1847cb;
+        }
+    </style>
+</head>
+<body>
+    <!--header嵌入-->
+    <div th:replace="/fragment/template1.html :: header"></div>
+    <!--header-->
+    <!--banner-->
+    <div id="topArea" >
+        <h1><span>NEWS</span></h1>
+        <img class="imgArea" th:src="@{/images/news_banner.jpg}" alt="banner-menu"/>
+    </div>
+
+    <main>
+        <section class="open" id="open01">
+            <h1>【 選舉日營業時間公告 】</h1>
+            <p>
+                \ 選舉日營業時間公告 / <br>
+                呼籲各位1/13要去投票喔！<br>
+                台灣🇹🇼是我們的家<br>
+                投票是公民的權利<br>
+                1/13營業時間更動<br>
+                請各位也要去投票👍<br>
+                一起愛逮丸！<br>
+                <span>#爪蛙關心您 #ANiceHoliday</span><br>
+            </p>
+            <img th:src="@{/images/news_open/01_1.jpg}" alt="news">
+        </section>
+        <section class="open" id="open02">
+            <h1>【 選舉日營業時間公告 】</h1>
+            <p>
+                \ 選舉日營業時間公告 / <br>
+                呼籲各位1/13要去投票喔！<br>
+                台灣🇹🇼是我們的家<br>
+                投票是公民的權利<br>
+                1/13營業時間更動<br>
+                請各位也要去投票👍<br>
+                一起愛逮丸！<br>
+                <span>#爪蛙關心您 #ANiceHoliday</span><br>
+            </p>
+            <img th:src="@{/images/news_open/01_1.jpg}" alt="news">
+        </section>
+    </main>
+    <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
+    <!--footer嵌入-->
+    <div th:replace="/fragment/template1.html :: footer"></div>
+    <!--footer-->
+
+</body>
+</html>

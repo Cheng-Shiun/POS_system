@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+
+}
+
+/*Top指標*/
+#scrollToTopBtn {
+    display: none;          /*初始的畫面先隱藏按鈕*/
+    position: fixed;        /*固定按鈕在畫面上方*/
+    bottom: 150px;
+    right: 20px;
+    background-color: #70bf2d;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius:15px;     /*邊框弧度*/
+    padding: 10px;
+    cursor: pointer;            /*滑鼠指標 變成手指形狀*/
+    box-shadow: 2px 5px 5px #005707;
+}
+
+/*banner*/
+#topArea{
+    position: relative;
+}
+
+#topArea img{
+    width: 100%;
+    border-radius: 0 0 80% 80% / 0 0 60% 60%;
+    margin-bottom: 80px;
+
+}
+
+#topArea h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 900;
+    font-family: Arvo, sans-serif;
+    font-size: 56px;
+}
+
+#news1{
+    width: 100%;
+}
+
+/*button*/
+#btnNews{
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    text-align: center;
+}
+
+#btnOpen, #btnActivity, #btnProduct {
+    font-size: 22px;
+    text-align: center;
+    border: 1px solid rgba(119, 95, 70, 0.2); /* 修改邊框寬度和邊框顏色 */
+    border-radius: 18px; /* 修改邊框圓角 */
+    width: 200px;
+    height: 40px;
+    color: #775F46;
+    font-weight: 600;
+    margin-left: 15px;
+}
+#btnOpen:hover, #btnActivity:hover, #btnProduct:hover {
+    border: 1px solid rgba(115, 184, 108, 0.2); /* 換顏色 */
+    color: #73b86c;
+}
+#btnOpen:focus, #btnActivity:focus, #btnProduct:focus {
+    border: 1px solid rgba(115, 184, 108, 0.2); /* 換顏色 */
+    color: #73b86c;
+}
+
+/*main*/
+
+.newsblock{
+    width: 100%;
+    padding:1.5rem;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin: 10px;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+}
+.n01{
+    width:25%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: #73b86c 0.2rem solid;
+}
+.n01:hover{
+    background: rgba(115, 184, 108, 0.5);
+}
+
+.n01 img{
+    margin-bottom: 20px;
+}
+.newsdate{
+    margin-bottom: 1.2rem;
+    color: #73b86c;
+    font-size: 1rem;
+}
+.line{
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+    color: #775F46;
+    margin-top: 30px;
+    margin-bottom:30px;
+}
