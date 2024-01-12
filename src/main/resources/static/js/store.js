@@ -14,7 +14,7 @@ $(function (){
 
 //Top指標
 $(window).scroll(function() {
-    // 當滾動位置超過100像素時，顯示箭頭按鈕；否則隱藏
+    // 當滾動位置超過100像素時，顯示TOP按鈕；否則隱藏
     if ($(this).scrollTop() > 100) {
         $('#scrollToTopBtn').fadeIn();
     } else {

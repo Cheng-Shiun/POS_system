@@ -1,51 +1,133 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, 新細明體;
     font-size: 20px;
 }
+
+/*Top指標*/
+#scrollToTopBtn {
+    display: none;          /*初始的畫面先隱藏按鈕*/
+    position: fixed;        /*固定按鈕在畫面上方*/
+    bottom: 150px;
+    right: 20px;
+    background-color: #70bf2d;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius:15px;     /*邊框弧度*/
+    padding: 10px;
+    cursor: pointer;            /*滑鼠指標 變成手指形狀*/
+    box-shadow: 2px 5px 5px #005707;
+}
+
+#topArea img{
+    width: 100%;
+    border-radius: 0 0 80% 80% / 0 0 60% 60%;
+    margin-bottom: 80px;
+    margin-top: 110px;
+}
+
+#topArea h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 900;
+    font-family: Arvo, sans-serif;
+    font-size: 56px;
+}
+
+/*main開始*/
 #formArea{
     width: 58%;
     margin-left: auto;
     margin-right: auto;
 }
+/*表頭文字*/
 .join{
     width: 100%;
-    background: grey;
-    text-align: center;
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
+    margin-bottom: 3.6rem;
 }
-h1,h3{
+.join_h1{
+    font-size: 3.5rem;
+}
+.join_h3{
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+.join_h1,.join_{
     margin: 0.5rem 0;
+    color: #007500;
 }
 #pArea{
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
 }
 
+/*表單內容*/
+/*表單輸入項目*/
 .info{
     display: flex;
     margin-bottom: 2rem;
-    align-items: center;
+    /*align-items: center;*/  /*垂直置中*/
     line-height: 1.8;
     width: 100%;
 }
 h4{
     margin: 0;
 }
+
+/*star符號*/
+.starcolor{
+    margin-right: 0.3rem;
+    color: #ff0000;
+}
+
+/*表單內容文字區塊*/
+.spanInfo{
+    width: 25%;
+}
+
+/*input輸入框區塊*/
+.inputinfo{
+    width: 80%;
+    line-height: 2;
+    flex: 1;
+}
+
+/*選項間距*/
+label{
+    margin-right: 0.3rem;
+}
+
+/*input 其他說明區塊*/
 .infodesc{
     display: flex;
     margin-bottom: 2rem;
     line-height: 1.8;
 }
 
-span{
-    margin-right: 0.3rem;
-    color: #ff0000;
+.sureArea{
+    text-align: right;
+    margin-bottom: 3rem;
+
+/*重置按鈕的邊框樣式和背景色 */
+input[type="reset"].sure,
+input[type="submit"].sure{
+    font-size: 1.1rem;
+    border: 2px solid #569c1a; /*設定邊框樣式*/
+    background: #f9e7bb;
+    color: #000000;
+    padding: 6px 12px; /*設定內邊距*/
+    cursor: pointer; /*設定指標樣式*/
+    border-radius: 0.5rem;
 }
-.spanInfo{
-    width: 25%;
-}
-.inputinfo{
-    width: 80%;
-    line-height: 2;
-    flex: 1;
+
+/*滑鼠移過時的樣式變化*/
+input[type="reset"].sure:hover,
+input[type="submit"].sure:hover
+{
+    background: #70bf2d;
+    box-shadow: 0.3rem -0.3rem 2rem #6fab00;
 }
