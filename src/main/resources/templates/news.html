@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>最新消息</title>
+    <link rel="stylesheet"  th:href="@{/css/news.css}" type="text/css" >
+    <link rel="shortcut icon" href="/images/icon_logo.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script th:src="@{/js/news.js}"></script>
+    <link rel="stylesheet" href="/css/fragment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!--header嵌入-->
+    <div th:replace="/fragment/template1.html :: header"></div>
+    <!--header-->
+    <!--banner-->
+    <div id="topArea" >
+        <h1><span>NEWS</span></h1>
+        <img class="imgArea" th:src="@{/images/news_banner.jpg}" alt="banner-menu"/>
+    </div>
+    <!--選單-->
+    <div id="btnNews">
+        <button id="btnOpen" onclick="showOpen()">新店開幕</button>
+        <button id="btnActivity" onclick="showActivity()">活動優惠</button>
+        <button id="btnProduct" onclick="showProduct()">新品上市</button>
+    </div>
+    <main>
+        <section id="newOpen">
+            <div id="news1">
+                <div class="newsblock">
+                    <div class="n01">
+                        <img th:src="@{/images/news_open/01.png}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>台中健行店全新開幕</h4>
+                        <h6>快相揪來體驗三代店風格~</h6>
+                    </div>
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>新竹光復店全新開幕</h4>
+                        <h6>我們回來了！這次我們穿著美美的新裝迎接您 歡迎您來店品嘗美味好茶~</h6>
+                    </div>
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>員林中山店激動開幕</h4>
+                        <h6>精心籌備，終於迎來了新店的燦爛開幕，期待與您分享美好時光。"~</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div id="news2">
+                <div class="newsblock">
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>台中健行店全新開幕</h4>
+                        <h6>快相揪來體驗三代店風格~</h6>
+                    </div>
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>新竹光復店全新開幕</h4>
+                        <h6>我們回來了！這次我們穿著美美的新裝迎接您 歡迎您來店品嘗美味好茶~</h6>
+                    </div>
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>員林中山店激動開幕</h4>
+                        <h6>精心籌備，終於迎來了新店的燦爛開幕，期待與您分享美好時光。"~</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div id="news3">
+                <div class="newsblock">
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>台中健行店全新開幕</h4>
+                        <h6>快相揪來體驗三代店風格~</h6>
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                    </div>
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>新竹光復店全新開幕</h4>
+                        <p>我們回來了！這次我們穿著美美的新裝迎接您 歡迎您來店品嘗美味好茶~</p>
+                    </div>
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>員林中山店激動開幕</h4>
+                        <h6>精心籌備，終於迎來了新店的燦爛開幕，期待與您分享美好時光。"~</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div id="news4">
+                <div class="newsblock">
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <h4>台中健行店全新開幕</h4>
+                        <h6>快相揪來體驗三代店風格~</h6>
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                    </div>
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <h4>新竹光復店全新開幕</h4>
+                        <h6>我們回來了！這次我們穿著美美的新裝迎接您 歡迎您來店品嘗美味好茶~</h6>
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                    </div>
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <h4>員林中山店激動開幕</h4>
+                        <h6>精心籌備，終於迎來了新店的燦爛開幕，期待與您分享美好時光。"~</h6>
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="newActivity">
+            <div id="news1">
+                <div class="newsblock">
+                    <div class="n01">
+                        <img th:src="@{/images/news_open/01.png}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>台中健行店全新開幕</h4>
+                        <h6>快相揪來體驗三代店風格~</h6>
+                    </div>
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>新竹光復店全新開幕</h4>
+                        <h6>我們回來了！這次我們穿著美美的新裝迎接您 歡迎您來店品嘗美味好茶~</h6>
+                    </div>
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>員林中山店激動開幕</h4>
+                        <h6>精心籌備，終於迎來了新店的燦爛開幕，期待與您分享美好時光。"~</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div id="news2">
+                <div class="newsblock">
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>台中健行店全新開幕</h4>
+                        <h6>快相揪來體驗三代店風格~</h6>
+                    </div>
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>新竹光復店全新開幕</h4>
+                        <h6>我們回來了！這次我們穿著美美的新裝迎接您 歡迎您來店品嘗美味好茶~</h6>
+                    </div>
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>員林中山店激動開幕</h4>
+                        <h6>精心籌備，終於迎來了新店的燦爛開幕，期待與您分享美好時光。"~</h6>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section id="newProduct">
+            <div id="news1">
+                <div class="newsblock">
+                    <div class="n01">
+                        <img th:src="@{/images/news_open/01.png}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>台中健行店全新開幕</h4>
+                        <h6>快相揪來體驗三代店風格~</h6>
+                    </div>
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>新竹光復店全新開幕</h4>
+                        <h6>我們回來了！這次我們穿著美美的新裝迎接您 歡迎您來店品嘗美味好茶~</h6>
+                    </div>
+                    <div class="n01">
+                        <img th:src="@{/images/news.jpg}" alt="news">
+                        <div class="newsdate"><span>刊登日期：Jan 11 2024</span></div>
+                        <h4>員林中山店激動開幕</h4>
+                        <h6>精心籌備，終於迎來了新店的燦爛開幕，期待與您分享美好時光。"~</h6>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
+    <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
+
+    <!--footer嵌入-->
+    <div th:replace="/fragment/template1.html :: footer"></div>
+    <!--footer-->
+
+</body>
+</html>
