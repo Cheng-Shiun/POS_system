@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+
+/*Top指標*/
+#scrollToTopBtn {
+    display: none;          /*初始的畫面先隱藏按鈕*/
+    position: fixed;        /*固定按鈕在畫面上方*/
+    bottom: 150px;
+    right: 20px;
+    background-color: #70bf2d;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius:15px;     /*邊框弧度*/
+    padding: 10px;
+    cursor: pointer;            /*滑鼠指標 變成手指形狀*/
+    box-shadow: 2px 5px 5px #005707;
+}
+
+#topArea img{
+    width: 100%;
+    border-radius: 0 0 80% 80% / 0 0 60% 60%;
+    margin-bottom: 80px;
+    margin-top: 110px;
+}
+
+#topArea h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 900;
+    font-family: Arvo, sans-serif;
+    font-size: 56px;
+}
+
+#news1{
+    width: 100%;
+}
+
+/*main*/
+.newsblock{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin: 10px;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+}
+.n01{
+    width:280px;
+    display: flex;
+    flex-direction: column;
+}
+img{
+    width: 280px;
+    margin-bottom: 20px;
+}
+.newsdate{
+    margin-top: auto;
+    margin-bottom: 0;
+}
+.line{
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+    color: #775F46;
+    margin-top: 30px;
+    margin-bottom:30px;
+}
