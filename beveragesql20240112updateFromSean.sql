@@ -108,6 +108,52 @@ INSERT INTO `javateamenu` (`pn`, `typeCode`, `productCode`, `type`, `product`, `
 	('wm3', 'wm', 3, 'winterMelo', '冬瓜檸檬', 50),
 	('wm4', 'wm', 4, 'winterMelo', '冬瓜仙茶蜜', 50);
 
+-- 傾印  資料表 beverage.javateaorder 結構
+DROP TABLE IF EXISTS `javateaorder`;
+CREATE TABLE IF NOT EXISTS `javateaorder` (
+  `on` int(3) NOT NULL AUTO_INCREMENT,
+  `type` varchar(20) NOT NULL DEFAULT '0',
+  `product` varchar(20) NOT NULL DEFAULT '0',
+  `material` varchar(20) NOT NULL DEFAULT '0',
+  `qty` int(2) NOT NULL DEFAULT 0,
+  `states` char(2) NOT NULL DEFAULT '0',
+  `date` datetime DEFAULT current_timestamp(),
+  KEY `索引 1` (`on`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- 正在傾印表格  beverage.javateaorder 的資料：~10 rows (近似值)
+INSERT INTO `javateaorder` (`on`, `type`, `product`, `material`, `qty`, `states`, `date`) VALUES
+	(1, '原味茶', '竹香翡翠', '草仔粿', 1, '熱', '0000-00-00 00:00:00'),
+	(2, '原味茶', '竹香翡翠', '草仔粿', 1, '熱', '0000-00-00 00:00:00'),
+	(3, '原味茶', '竹香翡翠', '草仔粿', 1, '熱飲', '0000-00-00 00:00:00'),
+	(4, '原味茶', '竹香翡翠', '草仔粿', 1, '熱飲', '2024-01-09 08:27:10'),
+	(5, '原味茶', '竹香翡翠', '草仔粿', 1, '熱飲', '2024-01-09 16:30:05'),
+	(6, '原味茶', '竹香翡翠', '草仔粿', 2, '熱飲', '2024-01-09 22:12:51'),
+	(7, '風味茶', '荔枝蘆薈', '蘆薈', 3, '冷飲', '2024-01-09 22:15:14'),
+	(8, '原味茶', '招牌紅茶', '草仔粿', 1, '冷飲', '2024-01-11 11:23:18'),
+	(9, '原味茶', '竹香翡翠', '草仔粿', 1, '冷飲', '2024-01-11 15:24:27'),
+	(10, '原味茶', '竹香翡翠', '琥珀粉圓', 2, '冷飲', '2024-01-12 14:03:58');
+
+-- 傾印  資料表 beverage.javateatype 結構
+DROP TABLE IF EXISTS `javateatype`;
+CREATE TABLE IF NOT EXISTS `javateatype` (
+  `typeCode` char(2) NOT NULL DEFAULT '',
+  `type` varchar(20) NOT NULL DEFAULT '',
+  PRIMARY KEY (`typeCode`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- 正在傾印表格  beverage.javateatype 的資料：~9 rows (近似值)
+INSERT INTO `javateatype` (`typeCode`, `type`) VALUES
+	('am', '加好料'),
+	('cm', '芝士奶蓋'),
+	('fm', '鮮奶茶'),
+	('ft', '風味茶'),
+	('ot', '原味茶'),
+	('tm', '香醇奶茶'),
+	('tt', '滋味茶'),
+	('ty', '種類'),
+	('wm', '冬瓜茶系列');
+
 -- 傾印  資料表 beverage.member 結構
 DROP TABLE IF EXISTS `member`;
 CREATE TABLE IF NOT EXISTS `member` (
