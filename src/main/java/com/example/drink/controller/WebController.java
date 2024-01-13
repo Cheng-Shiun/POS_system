@@ -58,10 +58,10 @@ public class WebController
     {
         return"Member";
     }
-    @GetMapping("/qna")
+    @GetMapping("/qa")
     public String getQnA()
     {
-        return"QandA";
+        return"QA";
     }
 
 }
