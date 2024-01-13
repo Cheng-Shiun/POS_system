@@ -2,7 +2,7 @@
 -- 主機:                           127.0.0.1
 -- 伺服器版本:                        11.2.2-MariaDB - mariadb.org binary distribution
 -- 伺服器作業系統:                      Win64
--- HeidiSQL 版本:                  12.6.0.6765
+-- HeidiSQL 版本:                  12.3.0.6589
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `add_materials` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='加料區';
 
 -- 正在傾印表格  beverage.add_materials 的資料：~12 rows (近似值)
-INSERT INTO `add_materials` (`name`, `price`) VALUES
+REPLACE INTO `add_materials` (`name`, `price`) VALUES
 	('草仔粿', 15),
 	('琥珀粉圓', 10),
 	('雙粉(粉粿+粉圓)', 10),
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `javateamenu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- 正在傾印表格  beverage.javateamenu 的資料：~43 rows (近似值)
-INSERT INTO `javateamenu` (`pn`, `typeCode`, `productCode`, `type`, `product`, `price`) VALUES
+REPLACE INTO `javateamenu` (`pn`, `typeCode`, `productCode`, `type`, `product`, `price`) VALUES
 	('am1', 'am', 1, 'addMateria', '草仔粿', 15),
 	('am2', 'am', 2, 'addMateria', '琥珀粉圓', 10),
 	('am3', 'am', 3, 'addMateria', '雙粉(粉粿+粉圓)', 10),
@@ -86,11 +86,13 @@ INSERT INTO `javateamenu` (`pn`, `typeCode`, `productCode`, `type`, `product`, `
 	('f4', 'f', 4, 'flavor', '養樂多青菜', 55),
 	('f5', 'f', 5, 'flavor', '檸檬高山青', 60),
 	('f6', 'f', 6, 'flavor', '粉粿柚香307', 79),
+	('f7', 'f', 7, 'flavor', '荔梅蜜語飲', 80),
 	('fm1', 'fm', 1, 'freshMilk', '招牌紅拿鐵', 70),
 	('fm2', 'fm', 2, 'freshMilk', '烏龍拿鐵', 70),
 	('fm3', 'fm', 3, 'freshMilk', '黃金蕎麥拿鐵', 70),
 	('fm4', 'fm', 4, 'freshMilk', '竹香翡翠拿鐵', 70),
 	('fm5', 'fm', 5, 'freshMilk', '極黑芝麻拿鐵', 80),
+	('fm6', 'fm', 6, 'freshMilk', '宇治抹茶優奶', 80),
 	('m1', 'm', 1, 'milk', '招牌紅奶茶', 50),
 	('m2', 'm', 2, 'milk', '粉粿黑糖奶茶	', 60),
 	('m3', 'm', 3, 'milk', '黃金蕎麥奶茶	', 60),
@@ -145,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `orderlist` (
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- 正在傾印表格  beverage.orderlist 的資料：~10 rows (近似值)
-INSERT INTO `orderlist` (`bid`, `bname`, `price`, `container`, `btype`, `isaddMaterial`, `material`, `mprice`, `ice`, `sugar`, `phone`) VALUES
+REPLACE INTO `orderlist` (`bid`, `bname`, `price`, `container`, `btype`, `isaddMaterial`, `material`, `mprice`, `ice`, `sugar`, `phone`) VALUES
 	(1, '翡翠檸檬', 40, '中', '茶人系列', '否', '', 0, '去冰', '微糖', '0975348123'),
 	(2, '招牌紅茶', 35, '中', '茶人系列', '否', '', 0, '熱', '微糖', '0923417582'),
 	(3, '荔枝蘆薈', 60, '大', '講究系列', '是', '珍珠', 5, '少冰', '半糖', '0912047583'),
@@ -166,10 +168,10 @@ CREATE TABLE IF NOT EXISTS `store` (
   `s_tel` varchar(11) NOT NULL,
   `opentime` varchar(50) NOT NULL,
   PRIMARY KEY (`sid`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='各地店舖';
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='各地店舖';
 
 -- 正在傾印表格  beverage.store 的資料：~18 rows (近似值)
-INSERT INTO `store` (`sid`, `s_name`, `s_area`, `s_addr`, `s_tel`, `opentime`) VALUES
+REPLACE INTO `store` (`sid`, `s_name`, `s_area`, `s_addr`, `s_tel`, `opentime`) VALUES
 	(1, '爪蛙.tea 新竹光復店', '北部', '新竹市東區光復路一段319號', '03-5790006', '11:00~21:00 週一~週日'),
 	(2, '爪蛙.tea 汐止建成店', '北部', '新北市汐止區建成路52號', '02-26475366', '10:00~21:00 週一~週日'),
 	(3, '爪蛙.tea 中壢日新店', '北部', '桃園市中壢區日新路42號', '03-4668890', '11:00~20:00 週一~週日'),
