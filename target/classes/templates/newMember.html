@@ -94,52 +94,52 @@
 </div>
 <div>
     <form method="post" th:object="${memberParam}" action="/newMember" novalidate="" class="row g-3 needs-validation">
-        <div class="col-md-4">
-            <label for="name" class="form-label col-form-label-lg">姓名</label>
-            <input type="text" id="name" th:field="*{name}" name="name" placeholder="請輸入姓名…" required="" spellcheck="false" data-ms-editor="true" class="form-control form-control-lg">
-            <div id="checkName" class="invalid-feedback">
+        <div class="form-floating mb-3">
+            <input type="text" id="name" th:field="*{name}" name="name" placeholder="王小明" value="王小明" required="" spellcheck="false" data-ms-editor="true" class="form-control">
+            <label for="name" class="form-label">姓名</label>
+            <div id="checkName" class="valid-feedback">
                 請輸入姓名…
             </div>
         </div>
-        <div class="col-md-4">
-            <label for="phone" class="form-label col-form-label-lg">電話</label>
-            <input type="text" id="phone" th:field="*{phone}" name="phone" placeholder="請輸入電話…" required="" spellcheck="false" data-ms-editor="true" class="form-control form-control-lg">
-            <div id="checkPhone" class="valid-feedback">
+        <div class="form-floating mb-3">
+            <input type="tel" id="phone" th:field="*{phone}" name="phone" placeholder="0921234567" value="0921234567" required="" spellcheck="false" data-ms-editor="true" class="form-control">
+            <label for="phone" class="form-label">電話</label>
+            <div id="checkPhone" class="invalid-feedback">
                 請輸入電話…
             </div>
         </div>
-        <div class="col-md-4">
-            <label for="address" class="form-label col-form-label-lg">地址</label>
-            <input type="text" id="address" th:field="*{address}" name="address" placeholder="請輸入地址…" required="" spellcheck="false" data-ms-editor="true" class="form-control form-control-lg">
+        <div class="form-floating mb-3">
+            <input type="text" id="address" th:field="*{address}" name="address" placeholder="台中市台灣大道一段100號" value="台中市台灣大道一段100號" required="" spellcheck="false" data-ms-editor="true" class="form-control">
+            <label for="address" class="form-label">地址</label>
             <div class="invalid-feedback">
                 請輸入地址…
             </div>
         </div>
-        <div class="col-md-4">
-            <label for="birthday" class="form-label col-form-label-lg">生日</label>
-            <input type="text" id="birthday" th:field="*{birthday}" name="birthday" placeholder="請輸入生日…" required="" spellcheck="false" data-ms-editor="true" class="form-control form-control-lg">
+        <div class="form-floating mb-3">
+            <input type="date" id="birthday" th:field="*{birthday}" name="birthday" placeholder="1911-01-01" value="1911-01-01" required="" spellcheck="false" data-ms-editor="true" class="form-control">
+            <label for="birthday" class="form-label">生日</label>
             <div class="invalid-feedback">
                 請輸入生日…
             </div>
         </div>
-        <div class="col-md-4">
-            <label for="gender" class="form-label col-form-label-lg">性別</label>
-            <input type="text" id="gender" th:field="*{gender}" name="gender" placeholder="請輸入性別…" required="" spellcheck="false" data-ms-editor="true" class="form-control form-control-lg">
+        <div class="form-floating mb-3">
+            <input type="text" id="gender" th:field="*{gender}" name="gender" placeholder="男" value="男" required="" spellcheck="false" data-ms-editor="true" class="form-control">
+            <label for="gender" class="form-label">性別</label>
             <div class="invalid-feedback">
                 請輸入性別…
             </div>
         </div>
-        <div class="col-md-4">
-            <label for="email" class="form-label col-form-label-lg">電郵</label>
-            <input type="text" id="email" th:field="*{email}" name="email" placeholder="請輸入電郵…" required="" spellcheck="false" data-ms-editor="true" class="form-control form-control-lg">
+        <div class="form-floating mb-3">
+            <input type="email" id="email" th:field="*{email}" name="email" placeholder="name@example.com" value="name@example.com" required="" spellcheck="false" data-ms-editor="true" class="form-control">
+            <label for="email" class="form-label">電郵</label>
             <div class="invalid-feedback">
                 請輸入電郵…
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="mb-3">
             <button class="btn btn-primary" type="submit">註冊</button>
         </div>
-        <div class="col-md-4">
+        <div class="mb-3">
             <button class="btn btn-primary" type="reset">清除</button>
         </div>
     </form>
@@ -166,54 +166,54 @@
             })
         })()
 
-        // $("#name").change(function(){
-        //     var changeName = $("#name").val();
-        //     console.log("顯示姓名欄位改變結果:"+changeName)
-        //     checkMemberByName(changeName);
-        // });
-
-        $("#phone").change(function(){
-            var changePhone = $("#phone").val();
-            console.log("顯示電話欄位改變結果:"+changePhone)
-            checkMemberByPhone(changePhone);
+        $("#name").change(function(){
+            var changeName = $("#name").val();
+            console.log("顯示姓名欄位改變結果:"+changeName)
+            checkMemberByName(changeName);
         });
 
-        // function checkMemberByName() {
-        //     let checkName = $('#name').val();
-        //     $.get( '/api/checkMemberByName/' + checkName,
+        // $("#phone").change(function(){
+        //     var changePhone = $("#phone").val();
+        //     console.log("顯示電話欄位改變結果:"+changePhone)
+        //     checkMemberByPhone(changePhone);
+        // });
+
+        function checkMemberByName() {
+            let checkName = $('#name').val();
+            $.get( '/api/checkMemberByName/' + checkName,
+                function (data , status) {
+                    let result = data[0];
+                    // console.log("顯示姓名欄位轉檔結果:"+JSON.stringify(result))
+                    console.log("顯示姓名欄位查詢結果:"+result.name)
+                    if(checkName === result.name) {
+                        $('#checkName').empty();
+                        $('#checkName').append('重覆申請');
+                    }
+                    // $('#checkName').empty();
+                    // $('#checkName').append('<option disabled selected>請選擇產品</option>');
+                    // for (var i=0; i<data.length; i++) {
+                    //     console.log( JSON.stringify(data[i]));
+                    //     console.log(data[i].product);
+                    //     $('#checkName').append('<option>' + data[i].product + '</option>');
+                    // }
+                }
+            )
+        }
+
+        // function checkMemberByPhone() {
+        //     let checkPhone = $('#phone').val();
+        //     $.get( '/api/checkMemberByPhone/' + checkPhone,
         //         function (data , status) {
         //             let result = data[0];
         //             // console.log("顯示姓名欄位轉檔結果:"+JSON.stringify(result))
-        //             console.log("顯示姓名欄位查詢結果:"+result.name)
-        //             if(checkName === result.name) {
-        //                 $('#checkName').empty();
-        //                 $('#checkName').append('重覆申請');
-        //             }
-        //             $('#checkName').empty();
-        //             $('#checkName').append('<option disabled selected>請選擇產品</option>');
-        //             for (var i=0; i<data.length; i++) {
-        //                 console.log( JSON.stringify(data[i]));
-        //                 console.log(data[i].product);
-        //                 $('#checkName').append('<option>' + data[i].product + '</option>');
+        //             console.log("顯示電話欄位查詢結果:"+result.phone);
+        //             if(checkPhone === result.phone) {
+        //                 $('#checkPhone').empty();
+        //                 $('#checkPhone').append('重覆申請');
         //             }
         //         }
         //     )
         // }
-
-        function checkMemberByPhone() {
-            let checkPhone = $('#phone').val();
-            $.get( '/api/checkMemberByPhone/' + checkPhone,
-                function (data , status) {
-                    let result = data[0];
-                    // console.log("顯示姓名欄位轉檔結果:"+JSON.stringify(result))
-                    console.log("顯示電話欄位查詢結果:"+result.phone);
-                    if(checkPhone === result.phone) {
-                        $('#checkPhone').empty();
-                        $('#checkPhone').append('重覆申請');
-                    }
-                }
-            )
-        }
     });
 </script>
 </body>
