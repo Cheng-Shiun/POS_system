@@ -10,6 +10,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class WebController
 {
 
+    @GetMapping("/")
+    public String getLoading()
+    {
+        return "loading";
+    }
+
     @GetMapping("/index")
     public String getHomePage()
     {
