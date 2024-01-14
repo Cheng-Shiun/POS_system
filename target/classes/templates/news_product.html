@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>最新消息-新店開幕</title>
+    <link rel="stylesheet"  th:href="@{/css/news.css}" type="text/css" >
+    <link rel="shortcut icon" href="/images/icon_logo.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script th:src="@{/js/news.js}"></script>
+    <link rel="stylesheet" href="/css/fragment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        section.product {
+            padding: 2rem;
+            text-align: center;
+            line-height: 1.5rem;
+        }
+        section.product h1 {
+            font-size: 2rem;
+            font-family: sans-serif;
+            margin: 2rem;
+        }
+        section.product img {
+            margin: 2rem;
+            width: 50%;
+        }
+        section span {
+            color: #1847cb;
+        }
+    </style>
+</head>
+<body>
+<!--header嵌入-->
+<div th:replace="/fragment/template1.html :: header"></div>
+<!--header-->
+<!--banner-->
+<div id="topArea" >
+    <h1><span>NEWS</span></h1>
+    <img class="imgArea" th:src="@{/images/news_banner.jpg}" alt="banner-menu"/>
+</div>
+
+<main>
+    <div class="alocation">
+        <span><a href="/index">&nbsp;首頁&nbsp;</a>/</span><span><a href="/news">&nbsp;最新消息&nbsp;</a></span><p>&nbsp;/&nbsp; 新品上市 </p>
+    </div>
+    <section class="product" id="product01">
+        <h1>【 宇治抹茶優奶 #新品上市 】</h1>
+        <p>
+            \ 喜歡抹茶的朋友趕緊看過來 / <br>
+            嚮往日本風情？<br>
+            不妨一試我們的「宇治之濤抹茶優奶」！<br>
+            源自宇治的頂級抹茶，<br>
+            融合小農鮮乳香，<br>
+            清新濃郁。<br>
+            每一口都是對味蕾的極致呵護。<br>
+            即刻品嚐，<br>
+            感受來自日本的細緻品味。<br>
+            <span>#宇治之濤 #抹茶優奶 #極致味蕾</span><br>
+        </p>
+        <img th:src="@{/images/news_products/01_1.jpg}" alt="news">
+    </section>
+    <hr>
+    <section class="product" id="product02">
+        <h1>【 荔莓蜜語飲 #新品上市 】</h1>
+        <p>
+            \ 最鮮甜的水果 來自荔枝的香氣/ <br>
+            沉浸在夏日的甜蜜時光！<br>
+            品嚐我們特調的「甜蜜荔莓時光」，<br>
+            口感獨特，<br>
+            彷彿吃到新鮮的荔枝果粒，<br>
+            再搭配特製的蔓越莓茶，<br>
+            讓酸甜在口中綻放。<br>
+            每一口都是對味蕾的美妙驚喜。<br>
+            盡情沉醉於這夏日的清涼異想，<br>
+            一試難忘。<br>
+            <span>#甜蜜荔莓時光 #夏日清涼 #口感獨特</span><br>
+        </p>
+        <img th:src="@{/images/news_products/02_1.jpg}" alt="news">
+    </section>
+    <hr>
+    <section class="product" id="product03">
+        <h1>【 限量環保聯名杯袋開跑 #中秋節活動 】</h1>
+        <p>
+            \ 歡樂慶中秋 以禮相袋 / <br>
+            🌕 中秋慶典，特別獻上限定好禮！<br>
+            喜歡柳橙果粒茶的您，<br>
+            只要單筆消費滿5杯，<br>
+            即可獲得我們精心設計的限量環保聯名杯袋一個！<br>
+            品味中秋，<br>
+            以禮相袋，<br>
+            與摯愛一同分享美好時光。<br>
+            數量有限，
+            別錯過這個感恩的季節，<br>
+            快來店內享受茶香和溫馨吧！🌙🎁<br>
+            <span> #中秋好禮 #柳橙果粒茶 #限量聯名杯袋</span><br>
+        </p>
+        <img th:src="@{/images/news_products/03_1.jpg}" alt="news">
+    </section>
+    <hr>
+</main>
+<button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
+<!--footer嵌入-->
+<div th:replace="/fragment/template1.html :: footer"></div>
+<!--footer-->
+
+</body>
+</html>

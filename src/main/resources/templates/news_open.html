@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>最新消息-新店開幕</title>
+    <link rel="stylesheet"  th:href="@{/css/news.css}" type="text/css" >
+    <link rel="shortcut icon" href="/images/icon_logo.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script th:src="@{/js/news.js}"></script>
+    <link rel="stylesheet" href="/css/fragment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        section.open {
+            padding: 2rem;
+            text-align: center;
+            line-height: 1.5rem;
+        }
+        section.open h1 {
+            font-size: 2rem;
+            font-family: sans-serif;
+            margin: 2rem;
+        }
+        section span {
+            color: #1847cb;
+        }
+    </style>
+</head>
+<body>
+    <!--header嵌入-->
+    <div th:replace="/fragment/template1.html :: header"></div>
+    <!--header-->
+    <!--banner-->
+    <div id="topArea" >
+        <h1><span>NEWS</span></h1>
+        <img class="imgArea" th:src="@{/images/news_banner.jpg}" alt="banner-menu"/>
+    </div>
+
+    <main>
+        <div class="alocation">
+            <span><a href="/index">&nbsp;首頁&nbsp;</a>/</span><span><a href="/news">&nbsp;最新消息&nbsp;</a></span><p>&nbsp;/&nbsp; 新店開幕 </p>
+        </div>
+        <section class="open" id="open01">
+            <h1>【 選舉日營業時間公告 】</h1>
+            <p>
+                \ 選舉日營業時間公告 / <br>
+                呼籲各位1/13要去投票喔！<br>
+                台灣🇹🇼是我們的家<br>
+                投票是公民的權利<br>
+                1/13營業時間更動<br>
+                請各位也要去投票👍<br>
+                一起愛逮丸！<br>
+                <span>#爪蛙關心您 #ANiceHoliday</span><br>
+            </p>
+            <img th:src="@{/images/news_open/01_1.jpg}" alt="news">
+        </section>
+        <hr>
+        <section class="open" id="open02">
+            <h1>【 #新竹光復店 12/25 起 #試營運 】</h1>
+            <p>
+                \ 🄼🄴🅁🅁🅈 🄲🄷🅁🄸🅂🅃🄼🄰🅂 / <br>
+                聖誕老公公🎅第二重磅好消息<br>
+                新竹光復店𝟏𝟐/𝟐𝟓見<br>
+                一次開兩間，真的有加速了⏩<br>
+                是個快樂的聖誕節🎄<br>
+                想問有善化的朋友嗎！舉手讓我知道你在這<br>
+                -<br>
+                為了做出大家手中的杯杯佳作，<br>
+                魔鬼訓練是必須，一沐日可能慢到但絕不缺席☝🏻
+                -<br>
+                🌱善化大成店<br>
+                門市地址｜新竹市東區光復路一段319號<br>
+                營業時間｜11:00-21:00 週一~週日<br>
+                訂購專線｜03-5790006<br>
+                <span>#慶新店開幕 #爪蛙茶飲 #ANiceHoliday #讓每天過得像假日</span><br>
+            </p>
+            <img th:src="@{/images/news_open/02_1.jpg}" alt="news">
+        </section>
+        <hr>
+        <section class="open" id="open03">
+            <h1>【 #台中昌平店 11/13 起 #試營運 】</h1>
+            <p>
+                \ 台中昌平路，我們來了!!! / <br>
+                台中再➕𝟏，昌平店𝟏𝟏/𝟏𝟑要跟大家相見了<br>
+                先來一個𝐆𝐢𝐯𝐞 𝐌𝐞 𝐅𝐢𝐯𝐞<br>
+                想喝的小夥伴，下週一昌平店集合<br>
+                一起喝上一杯好茶，讓天天都是休假日<br>
+                為了做出大家手中的杯杯佳作，<br>
+                魔鬼訓練是必須，一沐日可能慢到但絕不缺席☝🏻<br>
+                為了做出大家手中的杯杯佳作，<br>
+                魔鬼訓練是必須，一沐日可能慢到但絕不缺席☝🏻
+                -<br>
+                🌱台中昌平店<br>
+                門市地址｜台中市北屯區昌平路1段238號<br>
+                營業時間｜10:30~23:30 週一~週日<br>
+                訂購專線｜04-22377888<br>
+                <span>#慶新店開幕 #爪蛙茶飲 #ANiceHoliday #讓每天過得像假日</span><br>
+            </p>
+            <img th:src="@{/images/news_open/03_1.jpg}" alt="news">
+        </section>
+        <hr>
+    </main>
+    <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
+    <!--footer嵌入-->
+    <div th:replace="/fragment/template1.html :: footer"></div>
+    <!--footer-->
+
+</body>
+</html>
