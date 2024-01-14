@@ -3,6 +3,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -96,14 +97,14 @@
         <div class="col-md-4">
             <label for="name" class="form-label col-form-label-lg">姓名</label>
             <input type="text" id="name" th:field="*{name}" name="name" placeholder="請輸入姓名…" required="" spellcheck="false" data-ms-editor="true" class="form-control form-control-lg">
-            <div class="invalid-feedback">
+            <div id="checkName" class="invalid-feedback">
                 請輸入姓名…
             </div>
         </div>
         <div class="col-md-4">
             <label for="phone" class="form-label col-form-label-lg">電話</label>
             <input type="text" id="phone" th:field="*{phone}" name="phone" placeholder="請輸入電話…" required="" spellcheck="false" data-ms-editor="true" class="form-control form-control-lg">
-            <div class="invalid-feedback">
+            <div id="checkPhone" class="valid-feedback">
                 請輸入電話…
             </div>
         </div>
@@ -144,26 +145,76 @@
     </form>
 </div>
 <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (() => {
-        'use strict'
+    $(document).ready(function(){
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
 
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
 
-        // Loop over them and prevent submission
-        Array.from(forms).forEach(form => {
-            form.addEventListener('submit', event => {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+
+        // $("#name").change(function(){
+        //     var changeName = $("#name").val();
+        //     console.log("顯示姓名欄位改變結果:"+changeName)
+        //     checkMemberByName(changeName);
+        // });
+
+        $("#phone").change(function(){
+            var changePhone = $("#phone").val();
+            console.log("顯示電話欄位改變結果:"+changePhone)
+            checkMemberByPhone(changePhone);
+        });
+
+        // function checkMemberByName() {
+        //     let checkName = $('#name').val();
+        //     $.get( '/api/checkMemberByName/' + checkName,
+        //         function (data , status) {
+        //             let result = data[0];
+        //             // console.log("顯示姓名欄位轉檔結果:"+JSON.stringify(result))
+        //             console.log("顯示姓名欄位查詢結果:"+result.name)
+        //             if(checkName === result.name) {
+        //                 $('#checkName').empty();
+        //                 $('#checkName').append('重覆申請');
+        //             }
+        //             $('#checkName').empty();
+        //             $('#checkName').append('<option disabled selected>請選擇產品</option>');
+        //             for (var i=0; i<data.length; i++) {
+        //                 console.log( JSON.stringify(data[i]));
+        //                 console.log(data[i].product);
+        //                 $('#checkName').append('<option>' + data[i].product + '</option>');
+        //             }
+        //         }
+        //     )
+        // }
+
+        function checkMemberByPhone() {
+            let checkPhone = $('#phone').val();
+            $.get( '/api/checkMemberByPhone/' + checkPhone,
+                function (data , status) {
+                    let result = data[0];
+                    // console.log("顯示姓名欄位轉檔結果:"+JSON.stringify(result))
+                    console.log("顯示電話欄位查詢結果:"+result.phone);
+                    if(checkPhone === result.phone) {
+                        $('#checkPhone').empty();
+                        $('#checkPhone').append('重覆申請');
+                    }
                 }
-
-                form.classList.add('was-validated')
-            }, false)
-        })
-    })()
-
+            )
+        }
+    });
 </script>
 </body>
 </html>

@@ -1,57 +1,61 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-        input[type=text], select {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
+<!--    <style>-->
+<!--        input[type=text], select {-->
+<!--            width: 100%;-->
+<!--            padding: 12px 20px;-->
+<!--            margin: 8px 0;-->
+<!--            display: inline-block;-->
+<!--            border: 1px solid #ccc;-->
+<!--            border-radius: 4px;-->
+<!--            box-sizing: border-box;-->
+<!--        }-->
 
-        input[type=submit] {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+<!--        input[type=submit] {-->
+<!--            width: 100%;-->
+<!--            background-color: #4CAF50;-->
+<!--            color: white;-->
+<!--            padding: 14px 20px;-->
+<!--            margin: 8px 0;-->
+<!--            border: none;-->
+<!--            border-radius: 4px;-->
+<!--            cursor: pointer;-->
+<!--        }-->
 
-        input[type=submit]:hover {
-            background-color: #45a049;
-        }
+<!--        input[type=submit]:hover {-->
+<!--            background-color: #45a049;-->
+<!--        }-->
 
-        div {
-            border-radius: 5px;
-            background-color: #f2f2f2;
-            padding: 20px;
-        }
+<!--        div {-->
+<!--            border-radius: 5px;-->
+<!--            background-color: #f2f2f2;-->
+<!--            padding: 20px;-->
+<!--        }-->
 
-        input[type=reset] {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+<!--        input[type=reset] {-->
+<!--            width: 100%;-->
+<!--            background-color: #4CAF50;-->
+<!--            color: white;-->
+<!--            padding: 14px 20px;-->
+<!--            margin: 8px 0;-->
+<!--            border: none;-->
+<!--            border-radius: 4px;-->
+<!--            cursor: pointer;-->
+<!--        }-->
 
-        input[type=reset]:hover {
-            background-color: #45a049;
-        }
-    </style>
+<!--        input[type=reset]:hover {-->
+<!--            background-color: #45a049;-->
+<!--        }-->
+<!--    </style>-->
 </head>
-<body>
+<body class="p-3 m-0 border-0 bd-example m-0 border-0">
 <!--<form method="post" th:object="${memberParam}" action="/newMember">-->
 <!--    姓名：<input type="text" th:field="*{name}" name="name"><br>-->
 <!--    電話：<input type="text" th:field="*{phone}" name="phone"><br>-->
@@ -64,27 +68,153 @@
 <!--</form>-->
 <!--<hr>-->
 
-<div class="row column text-center">
+
+<!--<div>-->
+<!--    <form method="post" th:object="${memberParam}" action="/newMember">-->
+<!--        <label for="name">姓名</label>-->
+<!--        <input type="text" id="name" th:field="*{name}" name="name" placeholder="請輸入姓名…">-->
+<!--        <label for="phone">電話</label>-->
+<!--        <input type="text" id="phone" th:field="*{phone}" name="phone" placeholder="請輸入電話…">-->
+<!--        <label for="address">地址</label>-->
+<!--        <input type="text" id="address" th:field="*{address}" name="address" placeholder="請輸入地址…">-->
+<!--        <label for="birthday">生日</label>-->
+<!--        <input type="text" id="birthday" th:field="*{birthday}" name="birthday" placeholder="請輸入生日…">-->
+<!--        <label for="gender">姓別</label>-->
+<!--        <input type="text" id="gender" th:field="*{gender}" name="gender" placeholder="請輸入性別…">-->
+<!--        <label for="email">電郵</label>-->
+<!--        <input type="text" id="email" th:field="*{email}" name="email" placeholder="請輸入電郵…">-->
+<!--        <input type="submit" value="註冊">-->
+<!--        <input type="reset" value="清除"><br>-->
+<!--    </form>-->
+<!--</div>-->
+
+<div class="row mb-3 column text-center">
     <h2>前台會員處理系統</h2>
     <hr>
 </div>
 <div>
-    <form method="post" th:object="${memberParam}" action="/newMember">
-        <label for="name">姓名</label>
-        <input type="text" id="name" th:field="*{name}" name="name" placeholder="請輸入姓名…">
-        <label for="phone">電話</label>
-        <input type="text" id="phone" th:field="*{phone}" name="phone" placeholder="請輸入電話…">
-        <label for="address">地址</label>
-        <input type="text" id="address" th:field="*{address}" name="address" placeholder="請輸入地址…">
-        <label for="birthday">生日</label>
-        <input type="text" id="birthday" th:field="*{birthday}" name="birthday" placeholder="請輸入生日…">
-        <label for="gender">姓別</label>
-        <input type="text" id="gender" th:field="*{gender}" name="gender" placeholder="請輸入性別…">
-        <label for="email">電郵</label>
-        <input type="text" id="email" th:field="*{email}" name="email" placeholder="請輸入電郵…">
-        <input type="submit" value="註冊">
-        <input type="reset" value="清除"><br>
+    <form method="post" th:object="${memberParam}" action="/newMember" novalidate="" class="row g-3 needs-validation">
+        <div class="col-md-4">
+            <label for="name" class="form-label col-form-label-lg">姓名</label>
+            <input type="text" id="name" th:field="*{name}" name="name" placeholder="請輸入姓名…" required="" spellcheck="false" data-ms-editor="true" class="form-control form-control-lg">
+            <div id="checkName" class="invalid-feedback">
+                請輸入姓名…
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="phone" class="form-label col-form-label-lg">電話</label>
+            <input type="text" id="phone" th:field="*{phone}" name="phone" placeholder="請輸入電話…" required="" spellcheck="false" data-ms-editor="true" class="form-control form-control-lg">
+            <div id="checkPhone" class="valid-feedback">
+                請輸入電話…
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="address" class="form-label col-form-label-lg">地址</label>
+            <input type="text" id="address" th:field="*{address}" name="address" placeholder="請輸入地址…" required="" spellcheck="false" data-ms-editor="true" class="form-control form-control-lg">
+            <div class="invalid-feedback">
+                請輸入地址…
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="birthday" class="form-label col-form-label-lg">生日</label>
+            <input type="text" id="birthday" th:field="*{birthday}" name="birthday" placeholder="請輸入生日…" required="" spellcheck="false" data-ms-editor="true" class="form-control form-control-lg">
+            <div class="invalid-feedback">
+                請輸入生日…
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="gender" class="form-label col-form-label-lg">性別</label>
+            <input type="text" id="gender" th:field="*{gender}" name="gender" placeholder="請輸入性別…" required="" spellcheck="false" data-ms-editor="true" class="form-control form-control-lg">
+            <div class="invalid-feedback">
+                請輸入性別…
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="email" class="form-label col-form-label-lg">電郵</label>
+            <input type="text" id="email" th:field="*{email}" name="email" placeholder="請輸入電郵…" required="" spellcheck="false" data-ms-editor="true" class="form-control form-control-lg">
+            <div class="invalid-feedback">
+                請輸入電郵…
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary" type="submit">註冊</button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary" type="reset">清除</button>
+        </div>
     </form>
 </div>
+<script>
+    $(document).ready(function(){
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+
+        // $("#name").change(function(){
+        //     var changeName = $("#name").val();
+        //     console.log("顯示姓名欄位改變結果:"+changeName)
+        //     checkMemberByName(changeName);
+        // });
+
+        $("#phone").change(function(){
+            var changePhone = $("#phone").val();
+            console.log("顯示電話欄位改變結果:"+changePhone)
+            checkMemberByPhone(changePhone);
+        });
+
+        // function checkMemberByName() {
+        //     let checkName = $('#name').val();
+        //     $.get( '/api/checkMemberByName/' + checkName,
+        //         function (data , status) {
+        //             let result = data[0];
+        //             // console.log("顯示姓名欄位轉檔結果:"+JSON.stringify(result))
+        //             console.log("顯示姓名欄位查詢結果:"+result.name)
+        //             if(checkName === result.name) {
+        //                 $('#checkName').empty();
+        //                 $('#checkName').append('重覆申請');
+        //             }
+        //             $('#checkName').empty();
+        //             $('#checkName').append('<option disabled selected>請選擇產品</option>');
+        //             for (var i=0; i<data.length; i++) {
+        //                 console.log( JSON.stringify(data[i]));
+        //                 console.log(data[i].product);
+        //                 $('#checkName').append('<option>' + data[i].product + '</option>');
+        //             }
+        //         }
+        //     )
+        // }
+
+        function checkMemberByPhone() {
+            let checkPhone = $('#phone').val();
+            $.get( '/api/checkMemberByPhone/' + checkPhone,
+                function (data , status) {
+                    let result = data[0];
+                    // console.log("顯示姓名欄位轉檔結果:"+JSON.stringify(result))
+                    console.log("顯示電話欄位查詢結果:"+result.phone);
+                    if(checkPhone === result.phone) {
+                        $('#checkPhone').empty();
+                        $('#checkPhone').append('重覆申請');
+                    }
+                }
+            )
+        }
+    });
+</script>
 </body>
 </html>

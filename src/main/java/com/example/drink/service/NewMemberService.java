@@ -2,8 +2,11 @@ package com.example.drink.service;
 
 import com.example.drink.Dao.NewMemberRepository;
 import com.example.drink.model.MemberParam;
+import com.example.drink.model.OrderItemModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class NewMemberService {
@@ -34,5 +37,17 @@ public class NewMemberService {
         } else {
             return false;
         }
+    }
+
+    public List<MemberParam> checkMemberByName (String name) {
+        return newMemberRepository.checkMemberByName(name);
+    }
+
+    public List<MemberParam> checkMemberByPhone (String phone) {
+        return newMemberRepository.checkMemberByPhone(phone);
+    }
+
+    public List<MemberParam> checkMemberAll() {
+        return newMemberRepository.checkMemberAll();
     }
 }
