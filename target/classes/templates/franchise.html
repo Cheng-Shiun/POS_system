@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>我要加盟</title>
     <link rel="stylesheet"  th:href="@{/css/franchise.css}" type="text/css" >
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script th:src="@{/js/franchise.js}"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
@@ -19,7 +18,7 @@
     <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
 
     <main>
-        <form id="formArea">
+        <form id="formArea" method="post" action="/franchise/submitForm">
             <!--表頭文字-->
             <div class="join">
                 <h3><span class="join_h3">創業夢想從【爪蛙.tea】會開始</span></h3>
@@ -37,12 +36,12 @@
                 <input type="text" name="name" class="inputinfo">
             </div>
 
-            <div class="info">
+            <div class="info infogender">
                 <h4 class="spanInfo">生理性別：</h4>
-                <input type="radio" name="gender"value="男">
-                <label>男</label>
-                <input type="radio" name="gender"value="女">
-                <label>女</label>
+                <input type="radio" name="gender"value="男" class="gender">
+                <label class="gender">男</label>
+                <input type="radio" name="gender"value="女" class="gender">
+                <label class="gender">女</label>
             </div>
 
             <div class="info">
@@ -52,7 +51,7 @@
 
             <div class="info">
                 <h4 class="spanInfo">Line ID：</h4>
-                <input type="text" name="lineid" class="inputinfo">
+                <input type="text" name="lineID" class="inputinfo">
             </div>
 
             <div class="info">
@@ -64,17 +63,17 @@
                 <h4 class="spanInfo">開店自備款：<span class="starcolor">*</span></h4>
                 <div class="inputinfo">
                     <input type="radio" name="budget" value="10萬~100萬">
-                    <label> 10萬~100萬</label>
+                    <label class="budget"> 10萬~100萬</label>
                     <input type="radio" name="budget" value="100萬~200萬">
-                    <label>100萬~200萬</label>
+                    <label class="budget">100萬~200萬</label>
                     <input type="radio" name="budget" value="200萬~300萬">
-                    <label>200萬~300萬</label>
+                    <label class="budget">200萬~300萬</label>
                     <input type="radio" name="budget" value="300萬~400萬">
-                    <label>300萬~400萬</label>
+                    <label class="budget">300萬~400萬</label>
                     <input type="radio" name="budget" value="400萬~500萬">
-                    <label>400萬~500萬</label>
+                    <label class="budget">400萬~500萬</label>
                     <input type="radio" name="budget" value="500萬以上">
-                    <label>500萬以上</label>
+                    <label class="budget">500萬以上</label>
                 </div>
 
             </div>
@@ -82,15 +81,15 @@
             <div class="info">
                 <h4 class="spanInfo">預計可開店時間：<span class="starcolor">*</span></h4>
                 <div class="inputinfo">
-                    <input type="radio" name="opentime">
+                    <input type="radio" name="opentime" value="一個月">
                     <label>一個月</label>
-                    <input type="radio" name="opentime">
+                    <input type="radio" name="opentime" value="三個月">
                     <label>三個月</label>
-                    <input type="radio" name="opentime">
+                    <input type="radio" name="opentime" value="六個月">
                     <label>六個月</label>
-                    <input type="radio" name="opentime">
+                    <input type="radio" name="opentime" value="一個月">
                     <label>一年</label>
-                    <input type="radio" name="opentime">
+                    <input type="radio" name="opentime" value="尚未確定">
                     <label>尚未確定</label>
                 </div>
             </div>
@@ -98,12 +97,12 @@
             <div class="info">
                 <h4 class="spanInfo">方便可聯繫時間：<span class="starcolor">*</span></h4>
                 <div class="inputinfo">
-                    <input type="radio" name="contact" value="早上09:00~12:00">
-                    <label>早上09:00~12:00</label>
-                    <input type="radio" name="contact" value="下午12:00~18:00">
-                    <label>下午12:00~18:00</label>
-                    <input type="radio" name="contact" value="晚上18:00~22:00">
-                    <label>晚上18:00~22:00</label>
+                    <input type="radio" name="contacttime" value="早上09:00~12:00">
+                    <label class="time">早上09:00~12:00</label>
+                    <input type="radio" name="contacttime" value="下午12:00~18:00">
+                    <label class="time">下午12:00~18:00</label>
+                    <input type="radio" name="contacttime" value="晚上18:00~22:00">
+                    <label class="time">晚上18:00~22:00</label>
                 </div>
             </div>
 

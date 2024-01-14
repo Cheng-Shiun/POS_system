@@ -12,6 +12,7 @@ public class StoreService {
     @Autowired
     JdbcTemplate jdbcTemplate;
     public List<StoreModel> getStoreByArea(String area){
-        return jdbcTemplate.query ("select * from store where s_area=?", new Object[]{area}, new StoreMapper ());
+        return jdbcTemplate.query ("select * from store where s_area=?",
+                new Object[]{area}, new StoreMapper ());
     }
 }
