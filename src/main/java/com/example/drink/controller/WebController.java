@@ -15,11 +15,25 @@ public class WebController
     {
         return "index";
     }
-    @GetMapping("/t")
-    public String getTest()
+
+    @GetMapping("/news/open")
+    public String getOpen()
     {
-        return "test";
+        return"news_open";
     }
+
+    @GetMapping("/news/activity")
+    public String getActivity()
+    {
+        return"news_activity";
+    }
+
+    @GetMapping("/news/product")
+    public String getProduct()
+    {
+        return"news_product";
+    }
+
     @GetMapping("/menu")
     public String getMenu()
     {
@@ -63,6 +77,8 @@ public class WebController
     {
         return"QandA";
     }
+
+
 
 
 

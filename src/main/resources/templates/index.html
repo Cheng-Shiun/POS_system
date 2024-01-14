@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hants-TW">
+<html lang="zh-Hants-TW" xmlns="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,7 +20,7 @@
   <body>
     <header>
       <section class="logo">
-        <a href="http://localhost:8864/index"><img src="/images/web_Logo.svg" alt="爪蛙茶飲Logo"/></a>
+        <a href="/index"><img src="/images/web_Logo.svg" alt="爪蛙茶飲Logo"/></a>
       </section>
       <nav>
         <div class="social-icons">
@@ -31,33 +31,21 @@
         <!--製作導覽頁的下拉式選單 這邊開始-->
         <ul class="drop-down-menu">
           <li>
-            <a href="news">最新消息</a>
-            <ul>
-              <li><a href="#">新店開幕</a></li>
-              <li><a href="#">活動優惠</a></li>
-              <li><a href="#">新品上市</a></li>
-            </ul>
+            <a href="/news">最新消息</a>
           </li>
           <li>
             <a href="#">飲品資訊</a>
-            <ul>
-              <li><a href="#">北部</a></li>
-              <li><a href="#">中部</a></li>
-              <li><a href="#">南部</a></li>
-              <li><a href="#">東部</a></li>
-              <li><a href="#">離島</a></li>
-            </ul>
           </li>
           <li><a href="#">關於我們</a></li>
-          <li><a href="store">門市據點</a></li>
+          <li><a href="/store">門市據點</a></li>
           <li><a href="#">常見問答</a></li>
           <li><a href="#">加盟專區</a></li>
           <li>
             <a id="member" href="#">品牌會員</a>
             <ul>
-              <li><a href="#">點 餐</a></li>
+              <li><a href="#">點 &nbsp; &nbsp; &nbsp; 餐</a></li>
               <li><a href="#">登入系統 </a></li>
-              <li><a href="#">註 冊</a></li>
+              <li><a href="#">註 &nbsp; &nbsp; &nbsp; 冊</a></li>
             </ul>
           </li>
         </ul>
@@ -80,38 +68,38 @@
       <section class="news">
         <!--做間隔-->
         <div></div>
-        <h1>News 最新消息</h1>
+        <h1>News 活動通知</h1>
         <div class="rectangles">
           <div class="rectangle">
             <img
-              title="單筆消費買5杯柳橙果粒茶，贈送限量環保聯名杯袋"
-              src="./images/news_01.jpg"
-              alt="單筆消費買5杯柳橙果粒茶，贈送限量環保聯名杯袋"
+              title="2023最後強檔回饋，全品項飲品現折10元"
+              src="/images/news_01.jpg"
+              alt="2023最後強檔回饋，全品項飲品現折10元"
             />
-            <p><a href="#">more + </a></p>
+            <p><a th:href="|@{news/activity}#activity01|">more + </a></p>
           </div>
           <div class="rectangle">
             <img
               title="芋泥波波鮮奶2.0現折15元"
-              src="./images/news_02.jpg"
+              src="/images/news_02.jpg"
               alt="芋泥波波鮮奶2.0現折15元"
             />
-            <p><a href="#">more + </a></p>
+            <p><a th:href="|@{news/activity}#activity02|">more + </a></p>
           </div>
           <div class="rectangle">
             <img
-              title="2023最後強檔回饋，全品項飲品現折10元"
-              src="./images/news_03.jpg"
-              alt="2023最後強檔回饋，全品項飲品現折10元"
+              title="單筆消費買5杯柳橙果粒茶，贈送限量環保聯名杯袋"
+              src="/images/news_03.jpg"
+              alt="單筆消費買5杯柳橙果粒茶，贈送限量環保聯名杯袋"
             />
-            <p><a href="#">more + </a></p>
+            <p><a th:href="|@{news/activity}#activity03|">more + </a></p>
           </div>
         </div>
       </section>
       <section class="new-product">
         <img
           class="fixed-image"
-          src="./images/new-product-bg.jpg"
+          src="/images/new-product-bg.jpg"
           alt="新品上市"
         />
         <div class="circles">
@@ -119,28 +107,28 @@
             <div>
               <img
                 title="抹茶鮮奶茶"
-                src="./images/new-products/green-tea-iced-milk.jpg"
+                src="/images/green-tea-iced-milk.jpg"
                 alt="抹茶鮮奶茶"
               />
             </div>
             <div class="content">
               <h3>新品上市</h3>
               <p>源自日本宇治抹茶風味，搭配小農乳香，滿足您的味蕾。</p>
-              <a href="#">了解更多</a>
+              <a th:href="|@{news/product}#product01|">了解更多</a>
             </div>
           </div>
           <div class="circle">
             <div>
               <img
                 title="荔枝蔓越莓汁"
-                src="./images/new-products/lychee-juice.jpg"
+                src="/images/lychee-juice.jpg"
                 alt="荔枝蔓越莓汁"
               />
             </div>
             <div class="content">
               <h3>新品上市</h3>
               <p>吃得到的鮮甜荔枝果粒，搭配特製的蔓越莓茶增加酸甜口感。</p>
-              <a href="#">了解更多</a>
+              <a th:href="|@{news/product}#product02|">了解更多</a>
             </div>
           </div>
         </div>
@@ -158,7 +146,7 @@
               <div class="item-inner w36">
                 <div class="item-sec is1">
                   <div>
-                    <img class="pic" src="./images/rank/01.jpg" alt="逮丸奶茶">
+                    <img class="pic" src="/images/rank/01.jpg" alt="逮丸奶茶">
                   </div>
                 </div>
                 <div class="item-sec is2">
@@ -172,7 +160,7 @@
                 <div class="item-inner w36">
                   <div class="item-sec is1">
                     <div>
-                      <img class="pic" src="./images/rank/02.jpg" alt="粉粿桂花檸檬">
+                      <img class="pic" src="/images/rank/02.jpg" alt="粉粿桂花檸檬">
                     </div>
                   </div>
                   <div class="item-sec is2">
@@ -186,7 +174,7 @@
                 <div class="item-inner w36">
                   <div class="item-sec is1">
                     <div>
-                      <img class="pic" src="./images/rank/03.jpg" alt="招牌紅茶">
+                      <img class="pic" src="/images/rank/03.jpg" alt="招牌紅茶">
                     </div>
                   </div>
                   <div class="item-sec is2">
@@ -200,7 +188,7 @@
                 <div class="item-inner w36">
                   <div class="item-sec is1">
                     <div>
-                      <img class="pic" src="./images/rank/04.jpg" alt="奶蓋蕎麥茶">
+                      <img class="pic" src="/images/rank/04.jpg" alt="奶蓋蕎麥茶">
                     </div>
                   </div>
                   <div class="item-sec is2">
@@ -214,7 +202,7 @@
                 <div class="item-inner w36">
                   <div class="item-sec is1">
                     <div>
-                      <img class="pic" src="./images/rank/05.jpg" alt="覆盆子氣泡冰茶">
+                      <img class="pic" src="/images/rank/05.jpg" alt="覆盆子氣泡冰茶">
                     </div>
                   </div>
                   <div>
@@ -253,7 +241,7 @@
         <div class="pic">
           <img
             title="門市據點"
-            src="./images/store_location.webp"
+            src="/images/store_location.webp"
             alt="門市據點"
           />
         </div>
@@ -264,7 +252,7 @@
             茶即是生活態度。<br />
             我們相信每一杯茶代表的都是一段情感、一個回憶。
           </p>
-          <a href="#">READ MORE +</a>
+          <a href="/store">READ MORE +</a>
         </div>
       </section>
       <section class="about">
@@ -281,10 +269,10 @@
         <div class="pic">
           <img id="tea1"
             title="關於我們"
-            src="./images/tea.jpg"
+            src="/images/tea.jpg"
             alt="關於爪哇"
           />
-          <img id="tea2" src="./images/teaTable.png" alt="茶具組">
+          <img id="tea2" src="/images/teaTable.png" alt="茶具組">
         </div>
       </section>
     </main>
@@ -319,10 +307,10 @@
       <section class="info-right">
         <nav>
           <ul>
-            <li><a href="#">最新消息</a></li>
+            <li><a href="/news">最新消息</a></li>
             <li><a href="#">飲品資訊</a></li>
             <li><a href="#">關於我們</a></li>
-            <li><a href="#">門市據點</a></li>
+            <li><a href="/store">門市據點</a></li>
             <li><a href="#">常見問答</a></li>
             <li><a href="#">加盟專區</a></li>
             <li><a href="#">品牌會員</a></li>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>最新消息-新店開幕</title>
+    <link rel="stylesheet"  th:href="@{/css/news.css}" type="text/css" >
+    <link rel="shortcut icon" href="/images/icon_logo.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script th:src="@{/js/news.js}"></script>
+    <link rel="stylesheet" href="/css/fragment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        section.activity {
+            padding: 2rem;
+            text-align: center;
+            line-height: 1.5rem;
+        }
+        section.activity h1 {
+            font-size: 2rem;
+            font-family: sans-serif;
+            margin: 2rem;
+        }
+        section span {
+            color: #1847cb;
+        }
+    </style>
+</head>
+<body>
+<!--header嵌入-->
+<div th:replace="/fragment/template1.html :: header"></div>
+<!--header-->
+<!--banner-->
+<div id="topArea" >
+    <h1><span>NEWS</span></h1>
+    <img class="imgArea" th:src="@{/images/news_banner.jpg}" alt="banner-menu"/>
+</div>
+
+<main>
+    <div class="alocation">
+        <span><a href="/index">&nbsp;首頁&nbsp;</a>/</span><span><a href="/news">&nbsp;最新消息&nbsp;</a></span><p>&nbsp;/&nbsp; 活動優惠 </p>
+    </div>
+    <section class="activity" id="activity01">
+        <h1>【 2023最後強檔回饋 全品項折10元 】</h1>
+        <p>
+            \ 現在從12.12至12.21 持爪蛙環保大象杯回購全品項現折10元 / <br>
+            感謝您一年來的支持！<br>
+            2023最後強檔回饋，<br>
+            凡持有爪蛙環保大象杯的顧客，<br>
+            即日起至12月21日，<br>
+            全品項享現折10元優惠！<br>
+            讓您用最環保的方式愛地球，<br>
+            還能享受實惠。🌍💚<br>
+            <span>#環保好時光 #感謝您的支持</span><br>
+        </p>
+        <img th:src="@{/images/news_activity/01_1.jpg}" alt="news">
+    </section>
+    <hr>
+    <section class="activity" id="activity02">
+        <h1>【 期間限定芋泥波波鮮奶2.0 #現折15元 】</h1>
+        <p>
+            \ 喜歡芋泥的您快看這邊 / <br>
+            🎉 期間限定芋泥波波鮮奶2.0 現在超值優惠中！<br>
+            11月8日至11月14日期間，<br>
+            凡持有爪蛙環保大象杯的朋友，<br>
+            回購限定單品項即享現折15元！<br>
+            -<br>
+            擁有這杯美味，<br>
+            月月都有專屬優惠，<br>
+            讓您每天都能品味到幸福感。<br>
+            快來店內一嚐這美味的獨家滋味吧！ 🥤✨
+            -<br>
+            <span>#芋泥波波鮮奶 #限定優惠 #感謝您的支持</span><br>
+        </p>
+        <img th:src="@{/images/news_activity/02_1.jpg}" alt="news">
+    </section>
+    <hr>
+    <section class="activity" id="activity03">
+        <h1>【 限量環保聯名杯袋開跑 #中秋節活動 】</h1>
+        <p>
+            \ 歡樂慶中秋 以禮相袋 / <br>
+            🌕 中秋慶典，特別獻上限定好禮！<br>
+            喜歡柳橙果粒茶的您，<br>
+            只要單筆消費滿5杯，<br>
+            即可獲得我們精心設計的限量環保聯名杯袋一個！<br>
+            品味中秋，<br>
+            以禮相袋，<br>
+            與摯愛一同分享美好時光。<br>
+            數量有限，
+            別錯過這個感恩的季節，<br>
+            快來店內享受茶香和溫馨吧！🌙🎁<br>
+            <span> #中秋好禮 #柳橙果粒茶 #限量聯名杯袋</span><br>
+        </p>
+        <img th:src="@{/images/news_activity/03_1.jpg}" alt="news">
+    </section>
+    <hr>
+</main>
+<button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
+<!--footer嵌入-->
+<div th:replace="/fragment/template1.html :: footer"></div>
+<!--footer-->
+
+</body>
+</html>

@@ -21,7 +21,7 @@ header {
   align-items: end;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 1000000;
   box-shadow: 0px 5px 5px -5px #777;
 }
 header section.logo {
@@ -92,6 +92,12 @@ ul.drop-down-menu a:hover {
 }
 
 ul.drop-down-menu li:hover > a {
+  /* 滑鼠移入次選單上層按鈕保持變色*/
+  background-color: #ffffff;
+  color: #846950;
+}
+
+ul.drop-down-menu li:focus {
   /* 滑鼠移入次選單上層按鈕保持變色*/
   background-color: #ffffff;
   color: #846950;
@@ -542,17 +548,129 @@ footer section.info-right p {
 }
 
 /*RWD開始*/
-@media screen and (max-width: 1370px) {
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: start;
+    position: static;
+  }
   header section.logo {
-    width: 100%;
+    margin: 0 auto;
+    flex: 1 1 200px;
+    justify-content: flex-start;
+  }
+  header section.logo img {
+    width: 30vw;
+    height: 30vw;
+  }
+  header nav {
+    flex: 2 1 100px;
+    justify-content: space-around;
+    display: block;
+  }
+  header nav .social-icons {
+    top: -5%;
+    left: 38%;
   }
   header nav ul.drop-down-menu {
-    flex-direction: column;
+    padding: 1rem 2rem;
+    margin-left: 3rem;
   }
-}
-@media screen and (max-width: 1080px) {
+  header nav ul.drop-down-menu li {
+    margin-top: 1.5rem;
+  }
+  header nav ul.drop-down-menu li a {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  header nav ul.drop-down-menu ul li {
+    margin-top: 0; /* 移除間距 */
+  }
+  main div.fixed-menu div.store-menu {
+    height: 45vh;
+  }
+  main div.fixed-menu div.store-menu div.triangle {
+    border-left: 50px solid transparent;
+    border-right: 50px solid red;
+    border-bottom: 80px solid red;
+  }
+  main div.fixed-menu div.store-menu div.triangle a {
+    font-size: 1.2rem;
+  }
+  main div.fixed-menu div.store-menu div.triangle a span {
+    font-size: 1.4rem;
+  }
+  main section.background-image h3 {
+    font-size: 2rem;
+  }
+  main section.news div.rectangles div.rectangle {
+    flex: 0 1 600px;
+  }
+  main section.news div.rectangles div.rectangle p a {
+    font-size: 1.5rem;
+  }
+  main section.new-product {
+    min-height: 40vw;
+  }
   main section.new-product div.circles {
-    flex-direction: column;
+    width: 90%;
+  }
+  main section.new-product div.circles div.circle div.content h3 {
+    font-size: 1.5rem;
+  }
+  main section.rank div.swiper-container div.swiper-wrapper div.swiper-slide .pic {
+    width: 100%;
+  }
+  main section.location {
+    display: block;
+  }
+  main section.about {
+    display: block;
+  }
+  main section.about div.pic {
+    text-align: center;
+  }
+  main section.about div.pic #tea1 {
+    width: 80vw;
+    height: 80vw;
+  }
+  main section.about div.pic #tea2 {
+    width: 50vw;
+    height: 50vw;
+    top: 50%;
+    right: 50%;
+  }
+  footer {
+    display: block;
+  }
+  footer section.logo {
+    width: 20vw;
+    margin: auto;
+  }
+  footer section.info-left {
+    text-align: center;
+    font-size: 1rem;
+  }
+  footer section.info-right {
+    margin: 0;
+  }
+  footer section.info-right nav ul {
+    margin: 0.5rem;
+    justify-content: center;
+    padding: 0;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  footer section.info-right nav ul li {
+    margin: auto;
+    padding: 0.5rem 0;
+  }
+  footer section.info-right nav ul li a {
+    font-size: 1rem;
+  }
+  footer section.info-right p {
+    margin-left: 20%;
+    margin-right: auto;
   }
 }
 

@@ -75,7 +75,18 @@ body {
 }
 
 /*main*/
-
+.alocation {
+    display: flex;
+    padding: 2rem;
+}
+.alocation a {
+    text-decoration: none;
+    color: #8f7a66;
+}
+.alocation a:hover {
+    text-decoration: underline;
+    text-decoration-color: #8f7a66;
+}
 .newsblock{
     width: 100%;
     padding:1.5rem;
@@ -100,6 +111,7 @@ body {
 
 .n01 img{
     margin-bottom: 20px;
+    width: 100%;
 }
 .newsdate{
     margin-bottom: 1.2rem;
@@ -113,4 +125,24 @@ body {
     color: #775F46;
     margin-top: 30px;
     margin-bottom:30px;
+}
+.activity img {
+    width: 50%;
+}
+
+/*RWD*/
+@media screen and (max-width: 768px) {
+    #topArea h1 {
+        font-size: 2.5rem;
+        top: 40%;
+    }
+
+    #btnNews {
+        width: 100%;
+    }
+    #btnOpen, #btnActivity, #btnProduct {
+        font-size: 1rem;
+        width: 120px;
+        height: 40px;
+    }
 }
