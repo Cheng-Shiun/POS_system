@@ -11,7 +11,7 @@ public class DrinkItemController {
     @Autowired
     DrinkItemService drinkItemService;
 
-    @GetMapping("/drink_item")
+    @GetMapping("/menu")
     public String getDrinkItem(Model model){
         model.addAttribute ("originals", drinkItemService.getAllByType ("original"));
         model.addAttribute ("flavors", drinkItemService.getAllByType ("flavor"));

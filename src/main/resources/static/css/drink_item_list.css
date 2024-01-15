@@ -1,6 +1,5 @@
 body {
     font-family: Arial, sans-serif;
-    font-size: 20px;
 }
 /*Top指標*/
 #scrollToTopBtn {
@@ -33,7 +32,6 @@ body {
     width: 100%;
     border-radius: 0 0 80% 80% / 0 0 60% 60%;
     margin-bottom: 80px;
-    margin-top: 110px;
 }
 
 #topArea h1{
@@ -309,6 +307,10 @@ body {
     #footernav .nav-item a {
         font-size: 12px;
         padding: 0 8px 0 8px;
+    }
+    #topArea h1 {
+        font-size: 2.5rem;
+        top: 40%;
     }
 }
 

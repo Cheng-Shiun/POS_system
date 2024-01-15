@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 public class WebController
 {
+    @GetMapping("/")
+    public String getLoading(){
+        return "loading";
+    }
 
     @GetMapping("/index")
     public String getHomePage()
@@ -34,13 +38,8 @@ public class WebController
         return"news_product";
     }
 
-    @GetMapping("/menu")
-    public String getMenu()
-    {
-        return "Menu";
 
-    }
-    @GetMapping("/aboutus")
+    @GetMapping("/aboutUs")
     public String getAboutUs()
     {
         return"AboutUs";
@@ -62,20 +61,15 @@ public class WebController
     {
         return"Coordinates";
     }
-    @GetMapping("/franchise")
-    public String getFranchise()
-    {
-        return"Franchise";
-    }
     @GetMapping("/member")
     public String getMember()
     {
         return"Member";
     }
-    @GetMapping("/qna")
-    public String getQnA()
+    @GetMapping("/qa")
+    public String getQA()
     {
-        return"QandA";
+        return"QA";
     }
 
 
