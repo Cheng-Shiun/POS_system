@@ -48,11 +48,6 @@ public class WebController
     {
         return"Coordinates";
     }
-    @GetMapping("/franchise")
-    public String getFranchise()
-    {
-        return"franchise";
-    }
     @GetMapping("/member")
     public String getMember()
     {
