@@ -1,4 +1,4 @@
-package com.example.drink.Dao.mapper;
+package com.example.drink.DAO;
 
 import com.example.drink.model.FranchiseModel;
 import org.springframework.beans.factory.annotation.Autowired;
