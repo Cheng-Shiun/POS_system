@@ -1,0 +1,417 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #716147;
+  height: 100%;
+  width: 100%;
+}
+
+.var-highlight {
+  color: green;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.string-highlight {
+  color: green;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.image-container {
+  animation: swirlAdded 1s;
+}
+
+@keyframes swirlAdded {
+  from {
+    opacity: 0;
+    rotate: 0;
+    scale: 0.1;
+  }
+  to {
+    opacity: 1;
+    rotate: 360deg;
+    scale: 1;
+  }
+}
+
+
+.container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative; /* 對子元素絕對定位的參考 */
+}
+
+/* 確保圖片容器和圖片居中 */
+.image-container {
+  position: relative; /* 設置相對定位作為子元素絕對定位的基準 */
+  text-align: center; /* 對於內聯元素或圖片居中 */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 絕對定位打字機文字 */
+#typewriter {
+  position: absolute;
+  top: 32%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  z-index: 10; /* 確保文字在最上層 */
+}
+
+/* 絕對定位預載動畫和圖片 */
+.preloader {
+  position: absolute;
+  top: 54%;
+  left: 40.7%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  z-index: 5; /* 圖片應該在下方，所以z-index小於typewriter */
+}
+
+
+#typewriter {
+  font-size: 1rem;
+  margin: 0;
+  font-family: "Courier New";
+}
+
+#typewriter:after {
+  content: "|";
+  -webkit-animation: blink 500ms linear infinite alternate;
+          animation: blink 500ms linear infinite alternate;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.preloader__ring {
+  color: #9d237c;
+  font: 1em Dosis, sans-serif;
+  line-height: 1.5;
+  perspective: 40em;
+}
+
+.preloader {
+  display: none; 
+  animation: tiltSpin 8s linear infinite;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 17em;
+  height: 17em;
+  animation-play-state: paused;
+}
+
+.preloader, .preloader__ring {
+  transform-style: preserve-3d;
+}
+
+.preloader__ring {  
+  animation-name: spin;
+  animation-duration: 4s;
+  animation-timing-function: inherit;
+  animation-iteration-count: inherit;
+  font-size: 2em;
+  position: relative;
+  height: 2rem;
+  width: 1rem;
+  animation-play-state: paused;
+}
+
+.preloader__ring:nth-child(even) {  
+  animation-direction: reverse;
+  animation-play-state: paused;
+}
+
+.preloader__sector {
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  text-transform: uppercase;
+  transform: translateZ(7rem);
+}
+
+.preloader__sector, .preloader__sector:empty:before {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.preloader__sector:empty:before {
+  background: linear-gradient(transparent 45%, currentColor 45% 55%, transparent 55%);
+  content: "";
+}
+
+.preloader__sector:nth-child(2) {
+  transform: rotateY(12deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(3) {
+  transform: rotateY(24deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(4) {
+  transform: rotateY(36deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(5) {
+  transform: rotateY(48deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(6) {
+  transform: rotateY(60deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(7) {
+  transform: rotateY(72deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(8) {
+  transform: rotateY(84deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(9) {
+  transform: rotateY(96deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(10) {
+  transform: rotateY(108deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(11) {
+  transform: rotateY(120deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(12) {
+  transform: rotateY(132deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(13) {
+  transform: rotateY(144deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(14) {
+  transform: rotateY(156deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(15) {
+  transform: rotateY(168deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(16) {
+  transform: rotateY(180deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(17) {
+  transform: rotateY(192deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(18) {
+  transform: rotateY(204deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(19) {
+  transform: rotateY(216deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(20) {
+  transform: rotateY(228deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(21) {
+  transform: rotateY(240deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(22) {
+  transform: rotateY(252deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(23) {
+  transform: rotateY(264deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(24) {
+  transform: rotateY(276deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(25) {
+  transform: rotateY(288deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(26) {
+  transform: rotateY(300deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(27) {
+  transform: rotateY(312deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(28) {
+  transform: rotateY(324deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(29) {
+  transform: rotateY(336deg) translateZ(7rem);
+}
+.preloader__sector:nth-child(30) {
+  transform: rotateY(348deg) translateZ(7rem);
+}
+/* Animations */
+@keyframes tiltSpin {
+  from {
+    transform: rotateY(0) rotateX(30deg);
+  }
+  to {
+    transform: rotateY(1turn) rotateX(30deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
+
+.new-text {
+  color: #e4ddd2;
+  margin: auto;
+  height: 100vh;
+  text-align: center;
+  display: flex; /* 使用 Flex 布局 */
+  justify-content: center; /* 水平居中对齐文本 */
+  align-items: center; /* 垂直居中对齐文本 */
+  animation-name: growAndFade;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes growAndFade {
+  0% {
+    transform: scale(1); /* 初始狀態，文字大小為原始大小 */
+    opacity: 1; /* 完全不透明 */
+  }
+  50% {
+    transform: scale(10); /* 中間狀態，文字放大到150% */
+  }
+  100% {
+    transform: scale(20); /* 最終狀態，文字放大到200% */
+    opacity: 0; /* 完全透明，即消失 */
+  }
+}
+
+
+
+
+
+
+/* 小于600px的屏幕样式 */
+@media (max-width: 600px) {
+  img {
+    width: 300px;/* 在这里添加小屏幕样式 */
+    height: 400px;
+  }
+
+  #typewriter {
+    top: 32%;
+    left: 45%;
+    font-size: 0.6rem;
+  }
+
+  .var-highlight {
+    font-size: 10px;
+  }
+  
+  .string-highlight {
+    font-size: 10px;
+  }
+
+  .preloader {
+    width: 3em;
+    height: 5em;
+    top: 54%;
+    left: 45%;
+  }
+
+  .preloader__ring {
+    font-size: 1.3em;
+    height: 1rem;
+    width: 0.5rem;
+  }
+
+}
+
+/* 600px到1024px之间的屏幕样式 */
+@media (min-width: 601px) and (max-width: 1024px) {
+  img {
+    width: 400px;
+    height: 500px;
+  }
+
+  #typewriter {
+    top: 32%;
+    left: 45.5%;
+    font-size: 0.8rem;
+  }
+
+  .var-highlight {
+    font-size: 15px;
+  }
+  
+  .string-highlight {
+    font-size: 15px;
+  }
+
+  .preloader {
+    width: 3em;
+    height: 5em;
+    top: 54%;
+    left: 47%;
+  }
+
+  .preloader__ring {
+    font-size: 1.7em;
+    height: 1.2rem;
+    width: 0.8rem;
+  }
+
+}
+
+/* 大于1024px的屏幕样式 */
+@media (min-width: 1025px) {
+  img {
+    width: 500px;
+    height: 600px;
+  }
+
+  #typewriter {
+    top: 32%;
+    left: 47%;
+    font-size: 1rem;
+  }
+
+  .var-highlight {
+    font-size: 24px;
+  }
+  
+  .string-highlight {
+    font-size: 24px;
+  }
+
+  .preloader {
+    width: 17em;
+    height: 17em;
+    top: 54%;
+    left: 40.7%;
+  }
+
+  .preloader__ring {
+    font-size: 2em;
+    height: 2rem;
+    width: 1rem;
+  }
+}

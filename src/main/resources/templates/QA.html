@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>常見問答</title>
+    <link rel="stylesheet"  th:href="@{/css/QA.css}" type="text/css" >
+    <link rel="shortcut icon" href="/images/icon_logo.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script th:src="@{/js/QA.js}"></script>
+    <link rel="stylesheet" href="/css/fragment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <!--header嵌入-->
+    <div th:replace="/fragment/template1.html :: header"></div>
+    <!--header-->
+    <div id="topArea" >
+        <h1><span style="color: #ffffff; text-shadow: 0.2rem 0.2rem 0.8rem #000000">FAQ</span></h1>
+        <img class="imgArea" th:src="@{/images/qa_banner.jpg}" alt="banner-menu"/>
+    </div>
+    <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
+    <main>
+            <div id="btnQA">
+                <button class="btnAll" onclick="bA()" onmousedown="mouseDownAll()">全部問題</button>
+                <button class="btnDk" onclick="bD()" onmousedown="mouseDownDk()">飲品相關</button>
+                <button class="btnMb" onclick="bM()" onmousedown="mouseDownMb()">品牌會員</button>
+                <button class="btnOd" onclick="bO()" onmousedown="mouseDownOd()">網路訂餐</button>
+            </div>
+
+            <div id="drinkqa">
+                <div class="q1" tabindex="0" onclick="showq1()" onmousedown="mouseDown()"><h3>是否有提供選擇不加糖或減糖的選項？</h3></div>
+                <div class="a1"><h4>是的，我們提供客製化的服務，您可以選擇不加糖、減糖或全糖，以滿足不同口味的需求。</h4></div>
+                <div class="q2" tabindex="0" onclick="showq2()"><h3>茶飲中是否含有咖啡因？</h3></div>
+                <div class="a2"><h4>茶葉中自然含有咖啡因，但我們也提供無咖啡因的茶飲選擇，如花草茶或水果茶。</h4></div>
+            </div>
+
+            <div id="memberqa">
+                <div class="q3" tabindex="0" onclick="showq3()"><h3>如何加入我們的會員計畫？</h3></div>
+                <div class="a3"><h4>您可以透過我們的官方網站或在門店內的指定區域填寫會員申請表格，或使用我們的行動應用程式進行註冊。</h4></div>
+                <div class="q4" tabindex="0" onclick="showq4()"><h3>會員卡有什麼好處？</h3></div>
+                <div class="a4"><h4>我們的會員卡可以享有專屬折扣、累積消費點數，以及不定期的會員專屬活動和優惠，讓您在消費中獲得更多價值。</h4></div>
+            </div>
+
+            <div id="orderqa">
+                <div class="q5" tabindex="0" onclick="showq5()"><h3>茶飲是否有提供外送服務？</h3></div>
+                <div class="a5"><h4>我們提供外送服務，您可以在特定範圍內享受我們的茶飲。</h4></div>
+                <div class="q6" tabindex="0" onclick="showq6()"><h3>是否接受線上訂購或預訂服務？</h3></div>
+                <div class="a6"><h4>是的，您可以透過我們的網站或行動應用程式進行線上訂購或預訂服務。</h4></div>
+            </div>
+    </main>
+    <!--footer嵌入-->
+    <div th:replace="/fragment/template1.html :: footer"></div>
+    <!--footer-->
+
+
+</body>
+</html>

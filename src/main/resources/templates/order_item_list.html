@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Selectmenu - Default functionality</title>
+    <!--    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">-->
+    <!--    <link rel="stylesheet" href="/resources/demos/style.css">-->
+    <!--    <style>-->
+    <!--        fieldset {-->
+    <!--            border: 0;-->
+    <!--        }-->
+    <!--        label {-->
+    <!--            display: block;-->
+    <!--            margin: 30px 0 0 0;-->
+    <!--        }-->
+    <!--        .overflow {-->
+    <!--            height: 200px;-->
+    <!--        }-->
+    <!--    </style>-->
+    <style>
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        input[type=reset] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=reset]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="row column text-center">
+    <h2>前台訂單處理系統</h2>
+    <hr>
+</div>
+<div class="demo">
+
+    <form id="order" action="/addOrder" method="post">
+
+        <!--        <fieldset>-->
+        <label for="type">選擇種類</label>
+        <select name="type" id="type" class="dropdown">
+            <option disabled selected>請選擇種類</option>
+            <option th:each=" product:${products}" th:text="${product.getProduct()}"></option>
+        </select>
+
+        <label for="product">選擇產品</label>
+        <select name="product" id="product" class="dropdown">
+            <option disabled selected>請選擇產品</option>
+            <!--                <optgroup th:each=" original:${originals}" label="原味茶">-->
+            <!--                    <option th:text="${original.getName()}"></option>-->
+            <!--                </optgroup>-->
+            <!--                <optgroup th:each="flavor :${flavors}" label="風味茶">-->
+            <!--                    <option th:text="${flavor.getName()}"></option>-->
+            <!--                </optgroup>-->
+            <!--                <optgroup th:each="taste :${tastes}" label="滋味茶">-->
+            <!--                    <option th:text="${taste.getName()}"></option>-->
+            <!--                </optgroup>-->
+            <!--                <optgroup th:each="milk :${milks}" label="香醇奶茶">-->
+            <!--                    <option th:text="${milk.getName()}"></option>-->
+            <!--                </optgroup>-->
+        </select>
+
+        <label for="material">選擇加料</label>
+        <select name="material" id="material" class="dropdown">
+            <option disabled selected>請選擇加料</option>
+            <option th:each="material : ${materials}" th:text="${material.getProduct()}"></option>
+        </select>
+
+        <label for="qty">選擇數量</label>
+        <select name="qty" id="qty" class="dropdown">
+            <option disabled selected>請選擇數量</option>
+            <option th:each="number : ${#numbers.sequence(1, 10)}" th:text="${number}"></option>
+        </select>
+
+        <label for="states">選擇冷熱飲</label>
+        <select name="states" id="states" class="dropdown">
+            <option disabled selected>請選擇冷熱飲</option>
+            <option>冷飲</option>
+            <option>熱飲</option>
+        </select>
+        <!--        </fieldset>-->
+        <div class="widget">
+            <input type="submit" onclick="erro()" value="送出訂單">
+            <input type="reset" value="重選訂單">
+        </div>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!--<script src="https://code.jquery.com/jquery-3.6.0.js"></script>-->
+<!--<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>-->
+<script>
+    $(document).ready(function(){
+        $("#type").change(function(){
+            var selectedValue = $(this).val();
+            addOrderById(selectedValue);
+        });
+
+        $('#product').change(function (){
+            if($(this).val() === '') {
+                alert('請選擇加料內容');
+                return false;
+            }
+        });
+
+        $('#material').change(function (){
+            if($(this).val() === '') {
+                alert('請選擇加料內容');
+                return false;
+            }
+        });
+
+        $('#qty').change(function (){
+            if($(this).val() === '') {
+                alert('請選擇加料內容');
+                return false;
+            }
+        });
+
+        $('#states').change(function (){
+            if($(this).val() === '') {
+                alert('請選擇加料內容');
+                return false;
+            }
+        });
+
+        // $('#order').submit(function (event){
+        //     $('.dropdown').each(function (){
+        //         if($(this).val() === '') {
+        //             alert('表單選取不完整');
+        //             event.preventDefault();
+        //             return false;
+        //         }
+        //     })
+        // });
+
+        $('#order').submit(function (){
+            alert("請確認後在送出");
+        });
+
+        function addOrderById() {
+            let type = $('#type').val();
+            $.get( '/api/addOrderByType/' + type,
+                function (data , status) {
+                    console.log("發出 ajax .get 到 springboot api server 取資料結果:")
+                    $('#product').empty();
+                    $('#product').append('<option disabled selected>請選擇產品</option>');
+                    for (var i=0; i<data.length; i++) {
+                        console.log( JSON.stringify(data[i]));
+                        console.log(data[i].product);
+                        $('#product').append('<option>' + data[i].product + '</option>');
+                    }
+                }
+            )
+        }
+
+        $( function() {
+            $( "#type" )
+                .selectmenu()
+                .selectmenu( "menuWidget" )
+                .addClass( "overflow" );
+
+            $( "#product" )
+                .selectmenu()
+                .selectmenu( "menuWidget" )
+                .addClass( "overflow" );
+
+            $( "#material" )
+                .selectmenu()
+                .selectmenu( "menuWidget" )
+                .addClass( "overflow" );
+
+            $( "#qty" )
+                .selectmenu()
+                .selectmenu( "menuWidget" )
+                .addClass( "overflow" );
+
+            $( "#states" ).selectmenu();
+
+            $( ".widget input[type=submit], .widget input[type=reset],.widget a, .widget button" ).button();
+        } );
+    });
+
+</script>
+</body>
+</html>

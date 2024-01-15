@@ -1,0 +1,121 @@
+body {
+    font-family: sans-serif, Arial, 新細明體;
+}
+
+/*Top指標*/
+#scrollToTopBtn {
+    display: none;          /*初始的畫面先隱藏按鈕*/
+    position: fixed;        /*固定按鈕在畫面上方*/
+    bottom: 150px;
+    right: 20px;
+    background-color: #70bf2d;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius:15px;     /*邊框弧度*/
+    padding: 10px;
+    cursor: pointer;            /*滑鼠指標 變成手指形狀*/
+    box-shadow: 2px 5px 5px #005707;
+}
+
+/*banner*/
+#topArea{
+    position: relative;
+}
+#topArea img{
+    width: 100%;
+    border-radius: 0 0 80% 80% / 0 0 60% 60%;
+    margin-bottom: 80px;
+}
+main {
+    font-family: sans-serif;
+    margin-bottom: 5rem;
+}
+#topArea h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 900;
+    font-family: sans-serif,Arvo;
+    font-size: 56px;
+}
+
+/*main*/
+#drinkqa, #memberqa, #orderqa{
+    width: 50%;
+    margin: 0 auto;
+}
+#btnQA{
+    width: 50%;
+    margin: 2rem auto 4rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+.btnAll, .btnDk, .btnMb, .btnOd{
+    font-size: 1.5rem;
+    border: 1.5px solid #005707;
+    border-radius: 30px;
+    padding: 0.4rem 1.4rem;
+    background: none;
+}
+.q1, .q2, .q3, .q4, .q5, .q6{
+    border: 1.5px solid #569c1a;
+    border-radius:30px;
+    height: 50px;
+    display: flex;
+    margin-bottom: 1rem;
+}
+.q1:hover, .q2:hover,
+.q3:hover, .q4:hover,
+.q5:hover, .q6:hover,
+.btnAll:hover, .btnDk:hover,
+.btnMb:hover, .btnOd:hover{
+    border: 5px solid  #569c1a;
+}
+.q1:focus, .q2:focus,
+.q3:focus, .q4:focus,
+.q5:focus, .q6:focus{
+    background: #569c1a;
+    color: #FFFFFF;
+}
+
+h3{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin: auto 0 auto 1rem;
+}
+
+.a1, .a2, .a3, .a4, .a5, .a6{
+    border: 2px solid #662f00;
+    border-radius:30px;
+    display: flex;
+    margin-bottom: 3rem;
+    padding: 0.7rem 1rem 0.7rem 0;
+    text-align: justify;
+}
+
+h4{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin: auto 0 auto 1rem;
+    line-height: 1.5;
+}
+
+/*RWD*/
+@media screen and (max-width: 768px) {
+    #topArea h1 {
+        font-size: 2.5rem;
+        top: 40%;
+    }
+
+    #btnNews {
+        width: 100%;
+    }
+    #btnOpen, #btnActivity, #btnProduct {
+        font-size: 1rem;
+        width: 120px;
+        height: 40px;
+    }
+}
