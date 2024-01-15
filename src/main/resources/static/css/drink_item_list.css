@@ -296,6 +296,9 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
+    #topArea h1{
+        font-size: 42px;
+    }
 }
 
 /* RWD for #headnav, #footernav */

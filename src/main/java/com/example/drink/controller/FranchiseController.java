@@ -16,7 +16,7 @@ public class FranchiseController {
 
     @PostMapping("/submitForm")
     public String submitForm(@RequestParam("name") String name,
-                             @RequestParam("gender") String gender,
+                             @RequestParam(value = "gender", required = false) String gender, //equired = false 框架在資料綁定時，允許該欄位的值(參數)可以不存在(空字串)或為空（null）
                              @RequestParam("phone") String phone,
                              @RequestParam("lineID") String lineID,
                              @RequestParam("address") String address,
