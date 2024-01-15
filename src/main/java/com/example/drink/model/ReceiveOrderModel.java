@@ -14,12 +14,12 @@ import java.util.Date;
 @Getter
 @Setter
 public class ReceiveOrderModel {
-    private int on;
+    private int oNumber;
     private String type;
     private String product;
     private String material;
     private int qty;
     private String states;
     private Date date;
-    private Date edate;
+    private Date eDate;
 }

@@ -11,7 +11,7 @@ public class CheckOutOrderMapper implements RowMapper<CheckOutOrderModel> {
     @Override
     public CheckOutOrderModel mapRow (ResultSet rs, int rowNum) throws SQLException {
         CheckOutOrderModel checkOutOrderModel = new CheckOutOrderModel ();
-        checkOutOrderModel.setEdate(rs.getDate("edate"));
+        checkOutOrderModel.setEDate(rs.getDate("eDate"));
 //        orderItemModel.setPrice (rs.getInt ("price"));
 //        orderItemModel.setType (rs.getString("type"));
 //        drinkItemModel.setPn(rs.getString("pn"));

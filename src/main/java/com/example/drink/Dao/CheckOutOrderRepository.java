@@ -16,7 +16,7 @@ public class CheckOutOrderRepository {
     private JdbcTemplate jdbcTemplate;
 
     public int checkOutOrder (CheckOutOrderModel checkOutOrderModel) {
-        String sql = "insert into javateaorder(edate) values (?)";
-        return jdbcTemplate.update(sql, checkOutOrderModel.getEdate());
+        String sql = "UPDATE javateaorder SET eDate = NOW() WHERE oNumber = ?";
+        return jdbcTemplate.update(sql, checkOutOrderModel.getEDate());
     }
 }

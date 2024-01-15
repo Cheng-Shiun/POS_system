@@ -12,5 +12,5 @@ import java.util.Date;
 @Getter
 @Setter
 public class CheckOutOrderModel {
-    private Date edate;
+    private Date eDate;
 }

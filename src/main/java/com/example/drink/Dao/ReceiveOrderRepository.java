@@ -26,7 +26,7 @@ public class ReceiveOrderRepository {
 
     public List<ReceiveOrderModel> checkOutOrderByDate () {
         ReceiveOrderMapper receiveOrderMapper = new ReceiveOrderMapper();
-        List<ReceiveOrderModel> receiveOrderModel = jdbcTemplate.query("SELECT * from javateaorder WHERE edate IS null",receiveOrderMapper);
+        List<ReceiveOrderModel> receiveOrderModel = jdbcTemplate.query("SELECT * from javateaorder WHERE eDate IS null",receiveOrderMapper);
         return receiveOrderModel;
     }
 

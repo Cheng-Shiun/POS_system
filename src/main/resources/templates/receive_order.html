@@ -103,7 +103,7 @@
 </div>
 <div id="sortable" class="row small-up-2 medium-up-3 large-up-6">
     <div th:each="receiveOrder : ${receiveOrder}" class="column">
-        <h5>訂單號碼：<span th:text="${receiveOrder.getOn()}"></span></h5>
+        <h5>訂單號碼：<span th:text="${receiveOrder.getONumber()}"></span></h5>
         <p>種類：<span th:text="${receiveOrder.getType()}"></span></p>
         <p>產品：<span th:text="${receiveOrder.getProduct()}"></span></p>
         <p>加料：<span th:text="${receiveOrder.getMaterial()}"></span></p>
