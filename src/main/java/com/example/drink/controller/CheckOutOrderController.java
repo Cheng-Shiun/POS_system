@@ -14,9 +14,9 @@ public class CheckOutOrderController {
     CheckOutOrderService checkOutOrderService;
 
     @GetMapping("/checkOutOrder")
-    public String addOrder(Model model) {
+    public String checkOutOrder(Model model) {
         AddOrderModel addOrderModel = new AddOrderModel();
         model.addAttribute( "addOrderModel", addOrderModel);
-        return "checkOutOrder";
+        return "receive_order";
     }
 }

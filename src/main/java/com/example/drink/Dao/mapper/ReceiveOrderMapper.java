@@ -5,6 +5,8 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class ReceiveOrderMapper implements RowMapper<ReceiveOrderModel> {
     @Override
@@ -16,7 +18,8 @@ public class ReceiveOrderMapper implements RowMapper<ReceiveOrderModel> {
         receiveOrderModel.setMaterial( rs.getString("material"));
         receiveOrderModel.setQty( rs.getInt("qty"));
         receiveOrderModel.setStates( rs.getString("states"));
-//        receiveOrderModel.setDate( rs.getDate("date"));
+        receiveOrderModel.setDate( rs.getDate("date"));
+        receiveOrderModel.setEdate( rs.getDate("edate"));
         return receiveOrderModel;
     }
 }

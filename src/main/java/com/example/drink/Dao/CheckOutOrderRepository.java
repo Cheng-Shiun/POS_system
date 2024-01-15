@@ -17,6 +17,6 @@ public class CheckOutOrderRepository {
 
     public int checkOutOrder (CheckOutOrderModel checkOutOrderModel) {
         String sql = "insert into javateaorder(edate) values (?)";
-        return jdbcTemplate.update(sql, checkOutOrderModel.getDate());
+        return jdbcTemplate.update(sql, checkOutOrderModel.getEdate());
     }
 }

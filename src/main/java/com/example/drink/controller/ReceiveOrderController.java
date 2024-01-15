@@ -15,12 +15,17 @@ public class ReceiveOrderController {
     @Autowired
     ReceiveOrderService receiveOrderService;
 
-    @Autowired
-    ReceiveOrderRepository receiveOrderRepository;
+
+//    @GetMapping("/receiveOrder")
+//    public String receiveOrder(Model model) {
+//        List<ReceiveOrderModel> receiveOrder = receiveOrderService.receiveOrderAll();
+//        model.addAttribute("receiveOrder", receiveOrder);
+//        return "receive_order";
+//    }
 
     @GetMapping("/receiveOrder")
-    public String receiveOrder(Model model) {
-        List<ReceiveOrderModel> receiveOrder = receiveOrderRepository.receiveOrder();
+    public String checkOutOrder(Model model) {
+        List<ReceiveOrderModel> receiveOrder = receiveOrderService.checkOutOrderByDate();
         model.addAttribute("receiveOrder", receiveOrder);
         return "receive_order";
     }
