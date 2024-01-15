@@ -55,135 +55,135 @@
     <!--茶飲品項 與 加料品項-->
     <main>
     <div class="drink-section" >
-            <div class="drink-category">
-                <h2>原味茶</h2>
-                <hr>
-                <table class="original" th:each="item :${originals}" th:if="${item.type=='original'}" >
-                    <tr >
-                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
-                        <td class="tdprice" th:text="${item.getPrice()}"></td>
-                    </tr>
-                </table>
-            </div>
+        <div class="drink-category">
+            <h2>原味茶</h2>
+            <hr>
+            <table class="original" th:each="item :${originals}" th:if="${item.type=='original'}" >
+                <tr >
+                    <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                    <td class="tdprice" th:text="${item.getPrice()}"></td>
+                </tr>
+            </table>
+        </div>
 
-            <div  class="drink-category">
-                <h2>風味茶</h2>
-                <hr>
-                <table class="flavor" th:each="item :${flavors}" th:if="${item.type=='flavor'}">
-                    <tr>
-                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
-                        <td class="tdprice" th:text="${item.getPrice()}"></td>
-                    </tr>
-                </table>
-            </div>
+        <div  class="drink-category">
+            <h2>風味茶</h2>
+            <hr>
+            <table class="flavor" th:each="item :${flavors}" th:if="${item.type=='flavor'}">
+                <tr>
+                    <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                    <td class="tdprice" th:text="${item.getPrice()}"></td>
+                </tr>
+            </table>
+        </div>
 
-            <div class="drink-category">
-                <h2>滋味茶</h2>
-                <hr>
-                <table class="taste" th:each="item :${tastes}" th:if="${item.type=='taste'}">
-                    <tr>
-                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
-                        <td class="tdprice" th:text="${item.getPrice()}"></td>
-                    </tr>
-                </table>
-            </div>
+        <div class="drink-category">
+            <h2>滋味茶</h2>
+            <hr>
+            <table class="taste" th:each="item :${tastes}" th:if="${item.type=='taste'}">
+                <tr>
+                    <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                    <td class="tdprice" th:text="${item.getPrice()}"></td>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <div class="drink-section" >
-            <div class="drink-category">
-                <h2>香醇奶茶</h2>
-                <hr>
-                <table class="milk" th:each="item :${milks}" th:if="${item.type=='milk'}">
-                    <tr>
-                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
-                        <td class="tdprice" th:text="${item.getPrice()}"></td>
-                    </tr>
-                </table>
-            </div>
+        <div class="drink-category">
+            <h2>香醇奶茶</h2>
+            <hr>
+            <table class="milk" th:each="item :${milks}" th:if="${item.type=='milk'}">
+                <tr>
+                    <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                    <td class="tdprice" th:text="${item.getPrice()}"></td>
+                </tr>
+            </table>
+        </div>
 
-            <div class="drink-category">
-                <h2>芝士奶蓋</h2>
-                <hr>
-                <table class="cheese"  th:each="item :${cheeses}" th:if="${item.type=='cheese'}">
-                    <tr>
-                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
-                        <td class="tdprice" th:text="${item.getPrice()}"></td>
-                    </tr>
-                </table>
-            </div >
+        <div class="drink-category">
+            <h2>芝士奶蓋</h2>
+            <hr>
+            <table class="cheese"  th:each="item :${cheeses}" th:if="${item.type=='cheese'}">
+                <tr>
+                    <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                    <td class="tdprice" th:text="${item.getPrice()}"></td>
+                </tr>
+            </table>
+        </div >
 
-            <div class="drink-category">
-                <h2>鮮奶茶</h2>
-                <hr>
-                <table class="freshMilk"  th:each="item :${freshmilks}" th:if="${item.type=='freshMilk'}">
-                    <tr>
-                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
-                        <td class="tdprice" th:text="${item.getPrice()}"></td>
-                    </tr>
-                </table>
-            </div>
+        <div class="drink-category">
+            <h2>鮮奶茶</h2>
+            <hr>
+            <table class="freshMilk"  th:each="item :${freshmilks}" th:if="${item.type=='freshMilk'}">
+                <tr>
+                    <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                    <td class="tdprice" th:text="${item.getPrice()}"></td>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <div  class="wintermelon-section">
-            <div class="drink-category01" >
-                <h2>冬瓜茶系列</h2>
-                <hr>
-                    <table class="wintermelo" th:each="item :${wintermelons}" th:if="${item.type=='winterMelo'}">
-                        <tr>
+        <div class="drink-category01" >
+            <h2>冬瓜茶系列</h2>
+            <hr>
+                <table class="wintermelo" th:each="item :${wintermelons}" th:if="${item.type=='winterMelo'}">
+                    <tr>
+                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                        <td class="tdprice" th:text="${item.getPrice()}"></td>
+                    </tr>
+                </table>
+        </div>
+
+        <div class="drink-category02">
+            <h2>加好料</h2>
+            <hr>
+            <div class="addsection"style="">
+                <div class="addMateria add01">
+                    <table>
+                        <tr  th:each="item :${materials.subList(0,3)}" th:if="${item.type=='addMateria'}"><!--subList(0,3)從materials的陣列裡去抓出索引值0,1,2的資料-->
+                            <td class="tdproduct"  th:text="${item.getProduct()}"></td>
+                            <td class="tdprice" th:text="${item.getPrice()}"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="addMateria add02">
+                    <table>
+                        <tr  th:each="item :${materials.subList(3,6)}" th:if="${item.type=='addMateria'}"><!--subList(3,6)從materials的陣列裡去抓出索引值3,4,5的資料-->
                             <td class="tdproduct" th:text="${item.getProduct()}"></td>
                             <td class="tdprice" th:text="${item.getPrice()}"></td>
                         </tr>
                     </table>
-            </div>
-
-            <div class="drink-category02">
-                <h2>加好料</h2>
-                <hr>
-                <div class="addsection"style="">
-                    <div class="addMateria add01">
-                        <table>
-                            <tr  th:each="item :${materials.subList(0,3)}" th:if="${item.type=='addMateria'}"><!--subList(0,3)從materials的陣列裡去抓出索引值0,1,2的資料-->
-                                <td class="tdproduct"  th:text="${item.getProduct()}"></td>
-                                <td class="tdprice" th:text="${item.getPrice()}"></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="addMateria add02">
-                        <table>
-                            <tr  th:each="item :${materials.subList(3,6)}" th:if="${item.type=='addMateria'}"><!--subList(3,6)從materials的陣列裡去抓出索引值3,4,5的資料-->
-                                <td class="tdproduct" th:text="${item.getProduct()}"></td>
-                                <td class="tdprice" th:text="${item.getPrice()}"></td>
-                            </tr>
-                        </table>
-                    </div>
                 </div>
             </div>
+        </div>
     </div>
 
     <div id="icesugar">
-            <div class="iceArea">
-                <h5>冰量：</h5>
-                    <div class="ice">
-                        <p>正常冰</p>
-                        <p>少    冰</p>
-                        <p>微    冰</p>
-                        <p>去冰(小碎冰)</p>
-                        <p>完全去冰</p>
-                    </div>
-                <h6 >冰飲-660ml / 熱飲-600ml</h6>
-            </div>
-
-            <div class="sugarArea">
-                <h5>甜度：</h5>
-                <div class="sugar">
-                    <p>正常甜</p>
-                    <p>七分甜</p>
-                    <p>五分甜</p>
-                    <p>三分甜</p>
-                    <p>無   糖</p>
+        <div class="iceArea">
+            <h5>冰量：</h5>
+                <div class="ice">
+                    <p>正常冰</p>
+                    <p>少    冰</p>
+                    <p>微    冰</p>
+                    <p>去冰(小碎冰)</p>
+                    <p>完全去冰</p>
                 </div>
-                <h6>無咖啡因飲品請諮詢店員/買10送1、買20送3</h6>
+            <h6 >冰飲-660ml / 熱飲-600ml</h6>
+        </div>
+
+        <div class="sugarArea">
+            <h5>甜度：</h5>
+            <div class="sugar">
+                <p>正常甜</p>
+                <p>七分甜</p>
+                <p>五分甜</p>
+                <p>三分甜</p>
+                <p>無   糖</p>
             </div>
+            <h6>無咖啡因飲品請諮詢店員/買10送1、買20送3</h6>
+        </div>
     </div>
 
     <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>

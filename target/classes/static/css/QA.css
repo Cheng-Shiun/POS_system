@@ -20,6 +20,11 @@ body {
     box-shadow: 2px 5px 5px #005707;
 }
 
+/*banner*/
+#topArea{
+    position: relative;
+}
+
 #topArea img{
     width: 100%;
     border-radius: 0 0 80% 80% / 0 0 60% 60%;
@@ -96,4 +101,20 @@ h4{
     margin-bottom: auto;
     margin: auto 0 auto 1rem;
     line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    #headnav,
+    #footernav {
+        text-align: center;
+        justify-content: center;
+    }
+    #headnav .nav-item a,
+    #footernav .nav-item a {
+        font-size: 12px;
+        padding: 0 8px 0 8px;
+    }
+    #topArea h1{
+        font-size: 42px;
+    }
 }
