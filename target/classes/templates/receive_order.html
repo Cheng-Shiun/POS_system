@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation | Welcome</title>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#sortable" ).sortable();
+        } );
+    </script>
 </head>
 <body>
 
@@ -94,8 +101,7 @@
     <h2>後台訂單處理系統</h2>
     <hr>
 </div>
-
-<div class="row small-up-2 medium-up-3 large-up-6">
+<div id="sortable" class="row small-up-2 medium-up-3 large-up-6">
     <div th:each="receiveOrder : ${receiveOrder}" class="column">
         <h5>訂單號碼：<span th:text="${receiveOrder.getOn()}"></span></h5>
         <p>種類：<span th:text="${receiveOrder.getType()}"></span></p>
@@ -103,7 +109,7 @@
         <p>加料：<span th:text="${receiveOrder.getMaterial()}"></span></p>
         <p>數量：<span th:text="${receiveOrder.getQty()}"></span></p>
         <p>冷熱飲：<span th:text="${receiveOrder.getStates()}"></span></p>
-        <a href="#" class="button small expanded hollow">完成訂單</a>
+        <a href="/checkOutOrder" class="button small expanded hollow">完成訂單</a>
     </div>
 </div>
 
@@ -226,10 +232,10 @@
 <!--      </div>-->
 <!--    </div>-->
 
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-<script>
-    $(document).foundation();
-</script>
+<!--<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>-->
+<!--<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>-->
+<!--<script>-->
+<!--    $(document).foundation();-->
+<!--</script>-->
 </body>
 </html>

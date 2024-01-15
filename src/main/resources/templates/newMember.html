@@ -187,7 +187,13 @@
                     console.log("顯示姓名欄位查詢結果:"+result.name)
                     if(checkName === result.name) {
                         $('#checkName').empty();
-                        $('#checkName').append('重覆申請');
+                        $('#checkName').append('姓名已重覆');
+                        console.log(result.name+"姓名已重覆")
+                    }
+                    else if(checkName = null){
+                        $('#checkName').empty();
+                        $('#checkName').append('姓名未重覆');
+                        console.log("姓名未重覆")
                     }
                     // $('#checkName').empty();
                     // $('#checkName').append('<option disabled selected>請選擇產品</option>');
