@@ -36,6 +36,6 @@ public class CheckOutOrderController {
         }
         model.addAttribute("oNumber", checkOutOrderModel.getONumber());
         model.addAttribute("msg", msg);
-        return "receive_order";
+        return "redirect:/receiveOrder";
     }
 }

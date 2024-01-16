@@ -134,7 +134,10 @@
         <p>數量：<span th:text="${receiveOrder.getQty()}"></span></p>
         <p>冷熱飲：<span th:text="${receiveOrder.getStates()}"></span></p>
         <p>訂單時間：<span th:text="${receiveOrder.getDate()}"></span></p>
-        <a href="/checkOutOrder" class="button small expanded hollow">完成訂單</a>
+        <form action="/checkOutOrder" method="post">
+            <input type="hidden" name="oNumber" th:value="${receiveOrder.getONumber()}">
+            <button type="submit" class="button small expanded hollow">完成訂單</button>
+        </form>
     </div>
 
 <!--    <div class="row small-up-2 medium-up-3 large-up-6">-->

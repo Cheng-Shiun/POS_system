@@ -2,6 +2,7 @@ package com.example.drink.controller;
 
 import com.example.drink.model.AddOrderModel;
 import com.example.drink.service.AddOrderService;
+import com.example.drink.service.ReceiveOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class AddOrderController {
     @Autowired
     AddOrderService addOrderService;
+
+    @Autowired
+    ReceiveOrderService receiveOrderService;
 
     @GetMapping("/addOrder")
     public String addOrder(Model model) {
