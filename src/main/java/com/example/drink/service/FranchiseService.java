@@ -14,9 +14,9 @@ public class FranchiseService {
     public List<FranchiseModel> getAllFranchise(){
         return franchiseRepository.getAllFranchise ();
     }
-    //用加盟者名字 判斷 是否已存在
-    public boolean checkFranchise(String franchiseName){
-        long count = franchiseRepository.checkFranchise (franchiseName);
+    //用加盟者的name&phone 判斷 是否已存在
+    public boolean checkFranchise(String franchiseName, String franchisePhone){
+        long count = franchiseRepository.checkFranchise (franchiseName, franchisePhone);
         return count>0;
     }
     //送出表單的判斷
@@ -24,11 +24,12 @@ public class FranchiseService {
         //檢查是否有輸入 保留字
         if(franchiseModel.getName ().contains ("select") ||
                 franchiseModel.getName ().contains ("delete") ||
-                franchiseModel.getName ().contains ("update")){
+                franchiseModel.getName ().contains ("update")||
+                franchiseModel.getName().contains("query")){
             return 3;
         }
-        //判斷加盟者的 name 是否已存在
-        if(checkFranchise (franchiseModel.getName ())){
+        //判斷加盟者的 name&phone 是否已存在
+        if(checkFranchise (franchiseModel.getName (),franchiseModel.getPhone())){
             return 2;
         }
         int count = franchiseRepository.saveFranchise (franchiseModel);

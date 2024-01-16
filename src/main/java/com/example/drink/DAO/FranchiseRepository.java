@@ -32,8 +32,8 @@ public class FranchiseRepository {
     public List<FranchiseModel> getAllFranchise(){
         return jdbcTemplate.query ("select * from franchise",new FranchiseMapper ());
     }
-    //檢查加盟者的 名字 是否存在
-    public long checkFranchise(String franchiseName){
-        return jdbcTemplate.queryForObject ("select count(*) from franchise where name=?", Long.class, franchiseName);
+    //檢查加盟者的 name&phone 是否存在; 兩者同時存在,代表已填寫過
+    public long checkFranchise(String franchiseName, String franchisePhone){
+        return jdbcTemplate.queryForObject ("select count(*) from franchise where name=? and phone=?", Long.class, franchiseName,franchisePhone);
     }
 }

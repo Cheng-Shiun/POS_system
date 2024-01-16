@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>表單填寫完畢</title>
+    <title>表單填寫</title>
     <style>
         #countArea {
             width: 40%;
@@ -23,9 +23,9 @@
 <body>
 <div id="countArea">
     <div id="countdown">
-        倒數 <span id="count" class="red-text">5</span> 秒...即將跳轉到首頁囉!
+        倒數 <span id="count" class="red-text">5</span> 秒...即將跳轉到加盟表單!
     </div>
-    <h2>資料已成功送出,我們將儘快與您聯絡.</h2>
+    <h2>資料還沒填寫完成,無法送出資料喔~ 若有其他疑問,請洽本公司客服專線:0800-500-8585</h2>
 </div>
 
 <script>
@@ -37,7 +37,7 @@
         countdown--;
 
         if (countdown < 0) {
-            window.location.href = "/";
+            window.location.href = "/franchise";
         } else {
             setTimeout(updateCountdown, 1000);
         }
