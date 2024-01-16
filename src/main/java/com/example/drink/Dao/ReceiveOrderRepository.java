@@ -20,15 +20,29 @@ public class ReceiveOrderRepository {
 
     public List<ReceiveOrderModel> receiveOrderAll () {
         ReceiveOrderMapper receiveOrderMapper = new ReceiveOrderMapper();
-        List<ReceiveOrderModel> receiveOrderModel = jdbcTemplate.query("select * from javateaorder",receiveOrderMapper);
+        List<ReceiveOrderModel> receiveOrderModel = jdbcTemplate.query(
+                "select * from javateaorder",receiveOrderMapper);
         return receiveOrderModel;
     }
 
     public List<ReceiveOrderModel> checkOutOrderByDate () {
         ReceiveOrderMapper receiveOrderMapper = new ReceiveOrderMapper();
-        List<ReceiveOrderModel> receiveOrderModel = jdbcTemplate.query("SELECT * from javateaorder WHERE eDate IS null",receiveOrderMapper);
+        List<ReceiveOrderModel> receiveOrderModel = jdbcTemplate.query(
+                "SELECT * from javateaorder WHERE eDate IS null",receiveOrderMapper);
         return receiveOrderModel;
     }
 
+    public ReceiveOrderModel findByONumber(int oNumber) {
+        return jdbcTemplate.queryForObject(
+                "SELECT * FROM javateaorder WHERE oNumber = ?",
+                new Object[]{oNumber},
+                new ReceiveOrderMapper()
+        );
+    }
 
+    public void saveOrder(ReceiveOrderModel order) {
+        String sql = "UPDATE javateaorder SET eDate = ? WHERE oNumber = ?";
+        jdbcTemplate.update(sql, order.getEDate(), order.getONumber());
+    }
 }
+

@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -28,5 +31,20 @@ public class ReceiveOrderController {
         List<ReceiveOrderModel> receiveOrder = receiveOrderService.checkOutOrderByDate();
         model.addAttribute("receiveOrder", receiveOrder);
         return "receive_order";
+    }
+
+    @PostMapping("/completeOrder")
+    public String completeOrder(@RequestParam("oNumber") int oNumber) {
+        // 根據訂單號碼查找訂單
+        ReceiveOrderModel order = receiveOrderService.findOrderByONumber(oNumber);
+
+        // 如果訂單存在，完成訂單並更新 eDate
+        if (order != null) {
+            order.completeOrder();
+            receiveOrderService.saveOrder(order);
+        }
+
+        // 重定向到訂單列表頁面
+        return "redirect:/receiveOrder";
     }
 }

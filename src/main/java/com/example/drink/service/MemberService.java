@@ -16,15 +16,18 @@ public class MemberService {
     public List<Member> getMemberAll() {
         MemberMapper memberMapper = new MemberMapper();
 
-        List<Member> allmember = jdbcTemplate.query( "select * from member",memberMapper);
+        List<Member> allmember = jdbcTemplate.query(
+                "select * from member",memberMapper);
         return allmember;
     }
 
     public List<Member> getMemberById(int mid) {
-        return jdbcTemplate.query( "select * from member where mid=" + mid, new MemberMapper());
+        return jdbcTemplate.query(
+                "select * from member where mid=" + mid, new MemberMapper());
     }
 
     public List<Member> getMemberByName(String name) {
-        return jdbcTemplate.query( "select * from member where memberName='" + name + "'", new MemberMapper());
+        return jdbcTemplate.query(
+                "select * from member where memberName='" + name + "'", new MemberMapper());
     }
 }

@@ -20,4 +20,13 @@ public class ReceiveOrderService {
     public List<ReceiveOrderModel> checkOutOrderByDate() {
         return receiveOrderRepository.checkOutOrderByDate();
     }
+    public ReceiveOrderModel findOrderByONumber(int oNumber) {
+        // 實現查找訂單的邏輯，使用 ReceiveOrderRepository
+        return receiveOrderRepository.findByONumber(oNumber);
+    }
+
+    public void saveOrder(ReceiveOrderModel order) {
+        // 實現保存訂單的邏輯，使用 ReceiveOrderRepository
+        receiveOrderRepository.saveOrder(order);
+    }
 }

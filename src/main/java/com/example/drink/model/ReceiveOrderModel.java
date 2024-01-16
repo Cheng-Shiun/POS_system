@@ -22,4 +22,7 @@ public class ReceiveOrderModel {
     private String states;
     private Date date;
     private Date eDate;
+    public void completeOrder() {
+        this.setEDate(new Date());
+    }
 }
