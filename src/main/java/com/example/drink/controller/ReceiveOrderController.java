@@ -16,12 +16,12 @@ public class ReceiveOrderController {
     ReceiveOrderService receiveOrderService;
 
 
-//    @GetMapping("/receiveOrder")
-//    public String receiveOrder(Model model) {
-//        List<ReceiveOrderModel> receiveOrder = receiveOrderService.receiveOrderAll();
-//        model.addAttribute("receiveOrder", receiveOrder);
-//        return "receive_order";
-//    }
+    @GetMapping("/receiveOrderList")
+    public String receiveOrder(Model model) {
+        List<ReceiveOrderModel> receiveOrder = receiveOrderService.receiveOrderAll();
+        model.addAttribute("receiveOrder", receiveOrder);
+        return "receive_order_list";
+    }
 
     @GetMapping("/receiveOrder")
     public String checkOutOrder(Model model) {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>jQuery UI Selectmenu - Default functionality</title>
+    <title>前台訂單處理系統</title>
     <!--    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">-->
     <!--    <link rel="stylesheet" href="/resources/demos/style.css">-->
     <!--    <style>-->
@@ -134,33 +134,33 @@
             addOrderById(selectedValue);
         });
 
-        $('#product').change(function (){
-            if($(this).val() === '') {
-                alert('請選擇加料內容');
-                return false;
-            }
-        });
-
-        $('#material').change(function (){
-            if($(this).val() === '') {
-                alert('請選擇加料內容');
-                return false;
-            }
-        });
-
-        $('#qty').change(function (){
-            if($(this).val() === '') {
-                alert('請選擇加料內容');
-                return false;
-            }
-        });
-
-        $('#states').change(function (){
-            if($(this).val() === '') {
-                alert('請選擇加料內容');
-                return false;
-            }
-        });
+        // $('#product').change(function (){
+        //     if($(this).val() === '') {
+        //         alert('請選擇加料內容');
+        //         return false;
+        //     }
+        // });
+        //
+        // $('#material').change(function (){
+        //     if($(this).val() === '') {
+        //         alert('請選擇加料內容');
+        //         return false;
+        //     }
+        // });
+        //
+        // $('#qty').change(function (){
+        //     if($(this).val() === '') {
+        //         alert('請選擇加料內容');
+        //         return false;
+        //     }
+        // });
+        //
+        // $('#states').change(function (){
+        //     if($(this).val() === '') {
+        //         alert('請選擇加料內容');
+        //         return false;
+        //     }
+        // });
 
         // $('#order').submit(function (event){
         //     $('.dropdown').each(function (){
@@ -173,6 +173,11 @@
         // });
 
         $('#order').submit(function (){
+            // var currentDateTime = new Date();
+            // var formattedDateTime = currentDateTime.toLocaleString();
+            // $("#order").append("<input type='hidden' name='date' value='" + formattedDateTime + "'>");
+            // console.log(formattedDateTime);
+            // return true;
             alert("請確認後在送出");
         });
 
@@ -192,31 +197,31 @@
             )
         }
 
-        $( function() {
-            $( "#type" )
-                .selectmenu()
-                .selectmenu( "menuWidget" )
-                .addClass( "overflow" );
-
-            $( "#product" )
-                .selectmenu()
-                .selectmenu( "menuWidget" )
-                .addClass( "overflow" );
-
-            $( "#material" )
-                .selectmenu()
-                .selectmenu( "menuWidget" )
-                .addClass( "overflow" );
-
-            $( "#qty" )
-                .selectmenu()
-                .selectmenu( "menuWidget" )
-                .addClass( "overflow" );
-
-            $( "#states" ).selectmenu();
-
-            $( ".widget input[type=submit], .widget input[type=reset],.widget a, .widget button" ).button();
-        } );
+        // $( function() {
+        //     $( "#type" )
+        //         .selectmenu()
+        //         .selectmenu( "menuWidget" )
+        //         .addClass( "overflow" );
+        //
+        //     $( "#product" )
+        //         .selectmenu()
+        //         .selectmenu( "menuWidget" )
+        //         .addClass( "overflow" );
+        //
+        //     $( "#material" )
+        //         .selectmenu()
+        //         .selectmenu( "menuWidget" )
+        //         .addClass( "overflow" );
+        //
+        //     $( "#qty" )
+        //         .selectmenu()
+        //         .selectmenu( "menuWidget" )
+        //         .addClass( "overflow" );
+        //
+        //     $( "#states" ).selectmenu();
+        //
+        //     $( ".widget input[type=submit], .widget input[type=reset],.widget a, .widget button" ).button();
+        // } );
     });
 
 </script>

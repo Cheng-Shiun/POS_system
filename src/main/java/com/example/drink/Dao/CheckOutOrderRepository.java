@@ -15,8 +15,8 @@ public class CheckOutOrderRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public int checkOutOrder (CheckOutOrderModel checkOutOrderModel) {
+    public int checkOutOrderByOnumber (CheckOutOrderModel checkOutOrderModel) {
         String sql = "UPDATE javateaorder SET eDate = NOW() WHERE oNumber = ?";
-        return jdbcTemplate.update(sql, checkOutOrderModel.getEDate());
+        return jdbcTemplate.update(sql, checkOutOrderModel.getONumber());
     }
 }

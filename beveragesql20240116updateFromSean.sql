@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- 主機:                           127.0.0.1
--- 伺服器版本:                        11.4.0-MariaDB - mariadb.org binary distribution
+-- 伺服器版本:                        11.2.2-MariaDB - mariadb.org binary distribution
 -- 伺服器作業系統:                      Win64
 -- HeidiSQL 版本:                  12.3.0.6589
 -- --------------------------------------------------------
@@ -127,9 +127,9 @@ CREATE TABLE IF NOT EXISTS `javateaorder` (
   `date` datetime DEFAULT curtime(),
   `eDate` datetime DEFAULT NULL,
   KEY `索引 1` (`oNumber`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- 正在傾印表格  beverage.javateaorder 的資料：~19 rows (近似值)
+-- 正在傾印表格  beverage.javateaorder 的資料：~26 rows (近似值)
 INSERT INTO `javateaorder` (`oNumber`, `type`, `product`, `material`, `qty`, `states`, `date`, `eDate`) VALUES
 	(1, '原味茶', '竹香翡翠', '草仔粿', 1, '熱', '2024-01-09 08:27:10', '2024-01-15 16:30:26'),
 	(2, '原味茶', '竹香翡翠', '草仔粿', 1, '熱', '2024-01-09 08:27:10', '2024-01-15 16:30:26'),
@@ -145,11 +145,18 @@ INSERT INTO `javateaorder` (`oNumber`, `type`, `product`, `material`, `qty`, `st
 	(12, '原味茶', '竹香翡翠', '草仔粿', 1, '冷飲', '2024-01-12 22:52:06', '2024-01-15 16:30:26'),
 	(13, '香醇奶茶', '黃金蕎麥奶茶', '不加料', 3, '熱飲', '2024-01-12 23:40:04', '2024-01-15 16:30:26'),
 	(14, '滋味茶', '柚子烏龍', '蘆薈', 4, '熱飲', '2024-01-13 16:06:48', '2024-01-16 07:56:27'),
-	(15, '原味茶', '竹香翡翠', '草仔粿', 1, '冷飲', '2024-01-15 20:25:39', NULL),
-	(16, '原味茶', '竹香翡翠', '草仔粿', 1, '冷飲', '2024-01-15 21:20:17', NULL),
-	(17, '風味茶', '荔枝蘆薈', '雙粉(粉粿+粉圓)', 3, '熱飲', '2024-01-15 21:40:53', NULL),
-	(18, '原味茶', '竹香翡翠', '草仔粿', 1, '冷飲', '2024-01-15 22:49:16', NULL),
-	(19, '原味茶', '竹香翡翠', '琥珀粉圓', 2, '冷飲', '2024-01-16 07:53:26', NULL);
+	(15, '原味茶', '竹香翡翠', '草仔粿', 1, '冷飲', '2024-01-15 20:25:39', '2024-01-16 07:56:27'),
+	(16, '原味茶', '竹香翡翠', '草仔粿', 1, '冷飲', '2024-01-15 21:20:17', '2024-01-16 07:56:27'),
+	(17, '風味茶', '荔枝蘆薈', '雙粉(粉粿+粉圓)', 3, '熱飲', '2024-01-15 21:40:53', '2024-01-16 16:44:29'),
+	(18, '原味茶', '竹香翡翠', '草仔粿', 1, '冷飲', '2024-01-15 22:49:16', '2024-01-16 16:53:05'),
+	(19, '原味茶', '竹香翡翠', '琥珀粉圓', 2, '冷飲', '2024-01-16 07:53:26', '2024-01-16 16:59:24'),
+	(20, '原味茶', '招牌紅茶', '琥珀粉圓', 2, '冷飲', '2024-01-16 07:53:26', NULL),
+	(21, '原味茶', '招牌紅茶', '琥珀粉圓', 1, '冷飲', '2024-01-16 07:53:26', NULL),
+	(22, '原味茶', '招牌紅茶', '雙粉(粉粿+粉圓)', 3, '冷飲', '2024-01-16 07:53:26', NULL),
+	(23, '風味茶', '鮮葡萄柚青茶', '雙粉(粉粿+粉圓)', 3, '冷飲', '2024-01-16 10:13:37', NULL),
+	(24, '原味茶', '招牌紅茶', '琥珀粉圓', 2, '熱飲', '2024-01-16 10:18:48', NULL),
+	(25, '風味茶', '荔枝蘆薈', '琥珀粉圓', 3, '冷飲', '2024-01-16 16:33:16', NULL),
+	(26, '原味茶', '竹香翡翠', '草仔粿', 1, '熱飲', '2024-01-16 16:40:40', NULL);
 
 -- 傾印  資料表 beverage.javateatype 結構
 DROP TABLE IF EXISTS `javateatype`;
@@ -182,9 +189,9 @@ CREATE TABLE IF NOT EXISTS `member` (
   `gender` char(1) NOT NULL DEFAULT '0',
   `email` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`mid`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- 正在傾印表格  beverage.member 的資料：~14 rows (近似值)
+-- 正在傾印表格  beverage.member 的資料：~15 rows (近似值)
 INSERT INTO `member` (`mid`, `memberName`, `memberPhone`, `memberAddress`, `birthday`, `gender`, `email`) VALUES
 	(1, 'Sean', '0921324600', '台中市北區漢口路一段100號', '2003-01-06', '男', 'sean@gmail.com'),
 	(2, 'Joy', '0921730887', '台中市北區漢口路二段200號', '1983-12-09', '女', 'joy@gmail.com'),
@@ -199,7 +206,9 @@ INSERT INTO `member` (`mid`, `memberName`, `memberPhone`, `memberAddress`, `birt
 	(13, 'Kama', '0921876549', '台中市神岡區圳前路一段100號', '2011-11-11', '女', 'Kama@gmail.com'),
 	(14, 'Cook', '0921748596', '台中市北區陝西路一段100號', '1979-01-01', '男', 'cook@gmail.com'),
 	(15, 'Rod', '0921324600', '台中市神岡區神林路一段100號', '1979-02-13', '男', 'rod@gmail.com'),
-	(16, 'Java', '0921748596', '台中市北區中清路一段100號', '1979-07-07', '男', 'java@gmail.com');
+	(16, 'Java', '0921748596', '台中市北區中清路一段100號', '1979-07-07', '男', 'java@gmail.com'),
+	(17, 'cool', '0921748596', '台中市北區陝西路一段100號', '1979-07-07', '男', 'cool@gmail.com'),
+	(18, 'Qoo', '0921748596', '台中市北區陝西路二段200號', '2024-01-06', '女', 'qoo@gmail.com');
 
 -- 傾印  資料表 beverage.orderlist 結構
 DROP TABLE IF EXISTS `orderlist`;
