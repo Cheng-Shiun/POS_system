@@ -22,7 +22,7 @@ function scrollToTop() {
 }
 
 function focusName(x){
-    x.style.background="#f0e19e";
+    x.style.background="#d7d5cd";
 }
 function blurName(y){
     y.style.background="#fff";
