@@ -5,10 +5,7 @@ import com.example.drink.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -43,4 +40,11 @@ public class MemberController {
         System.out.println("接收 address=" + member.getAddress());
         return "memberList";
     }
+
+    //登入
+    @GetMapping("/login")
+    public String memberLogin(){
+        return "login";
+    }
+
 }

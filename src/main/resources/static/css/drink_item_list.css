@@ -48,12 +48,14 @@ body {
 #headnav {
     height:110px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: end;
+    margin-left: 30%;
 }
 #footernav {
     height: 150px;
     display: flex;
     justify-content: flex-end;
+    margin-left: 30%;
 }
 
 /* nav連結樣式 */
@@ -68,6 +70,7 @@ body {
 #footernav .nav-item a{
     font-weight: 700;
     color: #000000;
+
 }
 
 #footer{
@@ -84,14 +87,17 @@ body {
 }
 #header{
     position:fixed;
-    right: 0;
-    background: #fbfbfb;
+    left: 0;
+    background: #faeee4;
     height: 110px;
     width: 100%; /* 撐滿整個寬度 */
     top: 0; /* 與頂部對齊 */
     z-index: 1000; /* 提高 z-index 以確保在其他元素之上 */
 }
-
+.logoimg {
+    position: absolute;
+    left: 5%;
+}
 /* 飲品區塊和冬瓜區塊 */
 .drink-section,
 .wintermelon-section {

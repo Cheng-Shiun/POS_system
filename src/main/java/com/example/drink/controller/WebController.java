@@ -15,6 +15,9 @@ public class WebController
     }
 
     @GetMapping("/index")
+    public String getHomePage2(){return "index55";}
+
+    @GetMapping("/index2")
     public String getHomePage()
     {
         return "index";
@@ -72,7 +75,8 @@ public class WebController
         return"QA";
     }
 
-
+    @GetMapping("/test")
+    public String getTest(){ return "test";}
 
 
 

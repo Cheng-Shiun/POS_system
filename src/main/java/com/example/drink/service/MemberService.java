@@ -1,10 +1,14 @@
 package com.example.drink.service;
 
+import com.example.drink.Dao.MemberRepository;
 import com.example.drink.Dao.mapper.MemberMapper;
 import com.example.drink.model.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -12,7 +16,6 @@ import java.util.List;
 public class MemberService {
     @Autowired
     JdbcTemplate jdbcTemplate;
-
     public List<Member> getMemberAll() {
         MemberMapper memberMapper = new MemberMapper();
 
@@ -25,6 +28,12 @@ public class MemberService {
     }
 
     public List<Member> getMemberByName(String name) {
-        return jdbcTemplate.query( "select * from member where memberName='" + name + "'", new MemberMapper());
+        return jdbcTemplate.query( "select * from member where memberName=" + name, new MemberMapper());
     }
+
+    ///登入
+    @Autowired
+    MemberRepository memberRepository;
+
+
 }

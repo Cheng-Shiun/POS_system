@@ -85,7 +85,9 @@ body {
     margin-top: 50px;
     margin-bottom: 50px;
 }
-
+#nblock .nArea {
+    width: 50%;
+}
 .ulArea{
     width: 82%;
     margin-left: 10px;
@@ -184,4 +186,27 @@ body {
         width: 120px;
         height: 40px;
     }
+}
+/* RWD手機版 for #headnav, #footernav */
+@media (max-width: 390px){
+    #nblock {
+        width: 100%;
+        flex-direction:column;
+    }
+
+    #topArea img{
+        margin-bottom: 5%;
+    }
+    #btnNorth, #btnCentral, #btnSouth{
+        font-size: 0.8rem;
+        width: 80px;
+        height: 25px;
+    }
+    #nblock .nArea, #nblock .cArea, #nblock .sArea {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
 }

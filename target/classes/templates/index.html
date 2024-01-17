@@ -22,12 +22,21 @@
       <section class="logo">
         <a href="/index"><img src="/images/web_Logo.svg" alt="爪蛙茶飲Logo"/></a>
       </section>
+
+
+
       <nav>
         <div class="social-icons">
           <a class="icon-link" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook fa-2xl" title="Facebook"></i></a>
           <a class="icon-link" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram fa-2xl" title="instagram"></i></a>
           <a class="icon-link" href="#" target="_blank"><i class="fa-brands fa-line fa-2xl" title="Line"></i></a>
         </div>
+
+        <div th:if="${authenticatedMember}">
+          <p th:text="'Hello, ' + ${authenticatedMember.name} + '!'"></p>
+        </div>
+
+
         <!--製作導覽頁的下拉式選單 這邊開始-->
         <ul class="drop-down-menu">
           <li>
@@ -44,7 +53,7 @@
             <a id="member" href="#">品牌會員</a>
             <ul>
               <li><a href="http://65.52.173.136:8080/order_item">點 &nbsp; &nbsp; &nbsp; 餐</a></li>
-              <li><a href="#">登入系統 </a></li>
+              <li><a href="/login">登入系統 </a></li>
               <li><a href="http://65.52.173.136:8080/newMember">註 &nbsp; &nbsp; &nbsp; 冊</a></li>
             </ul>
           </li>
@@ -63,7 +72,7 @@
       <!--結束固定側邊選單-->
       <section class="background-image">
         <div class="filter"></div>
-        <h3>現點現做·香醇口感。<span>來一杯幸福滋味</span></h3>
+        <h3>現點現做·香醇口感。<br><span>來一杯幸福滋味</span></h3>
       </section>
       <section class="news">
         <!--做間隔-->
@@ -234,7 +243,7 @@
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    
+
   });
 </script>
       <section class="location">

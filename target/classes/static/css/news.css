@@ -146,3 +146,49 @@ body {
         height: 40px;
     }
 }
+/*RWD手機版*/
+@media screen and (max-width: 390px){
+    #topArea img{
+        margin-bottom: 5%;
+    }
+    #btnOpen, #btnActivity, #btnProduct{
+        font-size: 0.8rem;
+        width: 80px;
+        height: 25px;
+    }
+    .newsblock {
+        flex-direction: column;
+    }
+    .n01 {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    section#open01.open, section#open02.open,section#open03 {
+        padding: 1rem;
+    }
+    section#activity01.activity, section#activity02.activity,section#activity03.activity {
+        padding: 1rem;
+    }
+    section#product01.product, section#product02.product,section#product03.product {
+        padding: 1rem;
+    }
+    #open01 h1,#open02 h1,#open03 h1 {
+        font-size: 1.5rem;
+    }
+    #activity01 h1,#activity02 h1,#activity03 h1 {
+        font-size: 1.5rem;
+    }
+    #product01 h1,#product02 h1,#product03 h1 {
+        font-size: 1.5rem;
+    }
+    section#open01.open img, section#open02.open img, section#open03.open img{
+        width: 90%;
+    }
+    section#activity01.activity img, section#activity02.activity img, section#activity03.activity img{
+        width: 90%;
+    }
+    section#product01.product img, section#product02.product img, section#product03.product img{
+        width: 90%;
+    }
+}

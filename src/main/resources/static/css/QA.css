@@ -119,3 +119,19 @@ h4{
         height: 40px;
     }
 }
+/*RWD手機版*/
+@media screen and (max-width: 390px){
+    #topArea img{
+        margin-bottom: 5%;
+    }
+    #btnQA {
+        flex-direction: column;
+    }
+    .btnAll, .btnDk, .btnMb, .btnOd {
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+    }
+    #drinkqa, #memberqa, #orderqa {
+        font-size: 0.8rem;
+    }
+}

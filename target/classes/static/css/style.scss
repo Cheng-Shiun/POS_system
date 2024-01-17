@@ -30,16 +30,21 @@ header {
   }
 }
 nav {
-  flex: 4 1 800px;
+  flex: 5 1 900px;
   position: relative;
+  color: #9f856a;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   div.social-icons {
     position: absolute;
-    top: -150%;
-    left: 75%;
+    top: -100%;
+    right: 10%;
     a.icon-link {
       i.fa-brands {
         color: #b2a55b;
-        margin: 0 0.8rem;
+        margin: 0;
         &:hover {
           color: #52764f;
         }
@@ -47,82 +52,136 @@ nav {
     }
   }
 }
-
-ul.drop-down-menu {
-  display: inline-block;
-  font-family: "Open Sans", Arial, sans-serif;
-  font-size: 1rem;
-  li {
-    position: relative;
-    white-space: nowrap;
-    float: left; /* 只有第一層是靠左對齊*/
-    list-style: none;
-    &:last-child {
-      border-right: none;
-    }
-  }
-  a {
-    background-color: #846950;
-    color: #ffffff;
-    display: block;
-    padding: 0 1.5rem;
-    margin-right: 1.5rem;
-    text-decoration: none;
-    line-height: 2rem;
-    border-radius: 5px;
-  }
-}
-ul.drop-down-menu a {
-  background-color: #846950;
-  color: #ffffff;
-  display: block;
-  padding: 0 1.5rem;
-  text-decoration: none;
-  line-height: 2rem;
-  border-radius: 5px;
-}
-ul.drop-down-menu a:hover {
-  /* 滑鼠滑入按鈕變色*/
-  background-color: #ffffff;
-  color: #846950;
-}
-ul.drop-down-menu li:hover > a {
-  /* 滑鼠移入次選單上層按鈕保持變色*/
-  background-color: #ffffff;
-  color: #846950;
-}
-ul.drop-down-menu li:focus  {
-  /* 滑鼠移入次選單上層按鈕保持變色*/
-  background-color: #ffffff;
-  color: #846950;
-}
-ul.drop-down-menu ul {
-  position: absolute;
-  z-index: 99;
-  top: 100%;
-}
-
-ul.drop-down-menu ul li:last-child {
-  list-style: none;
-  border-bottom: none;
-}
-
-ul.drop-down-menu ul ul {
-  /*第三層以後的選單出現位置與第二層不同*/
-  z-index: 999;
-  top: 10px;
-  left: 90%;
-}
-ul.drop-down-menu ul {
-  /*隱藏次選單*/
+.menu-btn {
   display: none;
 }
 
-ul.drop-down-menu li:hover > ul {
-  /* 滑鼠滑入展開次選單*/
-  display: block;
-  list-style: none;
+//ul.drop-down-menu {
+//  display: inline-block;
+//  font-family: "Open Sans", Arial, sans-serif;
+//  font-size: 1rem;
+//  li {
+//    position: relative;
+//    white-space: nowrap;
+//    float: left; /* 只有第一層是靠左對齊*/
+//    list-style: none;
+//    &:last-child {
+//      border-right: none;
+//    }
+//  }
+//  a {
+//    background-color: #846950;
+//    color: #ffffff;
+//    display: block;
+//    padding: 0 1.5rem;
+//    margin-right: 1.5rem;
+//    text-decoration: none;
+//    line-height: 2rem;
+//    border-radius: 5px;
+//  }
+//}
+//ul.drop-down-menu a {
+//  background-color: #846950;
+//  color: #ffffff;
+//  display: block;
+//  padding: 0 1.5rem;
+//  text-decoration: none;
+//  line-height: 2rem;
+//  border-radius: 5px;
+//}
+//ul.drop-down-menu a:hover {
+//  /* 滑鼠滑入按鈕變色*/
+//  background-color: #ffffff;
+//  color: #846950;
+//}
+//ul.drop-down-menu li:hover > a {
+//  /* 滑鼠移入次選單上層按鈕保持變色*/
+//  background-color: #ffffff;
+//  color: #846950;
+//}
+//ul.drop-down-menu li:focus  {
+//  /* 滑鼠移入次選單上層按鈕保持變色*/
+//  background-color: #ffffff;
+//  color: #846950;
+//}
+//ul.drop-down-menu ul {
+//  position: absolute;
+//  z-index: 99;
+//  top: 100%;
+//}
+//
+//ul.drop-down-menu ul li:last-child {
+//  list-style: none;
+//  border-bottom: none;
+//}
+//
+//ul.drop-down-menu ul ul {
+//  /*第三層以後的選單出現位置與第二層不同*/
+//  z-index: 999;
+//  top: 10px;
+//  left: 90%;
+//}
+//ul.drop-down-menu ul {
+//  /*隱藏次選單*/
+//  display: none;
+//}
+//
+//ul.drop-down-menu li:hover > ul {
+//  /* 滑鼠滑入展開次選單*/
+//  display: block;
+//  list-style: none;
+//}
+/* 基本的導覽列樣式 */
+
+/* 頁籤樣式 */
+nav a {
+  color: #9f856a;
+  text-decoration: none;
+  margin: 0 10px;
 }
+
+.menu-btn {
+  cursor: pointer;
+  display: none;
+}
+
+.menu {
+  display: flex;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background-color: #9f856a;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.menu li {
+  list-style-type: none;
+}
+.menu a {
+  color: #9f856a;
+  text-decoration: none;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  &:hover {
+    background: #ffffff;
+    color: #846950;
+  }
+}
+
+.menu.show {
+  display: flex;
+}
+
+.menu {
+  display: flex;
+  position: static;
+  background-color: transparent;
+  flex-direction: row;
+  align-items: center;
+}
+
 #member {
   background: #8e822e;
   color: #ffffff;
@@ -336,6 +395,8 @@ main {
     position: relative;
     text-align: center;
     h1 {
+      color: #846950;
+      font-weight:600;
       font-size: 2.5rem;
       margin-top: 2rem;
     }
@@ -352,7 +413,14 @@ main {
         text-align: center;
         font-size: 18px;
         background: #fff;
-        
+        span{
+          color: #d0b79f;
+        }
+        h4{
+          a{
+            font-size: 1.4rem;
+          }
+        }
         .pic {
           width: 60%;
           object-fit: cover;
@@ -560,16 +628,17 @@ footer {
       }
     }
     nav {
-      flex: 2 1 100px;
+      flex: 2 1 50px;
       justify-content: space-around;
       display: block;
       .social-icons {
-        top: -5%;
-        left: 38%;
+        position: revert;
+        top: -50%;
+        left: 250%;
       }
       ul.drop-down-menu {
         padding: 1rem 2rem;
-        margin-left:3rem;
+        margin-left:0;
         li{
           margin-top: 1.5rem;
           a {
@@ -603,8 +672,13 @@ footer {
       }
     }
     section.background-image{
+      min-height: 60vh;
+      text-align: center;
       h3 {
         font-size: 2rem;
+      }
+      div.filter {
+        min-height: 60vh;
       }
     }
     section.news {
@@ -622,6 +696,7 @@ footer {
     section.new-product {
       min-height: 40vw;
       div.circles {
+        top: 30px;
         width: 90%;
         div.circle {
           div.content {
@@ -699,3 +774,234 @@ footer {
   }
 }
 
+/*選單按鈕 RWD*/
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.show {
+    display: flex;
+    flex-direction: column;
+  }
+  .menu.show ul {
+    width: 100%;
+  }
+}
+@media (min-width: 769px) {
+  .menu-btn {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    position: static;
+    background-color: transparent;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+
+/*手機版 RWD*/
+@media screen and (max-width: 390px){
+  header {
+    flex-direction: column;
+    align-items: start;
+    position: static;
+    section.logo {
+      margin: 0 auto;
+      flex: 1 1 100px;
+      justify-content: flex-start;
+      img {
+        width: 40vw;
+        height: 40vw;
+      }
+    }
+    nav {
+      flex: 2 1 100px;
+      justify-content: space-around;
+      display: block;
+      .social-icons {
+        position: revert;
+        top: -50%;
+        left: 250%;
+      }
+      ul.drop-down-menu {
+        padding: 1rem 2rem;
+        margin-left:3rem;
+        li{
+          margin-top: 1rem;
+          a {
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+          }
+        }
+        ul{
+          li {
+            margin-top: 0; /* 移除間距 */
+          }
+        }
+      }
+    }
+  }
+  main {
+    div.fixed-menu {
+      div.store-menu{
+        height: 30vh;
+        div.triangle {
+          border-left: 30px solid transparent;
+          border-right: 30px solid red;
+          border-bottom: 70px solid red;
+          a {
+            font-size: 1rem;
+            span {
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+    section.background-image{
+      text-align: center;
+      min-height: 40vh;
+      h3 {
+        font-size: 1.2rem;
+      }
+      div.filter{
+        min-height: 40vh;
+      }
+    }
+    section.news {
+      div.rectangles{
+        div.rectangle {
+          flex: 0 1 400px;
+          p {
+            a {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+    section.new-product {
+      min-height: 60vw;
+      div.circles {
+        top: 25px;
+        width: 90%;
+        div.circle {
+          div.content {
+            padding: 0.5rem;
+            h3 {
+              font-size: 1rem;
+            }
+            p{
+              font-size: 0.7rem;
+              margin: 0.5rem 0;
+            }
+            a{
+              top: 70%;
+              font-size: 0.6rem;
+            }
+          }
+        }
+      }
+    }
+    section.rank {
+      h1{
+        font-size: 1.5rem;
+        div.swiper-container {
+          div.swiper-wrapper {
+            div.swiper-slide {
+              a {
+                font-size: 1.2rem;
+              }
+              div.item-inner{
+                div.item-sec{
+                  .pic {
+                    width: 100%;
+                  }
+                  span.c7{
+                    font-size: 1rem;
+                  }
+                  h4{
+                    a{
+                      font-size: 1.2rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      h3{
+        font-size: 1.3rem;
+      }
+    }
+    section.location {
+      display: block;
+      div.location-info{
+        padding: 2rem;
+      }
+    }
+    section.about {
+      padding: 0;
+      display: block;
+      div.about-info{
+        padding: 2rem;
+        div.pic {
+          text-align: center;
+          #tea1 {
+            width: 80vw;
+            height: 80vw;
+          }
+          #tea2 {
+            width: 50vw;
+            height: 50vw;
+            top: 50%;
+            right: 50%;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    display: block;
+    section.logo {
+      width: 20vw;
+      margin: auto;
+    }
+    section.info-left {
+      text-align: center;
+      font-size: 1rem;
+    }
+    section.info-right {
+      margin: 0;
+      nav {
+        ul {
+          margin: 0.5rem;
+          justify-content: center;
+          padding: 0;
+          flex-wrap: wrap;
+          text-align: center;
+          li {
+            margin: auto;
+            padding: 0.5rem 0;
+            a {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+      p {
+        margin-left: 20%;
+        margin-right: auto;
+      }
+    }
+  }
+}
