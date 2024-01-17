@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="zh-Hants-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="工作、閒暇之餘來一杯美好的滋味，每一口都感受到甜甜的幸福滋味。品茶生活，爪蛙秉持嚴選食材，搭配傳承自家鄉的調茶技術，將茶的最高品質端上給您，歡迎細細品味。"
+    />
+    <meta name="keywords" content="爪蛙茶飲,外送,菜單,飲料外送" />
+    <title>爪蛙茶飲</title>
+    <link rel="shortcut icon" href="./images/web_Logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="/css/style.css">
+      <!-- 引入Swiper的CSS和JS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+
+
+
+
+
+    
+    <!-- CDN SECTION -->
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@800;900&display=swap" rel="stylesheet">
+
+
+
+  
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+
+
+
+
+
+  </head>
+  <body>
+    <header>
+      <section class="logo">
+        <img src="./images/web_Logo.svg" alt="爪蛙茶飲Logo" />
+      </section>
+      <nav>
+        <div class="social-icons">
+          <a class="icon-link" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook fa-2xl" title="Facebook"></i></a>
+          <a class="icon-link" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram fa-2xl" title="instagram"></i></a>
+          <a class="icon-link" href="#" target="_blank"><i class="fa-brands fa-line fa-2xl" title="Line"></i></a>
+        </div>
+        <!--製作導覽頁的下拉式選單 這邊開始-->
+        <ul class="drop-down-menu">
+          <li>
+            <a href="#">最新消息</a>
+            <ul>
+              <li><a href="#">新店開幕</a></li>
+              <li><a href="#">活動優惠</a></li>
+              <li><a href="#">新品上市</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">飲品資訊</a>
+            <ul>
+              <li><a href="#">北部</a></li>
+              <li><a href="#">中部</a></li>
+              <li><a href="#">南部</a></li>
+              <li><a href="#">東部</a></li>
+              <li><a href="#">離島</a></li>
+            </ul>
+          </li>
+          <li><a href="#">關於我們</a></li>
+          <li>
+            <a href="#">門市據點</a>
+            <ul>
+              <li>
+                <a href="#">北 部</a>
+                <ul>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">中 部</a>
+                <ul>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">南 部</a>
+                <ul>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">東 部</a>
+                <ul>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">離 島</a>
+                <ul>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                  <li><a href="#">門市</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#">常見問答</a></li>
+          <li><a href="#">加盟專區</a></li>
+          <li>
+            <a id="member" href="#">品牌會員</a>
+            <ul>
+              <li><a href="#">點 餐</a></li>
+              <li><a href="#">登入系統 </a></li>
+              <li><a href="#">註 冊</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+<style>
+
+/* Customize style below */
+.container {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.scrolling-text {
+  display: inline-block;
+  background: rgb(239, 239, 239);
+  transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
+  will-change: transform;
+
+  backface-visibility: hidden;
+}
+
+.scrolling-text .scrolling-text-content {
+    background: url(https://media.giphy.com/media/26vUyWzmjBIlNJvRC/giphy.gif);
+    text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 120px;
+  white-space: nowrap;
+  transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
+  line-height: 1em;
+  margin: 50px 0;
+
+
+  font-family: 'Noto Sans TC', sans-serif;
+
+
+}
+section
+{
+color: aliceblue;
+
+}
+
+
+
+
+
+
+.scrolling-text2 {
+  display: inline-block;
+  background: rgb(0, 0, 0);
+  transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
+  will-change: transform;
+
+  backface-visibility: hidden;
+}
+
+.scrolling-text2 .scrolling-text2-content2 {
+    background: url(https://media.giphy.com/media/mTgj4zdM2vPLxp9p2U/giphy.gif);
+    text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 120px;
+  white-space: nowrap;
+  transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
+  line-height: 1em;
+  margin: 50px 0;
+
+
+  font-family: "Libre Barcode 39 Extended Text", system-ui;
+  font-weight: 400;
+  font-style: normal;
+
+
+}
+
+
+
+
+
+
+.scrolling-text3 {
+  display: inline-block;
+  background: rgb(108, 158, 0);
+  transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
+  will-change: transform;
+
+  backface-visibility: hidden;
+}
+
+.scrolling-text3 .scrolling-text3-content3 {
+    background: url(https://media.giphy.com/media/koyjGfQHIZQKk/giphy.gif);
+    text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 120px;
+  white-space: nowrap;
+  transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
+  line-height: 1em;
+  margin: 50px 0;
+
+
+  font-family: "Bungee Shade", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+
+}
+
+
+
+
+</style>
+
+    <main>
+      <!-- 製作固定側邊選單 -->
+      <div class="fixed-menu">
+        <div class="store-menu">
+          <div class="triangle"><a href="#"><span>點</span>餐去</a></div>
+          <div class="triangle"><a href="#"><span>查</span>訂單</a></div>
+          <div class="triangle"><a href="#"><span>找</span>門市</a></div>
+        </div>
+      </div>
+      <!--結束固定側邊選單-->
+      <section class="background-image">
+        <div class="filter"></div>
+        <h3>現點現做·香醇口感。<span>來一杯幸福滋味</span></h3>
+      </section>
+      <section class="news">
+        <!--做間隔-->
+        <div></div>
+        <h1>News 最新消息</h1>
+        <div class="rectangles">
+          <div class="rectangle">
+            <img
+              title="單筆消費買5杯柳橙果粒茶，贈送限量環保聯名杯袋"
+              src="./images/news_01.jpg"
+              alt="單筆消費買5杯柳橙果粒茶，贈送限量環保聯名杯袋"
+            />
+            <p><a href="#">more + </a></p>
+          </div>
+          <div class="rectangle">
+            <img
+              title="芋泥波波鮮奶2.0現折15元"
+              src="./images/news_02.jpg"
+              alt="芋泥波波鮮奶2.0現折15元"
+            />
+            <p><a href="#">more + </a></p>
+          </div>
+          <div class="rectangle">
+            <img
+              title="2023最後強檔回饋，全品項飲品現折10元"
+              src="./images/news_03.jpg"
+              alt="2023最後強檔回饋，全品項飲品現折10元"
+            />
+            <p><a href="#">more + </a></p>
+          </div>
+        </div>
+      </section>
+      <section class="new-product">
+        <img
+          class="fixed-image"
+          src="./images/new-product-bg.jpg"
+          alt="新品上市"
+        />
+        <div class="circles">
+          <div class="circle">
+            <div>
+              <img
+                title="抹茶鮮奶茶"
+                src="./images/new-products/green-tea-iced-milk.jpg"
+                alt="抹茶鮮奶茶"
+              />
+            </div>
+            <div class="content">
+              <h3>新品上市</h3>
+              <p>源自日本宇治抹茶風味，搭配小農乳香，滿足您的味蕾。</p>
+              <a href="#">了解更多</a>
+            </div>
+          </div>
+          <div class="circle">
+            <div>
+              <img
+                title="荔枝蔓越莓汁"
+                src="./images/new-products/lychee-juice.jpg"
+                alt="荔枝蔓越莓汁"
+              />
+            </div>
+            <div class="content">
+              <h3>新品上市</h3>
+              <p>吃得到的鮮甜荔枝果粒，搭配特製的蔓越莓茶增加酸甜口感。</p>
+              <a href="#">了解更多</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- SCROLL ANIMAITON SECTION -->
+      <section>
+
+    
+        <div class="container" speed=500>
+            <div class='scrolling-text'>
+              <h2 class="scrolling-text-content">JAVA BEVERAGE IS IN THE HOUSE ! 爪蛙茶飲熱賣中!  </h2>
+            </div>
+          </div>
+          
+          <br>
+          <div class="container left-to-right" speed=500>
+            <div class='scrolling-text3'>
+              <h2 class="scrolling-text3-content3">SYStem.out.println("Hello  from Java  !") </h2>
+            </div>
+          </div>
+              
+          <br>
+    
+            <div class="container" speed=500>
+            <div class='scrolling-text2'>
+              <h2 class="scrolling-text2-content2">   JAVA BEVERAGE BLOCKBUSTER!   </h2>
+            </div>
+          </div>
+          <br>       
+          <div class="container left-to-right" speed=500>
+            <div class='scrolling-text3'>
+              <h2 class="scrolling-text3-content3"> JAVA{爪蛙} MADE YOUR DAY !  </h2>
+            </div>
+          </div>
+          
+          <br>
+          <div class="container left-to-right" speed=500>
+            <div class='scrolling-text'>
+              <h2 class="scrolling-text-content">SYStem.out.println("Hello  from 爪蛙  ! JAVA茶飲 ") </h2>
+            </div>
+          </div>
+          
+          <br>
+          
+          <div class="container" speed=500>
+            <div class='scrolling-text2'>
+              <h2 class="scrolling-text2-content2"> 
+                OUT.PRINTLN{JAVA爪蛙}   </h2>
+            </div>
+          </div>
+          
+          <br>
+          <div class="container left-to-right" speed=500>
+            <div class='scrolling-text'>
+              <h2 class="scrolling-text-content">HELLO FROM JAVA! 爪蛙茶飲 </h2>
+            </div>
+          </div>
+          
+          <br>
+          
+          
+          
+    </section>
+
+
+
+
+
+      <section class="rank">
+        <h1>熱銷排行榜</h1>
+        <h3>Top 5</h3>
+        <!-- Swiper容器 -->
+        <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <!-- 共5張圖片 -->
+            <div class="swiper-slide">
+              <div class="item-inner w36">
+                <div class="item-sec is1">
+                  <div>
+                    <img class="pic" src="./images/rank/01.jpg" alt="逮丸奶茶">
+                  </div>
+                </div>
+                <div class="item-sec is2">
+                  <p>TOP 1</p>
+                  <span class="c7">香醇系列 奶茶</span>
+                  <h4><a href="#">逮丸奶茶</a></h4>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="item-inner w36">
+                  <div class="item-sec is1">
+                    <div>
+                      <img class="pic" src="./images/rank/02.jpg" alt="粉粿桂花檸檬">
+                    </div>
+                  </div>
+                  <div class="item-sec is2">
+                    <p>TOP 2</p>
+                    <span class="c7">日常系列 滋味茶</span>
+                    <h4><a href="#">粉粿桂花檸檬</a></h4>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="item-inner w36">
+                  <div class="item-sec is1">
+                    <div>
+                      <img class="pic" src="./images/rank/03.jpg" alt="招牌紅茶">
+                    </div>
+                  </div>
+                  <div class="item-sec is2">
+                    <p>TOP 3</p>
+                    <span class="c7">茶人系列 原味茶</span>
+                    <h4><a href="/about">招牌紅茶</a></h4>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="item-inner w36">
+                  <div class="item-sec is1">
+                    <div>
+                      <img class="pic" src="./images/rank/04.jpg" alt="奶蓋蕎麥茶">
+                    </div>
+                  </div>
+                  <div class="item-sec is2">
+                    <p>TOP 4</p>
+                    <span class="c7">濃韻系列 芝士奶蓋</span>
+                    <h4><a href="/about">奶蓋蕎麥茶</a></h4>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="item-inner w36">
+                  <div class="item-sec is1">
+                    <div>
+                      <img class="pic" src="./images/rank/05.jpg" alt="覆盆子氣泡冰茶">
+                    </div>
+                  </div>
+                  <div>
+                    <p>TOP 5</p>
+                    <span class="c7">日常系列 滋味茶</span>
+                    <h4><a href="#">覆盆子氣泡冰茶</a></h4>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <!-- 左右按鈕 與 行內CSS樣式 -->
+          <div class="swiper-button-next" style="color: #846950; border: #846950 0.1rem solid; padding: 1.5rem;"></div>
+          <div class="swiper-button-prev" style="color: #846950; border: #846950 0.1rem solid; padding: 1.5rem;"></div>
+        </div>
+        </section>
+<script>
+  // 初始化Swiper
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 3, // 一次顯示的圖片數量
+    spaceBetween: 30, // 圖片之間的間距
+    centeredSlides: true, // 圖片是否居中顯示
+    loop: true, // 迴圈
+
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    
+  });
+</script>
+      <section class="location">
+        <div class="pic">
+          <img
+            title="門市據點"
+            src="./images/store_location.webp"
+            alt="門市據點"
+          />
+        </div>
+        <div class="location-info">
+          <h1>Our Stores</h1>
+          <h2>門市據點</h2>
+          <p>
+            茶即是生活態度。<br />
+            我們相信每一杯茶代表的都是一段情感、一個回憶。
+          </p>
+          <a href="#">READ MORE +</a>
+        </div>
+      </section>
+      <section class="about">
+        <div class="about-info">
+          <h1>About Us</h1>
+          <h2>關於爪蛙</h2>
+          <p>
+            爪蛙茶飲的品牌創立來自Java職訓班的6位成員<br />
+            我們相信要寫好程式，除了邏輯培養之外<br>
+            還缺少一杯好茶，茶中所含的類黃酮能促進提高注意力、活化血管機能...等。
+          </p>
+          <a href="#">READ MORE +</a>
+        </div>
+        <div class="pic">
+          <img id="tea1"
+            title="關於我們"
+            src="./images/tea.jpg"
+            alt="關於爪哇"
+          />
+          <img id="tea2" src="./images/teaTable.png" alt="茶具組">
+        </div>
+      </section>
+    </main>
+    <script>
+      setInterval(() => {
+        let topBackground = document.querySelector("section.background-image");
+        if (
+          topBackground.style.backgroundImage == 'url("../images/dessert.jpg")'
+        ) {
+          topBackground.style.backgroundImage =
+            'url("../images/fruit_drinks.jpg")';
+        } else if (
+          topBackground.style.backgroundImage ==
+          'url("../images/fruit_drinks.jpg")'
+        ) {
+          topBackground.style.backgroundImage =
+            'url("../images/smoothies.jpg")';
+        } else {
+          topBackground.style.backgroundImage = 'url("../images/dessert.jpg")';
+        }
+      }, 3000);
+    </script>
+    <footer>
+      <section class="logo">
+        <img src="./images/web_Logo.svg" alt="爪哇茶飲Logo" />
+      </section>
+      <section class="info-left">
+        <p>地址：臺中市南屯區公益路1000號</p>
+        <p>客服專線：0800-500-8585</p>
+        <p>營業時間：週一至週六 11:00-21:00</p>
+      </section>
+      <section class="info-right">
+        <nav>
+          <ul>
+            <li><a href="#">最新消息</a></li>
+            <li><a href="#">飲品資訊</a></li>
+            <li><a href="#">關於我們</a></li>
+            <li><a href="#">門市據點</a></li>
+            <li><a href="#">常見問答</a></li>
+            <li><a href="#">加盟專區</a></li>
+            <li><a href="#">品牌會員</a></li>
+          </ul>
+        </nav>
+        <p>CopyRight &copy 2024 爪蛙茶飲有限公司 ALL RIGHTS RESERVED</p>
+      </section>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- function below  -->
+
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script id="rendered-js" >
+
+
+
+
+
+$(document).ready(function () {
+var containers = $('.container');
+
+if (containers.length) {
+containers.each(function () {
+var container = $(this);
+
+// Support small text - copy to fill screen width
+if (container.find('.scrolling-text').outerWidth() < $(window).width()) {
+  var windowToScrolltextRatio = Math.round($(window).width() / container.find('.scrolling-text').outerWidth()),
+  scrollTextContent = container.find('.scrolling-text .scrolling-text-content').text(),
+  newScrollText = '';
+  for (var i = 0; i < windowToScrolltextRatio; i++) {if (window.CP.shouldStopExecution(0)) break;
+    newScrollText += ' ' + scrollTextContent;
+  }window.CP.exitedLoop(0);
+  container.find('.scrolling-text .scrolling-text-content').text(newScrollText);
+}
+
+// Init variables and config
+var scrollingText = container.find('.scrolling-text'),
+scrollingTextWidth = scrollingText.outerWidth(),
+scrollingTextHeight = scrollingText.outerHeight(true),
+startLetterIndent = parseInt(scrollingText.find('.scrolling-text-content').css('font-size'), 10) / 4.8,
+startLetterIndent = Math.round(startLetterIndent),
+scrollAmountBoundary = Math.abs($(window).width() - scrollingTextWidth),
+transformAmount = 0,
+leftBound = 0,
+rightBound = scrollAmountBoundary,
+transformDirection = container.hasClass('left-to-right') ? -1 : 1,
+transformSpeed = 100;
+
+
+
+
+
+// Read transform speed
+if (container.attr('speed')) {
+  transformSpeed = container.attr('speed');
+}
+
+// Make scrolling text copy for scrolling infinity
+container.append(scrollingText.clone().addClass('scrolling-text-copy'));
+container.find('.scrolling-text').css({ 'position': 'absolute', 'left': 0 });
+container.css('height', scrollingTextHeight);
+
+var getActiveScrollingText = function (direction) {
+  var firstScrollingText = container.find('.scrolling-text:nth-child(1)');
+  var secondScrollingText = container.find('.scrolling-text:nth-child(2)');
+
+  var firstScrollingTextLeft = parseInt(container.find('.scrolling-text:nth-child(1)').css("left"), 10);
+  var secondScrollingTextLeft = parseInt(container.find('.scrolling-text:nth-child(2)').css("left"), 10);
+
+  if (direction === 'left') {
+    return firstScrollingTextLeft < secondScrollingTextLeft ? secondScrollingText : firstScrollingText;
+  } else if (direction === 'right') {
+    return firstScrollingTextLeft > secondScrollingTextLeft ? secondScrollingText : firstScrollingText;
+  }
+};
+
+
+
+
+$(window).on('wheel', function (e) {
+  var delta = e.originalEvent.deltaY;
+
+  if (delta > 0) {
+    // going down
+    transformAmount += transformSpeed * transformDirection;
+    container.find('.scrolling-text .scrolling-text-content').css('transform', 'skewX(10deg)');
+  } else
+  {
+    transformAmount -= transformSpeed * transformDirection;
+    container.find('.scrolling-text .scrolling-text-content').css('transform', 'skewX(-10deg)');
+  }
+  setTimeout(function () {
+    container.find('.scrolling-text').css('transform', 'translate3d(' + transformAmount * -1 + 'px, 0, 0)');
+  }, 10);
+  setTimeout(function () {
+    container.find('.scrolling-text .scrolling-text-content').css('transform', 'skewX(0)');
+  }, 500);
+
+  
+
+
+
+  // Boundaries
+  if (transformAmount < leftBound) {
+    var activeText = getActiveScrollingText('left');
+    activeText.css({ 'left': Math.round(leftBound - scrollingTextWidth - startLetterIndent) + 'px' });
+    leftBound = parseInt(activeText.css("left"), 10);
+    rightBound = leftBound + scrollingTextWidth + scrollAmountBoundary + startLetterIndent;
+
+  } else if (transformAmount > rightBound) {
+    var activeText = getActiveScrollingText('right');
+    activeText.css({ 'left': Math.round(rightBound + scrollingTextWidth - scrollAmountBoundary + startLetterIndent) + 'px' });
+    rightBound += scrollingTextWidth + startLetterIndent;
+    leftBound = rightBound - scrollingTextWidth - scrollAmountBoundary - startLetterIndent;
+  }
+});
+});
+}
+});
+
+</script>
+
+
+
+
+
+<script id="rendered-js" >
+
+
+
+
+
+$(document).ready(function () {
+var containers = $('.container');
+
+if (containers.length) {
+containers.each(function () {
+var container = $(this);
+
+// Support small text - copy to fill screen width
+if (container.find('.scrolling-text2').outerWidth() < $(window).width()) {
+  var windowToScrolltextRatio = Math.round($(window).width() / container.find('.scrolling-text2').outerWidth()),
+  scrollTextContent = container.find('.scrolling-text2 .scrolling-text2-content2').text(),
+  newScrollText = '';
+  for (var i = 0; i < windowToScrolltextRatio; i++) {if (window.CP.shouldStopExecution(0)) break;
+    newScrollText += ' ' + scrollTextContent;
+  }window.CP.exitedLoop(0);
+  container.find('.scrolling-text2 .scrolling-text2-content2').text(newScrollText);
+}
+
+// Init variables and config
+var scrollingText = container.find('.scrolling-text2'),
+scrollingTextWidth = scrollingText.outerWidth(),
+scrollingTextHeight = scrollingText.outerHeight(true),
+startLetterIndent = parseInt(scrollingText.find('.scrolling-text2-content2').css('font-size'), 10) / 4.8,
+startLetterIndent = Math.round(startLetterIndent),
+scrollAmountBoundary = Math.abs($(window).width() - scrollingTextWidth),
+transformAmount = 0,
+leftBound = 0,
+rightBound = scrollAmountBoundary,
+transformDirection = container.hasClass('left-to-right') ? -1 : 1,
+transformSpeed = 100;
+
+
+
+
+
+// Read transform speed
+if (container.attr('speed')) {
+  transformSpeed = container.attr('speed');
+}
+
+// Make scrolling text copy for scrolling infinity
+container.append(scrollingText.clone().addClass('scrolling-text2-copy'));
+container.find('.scrolling-text2').css({ 'position': 'absolute', 'left': 0 });
+container.css('height', scrollingTextHeight);
+
+var getActiveScrollingText = function (direction) {
+  var firstScrollingText = container.find('.scrolling-text2:nth-child(1)');
+  var secondScrollingText = container.find('.scrolling-text2:nth-child(2)');
+
+  var firstScrollingTextLeft = parseInt(container.find('.scrolling-text2:nth-child(1)').css("left"), 10);
+  var secondScrollingTextLeft = parseInt(container.find('.scrolling-text2:nth-child(2)').css("left"), 10);
+
+  if (direction === 'left') {
+    return firstScrollingTextLeft < secondScrollingTextLeft ? secondScrollingText : firstScrollingText;
+  } else if (direction === 'right') {
+    return firstScrollingTextLeft > secondScrollingTextLeft ? secondScrollingText : firstScrollingText;
+  }
+};
+
+
+
+
+$(window).on('wheel', function (e) {
+  var delta = e.originalEvent.deltaY;
+
+  if (delta > 0) {
+    // going down
+    transformAmount += transformSpeed * transformDirection;
+    container.find('.scrolling-text2 .scrolling-text2-content2').css('transform', 'skewX(10deg)');
+  } else
+  {
+    transformAmount -= transformSpeed * transformDirection;
+    container.find('.scrolling-text2 .scrolling-text2-content').css('transform', 'skewX(-10deg)');
+  }
+  setTimeout(function () {
+    container.find('.scrolling-text2').css('transform', 'translate3d(' + transformAmount * -1 + 'px, 0, 0)');
+  }, 10);
+  setTimeout(function () {
+    container.find('.scrolling-text2 .scrolling-text2-content2').css('transform', 'skewX(0)');
+  }, 500);
+
+  
+
+
+
+  // Boundaries
+  if (transformAmount < leftBound) {
+    var activeText = getActiveScrollingText('left');
+    activeText.css({ 'left': Math.round(leftBound - scrollingTextWidth - startLetterIndent) + 'px' });
+    leftBound = parseInt(activeText.css("left"), 10);
+    rightBound = leftBound + scrollingTextWidth + scrollAmountBoundary + startLetterIndent;
+
+  } else if (transformAmount > rightBound) {
+    var activeText = getActiveScrollingText('right');
+    activeText.css({ 'left': Math.round(rightBound + scrollingTextWidth - scrollAmountBoundary + startLetterIndent) + 'px' });
+    rightBound += scrollingTextWidth + startLetterIndent;
+    leftBound = rightBound - scrollingTextWidth - scrollAmountBoundary - startLetterIndent;
+  }
+});
+});
+}
+});
+
+
+</script>
+
+
+
+<script id="rendered-js" >
+
+
+
+
+
+$(document).ready(function () {
+var containers = $('.container');
+
+if (containers.length) {
+containers.each(function () {
+var container = $(this);
+
+// Support small text - copy to fill screen width
+if (container.find('.scrolling-text3').outerWidth() < $(window).width()) {
+  var windowToScrolltextRatio = Math.round($(window).width() / container.find('.scrolling-text3').outerWidth()),
+  scrollTextContent = container.find('.scrolling-text3 .scrolling-text3-content3').text(),
+  newScrollText = '';
+  for (var i = 0; i < windowToScrolltextRatio; i++) {if (window.CP.shouldStopExecution(0)) break;
+    newScrollText += ' ' + scrollTextContent;
+  }window.CP.exitedLoop(0);
+  container.find('.scrolling-text3 .scrolling-text3-content3').text(newScrollText);
+}
+
+// Init variables and config
+var scrollingText = container.find('.scrolling-text3'),
+scrollingTextWidth = scrollingText.outerWidth(),
+scrollingTextHeight = scrollingText.outerHeight(true),
+startLetterIndent = parseInt(scrollingText.find('.scrolling-text3-content3').css('font-size'), 10) / 4.8,
+startLetterIndent = Math.round(startLetterIndent),
+scrollAmountBoundary = Math.abs($(window).width() - scrollingTextWidth),
+transformAmount = 0,
+leftBound = 0,
+rightBound = scrollAmountBoundary,
+transformDirection = container.hasClass('left-to-right') ? -1 : 1,
+transformSpeed = 100;
+
+
+
+
+
+// Read transform speed
+if (container.attr('speed')) {
+  transformSpeed = container.attr('speed');
+}
+
+// Make scrolling text copy for scrolling infinity
+container.append(scrollingText.clone().addClass('scrolling-text3-copy'));
+container.find('.scrolling-text3').css({ 'position': 'absolute', 'left': 0 });
+container.css('height', scrollingTextHeight);
+
+var getActiveScrollingText = function (direction) {
+  var firstScrollingText = container.find('.scrolling-text3:nth-child(1)');
+  var secondScrollingText = container.find('.scrolling-text3:nth-child(2)');
+
+  var firstScrollingTextLeft = parseInt(container.find('.scrolling-text3:nth-child(1)').css("left"), 10);
+  var secondScrollingTextLeft = parseInt(container.find('.scrolling-text3:nth-child(2)').css("left"), 10);
+
+  if (direction === 'left') {
+    return firstScrollingTextLeft < secondScrollingTextLeft ? secondScrollingText : firstScrollingText;
+  } else if (direction === 'right') {
+    return firstScrollingTextLeft > secondScrollingTextLeft ? secondScrollingText : firstScrollingText;
+  }
+};
+
+
+
+
+$(window).on('wheel', function (e) {
+  var delta = e.originalEvent.deltaY;
+
+  if (delta > 0) {
+    // going down
+    transformAmount += transformSpeed * transformDirection;
+    container.find('.scrolling-text3 .scrolling-text3-content3').css('transform', 'skewX(10deg)');
+  } else
+  {
+    transformAmount -= transformSpeed * transformDirection;
+    container.find('.scrolling-text3 .scrolling-text3-content').css('transform', 'skewX(-10deg)');
+  }
+  setTimeout(function () {
+    container.find('.scrolling-text3').css('transform', 'translate3d(' + transformAmount * -1 + 'px, 0, 0)');
+  }, 10);
+  setTimeout(function () {
+    container.find('.scrolling-text3 .scrolling-text3-content3').css('transform', 'skewX(0)');
+  }, 500);
+
+  
+
+
+
+  // Boundaries
+  if (transformAmount < leftBound) {
+    var activeText = getActiveScrollingText('left');
+    activeText.css({ 'left': Math.round(leftBound - scrollingTextWidth - startLetterIndent) + 'px' });
+    leftBound = parseInt(activeText.css("left"), 10);
+    rightBound = leftBound + scrollingTextWidth + scrollAmountBoundary + startLetterIndent;
+
+  } else if (transformAmount > rightBound) {
+    var activeText = getActiveScrollingText('right');
+    activeText.css({ 'left': Math.round(rightBound + scrollingTextWidth - scrollAmountBoundary + startLetterIndent) + 'px' });
+    rightBound += scrollingTextWidth + startLetterIndent;
+    leftBound = rightBound - scrollingTextWidth - scrollAmountBoundary - startLetterIndent;
+  }
+});
+});
+}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
+
+
+
+  </body>
+</html>
