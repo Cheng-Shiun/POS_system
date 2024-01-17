@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Session Data</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 使用 jQuery 發送 AJAX 請求獲取 Session 屬性
+            $.get("/getSessionData", function (data) {
+                // 在網頁上顯示 Session 屬性的值
+                $("#sessionData").text("Session Data: " + data);
+            });
+        });
+    </script>
+</head>
+<body>
+
+<h2>Hello, <span th:text="${username}"></span>!</h2>
+
+<!-- 顯示 Session 屬性的值 -->
+<p id="sessionData"></p>
+
+</body>
+</html>

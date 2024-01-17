@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdn.staticfile.org/Chart.js/3.9.1/chart.js"></script>
 <!--    <script>-->
 <!--        $( function() {-->
 <!--            $( "#sortable" ).sortable();-->
@@ -38,89 +39,6 @@
     </style>
 </head>
 <body>
-
-<!-- Start Top Bar -->
-<!--    <div class="top-bar">-->
-<!--      <div class="top-bar-left">-->
-<!--        <ul class="menu">-->
-<!--          <li class="menu-text">Marketing Site</li>-->
-<!--          <li><a href="#">One</a></li>-->
-<!--          <li><a href="#">Two</a></li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--      <div class="top-bar-right">-->
-<!--        <ul class="menu">-->
-<!--          <li><a href="#">Three</a></li>-->
-<!--          <li><a href="#">Four</a></li>-->
-<!--          <li><a href="#">Five</a></li>-->
-<!--          <li><a href="#">Six</a></li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--    </div>-->
-<!-- End Top Bar -->
-
-
-<!--    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>-->
-<!--      <ul class="orbit-container">-->
-<!--        <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>-->
-<!--        <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>-->
-<!--        <li class="orbit-slide is-active">-->
-<!--          <img src="https://placehold.it/2000x750">-->
-<!--        </li>-->
-<!--        <li class="orbit-slide">-->
-<!--          <img src="https://placehold.it/2000x750">-->
-<!--        </li>-->
-<!--        <li class="orbit-slide">-->
-<!--          <img src="https://placehold.it/2000x750">-->
-<!--        </li>-->
-<!--        <li class="orbit-slide">-->
-<!--          <img src="https://placehold.it/2000x750">-->
-<!--        </li>-->
-<!--      </ul>-->
-<!--    </div>-->
-
-<!--    <div class="row column text-center">-->
-<!--      <h2>Our Newest Products</h2>-->
-<!--      <hr>-->
-<!--    </div>-->
-
-<!--    <div class="row small-up-2 large-up-4">-->
-<!--      <div class="column">-->
-<!--        <img class="thumbnail" src="https://placehold.it/300x400">-->
-<!--        <h5>Nulla At Nulla Justo, Eget</h5>-->
-<!--        <p>$400</p>-->
-<!--        <a href="#" class="button expanded">Buy</a>-->
-<!--      </div>-->
-<!--      <div class="column">-->
-<!--        <img class="thumbnail" src="https://placehold.it/300x400">-->
-<!--        <h5>Nulla At Nulla Justo, Eget</h5>-->
-<!--        <p>$400</p>-->
-<!--        <a href="#" class="button expanded">Buy</a>-->
-<!--      </div>-->
-<!--      <div class="column">-->
-<!--        <img class="thumbnail" src="https://placehold.it/300x400">-->
-<!--        <h5>Nulla At Nulla Justo, Eget</h5>-->
-<!--        <p>$400</p>-->
-<!--        <a href="#" class="button expanded">Buy</a>-->
-<!--      </div>-->
-<!--      <div class="column">-->
-<!--        <img class="thumbnail" src="https://placehold.it/300x400">-->
-<!--        <h5>Nulla At Nulla Justo, Eget</h5>-->
-<!--        <p>$400</p>-->
-<!--        <a href="#" class="button expanded">Buy</a>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <hr>-->
-
-<!--    <div class="row column">-->
-<!--      <div class="callout primary">-->
-<!--        <h3>Really big special this week on items.</h3>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <hr>-->
-
 <div class="row column text-center">
     <h2>後台訂單處理系統(未完成訂單)</h2>
     <hr>
@@ -139,17 +57,22 @@
             <button type="submit" class="button small expanded hollow">完成訂單</button>
         </form>
     </div>
+</div>
 
-<!--    <div class="row small-up-2 medium-up-3 large-up-6">-->
-<!--    <div class="column">-->
-<!--    <a onclick="AjaxUpload()" class="button small expanded hollow">手動更新已完成訂單</a>-->
-<!--    </div>-->
-<!--    </div>-->
+<div class="row column text-center">
+    <h2>後台訂單處理系統(訂單報表)</h2>
+    <hr>
+</div>
 
-</div><div id="chartOrder">
+<div class="row small-up-2 medium-up-3 large-up-6">
+    <canvas id="myChart" width="400" height="200"></canvas>
+</div>
+
+<div id="chartOrder">
 
 </div>
-</div><div id="receiveOrder">
+
+<div id="receiveOrder">
 
 </div>
 
@@ -180,151 +103,87 @@
 <!--    </tr>-->
 <!--</table>-->
 <!--</div>-->
-
-
-
-<!--    <hr>-->
-<!--    <div class="row">-->
-<!--      <div class="medium-4 columns">-->
-<!--        <h4>Top Products</h4>-->
-<!--        <div class="media-object">-->
-<!--          <div class="media-object-section">-->
-<!--            <img class="thumbnail" src="https://placehold.it/100x100">-->
-<!--          </div>-->
-<!--          <div class="media-object-section">-->
-<!--            <h5>Nunc Eu Ullamcorper Orci</h5>-->
-<!--            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="media-object">-->
-<!--          <div class="media-object-section">-->
-<!--            <img class="thumbnail" src="https://placehold.it/100x100">-->
-<!--          </div>-->
-<!--          <div class="media-object-section">-->
-<!--            <h5>Nunc Eu Ullamcorper Orci</h5>-->
-<!--            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="media-object">-->
-<!--          <div class="media-object-section">-->
-<!--            <img class="thumbnail" src="https://placehold.it/100x100">-->
-<!--          </div>-->
-<!--          <div class="media-object-section">-->
-<!--            <h5>Nunc Eu Ullamcorper Orci</h5>-->
-<!--            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="medium-4 columns">-->
-<!--        <h4>Top Products</h4>-->
-<!--        <div class="media-object">-->
-<!--          <div class="media-object-section">-->
-<!--            <img class="thumbnail" src="https://placehold.it/100x100">-->
-<!--          </div>-->
-<!--          <div class="media-object-section">-->
-<!--            <h5>Nunc Eu Ullamcorper Orci</h5>-->
-<!--            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="media-object">-->
-<!--          <div class="media-object-section">-->
-<!--            <img class="thumbnail" src="https://placehold.it/100x100">-->
-<!--          </div>-->
-<!--          <div class="media-object-section">-->
-<!--            <h5>Nunc Eu Ullamcorper Orci</h5>-->
-<!--            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="media-object">-->
-<!--          <div class="media-object-section">-->
-<!--            <img class="thumbnail" src="https://placehold.it/100x100">-->
-<!--          </div>-->
-<!--          <div class="media-object-section">-->
-<!--            <h5>Nunc Eu Ullamcorper Orci</h5>-->
-<!--            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="medium-4 columns">-->
-<!--        <h4>Top Products</h4>-->
-<!--        <div class="media-object">-->
-<!--          <div class="media-object-section">-->
-<!--            <img class="thumbnail" src="https://placehold.it/100x100">-->
-<!--          </div>-->
-<!--          <div class="media-object-section">-->
-<!--            <h5>Nunc Eu Ullamcorper Orci</h5>-->
-<!--            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="media-object">-->
-<!--          <div class="media-object-section">-->
-<!--            <img class="thumbnail" src="https://placehold.it/100x100">-->
-<!--          </div>-->
-<!--          <div class="media-object-section">-->
-<!--            <h5>Nunc Eu Ullamcorper Orci</h5>-->
-<!--            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="media-object">-->
-<!--          <div class="media-object-section">-->
-<!--            <img class="thumbnail" src="https://placehold.it/100x100">-->
-<!--          </div>-->
-<!--          <div class="media-object-section">-->
-<!--            <h5>Nunc Eu Ullamcorper Orci</h5>-->
-<!--            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <div class="callout large secondary">-->
-<!--      <div class="row">-->
-<!--        <div class="large-4 columns">-->
-<!--          <h5>Vivamus Hendrerit Arcu Sed Erat Molestie</h5>-->
-<!--          <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit.</p>-->
-<!--        </div>-->
-<!--        <div class="large-3 large-offset-2 columns">-->
-<!--          <ul class="menu vertical">-->
-<!--            <li><a href="#">One</a></li>-->
-<!--            <li><a href="#">Two</a></li>-->
-<!--            <li><a href="#">Three</a></li>-->
-<!--            <li><a href="#">Four</a></li>-->
-<!--          </ul>-->
-<!--        </div>-->
-<!--        <div class="large-3 columns">-->
-<!--          <ul class="menu vertical">-->
-<!--            <li><a href="#">One</a></li>-->
-<!--            <li><a href="#">Two</a></li>-->
-<!--            <li><a href="#">Three</a></li>-->
-<!--            <li><a href="#">Four</a></li>-->
-<!--          </ul>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>-->
-<!--<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>-->
-<!--<script>-->
-<!--    $(document).foundation();-->
-<!--</script>-->
 <script>
     $(document).ready(function() {
-        AjaxUpload2(); // 在文檔加載完成後執行 getData 函數
-        AjaxUpload3();
-    });
-    setInterval(AjaxUpload2,10000);
-    setInterval(AjaxUpload3, 10000);
-    function AjaxUpload() {
-        $('#receiveOrder').load('http://localhost:8080/receiveOrderList')
-    }
+        // AjaxUpload1();
+        AjaxUpload2();
+        getData();
+
+    // setInterval(AjaxUpload1,10000);
+    // setInterval(AjaxUpload2, 10000);
+
+    // function AjaxUpload1() {
+    //     $('#chartOrder').load('/chartOrder')
+    // }
 
     function AjaxUpload2() {
         $('#receiveOrder').load('/receiveOrderList')
     }
 
-    function AjaxUpload3() {
-        $('#chartOrder').load('/chartOrder')
-    }
+        function getData() {
+            console.log("發出 Rest API 需求取得資料");
+            $.get('/api/chartOrder/',function (data, status) {
+                // console.log("取得資料"+JSON.stringify(data[0]));
+                // console.log("轉換資料"+data[0].total);
+                var totalsArray = [];
+                for (var i=0; i<data.length; i++) {
+                    console.log("取得資料"+data[i].total);
+                    console.log( "轉換資料"+JSON.stringify(data[i].total));
+                    totalsArray.push(data[i].total);
+                }
+                showReport(totalsArray);
+            })
+        }
+
+
+        // var myChart= null;
+
+        function showReport (reportData) {
+            // if( myChart != null) {
+            //     myChart.destroy();
+            // }
+            const ctx = document.getElementById('myChart');
+            const labels = ['冬瓜茶系列', '原味茶', '滋味茶','芝士奶蓋', '風味茶', '香醇奶茶', '鮮奶茶'];  // 设置 X 轴上对应的标签
+            const data = {
+                labels: labels,
+                datasets: [{
+                    label: '訂單報表',
+                    data: reportData,
+                    backgroundColor: [      // 设置每个柱形图的背景颜色
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 205, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(201, 203, 207, 0.2)'
+                    ],
+                    borderColor: [     //设置每个柱形图边框线条颜色
+                        'rgb(255, 99, 132)',
+                        'rgb(255, 159, 64)',
+                        'rgb(255, 205, 86)',
+                        'rgb(75, 192, 192)',
+                        'rgb(54, 162, 235)',
+                        'rgb(153, 102, 255)',
+                        'rgb(201, 203, 207)'
+                    ],
+                    borderWidth: 1     // 设置线条宽度
+                }]
+            };
+            const config = {
+                type: 'bar', // 设置图表类型
+                data: data,  // 设置数据集
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true // 设置 y 轴从 0 开始
+                        }
+                    }
+                },
+            };
+            const myChart = new Chart(ctx, config);
+        }
+    });
 </script>
 </body>
 </html>

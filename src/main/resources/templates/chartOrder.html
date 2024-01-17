@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>後台訂單處理系統(訂單報表)</title>
     <script src="https://cdn.staticfile.org/Chart.js/3.9.1/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
@@ -19,40 +19,9 @@
 </div>
 
 <script>
-    // $(document).ready(function(){
-    //     $("#type").change(function(){
-    //         var selectedValue = $(this).val();
-    //         addOrderById(selectedValue);
-    //     });
-    //
-    //     $('#order').submit(function (){
-    //         alert("請確認後在送出");
-    //     });
-    //
-    //     function addOrderById() {
-    //         let type = $('#type').val();
-    //         $.get( '/api/addOrderByType/' + type,
-    //             function (data , status) {
-    //                 console.log("發出 ajax .get 到 springboot api server 取資料結果:")
-    //                 $('#product').empty();
-    //                 $('#product').append('<option disabled selected>請選擇產品</option>');
-    //                 for (var i=0; i<data.length; i++) {
-    //                     console.log( JSON.stringify(data[i]));
-    //                     console.log(data[i].product);
-    //                     $('#product').append('<option>' + data[i].product + '</option>');
-    //                 }
-    //             }
-    //         )
-    //     }
-    //
-    //     $("#chart").submit(function(){
-    //         var selectedValue = $(this).val();
-    //         getData(selectedValue);
-    //     });
-
     $(document).ready(function() {
         getData(); // 在文檔加載完成後執行 getData 函數
-    });
+
     function getData() {
         console.log("發出 Rest API 需求取得資料");
         $.get('/api/chartOrder/',function (data, status) {
@@ -63,7 +32,6 @@
                 console.log("取得資料"+data[i].total);
                 console.log( "轉換資料"+JSON.stringify(data[i].total));
                 totalsArray.push(data[i].total);
-                // $('#product').append('<option>' + data[i].product + '</option>');
             }
             showReport(totalsArray);
         })
@@ -117,7 +85,7 @@
         };
         const myChart = new Chart(ctx, config);
     }
-    // });
+    });
 </script>
 </body>
 </html>
