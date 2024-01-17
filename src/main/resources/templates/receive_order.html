@@ -146,6 +146,9 @@
 <!--    </div>-->
 <!--    </div>-->
 
+</div><div id="chartOrder">
+
+</div>
 </div><div id="receiveOrder">
 
 </div>
@@ -306,12 +309,17 @@
 <!--</script>-->
 <script>
     setInterval(AjaxUpload2,1000);
+    setInterval(AjaxUpload3, 10000);
     function AjaxUpload() {
         $('#receiveOrder').load('http://localhost:8080/receiveOrderList')
     }
 
     function AjaxUpload2() {
         $('#receiveOrder').load('/receiveOrderList')
+    }
+
+    function AjaxUpload3() {
+        $('#chartOrder').load('/chartOrder')
     }
 </script>
 </body>

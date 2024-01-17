@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/Chart.js/3.9.1/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+</head>
+<body>
+<!--<button onclick="getData()">更新報表</button>-->
+<div class="row column text-center">
+    <h2>後台訂單處理系統(訂單報表)</h2>
+    <hr>
+</div>
+
+<div class="row small-up-2 medium-up-3 large-up-6">
+<canvas id="myChart" width="400" height="200"></canvas>
+</div>
+
+<script>
+    // $(document).ready(function(){
+    //     $("#type").change(function(){
+    //         var selectedValue = $(this).val();
+    //         addOrderById(selectedValue);
+    //     });
+    //
+    //     $('#order').submit(function (){
+    //         alert("請確認後在送出");
+    //     });
+    //
+    //     function addOrderById() {
+    //         let type = $('#type').val();
+    //         $.get( '/api/addOrderByType/' + type,
+    //             function (data , status) {
+    //                 console.log("發出 ajax .get 到 springboot api server 取資料結果:")
+    //                 $('#product').empty();
+    //                 $('#product').append('<option disabled selected>請選擇產品</option>');
+    //                 for (var i=0; i<data.length; i++) {
+    //                     console.log( JSON.stringify(data[i]));
+    //                     console.log(data[i].product);
+    //                     $('#product').append('<option>' + data[i].product + '</option>');
+    //                 }
+    //             }
+    //         )
+    //     }
+    //
+    //     $("#chart").submit(function(){
+    //         var selectedValue = $(this).val();
+    //         getData(selectedValue);
+    //     });
+
+    $(document).ready(function() {
+        getData(); // 在文檔加載完成後執行 getData 函數
+    });
+    function getData() {
+        console.log("發出 Rest API 需求取得資料");
+        $.get('/api/chartOrder/',function (data, status) {
+            // console.log("取得資料"+JSON.stringify(data[0]));
+            // console.log("轉換資料"+data[0].total);
+            var totalsArray = [];
+            for (var i=0; i<data.length; i++) {
+                console.log("取得資料"+data[i].total);
+                console.log( "轉換資料"+JSON.stringify(data[i].total));
+                totalsArray.push(data[i].total);
+                // $('#product').append('<option>' + data[i].product + '</option>');
+            }
+            showReport(totalsArray);
+        })
+    }
+
+
+    // var myChart= null;
+
+    function showReport (reportData) {
+        // if( myChart != null) {
+        //     myChart.destroy();
+        // }
+        const ctx = document.getElementById('myChart');
+        const labels = ['冬瓜茶系列', '原味茶', '滋味茶','芝士奶蓋', '風味茶', '香醇奶茶', '鮮奶茶'];  // 设置 X 轴上对应的标签
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: '訂單報表',
+                data: reportData,
+                backgroundColor: [      // 设置每个柱形图的背景颜色
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(201, 203, 207, 0.2)'
+                ],
+                borderColor: [     //设置每个柱形图边框线条颜色
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                    'rgb(201, 203, 207)'
+                ],
+                borderWidth: 1     // 设置线条宽度
+            }]
+        };
+        const config = {
+            type: 'bar', // 设置图表类型
+            data: data,  // 设置数据集
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true // 设置 y 轴从 0 开始
+                    }
+                }
+            },
+        };
+        const myChart = new Chart(ctx, config);
+    }
+    // });
+</script>
+</body>
+</html>
