@@ -26,10 +26,10 @@ public class WebController
         return "Menu";
 
     }
-    @GetMapping("/aboutus")
+    @GetMapping("/login")
     public String getAboutUs()
     {
-        return"AboutUs";
+        return"login";
 
     }
     @GetMapping("/contactus")
