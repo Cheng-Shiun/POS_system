@@ -49,8 +49,8 @@ function blurName(y){
 //     });
 // }
 
+//檢查電話號碼 是否與DB的資料重覆
 function checkPhone() {
-    console.log("Checking phone...");
     var phone = $("input[name='phone']").val();
 
     // 檢查是否輸入了有效的電話號碼和是否為非空
@@ -62,9 +62,9 @@ function checkPhone() {
             data: { phone: phone },
             success: function(response) {
                 if (response.exists) {
-                    $("#phoneStatus").text("該電話號碼已存在");
+                    $("#phoneStatus").text(" 該電話號碼已存在 ");
                 } else {
-                    $("#phoneStatus").text("該電話號碼可以使用");
+                    $("#phoneStatus").text(" 該電話號碼可以使用 ");
                 }
             },
             error: function(error) {
@@ -73,12 +73,25 @@ function checkPhone() {
         });
     } else {
         // 如果電話號碼無效或為空，清除狀態
-        $("#phoneStatus").text("");
+        $("#phoneStatus").text("無效的電話號碼,請重新輸入!");
     }
 }
 
 function isValidPhoneNumber(phoneNumber) {
-    // 使用正則表達式檢查電話號碼是否為有效格式（只包含數字）
-    return phoneNumber !== null && phoneNumber.match(/^\d+$/);
+    // 使用正則表達式檢查電話號碼是否為有效格式-不能為空值、只包含數字、長度要10碼
+    return phoneNumber !== null && phoneNumber.match(/^\d+$/) && phoneNumber.length == 10;
 }
 
+//阻止在任何 input 按Enter後就送出表單
+document.addEventListener("DOMContentLoaded",function (){
+    //取得每個 input/textarea
+    var inputElements = document.querySelectorAll('input','textarea');
+    //加入keydown事件 監聽
+    inputElements.forEach(function (element){
+        element.addEventListener("keydown",function (e){
+            if(e.key === "Enter"){
+                e.preventDefault();
+            }
+        });
+    });
+});

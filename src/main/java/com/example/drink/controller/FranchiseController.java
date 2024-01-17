@@ -54,20 +54,20 @@ public class FranchiseController {
         }
     }
 
-    //調用FranchiseService
+    //調用FranchiseService 若Service有要另任條件判斷
 //    @PostMapping("/checkPhoneNumber")
 //    @ResponseBody
 //    //處理POST請求 用來接收 傳前端傳來的 參數(phone)
 //    public Map<String, Boolean> checkPhoneNumber(@RequestParam("phone") String phone) {
 //        Map<String, Boolean> response = new HashMap<>();  //建一個 Map 存放 後端處理後的結果
-//        boolean exists = franchiseService.checkFranchiseByPhone(phone);
+//        boolean exists = franchiseService.checkFranchiseByPhone(phone);    //這裡用 franchiseService
 //        response.put("exists", exists); //把檢查的結果放入 Map  用exists作為key。
 //        return response;
 //    }
 
     //調用FranchiseRepository 不在Service做任何條件判斷
     @Autowired
-    FranchiseRepository franchiseRepository;
+    FranchiseRepository franchiseRepository;  //因為是用Repository 因此要加入FranchiseRepository
     @PostMapping("/checkPhoneNumber")
     @ResponseBody
     public Map<String, Boolean> checkPhoneNumber(@RequestParam("phone") String phone) {
