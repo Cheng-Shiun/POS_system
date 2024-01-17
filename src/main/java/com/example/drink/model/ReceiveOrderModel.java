@@ -5,16 +5,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class ReceiveOrderModel {
-    private int on;
+    private int oNumber;
     private String type;
     private String product;
     private String material;
     private int qty;
     private String states;
-//    private Date date;
+    private Date date;
+    private Date eDate;
 }

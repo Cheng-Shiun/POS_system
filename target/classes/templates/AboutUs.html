@@ -199,10 +199,41 @@
         <a class="nav-link" href="/store">門市據點</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">品牌會員</a>
+        <a class="nav-link" href="#" onclick="openForm()">品牌會員</a>
       </li>
     </ul>
   </div>
+  <script>
+    function toggleMenu() {
+      var menu = document.querySelector('.menu');
+      menu.classList.toggle('show');
+    }
+  </script>
+  <!--登入彈跳視窗-->
+  <div class="form-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+      <h1 style="text-align: center">會員登入</h1>
+
+      <label for="email"><b>使用者名稱</b></label>
+      <input type="text" placeholder="Enter Member Name" name="name" required>
+
+      <label for="psw"><b>手機</b></label>
+      <input type="password" placeholder="Enter Phone" name="phone" required>
+
+      <button type="submit" class="btn">登入</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">關閉</button>
+    </form>
+  </div>
+  <!--登入彈跳視窗End-->
+  <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+  </script>
 </header>
 <!--頁首nav End-->
 

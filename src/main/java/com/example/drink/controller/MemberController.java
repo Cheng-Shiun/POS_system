@@ -2,10 +2,15 @@ package com.example.drink.controller;
 
 import com.example.drink.model.Member;
 import com.example.drink.service.MemberService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -41,10 +46,12 @@ public class MemberController {
         return "memberList";
     }
 
-    //登入
-    @GetMapping("/login")
-    public String memberLogin(){
-        return "login";
+    //接收使用者名稱、手機號碼
+    @GetMapping("/member2")
+    public String getMemberName(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        //存取使用者輸入的session
+        session.setAttribute("memberName", "name");
+        return "memberName";
     }
-
 }

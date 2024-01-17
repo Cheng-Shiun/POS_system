@@ -3,8 +3,39 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
+    <title>後台訂單處理系統</title>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<!--    <script>-->
+<!--        $( function() {-->
+<!--            $( "#sortable" ).sortable();-->
+<!--        } );-->
+<!--    </script>-->
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers tr:hover {background-color: #93bd77;}
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #298cbb;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
@@ -91,21 +122,66 @@
 <!--    <hr>-->
 
 <div class="row column text-center">
-    <h2>後台訂單處理系統</h2>
+    <h2>後台訂單處理系統(未完成訂單)</h2>
     <hr>
 </div>
-
-<div class="row small-up-2 medium-up-3 large-up-6">
+<div id="sortable" class="row small-up-2 medium-up-3 large-up-6">
     <div th:each="receiveOrder : ${receiveOrder}" class="column">
-        <h5>訂單號碼：<span th:text="${receiveOrder.getOn()}"></span></h5>
+        <h5>訂單號碼：<span th:text="${receiveOrder.getONumber()}"></span></h5>
         <p>種類：<span th:text="${receiveOrder.getType()}"></span></p>
         <p>產品：<span th:text="${receiveOrder.getProduct()}"></span></p>
         <p>加料：<span th:text="${receiveOrder.getMaterial()}"></span></p>
         <p>數量：<span th:text="${receiveOrder.getQty()}"></span></p>
         <p>冷熱飲：<span th:text="${receiveOrder.getStates()}"></span></p>
-        <a href="#" class="button small expanded hollow">完成訂單</a>
+        <p>訂單時間：<span th:text="${receiveOrder.getDate()}"></span></p>
+        <form action="/checkOutOrder" method="post">
+            <input type="hidden" name="oNumber" th:value="${receiveOrder.getONumber()}">
+            <button type="submit" class="button small expanded hollow">完成訂單</button>
+        </form>
     </div>
+
+<!--    <div class="row small-up-2 medium-up-3 large-up-6">-->
+<!--    <div class="column">-->
+<!--    <a onclick="AjaxUpload()" class="button small expanded hollow">手動更新已完成訂單</a>-->
+<!--    </div>-->
+<!--    </div>-->
+
+</div><div id="chartOrder">
+
 </div>
+</div><div id="receiveOrder">
+
+</div>
+
+
+<!--<div class="row column text-center">-->
+<!--    <h2>後台訂單處理系統(全部清單)</h2>-->
+<!--    <hr>-->
+<!--</div>-->
+<!--<div class="row small-up-2 medium-up-3 large-up-6">-->
+<!--<table id="customers">-->
+<!--    <tr>-->
+<!--        <th>訂單號碼</th>-->
+<!--        <th>種類</th>-->
+<!--        <th>產品</th>-->
+<!--        <th>加料</th>-->
+<!--        <th>數量</th>-->
+<!--        <th>冷熱飲</th>-->
+<!--        <th>訂單時間</th>-->
+<!--    </tr>-->
+<!--    <tr th:each="receiveOrder : ${receiveOrder}">-->
+<!--        <td th:text="${ receiveOrder.getONumber() }"></td>-->
+<!--        <td th:text="${ receiveOrder.getType() }"></td>-->
+<!--        <td th:text="${ receiveOrder.getProduct() }"></td>-->
+<!--        <td th:text="${ receiveOrder.getMaterial() }"></td>-->
+<!--        <td th:text="${ receiveOrder.getQty() }"></td>-->
+<!--        <td th:text="${ receiveOrder.getStates() }"></td>-->
+<!--        <td th:text="${ receiveOrder.getDate() }"></td>-->
+<!--    </tr>-->
+<!--</table>-->
+<!--</div>-->
+
+
 
 <!--    <hr>-->
 <!--    <div class="row">-->
@@ -226,10 +302,25 @@
 <!--      </div>-->
 <!--    </div>-->
 
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+<!--<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>-->
+<!--<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>-->
+<!--<script>-->
+<!--    $(document).foundation();-->
+<!--</script>-->
 <script>
-    $(document).foundation();
+    setInterval(AjaxUpload2,1000);
+    setInterval(AjaxUpload3, 10000);
+    function AjaxUpload() {
+        $('#receiveOrder').load('http://localhost:8080/receiveOrderList')
+    }
+
+    function AjaxUpload2() {
+        $('#receiveOrder').load('/receiveOrderList')
+    }
+
+    function AjaxUpload3() {
+        $('#chartOrder').load('/chartOrder')
+    }
 </script>
 </body>
 </html>
