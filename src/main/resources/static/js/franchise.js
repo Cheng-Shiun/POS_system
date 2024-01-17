@@ -78,8 +78,8 @@ function checkPhone() {
 }
 
 function isValidPhoneNumber(phoneNumber) {
-    // 使用正則表達式檢查電話號碼是否為有效格式-不能為空值、只包含數字、長度要10碼
-    return phoneNumber !== null && phoneNumber.match(/^\d+$/) && phoneNumber.length == 10;
+    // 使用正則表達式檢查電話號碼是否為有效格式-不能為空值、只包含數字、長度要9碼或10碼、號碼一定是0開始
+    return phoneNumber !== null && phoneNumber.match(/^0\d{0,9}$/) && phoneNumber.length >=9 && phoneNumber.length<=10;
 }
 
 //阻止在任何 input 按Enter後就送出表單

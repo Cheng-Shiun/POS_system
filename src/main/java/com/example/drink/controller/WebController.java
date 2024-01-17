@@ -32,12 +32,6 @@ public class WebController
         return"AboutUs";
 
     }
-    @GetMapping("/latestnews")
-    public String getLatestNews()
-    {
-        return"LatestNews";
-
-    }
     @GetMapping("/contactus")
     public String getContactUs()
     {
