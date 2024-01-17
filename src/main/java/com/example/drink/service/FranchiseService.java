@@ -3,6 +3,7 @@ package com.example.drink.service;
 import com.example.drink.DAO.FranchiseRepository;
 import com.example.drink.model.FranchiseModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 public class FranchiseService {
     @Autowired
     FranchiseRepository franchiseRepository;
+    JdbcTemplate jdbcTemplate;
     public List<FranchiseModel> getAllFranchise(){
         return franchiseRepository.getAllFranchise ();
     }
@@ -40,4 +42,12 @@ public class FranchiseService {
             return count;
         }
     }
+
+    //這個判斷也是調用Repository來做判斷 資料是否存在,如果沒有要再做其他判斷,就不用寫 Controller部份直接Autowire FranchiseRepository就可以
+//    public boolean checkFranchiseByPhone(String franchisePhone) {
+//        return franchiseRepository.checkFranchiseByPhone(franchisePhone);
+//    }
+
+    //延續上面的方法 這裡要加入 條件判斷式
+
 }

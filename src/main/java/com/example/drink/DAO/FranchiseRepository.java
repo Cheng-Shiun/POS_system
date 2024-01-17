@@ -36,4 +36,8 @@ public class FranchiseRepository {
     public long checkFranchise(String franchiseName, String franchisePhone){
         return jdbcTemplate.queryForObject ("select count(*) from franchise where name=? and phone=?", Long.class, franchiseName,franchisePhone);
     }
+    public boolean checkFranchiseByPhone(String franchisePhone) {
+        long count = jdbcTemplate.queryForObject("select count(*) from franchise where phone=?", Long.class, franchisePhone);   //? = franchisePhone
+        return count > 0; //count > 0 ,代表號碼已存在
+    }
 }

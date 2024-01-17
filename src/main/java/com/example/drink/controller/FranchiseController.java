@@ -1,5 +1,6 @@
 package com.example.drink.controller;
 
+import com.example.drink.DAO.FranchiseRepository;
 import com.example.drink.model.FranchiseModel;
 import com.example.drink.service.FranchiseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequestMapping("franchise")
@@ -45,13 +50,32 @@ public class FranchiseController {
             return "invalid";   // 有保留字 導到錯誤輸入頁面
         }
         else {
-            return "otherError";       // 其他情况，重定向到默认错误頁面 ex.未填完
+            return "otherError";       // 其他情况 導到其他錯誤頁面 ex.未填完
         }
-
     }
-//    @RequestMapping("/success")
-//    public String submitSuccess(){
-//        return "success";
+
+    //調用FranchiseService
+//    @PostMapping("/checkPhoneNumber")
+//    @ResponseBody
+//    //處理POST請求 用來接收 傳前端傳來的 參數(phone)
+//    public Map<String, Boolean> checkPhoneNumber(@RequestParam("phone") String phone) {
+//        Map<String, Boolean> response = new HashMap<>();  //建一個 Map 存放 後端處理後的結果
+//        boolean exists = franchiseService.checkFranchiseByPhone(phone);
+//        response.put("exists", exists); //把檢查的結果放入 Map  用exists作為key。
+//        return response;
 //    }
+
+    //調用FranchiseRepository 不在Service做任何條件判斷
+    @Autowired
+    FranchiseRepository franchiseRepository;
+    @PostMapping("/checkPhoneNumber")
+    @ResponseBody
+    public Map<String, Boolean> checkPhoneNumber(@RequestParam("phone") String phone) {
+        Map<String, Boolean> response = new HashMap<>();
+        boolean exists = franchiseRepository.checkFranchiseByPhone(phone);  //這裡改 franchiseRepository
+        response.put("exists", exists);
+        return response;
+    }
+
 
 }

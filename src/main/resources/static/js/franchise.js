@@ -22,8 +22,63 @@ function scrollToTop() {
 }
 
 function focusName(x){
-    x.style.background="#eaeaea";
+    x.style.background="#f0e19e";
 }
-function blurName(x){
-    x.style.background="#fff";
+function blurName(y){
+    y.style.background="#fff";
 }
+
+// function checkPhone() {
+//     var phone = $("input[name='phone']").val();
+//
+//     //發送Http請求
+//     $.ajax({
+//         type: "POST",
+//         url: "/franchise/checkPhoneNumber",
+//         data: { phone: phone },              //傳遞要發送到後端的數據 phone
+//         success: function(response) {  //response 是從後端回傳數據
+//             if (response.exists) {
+//                 $("#phoneStatus").text("電話號碼已被使用,請重新輸入!");
+//             } else {
+//                 $("#phoneStatus").text("電話號碼可以使用");
+//             }
+//         },
+//         error: function(error) {
+//             console.log("Error checking phone number: " + error);
+//         }
+//     });
+// }
+
+function checkPhone() {
+    console.log("Checking phone...");
+    var phone = $("input[name='phone']").val();
+
+    // 檢查是否輸入了有效的電話號碼和是否為非空
+    if (isValidPhoneNumber(phone)) {
+        // 發送 Http 請求
+        $.ajax({
+            type: "POST",
+            url: "/franchise/checkPhoneNumber",
+            data: { phone: phone },
+            success: function(response) {
+                if (response.exists) {
+                    $("#phoneStatus").text("該電話號碼已存在");
+                } else {
+                    $("#phoneStatus").text("該電話號碼可以使用");
+                }
+            },
+            error: function(error) {
+                console.log("Error checking phone number: " + error);
+            }
+        });
+    } else {
+        // 如果電話號碼無效或為空，清除狀態
+        $("#phoneStatus").text("");
+    }
+}
+
+function isValidPhoneNumber(phoneNumber) {
+    // 使用正則表達式檢查電話號碼是否為有效格式（只包含數字）
+    return phoneNumber !== null && phoneNumber.match(/^\d+$/);
+}
+
