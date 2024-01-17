@@ -308,7 +308,11 @@
 <!--    $(document).foundation();-->
 <!--</script>-->
 <script>
-    setInterval(AjaxUpload2,1000);
+    $(document).ready(function() {
+        AjaxUpload2(); // 在文檔加載完成後執行 getData 函數
+        AjaxUpload3();
+    });
+    setInterval(AjaxUpload2,10000);
     setInterval(AjaxUpload3, 10000);
     function AjaxUpload() {
         $('#receiveOrder').load('http://localhost:8080/receiveOrderList')
