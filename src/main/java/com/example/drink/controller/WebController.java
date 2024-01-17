@@ -15,23 +15,21 @@ public class WebController
     {
         return "index";
     }
-
+    @GetMapping("/t")
+    public String getTest()
+    {
+        return "test";
+    }
     @GetMapping("/menu")
     public String getMenu()
     {
         return "Menu";
 
     }
-    @GetMapping("/aboutus")
+    @GetMapping("/login")
     public String getAboutUs()
     {
-        return"AboutUs";
-
-    }
-    @GetMapping("/latestnews")
-    public String getLatestNews()
-    {
-        return"LatestNews";
+        return"login";
 
     }
     @GetMapping("/contactus")
@@ -44,6 +42,11 @@ public class WebController
     {
         return"Coordinates";
     }
+//    @GetMapping("/franchise")
+//    public String getFranchise()
+//    {
+//        return"franchise";
+//    }
     @GetMapping("/member")
     public String getMember()
     {

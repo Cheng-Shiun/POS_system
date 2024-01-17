@@ -2,6 +2,7 @@ package com.example.drink.DAO;
 
 import com.example.drink.model.FranchiseModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -19,4 +20,14 @@ public class FranchiseRepository {
                 franchise.getBudget(), franchise.getOpentime(), franchise.getContacttime(),
                 franchise.getDescription());
     }
+    public FranchiseModel findByPhone(String phone) {
+        String sql = "SELECT * FROM franchise WHERE phone = ?";
+        try {
+            return jdbcTemplate.queryForObject(sql, new Object[]{phone}, new BeanPropertyRowMapper<> (FranchiseModel.class));
+        } catch (Exception e) {
+            // 如果DB裡沒有  傳回null
+            return null;
+        }
+    }
+
 }

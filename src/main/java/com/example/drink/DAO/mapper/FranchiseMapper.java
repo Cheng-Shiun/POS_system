@@ -18,7 +18,7 @@ public class FranchiseMapper implements RowMapper<FranchiseModel> {
         franchiseModel.setBudget (rs.getString ("budget"));
         franchiseModel.setOpentime (rs.getString ("opentime"));
         franchiseModel.setContacttime (rs.getString ("contacttime"));
-        franchiseModel.setDescription (rs.getNString ("desciption"));
+        franchiseModel.setDescription (rs.getNString ("description"));
         return franchiseModel;
     }
 }
