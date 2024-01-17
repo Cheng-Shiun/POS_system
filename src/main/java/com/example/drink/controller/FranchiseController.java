@@ -29,7 +29,7 @@ public class FranchiseController {
                 address.isEmpty()||budget==null||budget.isEmpty()||
                 opentime==null||opentime.isEmpty()||
                 contacttime==null||contacttime.isEmpty()){
-            return "othererror";        //檢查必填欄位 若未填寫會跳錯誤頁面
+            return "otherError";        //檢查必填欄位 若未填寫會跳錯誤頁面
         }
 
         FranchiseModel franchiseModel = new FranchiseModel (name,gender,phone,lineID,address,budget,opentime,contacttime,description);
