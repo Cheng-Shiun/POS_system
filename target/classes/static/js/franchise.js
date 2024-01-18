@@ -28,39 +28,6 @@ function blurName(y){
 }
 
 
-function checkPhone() {
-    var phone = $(".inputinfo[name='phone']").val();    // 取得輸入的號碼
-    var phoneStatus = $(".inputinfo[name='phone']").next("#phoneStatus");
-
-
-    // 檢查是否未輸入電話號碼
-    if (phone.trim() === "") {
-        phoneStatus.text("請輸入電話號碼");
-        phoneStatus.css("color", "red");
-        return;
-    }
-
-    // 發送AJAX(Http)請求
-    $.ajax({
-        type: "POST",
-        url: "/checkPhone",
-        data: { phone: phone },
-        success: function(response) {
-            console.log("Server response:", response);
-            // 從controller來 傳相對的訊息
-            if (response === "Duplicate phone number") {
-                phoneStatus.text("電話號碼已被使用,請重新輸入!");
-                phoneStatus.css("color", "red");
-            } else{
-                phoneStatus.text("號碼可用");
-                phoneStatus.css("color", "green");
-            }
-        },
-        error: function(xhr) {
-            console.error("Error checking phone:", xhr.responseText);
-        }
-    });
-}
 
 
 
@@ -70,35 +37,6 @@ $(document).ready(function() {
         checkPhone();
     });
 });
-
-function checkPhone() {
-    var phone = $("input[name='phone']").val();
-
-    // 檢查號碼是否未輸入
-    if (phone === null || phone.trim() === "") {
-        $("#phoneStatus").text("號碼還沒輸入喔~");
-    } else {
-        // 透過 AJAX 呼叫後端端點檢查號碼是否重複
-        $.ajax({
-            type: "POST",
-            url: "/checkPhone",
-            data: { phone: phone },
-            success: function(response) {
-                // 根據後端回應更新介面
-                if (response === "Duplicate phone number") {
-                    $("#phoneStatus").text("重複號碼，請重新輸入");
-                } else {
-                    $("#phoneStatus").text("號碼可使用");
-                }
-            },
-            error: function(error) {
-                console.log(error);
-            }
-        });
-    }
-}
-
-
 
 
 //阻止在任何 input 按Enter後就送出表單
@@ -114,3 +52,38 @@ document.addEventListener("DOMContentLoaded",function (){
         });
     });
 });
+
+
+
+//檢查電話號碼 是否與DB的資料重覆
+// function checkPhone() {
+//     var phone = $("input[name='phone']").val();
+//
+//     // 檢查是否輸入了有效的電話號碼和是否為非空
+//     if (isValidPhoneNumber(phone)) {
+//         // 發送 Http 請求
+//         $.ajax({
+//             type: "POST",
+//             url: "/franchise/checkPhoneNumber",
+//             data: { phone: phone },
+//             success: function(response) {
+//                 if (response.exists) {
+//                     $("#phoneStatus").text("電話號碼已被使用,請重新輸入!");
+//                 } else {
+//                     $("#phoneStatus").text("該電話號碼可以使用");
+//                 }
+//             },
+//             error: function(error) {
+//                 console.log("Error checking phone number: " + error);
+//             }
+//         });
+//     } else {
+//         // 如果電話號碼無效或為空，清除狀態
+//         $("#phoneStatus").text("無效的電話號碼,請重新輸入!");
+//     }
+// }
+
+function isValidPhoneNumber(phoneNumber) {
+    // 使用正則表達式檢查電話號碼是否為有效格式-不能為空值、只包含數字、長度要9碼或10碼、號碼一定是0開始
+    return phoneNumber !== null && phoneNumber.match(/^0\d{0,9}$/) && phoneNumber.length >=9 && phoneNumber.length<=10;
+}
