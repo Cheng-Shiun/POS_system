@@ -22,7 +22,7 @@ public class FranchiseController {
 
     @PostMapping
     public String submitFranchiseForm(@ModelAttribute FranchiseModel franchiseModel, Model model) {
-        System.out.println("Received form data: " + franchiseModel.toString());
+//        System.out.println("Received form data: " + franchiseModel.toString()); //確定資料的來源
         int result = franchiseService.submitFranchiseForm(franchiseModel);
 
         if (result == 1) {
@@ -34,9 +34,13 @@ public class FranchiseController {
         } else if (result == 3) {
             // 包含保留字的情况
             return "invalid";
-        } else {
+        } else if(result == 4){
             // 失敗的情况
+            System.out.println("進入資料未填寫完整的區段");
             return "otherError";
+        } else {
+            System.out.println("未知的結果: " + result);
+            return "error";
         }
     }
 }

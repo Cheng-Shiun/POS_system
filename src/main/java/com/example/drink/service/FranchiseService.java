@@ -32,25 +32,8 @@ public class FranchiseService {
 
     //送出表單的判斷
     public int submitFranchiseForm(FranchiseModel franchiseModel){
-        //檢查是否有輸入 保留字
-        if(franchiseModel.getName ().contains ("select") ||
-                franchiseModel.getName ().contains ("delete") ||
-                franchiseModel.getName ().contains ("update")||
-                franchiseModel.getName().contains("query")){
-            System.out.println(("name有保留字"));
-            return 3;
-        }
-        //判斷加盟者的 name&phone 是否已存在
-        if(checkFranchise (franchiseModel.getName (),franchiseModel.getPhone())){
-            System.out.println("資料已存在");
-            return 2;
-        }
-        int count = franchiseRepository.saveFranchise (franchiseModel);
-        if(count>0){
-            System.out.println("成功新增");
-            return 1;
-
-        }else if(franchiseModel.getName().isEmpty() || franchiseModel.getName() ==null||
+        //檢查必填項目是否都有填寫
+        if(franchiseModel.getName().isEmpty() || franchiseModel.getName() ==null||
                 franchiseModel.getPhone().isEmpty() || franchiseModel.getPhone() ==null||
                 franchiseModel.getAddress().isEmpty()|| franchiseModel.getAddress() ==null||
                 franchiseModel.getBudget().isEmpty() ||franchiseModel.getBudget() ==null||
@@ -58,6 +41,25 @@ public class FranchiseService {
                 franchiseModel.getContacttime().isEmpty()|| franchiseModel.getContacttime() ==null){
             System.out.println("資料未填寫完整");
             return 4;
+        }
+        //判斷加盟者的 name&phone 是否已存在
+        if(franchiseModel.getName ().contains ("select") ||
+                franchiseModel.getName ().contains ("delete") ||
+                franchiseModel.getName ().contains ("update")||
+                franchiseModel.getName().contains("query")){
+            System.out.println(("name有保留字"));
+            return 3;
+        }
+        if (checkFranchise (franchiseModel.getName (),franchiseModel.getPhone())){
+            System.out.println("資料已存在");
+            return 2;
+        }
+        //新增加盟表單資訊
+        int count = franchiseRepository.saveFranchise (franchiseModel);
+        if(count>0){
+            System.out.println("成功新增");
+            return 1;
+        //檢查是否有輸入 保留字
         }else {
             System.out.println("其他錯誤");
             return count;
