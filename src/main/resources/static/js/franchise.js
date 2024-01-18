@@ -56,9 +56,43 @@ document.addEventListener("DOMContentLoaded",function (){
 
 
 //檢查電話號碼 是否與DB的資料重覆
+function checkPhone() {
+    var phone = $("input[name='phone']").attr("value");
+
+    // 檢查是否輸入了有效的電話號碼和是否為非空
+    if (isValidPhoneNumber(phone)) {
+        console.log("Phone sent to backend: " + phone);
+        // 發送 Http 請求
+        $.ajax({
+            type: "POST",
+            url: "/franchise/checkPhoneNumber",
+            data: { phone: phone },
+            success: function(response) {
+                if (response) {
+                    $("#phoneStatus").text("電話號碼已被使用,請重新輸入!");
+                } else {
+                    $("#phoneStatus").text("該電話號碼可以使用");
+                }
+            },
+            error: function(error) {
+                console.log("Error checking phone number: " + error);
+            }
+        });
+    } else {
+        // 如果電話號碼無效或為空，清除狀態
+        $("#phoneStatus").text("請正確輸入手機或市話(含區碼)");
+    }
+}
 
 
 function isValidPhoneNumber(phoneNumber) {
     // 使用正則表達式檢查電話號碼是否為有效格式-不能為空值、只包含數字、長度要9碼或10碼、號碼一定是0開始
     return phoneNumber !== null && phoneNumber.match(/^0\d{0,9}$/) && phoneNumber.length >=9 && phoneNumber.length<=10;
 }
+
+// 在輸入框失去焦點時觸發
+$(document).ready(function() {
+    $("input[name='phone']").blur(function() {
+        checkPhone();
+    });
+});

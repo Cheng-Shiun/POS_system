@@ -5,6 +5,9 @@ import com.example.drink.model.FranchiseModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -13,12 +16,25 @@ public class FranchiseService {
 
     @Autowired
     private FranchiseRepository franchiseRepository;
+    FranchiseService franchiseService;
     public void saveFranchise(FranchiseModel franchiseModel) {
         franchiseRepository.saveFranchise(franchiseModel);
     }
 
+    //new
+    @PostMapping("/checkPhoneNumber")
+    @ResponseBody
+    public boolean isPhoneDuplicate(@RequestParam String phone) {
 
-    JdbcTemplate jdbcTemplate;
+        System.out.println("Phone from frontend: " + phone); // 添加這行
+
+        System.out.println("Inside checkPhoneNumber method.");
+        return franchiseService.isPhoneDuplicate(phone);
+
+    }
+
+
+
     public List<FranchiseModel> getAllFranchise(){
         return franchiseRepository.getAllFranchise ();
     }

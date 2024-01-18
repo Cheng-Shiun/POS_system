@@ -28,17 +28,12 @@ public class FranchiseRepository {
         return jdbcTemplate.query ("select * from franchise",new FranchiseMapper());
     }
 
-
-
-
     //檢查加盟者的 name&phone 是否存在; 兩者同時存在,代表已填寫過
     public long checkFranchise(String franchiseName, String franchisePhone){
         return jdbcTemplate.queryForObject ("select count(*) from franchise where name=? and phone=?", Long.class, franchiseName,franchisePhone);
     }
 
-
-
-    public boolean checkFranchiseByPhone(String franchisePhone) {
+    public boolean isPhoneDuplicate(String franchisePhone) {
         long count = jdbcTemplate.queryForObject("select count(*) from franchise where phone=?", Long.class, franchisePhone);   //? = franchisePhone
         return count > 0; //count > 0 ,代表號碼已存在
     }
