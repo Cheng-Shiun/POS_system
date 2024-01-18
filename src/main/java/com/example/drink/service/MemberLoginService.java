@@ -2,10 +2,14 @@ package com.example.drink.service;
 
 import com.example.drink.Dao.MemberLoginRepository;
 import com.example.drink.Dao.NewMemberRepository;
+import com.example.drink.controller.MemberController;
+import com.example.drink.controller.MemberLoginController;
 import com.example.drink.model.MemberLoginModel;
 import com.example.drink.model.MemberParam;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import java.util.List;
 
@@ -13,6 +17,7 @@ import java.util.List;
 public class MemberLoginService {
     @Autowired
     MemberLoginRepository memberLoginRepository;
+
 
     public int memberLogin(MemberLoginModel memberLoginModel) {
         if (memberLoginModel.getName().contains("select") || memberLoginModel.getName().contains("delate")) {
@@ -51,4 +56,5 @@ public class MemberLoginService {
     public List<MemberLoginModel> checkMemberAll() {
         return memberLoginRepository.checkMemberAll();
     }
+
 }

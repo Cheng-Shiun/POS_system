@@ -17,14 +17,17 @@ public class MemberLoginController {
     @Autowired
     MemberLoginService memberLoginService;
     @GetMapping("/memberLogin")
-    public String memberLogin(Model model) {
+    public String memberLogin(Model model, HttpSession httpSession) {
         MemberLoginModel memberLoginModel = new MemberLoginModel();
         model.addAttribute("memberLoginModel", memberLoginModel);
+
+        httpSession.setAttribute("nameSession", memberLoginModel.getName());
+        httpSession.setAttribute("phoneSession", memberLoginModel.getPhone());
         return "memberLogin";
     }
 
     @PostMapping("/memberLogin")
-    public String memberLoginProcess(@ModelAttribute MemberLoginModel memberLoginModel, Model model, HttpSession httpSession, Model modelSession ) {
+    public String memberLoginProcess(@ModelAttribute MemberLoginModel memberLoginModel, Model model) {
         String msg = null;
 
         int result = memberLoginService.memberLogin(memberLoginModel);
@@ -50,10 +53,9 @@ public class MemberLoginController {
         model.addAttribute("name", memberLoginModel.getName());
         model.addAttribute("phone", memberLoginModel.getPhone());
 
-        httpSession.setAttribute("nameSession", memberLoginModel.getName());
-        httpSession.setAttribute("phoneSession", memberLoginModel.getPhone());
 
         model.addAttribute("mesg", msg);
+
         return "memberLoginResult";
     }
 
@@ -61,7 +63,7 @@ public class MemberLoginController {
     public String setSession(HttpSession session) {
         // 在 session 中存儲一個屬性
         session.setAttribute("username", "John");
-        return "redirect:/showSession";
+        return "redirect:/showSessionLogin";
     }
 
     @GetMapping("/showSessionLogin")
