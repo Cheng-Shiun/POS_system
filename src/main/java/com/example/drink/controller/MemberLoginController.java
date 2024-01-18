@@ -17,17 +17,14 @@ public class MemberLoginController {
     @Autowired
     MemberLoginService memberLoginService;
     @GetMapping("/memberLogin")
-    public String memberLogin(Model model, HttpSession httpSession) {
+    public String memberLogin(Model model) {
         MemberLoginModel memberLoginModel = new MemberLoginModel();
         model.addAttribute("memberLoginModel", memberLoginModel);
-
-        httpSession.setAttribute("nameSession", memberLoginModel.getName());
-        httpSession.setAttribute("phoneSession", memberLoginModel.getPhone());
         return "memberLogin";
     }
 
     @PostMapping("/memberLogin")
-    public String memberLoginProcess(@ModelAttribute MemberLoginModel memberLoginModel, Model model) {
+    public String memberLoginProcess(@ModelAttribute MemberLoginModel memberLoginModel, Model model, HttpSession httpSession) {
         String msg = null;
 
         int result = memberLoginService.memberLogin(memberLoginModel);
@@ -55,6 +52,11 @@ public class MemberLoginController {
 
 
         model.addAttribute("mesg", msg);
+
+        httpSession.setAttribute("nameSession", memberLoginModel.getName());
+        httpSession.setAttribute("phoneSession", memberLoginModel.getPhone());
+
+        httpSession.setAttribute("phoneSession", msg);
 
         return "memberLoginResult";
     }
