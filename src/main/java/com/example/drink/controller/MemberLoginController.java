@@ -4,6 +4,7 @@ import com.example.drink.model.MemberLoginModel;
 import com.example.drink.model.MemberParam;
 import com.example.drink.service.MemberLoginService;
 import com.example.drink.service.NewMemberService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +24,7 @@ public class MemberLoginController {
     }
 
     @PostMapping("/memberLogin")
-    public String memberLoginProcess(@ModelAttribute MemberLoginModel memberLoginModel, Model model) {
+    public String memberLoginProcess(@ModelAttribute MemberLoginModel memberLoginModel, Model model, HttpSession httpSession, Model modelSession ) {
         String msg = null;
 
         int result = memberLoginService.memberLogin(memberLoginModel);
@@ -49,7 +50,27 @@ public class MemberLoginController {
         model.addAttribute("name", memberLoginModel.getName());
         model.addAttribute("phone", memberLoginModel.getPhone());
 
+        httpSession.setAttribute("nameSession", memberLoginModel.getName());
+        httpSession.setAttribute("phoneSession", memberLoginModel.getPhone());
+
         model.addAttribute("mesg", msg);
         return "memberLoginResult";
+    }
+
+    @GetMapping("/setSessionLogin")
+    public String setSession(HttpSession session) {
+        // 在 session 中存儲一個屬性
+        session.setAttribute("username", "John");
+        return "redirect:/showSession";
+    }
+
+    @GetMapping("/showSessionLogin")
+    public String showSession(HttpSession session, Model model) {
+        // 從 session 中讀取屬性
+        String username = (String) session.getAttribute("username");
+
+        // 將屬性傳遞給 Thymeleaf 模板
+        model.addAttribute("username", username);
+        return "showSession";
     }
 }
