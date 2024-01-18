@@ -31,9 +31,5 @@ public class MemberService {
         return jdbcTemplate.query( "select * from member where memberName=" + name, new MemberMapper());
     }
 
-    ///登入
-    @Autowired
-    MemberRepository memberRepository;
-
 
 }

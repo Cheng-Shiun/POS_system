@@ -45,13 +45,4 @@ public class MemberController {
         System.out.println("接收 address=" + member.getAddress());
         return "memberList";
     }
-
-    //接收使用者名稱、手機號碼
-    @GetMapping("/member2")
-    public String getMemberName(HttpServletRequest request){
-        HttpSession session = request.getSession();
-        //存取使用者輸入的session
-        session.setAttribute("memberName", "name");
-        return "memberName";
-    }
 }

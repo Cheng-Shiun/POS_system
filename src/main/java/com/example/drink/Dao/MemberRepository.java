@@ -15,4 +15,6 @@ public class MemberRepository {
         return jdbcTemplate.queryForObject(sql, Long.class, name);
 
     }
+
+
 }

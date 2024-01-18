@@ -35,4 +35,7 @@ public class NewMemberRepository {
     public List<MemberParam> checkMemberByPhone (String phone) {
         return jdbcTemplate.query("select * from member where memberPhone=?", new MemberParamMapper(), phone);
     }
+
+
+
 }
