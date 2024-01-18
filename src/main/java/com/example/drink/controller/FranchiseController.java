@@ -19,10 +19,15 @@ public class FranchiseController {
         model.addAttribute("franchiseModel", new FranchiseModel());
         return "franchise";
     }
+    @PostMapping("/checkPhoneNumber")
+    @ResponseBody
+    public boolean checkPhoneNumber(@RequestParam String phone){
+        return checkPhoneNumber(phone);
+    }
 
     @PostMapping
     public String submitFranchiseForm(@ModelAttribute FranchiseModel franchiseModel, Model model) {
-//        System.out.println("Received form data: " + franchiseModel.toString()); //確定資料的來源
+        System.out.println("Received form data: " + franchiseModel.toString()); //確定資料的來源
         int result = franchiseService.submitFranchiseForm(franchiseModel);
 
         if (result == 1) {

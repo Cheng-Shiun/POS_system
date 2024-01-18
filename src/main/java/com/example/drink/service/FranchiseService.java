@@ -33,12 +33,12 @@ public class FranchiseService {
     //送出表單的判斷
     public int submitFranchiseForm(FranchiseModel franchiseModel){
         //檢查必填項目是否都有填寫
-        if(franchiseModel.getName().isEmpty() || franchiseModel.getName() ==null||
-                franchiseModel.getPhone().isEmpty() || franchiseModel.getPhone() ==null||
-                franchiseModel.getAddress().isEmpty()|| franchiseModel.getAddress() ==null||
-                franchiseModel.getBudget().isEmpty() ||franchiseModel.getBudget() ==null||
-                franchiseModel.getOpentime().isEmpty()||franchiseModel.getOpentime() ==null||
-                franchiseModel.getContacttime().isEmpty()|| franchiseModel.getContacttime() ==null){
+        if (franchiseModel.getName() == null || franchiseModel.getName().isEmpty() ||
+                franchiseModel.getPhone() == null || franchiseModel.getPhone().isEmpty() ||
+                franchiseModel.getAddress() == null || franchiseModel.getAddress().isEmpty() ||
+                franchiseModel.getBudget() == null || franchiseModel.getBudget().isEmpty() ||
+                franchiseModel.getOpentime() == null || franchiseModel.getOpentime().isEmpty() ||
+                franchiseModel.getContacttime() == null || franchiseModel.getContacttime().isEmpty()) {
             System.out.println("資料未填寫完整");
             return 4;
         }
