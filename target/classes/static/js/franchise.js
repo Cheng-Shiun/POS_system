@@ -32,10 +32,18 @@ function checkPhone() {
     var phone = $(".inputinfo[name='phone']").val();    // 取得輸入的號碼
     var phoneStatus = $(".inputinfo[name='phone']").next("#phoneStatus");
 
+
+    // 檢查是否未輸入電話號碼
+    if (phone.trim() === "") {
+        phoneStatus.text("請輸入電話號碼");
+        phoneStatus.css("color", "red");
+        return;
+    }
+
     // 發送AJAX(Http)請求
     $.ajax({
         type: "POST",
-        url: "/checkPhone", // 替换成实际的后端检查电话号码的接口
+        url: "/checkPhone",
         data: { phone: phone },
         success: function(response) {
             console.log("Server response:", response);
@@ -49,13 +57,45 @@ function checkPhone() {
             }
         },
         error: function(xhr) {
-            if (xhr.status === 400) {
-                $("#phoneStatus").text(xhr.responseText)
-            } else {
-                console.error("Error checking phone:", xhr.responseText);
-            }
+            console.error("Error checking phone:", xhr.responseText);
         }
     });
+}
+
+
+
+$(document).ready(function() {
+    // 當輸入框失去焦點時觸發
+    $("input[name='phone']").blur(function() {
+        checkPhone();
+    });
+});
+
+function checkPhone() {
+    var phone = $("input[name='phone']").val();
+
+    // 檢查號碼是否未輸入
+    if (phone === null || phone.trim() === "") {
+        $("#phoneStatus").text("號碼還沒輸入喔~");
+    } else {
+        // 透過 AJAX 呼叫後端端點檢查號碼是否重複
+        $.ajax({
+            type: "POST",
+            url: "/checkPhone",
+            data: { phone: phone },
+            success: function(response) {
+                // 根據後端回應更新介面
+                if (response === "Duplicate phone number") {
+                    $("#phoneStatus").text("重複號碼，請重新輸入");
+                } else {
+                    $("#phoneStatus").text("號碼可使用");
+                }
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
 }
 
 

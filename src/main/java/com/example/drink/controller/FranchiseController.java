@@ -34,6 +34,7 @@ public class FranchiseController {
         return ResponseEntity.ok("Form submitted successfully!");
     }
 
+
     @PostMapping("/checkPhone")
     public ResponseEntity<String> checkPhone(@RequestParam String phone) {
         // 檢查號碼 是否未輸入

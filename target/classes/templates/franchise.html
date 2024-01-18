@@ -19,8 +19,107 @@
 <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
 
 <main>
-    <form id="formArea">
+    <form id="formArea" method="post" th:object="${franchiseModel}" action="/franchise">
         <!--表頭文字-->
+        <div class="join">
+            <h3><span class="join_h3">創業夢想從【爪蛙.tea】會開始</span></h3>
+            <h1><span class="join_h1">加盟線上申請</span></h1>
+        </div>
+
+        <div id="pArea">
+            <p>親愛的顧客您好，歡迎透過加盟表單與我們洽詢加盟相關事項。</p>
+            <p><span class="starcolor">*</span>號為必填訊息</p>
+        </div>
+
+        <!--表單內容-->
+<!--        <div class="info">-->
+<!--            <h4 class="spanInfo">加盟者姓名：<span class="starcolor">*</span></h4>-->
+<!--            <input type="text" name="name" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this)" placeholder="請輸入姓名...">-->
+<!--        </div>-->
+
+<!--        <div class="info">-->
+<!--            <h4 class="spanInfo">生理性別：</h4>-->
+<!--            <input type="radio" name="gender"value="男">-->
+<!--            <label>男</label>-->
+<!--            <input type="radio" name="gender"value="女">-->
+<!--            <label>女</label>-->
+<!--        </div>-->
+
+<!--        <div class="info">-->
+<!--            <h4 class="spanInfo">聯絡電話：<span class="starcolor">*</span></h4>-->
+<!--            <input type="text" name="phone" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this); checkPhone();" placeholder="請輸入手機或市話(含區碼)...">-->
+<!--            <div id="phoneStatus"></div>-->
+<!--        </div>-->
+
+<!--        <div class="info">-->
+<!--            <h4 class="spanInfo">Line ID：</h4>-->
+<!--            <input type="text" name="lineid" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this)" placeholder="LineID...">-->
+<!--        </div>-->
+
+<!--        <div class="info">-->
+<!--            <h4 class="spanInfo">地址：<span class="starcolor" onfocus="focusName(this)" onblur="blurName(this)" placeholder="請輸入地址...">*</span></h4>-->
+<!--            <input type="text" name="address" class="inputinfo">-->
+<!--        </div>-->
+
+<!--        <div class="info">-->
+<!--            <h4 class="spanInfo">開店自備款：<span class="starcolor">*</span></h4>-->
+<!--            <div class="inputinfo">-->
+<!--                <input type="radio" name="budget" value="10萬~100萬">-->
+<!--                <label> 10萬~100萬</label>-->
+<!--                <input type="radio" name="budget" value="100萬~200萬">-->
+<!--                <label>100萬~200萬</label>-->
+<!--                <input type="radio" name="budget" value="200萬~300萬">-->
+<!--                <label>200萬~300萬</label>-->
+<!--                <input type="radio" name="budget" value="300萬~400萬">-->
+<!--                <label>300萬~400萬</label>-->
+<!--                <input type="radio" name="budget" value="400萬~500萬">-->
+<!--                <label>400萬~500萬</label>-->
+<!--                <input type="radio" name="budget" value="500萬以上">-->
+<!--                <label>500萬以上</label>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+<!--        <div class="info">-->
+<!--            <h4 class="spanInfo">預計可開店時間：<span class="starcolor">*</span></h4>-->
+<!--            <div class="inputinfo">-->
+<!--                <input type="radio" name="opentime">-->
+<!--                <label>一個月</label>-->
+<!--                <input type="radio" name="opentime">-->
+<!--                <label>三個月</label>-->
+<!--                <input type="radio" name="opentime">-->
+<!--                <label>六個月</label>-->
+<!--                <input type="radio" name="opentime">-->
+<!--                <label>一年</label>-->
+<!--                <input type="radio" name="opentime">-->
+<!--                <label>尚未確定</label>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="info">-->
+<!--            <h4 class="spanInfo">方便可聯繫時間：<span class="starcolor">*</span></h4>-->
+<!--            <div class="inputinfo">-->
+<!--                <input type="radio" name="contact" value="早上09:00~12:00">-->
+<!--                <label>早上09:00~12:00</label>-->
+<!--                <input type="radio" name="contact" value="下午12:00~18:00">-->
+<!--                <label>下午12:00~18:00</label>-->
+<!--                <input type="radio" name="contact" value="晚上18:00~22:00">-->
+<!--                <label>晚上18:00~22:00</label>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="infodesc">-->
+<!--            <h4 class="spanInfo">其他說明：</h4>-->
+<!--            <textarea name="description" id="inputinfo" rows="10" cols="85" onfocus="focusName(this)" onblur="blurName(this)" placeholder="其他..."></textarea>-->
+<!--        </div>-->
+<!--        <div class="sureArea" >-->
+<!--            <input type="reset" value="清除重填"  class="sure">-->
+<!--            <input type="submit" value="確認送出" class="sure">-->
+<!--        </div>-->
+<!--    </form>-->
+<!--</main>-->
+
+<!--<footer></footer>-->
         <div class="join">
             <h3><span class="join_h3">創業夢想從【爪蛙.tea】會開始</span></h3>
             <h1><span class="join_h1">加盟線上申請</span></h1>
@@ -34,47 +133,46 @@
         <!--表單內容-->
         <div class="info">
             <h4 class="spanInfo">加盟者姓名：<span class="starcolor">*</span></h4>
-            <input type="text" name="name" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this)" placeholder="請輸入姓名...">
+            <input type="text"  th:field="*{name}" name="name" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this)" placeholder="請輸入姓名...">
         </div>
 
         <div class="info">
             <h4 class="spanInfo">生理性別：</h4>
-            <input type="radio" name="gender"value="男">
+            <input type="radio" th:field="*{gender}" name="gender"value="男">
             <label>男</label>
-            <input type="radio" name="gender"value="女">
+            <input type="radio" th:field="*{gender}" name="gender"value="女">
             <label>女</label>
         </div>
 
         <div class="info">
             <h4 class="spanInfo">聯絡電話：<span class="starcolor">*</span></h4>
-            <input type="text" name="phone" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this); checkPhone();" placeholder="請輸入手機或市話(含區碼)...">
-            <div id="phoneStatus"></div>
+            <input type="text" th:field="*{phone}" name="phone"  class="inputinfo" onfocus="focusName(this)" onblur="blurName(this); checkPhone();" placeholder="請輸入手機或市話(含區碼)...">
         </div>
 
         <div class="info">
             <h4 class="spanInfo">Line ID：</h4>
-            <input type="text" name="lineid" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this)" placeholder="LineID...">
+            <input type="text" th:field="*{lineID}" name="lineid" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this)" placeholder="LineID...">
         </div>
 
         <div class="info">
-            <h4 class="spanInfo">地址：<span class="starcolor" onfocus="focusName(this)" onblur="blurName(this)" placeholder="請輸入地址...">*</span></h4>
-            <input type="text" name="address" class="inputinfo">
+            <h4 class="spanInfo">地址：<span class="starcolor">*</span></h4>
+            <input type="text" th:field="*{address}" name="address" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this)" placeholder="請輸入地址...">
         </div>
 
         <div class="info">
             <h4 class="spanInfo">開店自備款：<span class="starcolor">*</span></h4>
             <div class="inputinfo">
-                <input type="radio" name="budget" value="10萬~100萬">
+                <input type="radio" th:field="*{budget}" name="budget" value="10萬~100萬">
                 <label> 10萬~100萬</label>
-                <input type="radio" name="budget" value="100萬~200萬">
+                <input type="radio" th:field="*{budget}" name="budget" value="100萬~200萬">
                 <label>100萬~200萬</label>
-                <input type="radio" name="budget" value="200萬~300萬">
+                <input type="radio" th:field="*{budget}" name="budget" value="200萬~300萬">
                 <label>200萬~300萬</label>
-                <input type="radio" name="budget" value="300萬~400萬">
+                <input type="radio" th:field="*{budget}" name="budget" value="300萬~400萬">
                 <label>300萬~400萬</label>
-                <input type="radio" name="budget" value="400萬~500萬">
+                <input type="radio" th:field="*{budget}" name="budget" value="400萬~500萬">
                 <label>400萬~500萬</label>
-                <input type="radio" name="budget" value="500萬以上">
+                <input type="radio" th:field="*{budget}" name="budget" value="500萬以上">
                 <label>500萬以上</label>
             </div>
 
@@ -83,15 +181,15 @@
         <div class="info">
             <h4 class="spanInfo">預計可開店時間：<span class="starcolor">*</span></h4>
             <div class="inputinfo">
-                <input type="radio" name="opentime">
+                <input type="radio" th:field="*{opentime}" value="一個月" name="opentime">
                 <label>一個月</label>
-                <input type="radio" name="opentime">
+                <input type="radio" th:field="*{opentime}" value="三個月" name="opentime">
                 <label>三個月</label>
-                <input type="radio" name="opentime">
+                <input type="radio" th:field="*{opentime}" value="六個月" name="opentime">
                 <label>六個月</label>
-                <input type="radio" name="opentime">
+                <input type="radio" th:field="*{opentime}" value="一年" name="opentime">
                 <label>一年</label>
-                <input type="radio" name="opentime">
+                <input type="radio" th:field="*{opentime}" value="尚未確定" name="opentime">
                 <label>尚未確定</label>
             </div>
         </div>
@@ -99,11 +197,11 @@
         <div class="info">
             <h4 class="spanInfo">方便可聯繫時間：<span class="starcolor">*</span></h4>
             <div class="inputinfo">
-                <input type="radio" name="contact" value="早上09:00~12:00">
+                <input type="radio" th:field="*{contacttime}" name="contact" value="早上09:00~12:00">
                 <label>早上09:00~12:00</label>
-                <input type="radio" name="contact" value="下午12:00~18:00">
+                <input type="radio" th:field="*{contacttime}" name="contact" value="下午12:00~18:00">
                 <label>下午12:00~18:00</label>
-                <input type="radio" name="contact" value="晚上18:00~22:00">
+                <input type="radio" th:field="*{contacttime}" name="contact" value="晚上18:00~22:00">
                 <label>晚上18:00~22:00</label>
             </div>
         </div>
@@ -118,8 +216,6 @@
         </div>
     </form>
 </main>
-
-<header></header>
 
 </body>
 </html>
