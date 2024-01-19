@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>表單填寫</title>
+    <style>
+        #countArea {
+            width: 40%;
+            margin: auto auto;
+            text-align: center;
+        }
+
+        #countdown {
+            font-size: 20px;
+            margin-top: 10rem;
+        }
+
+        .red-text {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div id="countArea">
+    <div id="countdown">
+        倒數 <span id="count" class="red-text">5</span> 秒...即將跳轉到首頁囉!
+    </div>
+    <h2>電話號碼似乎輸入不正確喔...請再檢查!!!</h2>
+</div>
+
+<script>
+    var countdownElement = document.getElementById("count");
+    var countdown = 5;
+
+    function updateCountdown() {
+        countdownElement.innerText =countdown;
+        countdown--;
+
+        if (countdown < 0) {
+            window.location.href = "/";
+        } else {
+            setTimeout(updateCountdown, 1000);
+        }
+    }
+    updateCountdown();
+</script>
+</body>
+</html>
