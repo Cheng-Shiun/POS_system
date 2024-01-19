@@ -132,6 +132,6 @@ input[type="submit"].sure:hover
     box-shadow: 0.3rem -0.3rem 2rem #6fab00;
 }
 
-#phoneStatus{
+#phoneStatus,#nameError,#addError{
     margin-left: 0.4rem;
 }

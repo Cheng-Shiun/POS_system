@@ -84,9 +84,33 @@ function checkPhone() {
         $("#phoneStatus").css({"color": "#f00", "font-weight": "600"});
     }
 }
-
-
 function isValidPhoneNumber(phoneNumber) {
     // 使用正則表達式檢查電話號碼是否為有效格式-不能為空值、只包含數字、長度要9碼或10碼、號碼一定是0開始
     return phoneNumber !== null && phoneNumber.match(/^0\d{0,9}$/) && phoneNumber.length >=9 && phoneNumber.length<=10;
+}
+
+//blur時 若姓名未填寫跳出訊息
+function validateName(){
+    var nampInput = document.getElementById('name');
+    var nameError=document.getElementById('nameError');
+    var nameValue = nampInput.value.trim();
+    if(nameValue ===''){
+        nameError.textContent='姓名未填寫喔!!';
+        $("#nameError").css({'color':'#f00','font-weight':'600'});
+    }else{
+        nameError.textContent=''; //有填寫後就清空提示訊息
+    }
+}
+//blur時 若地址
+// 未填寫跳出訊息
+function validateAddr(){
+    var addInput = document.getElementById('address');
+    var addError = document.getElementById("addrError");
+    var addrValue = addInput.value.trim();
+    if(addrValue ===''){
+        addError.textContent='地址未填寫喔!!';
+        $("#addrError").css({'color':'#f00','font-weight':'600'})
+    }else{
+        addError.textContent=''; //有填寫後就清空提示訊息
+    }
 }

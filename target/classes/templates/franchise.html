@@ -32,7 +32,8 @@
         <!--表單內容-->
         <div class="info">
             <h4 class="spanInfo">加盟者姓名：<span class="starcolor">*</span></h4>
-            <input type="text"  th:field="*{name}" name="name" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this)" placeholder="請輸入姓名...">
+            <input type="text"  th:field="*{name}" name="name" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this); validateName()" placeholder="請輸入姓名...">
+            <div id="nameError"></div>
         </div>
 
         <div class="info">
@@ -52,11 +53,13 @@
         <div class="info">
             <h4 class="spanInfo">Line ID：</h4>
             <input type="text" th:field="*{lineID}" name="lineid" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this)" placeholder="LineID...">
+
         </div>
 
         <div class="info">
             <h4 class="spanInfo">地址：<span class="starcolor">*</span></h4>
-            <input type="text" th:field="*{address}" name="address" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this)" placeholder="請輸入地址...">
+            <input type="text" th:field="*{address}" name="address" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this); validateAddr()" placeholder="請輸入地址...">
+            <div id="addrError"></div>
         </div>
 
         <div class="info">
