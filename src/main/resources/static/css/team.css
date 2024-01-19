@@ -1,0 +1,68 @@
+body {
+    font-family: sans-serif,Arial;
+}
+
+/*Top指標*/
+#scrollToTopBtn {
+    display: none;          /*初始的畫面先隱藏按鈕*/
+    position: fixed;        /*固定按鈕在畫面上方*/
+    bottom: 150px;
+    right: 20px;
+    background-color: #70bf2d;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius:15px;     /*邊框弧度*/
+    padding: 10px;
+    cursor: pointer;            /*滑鼠指標 變成手指形狀*/
+    box-shadow: 2px 5px 5px #005707;
+}
+/*logo*/
+.logoimg{
+    float: left;
+}
+
+/*banner*/
+#topArea{
+    position: relative;
+}
+
+#topArea img{
+    width: 100%;
+    border-radius: 0 0 80% 80% / 0 0 60% 60%;
+    margin-bottom: 80px;
+}
+
+#topArea h1{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 900;
+    font-family: Arvo, sans-serif;
+    font-size: 56px;
+}
+
+/* RWD for #headnav, #footernav */
+@media (max-width: 768px) {
+
+    #topArea h1 {
+        font-size: 2.5rem;
+        top: 40%;
+    }
+}
+/* RWD手機版 for #headnav, #footernav */
+@media (max-width: 390px){
+    #nblock {
+        width: 100%;
+        flex-direction:column;
+    }
+
+    #topArea img{
+        margin-bottom: 5%;
+    }
+
+
+
+}

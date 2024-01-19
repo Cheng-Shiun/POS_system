@@ -290,10 +290,12 @@
             <a href="/drink_item">飲品資訊</a>
           </li>
           <li><a href="/aboutUs">關於我們</a></li>
+          <li><a href="/team">團隊介紹</a></li>
           <li><a href="/store">門市據點</a></li>
           <li><a href="/qa">常見問答</a></li>
           <li><a href="/franchise">加盟專區</a></li>
           <li><a id="member" href="#" onclick="openForm()">品牌會員</a></li>
+          <li><span th:text="${name}"></span>歡迎您加入</li>
         </ul>
       </nav>
       <script>
@@ -304,7 +306,7 @@
       </script>
       <!--登入彈跳視窗-->
       <div class="form-popup" id="myForm">
-        <form action="/action" class="form-container" method="post">
+        <form action="/memberLogin" class="form-container" method="post">
           <h1 style="text-align: center">會員登入</h1>
 
           <label for="email"><b>使用者名稱</b></label>
