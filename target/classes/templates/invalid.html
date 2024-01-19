@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>表單填寫</title>
+  <style>
+    #countArea {
+      width: 40%;
+      margin: auto auto;
+      text-align: center;
+    }
+
+    #countdown {
+      font-size: 20px;
+      margin-top: 10rem;
+    }
+
+    .red-text {
+      color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+<div id="countArea">
+  <div id="countdown">
+    倒數 <span id="count" class="red-text">5</span> 秒...即將跳轉到加盟表單!
+  </div>
+  <h2>請填寫正確的【加盟者姓名】.</h2>
+</div>
+
+<script>
+  var countdownElement = document.getElementById("count");
+  var countdown = 5;
+
+  function updateCountdown() {
+    countdownElement.innerText =countdown;
+    countdown--;
+
+    if (countdown < 0) {
+      window.location.href = "/franchise";
+    } else {
+      setTimeout(updateCountdown, 1000);
+    }
+  }
+  updateCountdown();
+</script>
+</body>
+</html>
