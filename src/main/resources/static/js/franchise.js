@@ -89,28 +89,45 @@ function isValidPhoneNumber(phoneNumber) {
     return phoneNumber !== null && phoneNumber.match(/^0\d{0,9}$/) && phoneNumber.length >=9 && phoneNumber.length<=10;
 }
 
-//blur時 若姓名未填寫跳出訊息
-function validateName(){
-    var nampInput = document.getElementById('name');
-    var nameError=document.getElementById('nameError');
-    var nameValue = nampInput.value.trim();
-    if(nameValue ===''){
-        nameError.textContent='姓名未填寫喔!!';
-        $("#nameError").css({'color':'#f00','font-weight':'600'});
-    }else{
-        nameError.textContent=''; //有填寫後就清空提示訊息
+// //blur時 若姓名未填寫跳出訊息
+// function validateName(){
+//     var nampInput = document.getElementById('name');
+//     var nameError=document.getElementById('nameError');
+//     var nameValue = nampInput.value.trim();
+//     if(nameValue ===''){
+//         nameError.textContent='姓名未填寫喔!!';
+//         $("#nameError").css({'color':'#f00','font-weight':'600'});
+//     }else{
+//         nameError.textContent=''; //有填寫後就清空提示訊息
+//     }
+// }
+// //blur時 若地址未填寫跳出訊息
+// function validateAddr(){
+//     var addInput = document.getElementById('address');
+//     var addError = document.getElementById("addrError");
+//     var addrValue = addInput.value.trim();
+//     if(addrValue ===''){
+//         addError.textContent='地址未填寫喔!!';
+//         $("#addrError").css({'color':'#f00','font-weight':'600'})
+//     }else{
+//         addError.textContent=''; //有填寫後就清空提示訊息
+//     }
+// }
+
+//將上面兩個方法做整合 因為這裡帶3個參數,html的name與address的方法,也要改成 validateInput(inputId, errorId, errorMessage)
+function checkInput(inputId, errorId, errorMessage) {
+    var input = document.getElementById(inputId); //宣告var input -- 輸入的值
+    var error = document.getElementById(errorId); //宣告var error -- 沒有輸入內容 跳Error
+    var value = input.value.trim();     //輸入框 的值 .trim()去除前後空白
+
+    if (value === '') {
+        error.textContent = errorMessage; //若輸入框 的值為 空 跳出errorMessage
+        $("#" + errorId).css({ 'color': '#f00', 'font-weight': '600' });
+    } else {
+        error.textContent = ''; // 有填寫後就清空error的提示訊息
     }
 }
-//blur時 若地址
-// 未填寫跳出訊息
-function validateAddr(){
-    var addInput = document.getElementById('address');
-    var addError = document.getElementById("addrError");
-    var addrValue = addInput.value.trim();
-    if(addrValue ===''){
-        addError.textContent='地址未填寫喔!!';
-        $("#addrError").css({'color':'#f00','font-weight':'600'})
-    }else{
-        addError.textContent=''; //有填寫後就清空提示訊息
-    }
-}
+
+//呼叫 checkInput
+validateInput('name', 'nameError', '姓名未填寫喔!!');
+validateInput('address', 'addrError', '地址未填寫喔!!');
