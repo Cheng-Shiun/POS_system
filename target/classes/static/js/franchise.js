@@ -114,48 +114,47 @@ function isValidPhoneNumber(phoneNumber) {
 //     }
 // }
 
-//在input後顯示 訊息
-// 將上面兩個方法做整合 因為這裡帶3個參數,html的name與address的方法,也要改成 validateInput(inputId, errorId, errorMessage)
+//=======在input後顯示 訊息=========
+//將上面兩個方法做整合 因為這裡帶3個參數,html的name與address的方法,也要改成 validateInput(inputId, errorId, errorMessage)
+function checkInput(inputId, errorId, errorMessage) {
+    var input = document.getElementById(inputId); //宣告var input -- 輸入的值
+    var error = document.getElementById(errorId); //宣告var error -- 沒有輸入內容 跳Error
+    var value = input.value.trim();     //輸入框 的值 .trim()去除前後空白
+
+    if (value === '') {
+        error.textContent = errorMessage; //若輸入框 的值為 空 跳出errorMessage
+        $("#" + errorId).css({ 'color': '#f00', 'font-weight': '600' });
+    } else {
+        error.textContent = ''; // 有填寫後就清空error的提示訊息
+    }
+}
+//呼叫 checkInput
+checkInput('name', 'nameError', '姓名未填寫喔!!');
+checkInput('address', 'addrError', '地址未填寫喔!!');
+
+
+
+//=======用sweetAlert2 來取代傳統Alert的跳出視窗=======
 // function checkInput(inputId, errorId, errorMessage) {
-//     var input = document.getElementById(inputId); //宣告var input -- 輸入的值
-//     var error = document.getElementById(errorId); //宣告var error -- 沒有輸入內容 跳Error
-//     var value = input.value.trim();     //輸入框 的值 .trim()去除前後空白
+//     var input = document.getElementById(inputId);
+//     var error = document.getElementById(errorId);
+//     var value = input.value.trim();
 //
 //     if (value === '') {
-//         error.textContent = errorMessage; //若輸入框 的值為 空 跳出errorMessage
-//         $("#" + errorId).css({ 'color': '#f00', 'font-weight': '600' });
+//         // 使用 SweetAlert2 顯示錯誤訊息
+//         Swal.fire({
+//             icon: 'error',
+//             title: 'Oops...',
+//             text: errorMessage,
+//         });
+//         // 同時設定錯誤訊息到 error 元素 //如果輸入正確，則不會在 input 的框後面跳出 errorMessage
+//         // error.textContent = errorMessage;
+//         // $("#" + errorId).css({ 'color': '#f00', 'font-weight': '600' });
 //     } else {
-//         error.textContent = ''; // 有填寫後就清空error的提示訊息
+//         error.textContent = ''; // 有填寫後就清空提示訊息
 //     }
 // }
 //
-// //呼叫 checkInput
+// // 呼叫 checkInput
 // checkInput('name', 'nameError', '姓名未填寫喔!!');
 // checkInput('address', 'addrError', '地址未填寫喔!!');
-
-
-
-//用sweetAlert2 來取代傳統Alert的跳出視窗
-function checkInput(inputId, errorId, errorMessage) {
-    var input = document.getElementById(inputId);
-    var error = document.getElementById(errorId);
-    var value = input.value.trim();
-
-    if (value === '') {
-        // 使用 SweetAlert2 顯示錯誤訊息
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: errorMessage,
-        });
-        // 同時設定錯誤訊息到 error 元素 //如果輸入正確，則不會在 input 的框後面跳出 errorMessage
-        // error.textContent = errorMessage;
-        // $("#" + errorId).css({ 'color': '#f00', 'font-weight': '600' });
-    } else {
-        error.textContent = ''; // 有填寫後就清空提示訊息
-    }
-}
-
-// 呼叫 checkInput
-checkInput('name', 'nameError', '姓名未填寫喔!!');
-checkInput('address', 'addrError', '地址未填寫喔!!');

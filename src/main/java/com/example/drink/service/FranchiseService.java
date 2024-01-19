@@ -52,6 +52,7 @@ public class FranchiseService {
             System.out.println("資料未填寫完整");
             return 4;
         }
+        //確保輸入的號碼是9碼或10碼
         if(franchiseModel.getPhone().length()<9 || franchiseModel.getPhone().length()>10){
             return 5;
         }
