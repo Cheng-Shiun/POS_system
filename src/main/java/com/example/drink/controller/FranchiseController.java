@@ -50,7 +50,7 @@ public class FranchiseController {
             return "otherError";
         } else if(result == 5){
             // 資料未填寫完整
-            return "error";
+            return "phoneLen";
         }else {
             System.out.println("未知的結果: " + result);
             return "error";
