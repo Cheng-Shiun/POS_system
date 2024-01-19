@@ -108,10 +108,10 @@ label{
     line-height: 1.8;
 }
 
-.sureArea{
+.sureArea {
     text-align: right;
     margin-bottom: 3rem;
-
+}
 /*重置按鈕的邊框樣式和背景色 */
 input[type="reset"].sure,
 input[type="submit"].sure{
@@ -130,4 +130,8 @@ input[type="submit"].sure:hover
 {
     background: #70bf2d;
     box-shadow: 0.3rem -0.3rem 2rem #6fab00;
+}
+
+#phoneStatus{
+    margin-left: 0.4rem;
 }

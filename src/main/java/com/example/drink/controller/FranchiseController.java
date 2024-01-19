@@ -24,12 +24,16 @@ public class FranchiseController {
     @PostMapping("/checkPhoneNumber")
     @ResponseBody
     public boolean checkPhoneNumber(@RequestParam String phone){
-        return franchiseService.isPhoneDuplicate(phone);
+        return franchiseService.isPhoneDuplicate (phone);
     }
 
     @PostMapping
-    public String submitFranchiseForm(@ModelAttribute FranchiseModel franchiseModel, Model model) {
-//        System.out.println("Received form data: " + franchiseModel.toString()); //確定資料的來源
+    public String submitFranchiseForm(@ModelAttribute("franchiseModel") FranchiseModel franchiseModel, Model model) {
+        String phoneNumber = franchiseModel.getPhone ();
+        if(franchiseService.isPhoneDuplicate (phoneNumber)){
+            model.addAttribute ("duplicate",true);
+            return "franchise";// 返回加盟表單的視圖名稱，顯示錯誤消息
+        }
         int result = franchiseService.submitFranchiseForm(franchiseModel);
 
         if (result == 1) {

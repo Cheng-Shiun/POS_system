@@ -27,18 +27,13 @@ public class FranchiseService {
     public boolean isPhoneDuplicate(@RequestParam String phone) {
 
         System.out.println("Phone from frontend: " + phone); // 添加這行
-
-        System.out.println("Inside checkPhoneNumber method.");
-        return franchiseService.isPhoneDuplicate(phone);
+        return franchiseRepository.isPhoneDuplicate(phone);
 
     }
-
-
 
     public List<FranchiseModel> getAllFranchise(){
         return franchiseRepository.getAllFranchise ();
     }
-
 
     //用加盟者的name&phone 判斷 是否已存在
     public boolean checkFranchise(String franchiseName, String franchisePhone){
@@ -58,7 +53,7 @@ public class FranchiseService {
             System.out.println("資料未填寫完整");
             return 4;
         }
-        //判斷加盟者的 name&phone 是否已存在
+        //檢查是否有輸入 保留字
         if(franchiseModel.getName ().contains ("select") ||
                 franchiseModel.getName ().contains ("delete") ||
                 franchiseModel.getName ().contains ("update")||
@@ -66,6 +61,7 @@ public class FranchiseService {
             System.out.println(("name有保留字"));
             return 3;
         }
+        //判斷加盟者的 name&phone 是否已存在
         if (checkFranchise (franchiseModel.getName (),franchiseModel.getPhone())){
             System.out.println("資料已存在");
             return 2;
@@ -75,7 +71,6 @@ public class FranchiseService {
         if(count>0){
             System.out.println("成功新增");
             return 1;
-        //檢查是否有輸入 保留字
         }else {
             System.out.println("其他錯誤");
             return count;
