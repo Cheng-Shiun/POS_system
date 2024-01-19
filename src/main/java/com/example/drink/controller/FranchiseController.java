@@ -30,10 +30,10 @@ public class FranchiseController {
     @PostMapping
     public String submitFranchiseForm(@ModelAttribute("franchiseModel") FranchiseModel franchiseModel, Model model) {
         String phoneNumber = franchiseModel.getPhone ();
-        if(franchiseService.isPhoneDuplicate (phoneNumber)){
-            model.addAttribute ("duplicate",true);
-            return "franchise";// 返回加盟表單的視圖名稱，顯示錯誤消息
-        }
+//        if(franchiseService.isPhoneDuplicate (phoneNumber)){
+//            model.addAttribute ("duplicate",true);
+//            return "franchise";// 返回加盟表單的視圖名稱，顯示錯誤消息
+//        }
         int result = franchiseService.submitFranchiseForm(franchiseModel);
 
         if (result == 1) {
@@ -46,10 +46,12 @@ public class FranchiseController {
             // 包含保留字的情况
             return "invalid";
         } else if(result == 4){
-            // 失敗的情况
-            System.out.println("進入資料未填寫完整的區段");
+            // 資料未填寫完整
             return "otherError";
-        } else {
+        } else if(result == 5){
+            // 資料未填寫完整
+            return "error";
+        }else {
             System.out.println("未知的結果: " + result);
             return "error";
         }

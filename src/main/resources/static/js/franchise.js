@@ -29,8 +29,6 @@ function blurName(y){
 
 
 
-
-
 $(document).ready(function() {
     // 當輸入框失去焦點時觸發
     $("input[name='phone']").blur(function() {
@@ -92,10 +90,3 @@ function isValidPhoneNumber(phoneNumber) {
     // 使用正則表達式檢查電話號碼是否為有效格式-不能為空值、只包含數字、長度要9碼或10碼、號碼一定是0開始
     return phoneNumber !== null && phoneNumber.match(/^0\d{0,9}$/) && phoneNumber.length >=9 && phoneNumber.length<=10;
 }
-
-// 在輸入框失去焦點時觸發
-$(document).ready(function() {
-    $("input[name='phone']").blur(function() {
-        checkPhone();
-    });
-});

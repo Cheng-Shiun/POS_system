@@ -28,7 +28,6 @@ public class FranchiseService {
 
         System.out.println("Phone from frontend: " + phone); // 添加這行
         return franchiseRepository.isPhoneDuplicate(phone);
-
     }
 
     public List<FranchiseModel> getAllFranchise(){
@@ -52,6 +51,9 @@ public class FranchiseService {
                 franchiseModel.getContacttime() == null || franchiseModel.getContacttime().isEmpty()) {
             System.out.println("資料未填寫完整");
             return 4;
+        }
+        if(franchiseModel.getPhone().length()<9 || franchiseModel.getPhone().length()>10){
+            return 5;
         }
         //檢查是否有輸入 保留字
         if(franchiseModel.getName ().contains ("select") ||
