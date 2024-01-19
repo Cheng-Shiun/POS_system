@@ -6,6 +6,13 @@
     <link rel="stylesheet"  th:href="@{/css/franchise.css}" type="text/css" >
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script th:src="@{/js/franchise.js}"></script>
+
+    <!-- 引入 SweetAlert2 的樣式 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+
+    <!-- 引入 SweetAlert2 的腳本 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -32,7 +39,9 @@
         <!--表單內容-->
         <div class="info">
             <h4 class="spanInfo">加盟者姓名：<span class="starcolor">*</span></h4>
-            <input type="text"  th:field="*{name}" name="name" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this); checkInput('name', 'nameError', '姓名未填寫喔!!')" placeholder="請輸入姓名...">
+            <input type="text"  th:field="*{name}" name="name" class="inputinfo"
+                   onfocus="focusName(this)" onblur="blurName(this); checkInput('name', 'nameError', '姓名未填寫喔!!')"
+                   placeholder="請輸入姓名...">
             <div id="nameError"></div>
         </div>
 
@@ -46,19 +55,23 @@
 
         <div class="info">
             <h4 class="spanInfo">聯絡電話：<span class="starcolor">*</span></h4>
-            <input type="text" th:field="*{phone}" name="phone"  class="inputinfo" onfocus="focusName(this)" onblur="blurName(this); checkPhone();" placeholder="請輸入手機或市話(含區碼)...">
+            <input type="text" th:field="*{phone}" name="phone"  class="inputinfo"
+                   onfocus="focusName(this)" onblur="blurName(this); checkPhone();" placeholder="請輸入手機或市話(含區碼)...">
             <div id="phoneStatus"></div>
         </div>
 
         <div class="info">
             <h4 class="spanInfo">Line ID：</h4>
-            <input type="text" th:field="*{lineID}" name="lineid" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this)" placeholder="LineID...">
+            <input type="text" th:field="*{lineID}" name="lineid" class="inputinfo"
+                   onfocus="focusName(this)" onblur="blurName(this)" placeholder="LineID...">
 
         </div>
 
         <div class="info">
             <h4 class="spanInfo">地址：<span class="starcolor">*</span></h4>
-            <input type="text" th:field="*{address}" name="address" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this); checkInput('address', 'addrError', '地址未填寫喔!!')" placeholder="請輸入地址...">
+            <input type="text" th:field="*{address}" name="address" class="inputinfo"
+                   onfocus="focusName(this)" onblur="blurName(this); checkInput('address', 'addrError', '地址未填寫喔!!')"
+                   placeholder="請輸入地址...">
             <div id="addrError"></div>
         </div>
 
