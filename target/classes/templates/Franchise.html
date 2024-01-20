@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>我要加盟</title>
     <link rel="stylesheet"  th:href="@{/css/franchise.css}" type="text/css" >
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script th:src="@{/js/franchise.js}"></script>
+
     <link rel="stylesheet" href="/css/fragment.css">
     <link rel="shortcut icon" href="/images/icon_logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- 引入 SweetAlert2 的樣式 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+    <script th:src="@{/js/franchise.js}"></script>
+    <!--    &lt;!&ndash; 引入 SweetAlert2 的樣式 &ndash;&gt;-->
+    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">-->
 
-    <!-- 引入 SweetAlert2 的腳本 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--    &lt;!&ndash; 引入 SweetAlert2 的腳本 &ndash;&gt;-->
+    <!--    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>-->
 
 </head>
 
 <body>
 <!--header嵌入-->
-<div th:replace="/fragment/template1.html :: header"></div>
+<div th:replace="~{/fragment/template1.html :: header}"></div>
 <!--header-->
 <div id="topArea" >
-    <h1><span>FRANCHISE</span></h1>
+    <h1><span>Franchise</span></h1>
     <img class="imgArea" th:src="@{/images/franchise_banner.jpg}" alt="banner-menu"/>
 </div>
 <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
@@ -43,9 +44,9 @@
         <!--表單內容-->
         <div class="info">
             <h4 class="spanInfo">加盟者姓名：<span class="starcolor">*</span></h4>
-            <input type="text"  th:field="*{name}" name="name" class="inputinfo"
-                   onfocus="focusName(this)" onblur="blurName(this); checkInput('name', 'nameError', '姓名未填寫喔!!')"
-                   placeholder="請輸入姓名...">
+            <input  type="text"  th:field="*{name}" name="name" class="inputinfo"
+                    onfocus="focusName(this)" onblur="blurName(this); checkInput('name', 'nameError', '姓名未填寫喔!!')"
+                    placeholder="請輸入姓名...">
             <div id="nameError"></div>
         </div>
 
@@ -137,7 +138,7 @@
     </form>
 </main>
 <!--footer嵌入-->
-<div th:replace="/fragment/template1.html :: footer"></div>
+<div th:replace="~{/fragment/template1.html :: footer}"></div>
 <!--footer-->
 </body>
 </html>
