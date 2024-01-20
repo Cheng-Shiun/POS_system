@@ -55,11 +55,11 @@ document.addEventListener("DOMContentLoaded",function (){
 
 //檢查電話號碼 是否與DB的資料重覆
 function checkPhone() {
-    var phone = $("input[name='phone']").val();  //取得input[name='phone' 輸入值 並回傳
+    var phone = $("input[name='phone']").val();  //取得input[name='phone'] 輸入值 並回傳
 
     // 檢查是否輸入了有效的電話號碼和是否為非空
     if (isValidPhoneNumber(phone)) {
-        console.log("Phone sent to backend: " + phone);
+        //console.log("Phone sent to backend: " + phone);
         // 發送 Http 請求
         $.ajax({
             type: "POST",
@@ -137,7 +137,7 @@ checkInput('address', 'addrError', '地址未填寫喔!!');
 //=======用sweetAlert2 來取代傳統Alert的跳出視窗=======
 // function checkInput(inputId, errorId, errorMessage) {
 //     var input = document.getElementById(inputId);
-//     var error = document.getElementById(errorId);
+//     var errorText = document.getElementById(errorId);
 //     var value = input.value.trim();
 //
 //     if (value === '') {
@@ -151,7 +151,7 @@ checkInput('address', 'addrError', '地址未填寫喔!!');
 //         // error.textContent = errorMessage;
 //         // $("#" + errorId).css({ 'color': '#f00', 'font-weight': '600' });
 //     } else {
-//         error.textContent = ''; // 有填寫後就清空提示訊息
+//         errorText.textContent = ''; // 有填寫後就清空提示訊息
 //     }
 // }
 //
