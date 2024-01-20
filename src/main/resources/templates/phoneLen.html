@@ -23,7 +23,7 @@
 <body>
 <div id="countArea">
     <div id="countdown">
-        倒數 <span id="count" class="red-text">5</span> 秒...即將跳轉到首頁囉!
+        倒數 <span id="count" class="red-text">5</span> 秒...回到加盟表單頁面
     </div>
     <h2>電話號碼似乎輸入不正確喔...請再檢查!!!</h2>
 </div>
@@ -37,7 +37,7 @@
         countdown--;
 
         if (countdown < 0) {
-            window.location.href = "/";
+            window.location.href = "/franchise";
         } else {
             setTimeout(updateCountdown, 1000);
         }
