@@ -6,7 +6,9 @@
     <link rel="stylesheet"  th:href="@{/css/franchise.css}" type="text/css" >
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script th:src="@{/js/franchise.js}"></script>
-
+    <link rel="stylesheet" href="/css/fragment.css">
+    <link rel="shortcut icon" href="/images/icon_logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- 引入 SweetAlert2 的樣式 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
 
@@ -16,10 +18,12 @@
 </head>
 
 <body>
-<header></header>
+<!--header嵌入-->
+<div th:replace="/fragment/template1.html :: header"></div>
+<!--header-->
 <div id="topArea" >
     <h1><span>FRANCHISE</span></h1>
-    <img class="imgArea" th:src="@{/image/2.webp}" alt="banner-menu"/>
+    <img class="imgArea" th:src="@{/images/franchise_banner.jpg}" alt="banner-menu"/>
 </div>
 <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
 
@@ -132,6 +136,8 @@
         </div>
     </form>
 </main>
-
+<!--footer嵌入-->
+<div th:replace="/fragment/template1.html :: footer"></div>
+<!--footer-->
 </body>
 </html>

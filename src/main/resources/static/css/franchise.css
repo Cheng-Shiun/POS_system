@@ -119,8 +119,8 @@ label{
     margin-bottom: 3rem;
 }
 /*重置按鈕的邊框樣式和背景色 */
-input[type="reset"].sure,
-input[type="submit"].sure{
+input[type="reset"].sure
+{
     font-size: 1.1rem;
     border: 2px solid #569c1a; /*設定邊框樣式*/
     background: #f9e7bb;
@@ -129,13 +129,27 @@ input[type="submit"].sure{
     cursor: pointer; /*設定指標樣式*/
     border-radius: 0.5rem;
 }
+input[type="submit"].sure {
+    font-size: 1.1rem;
+    border: 2px solid #ff14a1; /*設定邊框樣式*/
+    background: #f9e7bb;
+    color: #000000;
+    padding: 6px 12px; /*設定內邊距*/
+    cursor: pointer; /*設定指標樣式*/
+    border-radius: 0.5rem;
+}
+
 
 /*滑鼠移過時的樣式變化*/
-input[type="reset"].sure:hover,
-input[type="submit"].sure:hover
+input[type="reset"].sure:hover
 {
     background: #70bf2d;
-    box-shadow: 0.3rem -0.3rem 2rem #6fab00;
+    box-shadow: 0.1rem -0.1rem 0.02rem #6fab00;
+}
+input[type="submit"].sure:hover
+{
+    background: #ff14a1;
+    box-shadow: 0.1rem -0.1rem 0.02rem #cb1182;
 }
 
 #phoneStatus,#nameError,#addError{
