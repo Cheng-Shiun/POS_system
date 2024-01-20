@@ -1,30 +1,26 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>我要加盟</title>
     <link rel="stylesheet"  th:href="@{/css/franchise.css}" type="text/css" >
-    <link rel="shortcut icon" href="/images/icon_logo.svg" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script th:src="@{/js/franchise.js}"></script>
-    <link rel="stylesheet" href="/css/fragment.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <!-- 引入 SweetAlert2 的樣式 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
 
     <!-- 引入 SweetAlert2 的腳本 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
-<!--header嵌入-->
-<div th:replace="/fragment/template1.html :: header"></div>
-<!--header-->
+<header></header>
 <div id="topArea" >
-    <h1><span>Franchise</span></h1>
-    <img class="imgArea" th:src="@{/images/franchise_banner.jpg}" alt="banner-menu"/>
+    <h1><span>FRANCHISE</span></h1>
+    <img class="imgArea" th:src="@{/image/2.webp}" alt="banner-menu"/>
 </div>
-
 <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
 
 <main>
@@ -43,7 +39,9 @@
         <!--表單內容-->
         <div class="info">
             <h4 class="spanInfo">加盟者姓名：<span class="starcolor">*</span></h4>
-            <input type="text"  th:field="*{name}" name="name" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this); checkInput('name','nameError','姓名未填寫喔!!!')" placeholder="請輸入姓名...">
+            <input type="text"  th:field="*{name}" name="name" class="inputinfo"
+                   onfocus="focusName(this)" onblur="blurName(this); checkInput('name', 'nameError', '姓名未填寫喔!!')"
+                   placeholder="請輸入姓名...">
             <div id="nameError"></div>
         </div>
 
@@ -57,18 +55,23 @@
 
         <div class="info">
             <h4 class="spanInfo">聯絡電話：<span class="starcolor">*</span></h4>
-            <input type="text" th:field="*{phone}" name="phone"  class="inputinfo" onfocus="focusName(this)" onblur="blurName(this); checkPhone();" placeholder="請輸入手機或市話(含區碼)...">
+            <input type="text" th:field="*{phone}" name="phone"  class="inputinfo"
+                   onfocus="focusName(this)" onblur="blurName(this); checkPhone();" placeholder="請輸入手機或市話(含區碼)...">
             <div id="phoneStatus"></div>
         </div>
 
         <div class="info">
             <h4 class="spanInfo">Line ID：</h4>
-            <input type="text" th:field="*{lineID}" name="lineid" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this)" placeholder="LineID...">
+            <input type="text" th:field="*{lineID}" name="lineid" class="inputinfo"
+                   onfocus="focusName(this)" onblur="blurName(this)" placeholder="LineID...">
+
         </div>
 
         <div class="info">
             <h4 class="spanInfo">地址：<span class="starcolor">*</span></h4>
-            <input type="text" th:field="*{address}" name="address" class="inputinfo" onfocus="focusName(this)" onblur="blurName(this); checkInput('address','addrError','地址未填寫喔!!!')" placeholder="請輸入地址...">
+            <input type="text" th:field="*{address}" name="address" class="inputinfo"
+                   onfocus="focusName(this)" onblur="blurName(this); checkInput('address', 'addrError', '地址未填寫喔!!')"
+                   placeholder="請輸入地址...">
             <div id="addrError"></div>
         </div>
 
@@ -130,9 +133,5 @@
     </form>
 </main>
 
-<!--footer嵌入-->
-<div th:replace="/fragment/template1.html :: footer"></div>
-<!--footer-->
 </body>
 </html>
-
