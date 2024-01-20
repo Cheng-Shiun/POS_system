@@ -48,7 +48,7 @@ function checkPhone() {
 
     // 檢查是否輸入了有效的電話號碼和是否為非空
     if (isValidPhoneNumber(phone)) {
-        // 發送 Http 請求
+        // 發送 請求 到後端檢查
         $.ajax({
             type: "POST",
             url: "/franchise/checkPhoneNumber",
@@ -68,7 +68,7 @@ function checkPhone() {
             }
         });
     } else {
-        // 如果電話號碼無效或為空，清除狀態
+        // 如果電話號碼無效或為空
         $("#phoneStatus").text("請正確輸入手機或市話(含區碼)");
         $("#phoneStatus").css({ "color": "#f00", "font-weight": "600" });
     }
@@ -77,26 +77,6 @@ function checkPhone() {
 function isValidPhoneNumber(phoneNumber) {
     // 使用正則表達式檢查電話號碼是否為有效格式-不能為空值、只包含數字、長度要9碼或10碼、號碼一定是0開始
     return phoneNumber !== null && phoneNumber.match(/^0\d{0,9}$/) && phoneNumber.length >= 9 && phoneNumber.length <= 10;
-}
-
-// 對每個 inputinfo 元素應用 checkInput 函數
-$(".inputinfo").each(function () {
-    var input = $(this);
-    input.blur(function () {
-        checkInput(input, '請輸入' + input.attr('placeholder') + '...');
-    });
-});
-
-// checkInput 函數
-function checkInput(input, errorMessage) {
-    var error = input.next('.error'); //找到下一個同級的 error 元素
-
-    if (input.val().trim() === '') {
-        error.text(errorMessage);
-        error.css({ 'color': '#f00', 'font-weight': '600' });
-    } else {
-        error.text('');
-    }
 }
 
 
@@ -169,3 +149,24 @@ checkInput('address', 'addrError', '地址未填寫喔!!');
 // // 呼叫 checkInput
 // checkInput('name', 'nameError', '姓名未填寫喔!!');
 // checkInput('address', 'addrError', '地址未填寫喔!!');
+
+
+// 對每個 inputinfo 元素應用 checkInput 函數
+$(".inputinfo").each(function () {
+    var input = $(this);
+    input.blur(function () {
+        checkInput(input, '請輸入' + input.attr('placeholder') + '...');
+    });
+});
+
+// checkInput 函數
+function checkInput(input, errorMessage) {
+    var error = input.next('.error'); //找到下一個同級的 error 元素
+
+    if (input.val().trim() === '') {
+        error.text(errorMessage);
+        error.css({ 'color': '#f00', 'font-weight': '600' });
+    } else {
+        error.text('');
+    }
+}
