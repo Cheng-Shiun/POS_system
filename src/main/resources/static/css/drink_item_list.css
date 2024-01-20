@@ -362,4 +362,11 @@ body {
         font-size: 13px;
     }
 }
+/* RWD 手機版*/
+@media (max-width: 390px){
+    #icesugar {
+        height: 445px;
+    }
+}
+
 

@@ -156,6 +156,16 @@ input[type="submit"].sure:hover
         width: 120px;
         height: 40px;
     }
+    #formArea {
+        width: 80%;
+    }
+    #inputinfo {
+        width: 450px;
+
+    }
+    .sureArea {
+        text-align: center;
+    }
 }
 /*RWD手機版*/
 @media screen and (max-width: 390px){
@@ -171,5 +181,18 @@ input[type="submit"].sure:hover
     }
     #drinkqa, #memberqa, #orderqa {
         font-size: 0.8rem;
+    }
+    .join_h1 {
+        font-size: 2rem;
+    }
+    #formArea {
+        width: 80%;
+    }
+    #inputinfo {
+        width: 240px;
+
+    }
+    .sureArea {
+        text-align: center;
     }
 }
