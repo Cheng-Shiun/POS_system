@@ -78,7 +78,25 @@ function isValidPhoneNumber(phoneNumber) {
     // 使用正則表達式檢查電話號碼是否為有效格式-不能為空值、只包含數字、長度要9碼或10碼、號碼一定是0開始
     return phoneNumber !== null && phoneNumber.match(/^0\d{0,9}$/) && phoneNumber.length >= 9 && phoneNumber.length <= 10;
 }
+// 對每個 inputinfo 元素應用 checkInput 函數
+$(".inputinfo").each(function () {
+    var input = $(this);
+    input.blur(function () {
+        checkInput(input, '請輸入' + input.attr('placeholder') + '...');
+    });
+});
 
+// checkInput 函數
+function checkInput(input, errorMessage) {
+    var error = input.next('.error'); //找到下一個同級的 error 元素
+
+    if (input.val().trim() === '') {
+        error.text(errorMessage);
+        error.css({ 'color': '#f00', 'font-weight': '600' });
+    } else {
+        error.text('');
+    }
+}
 
 // //blur時 若姓名未填寫跳出訊息
 // function validateName(){
@@ -151,22 +169,4 @@ checkInput('address', 'addrError', '地址未填寫喔!!');
 // checkInput('address', 'addrError', '地址未填寫喔!!');
 
 
-// 對每個 inputinfo 元素應用 checkInput 函數
-$(".inputinfo").each(function () {
-    var input = $(this);
-    input.blur(function () {
-        checkInput(input, '請輸入' + input.attr('placeholder') + '...');
-    });
-});
 
-// checkInput 函數
-function checkInput(input, errorMessage) {
-    var error = input.next('.error'); //找到下一個同級的 error 元素
-
-    if (input.val().trim() === '') {
-        error.text(errorMessage);
-        error.css({ 'color': '#f00', 'font-weight': '600' });
-    } else {
-        error.text('');
-    }
-}
