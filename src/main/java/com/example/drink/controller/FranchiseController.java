@@ -18,7 +18,7 @@ public class FranchiseController {
     @GetMapping
     public String showFranchiseForm(Model model) {
         model.addAttribute("franchiseModel", new FranchiseModel());
-        return "franchise";
+        return "Franchise";
     }
     //new
     @PostMapping("/checkPhoneNumber")
