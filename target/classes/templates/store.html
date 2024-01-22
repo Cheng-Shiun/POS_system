@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!--header嵌入-->
-    <div th:replace="/fragment/template1.html :: header"></div>
-    <!--header-->
+<!--header嵌入-->
+<div th:replace="~{/fragment/template1.html :: header}"></div>
+<!--header-->
     <!-- banner-menu-->
     <div id="topArea" >
         <h1><span style="color: #ffffff; text-shadow: 0.2rem 0.2rem 0.8rem #000000">Store</span></h1>
@@ -69,8 +69,8 @@
 
         <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
     </main>
-    <!--footer嵌入-->
-    <div th:replace="/fragment/template1.html :: footer"></div>
-    <!--footer-->
+<!--footer嵌入-->
+<div th:replace="~{/fragment/template1.html :: footer}"></div>
+<!--footer-->
 </body>
 </html>

@@ -182,10 +182,10 @@
 <body>
 
 
-     
-    <!--header嵌入-->
-    <div th:replace="/fragment/template1.html :: header"></div>
-    <!--header-->
+
+<!--header嵌入-->
+<div th:replace="~{/fragment/template1.html :: header}"></div>
+<!--header-->
     <!-- banner-menu-->
 
     <div class="has-animation animation-ltr" data-delay="100">
@@ -366,9 +366,9 @@
 
     <!--茶飲品項 與 加料品項 End-->
 
-    <!--footer嵌入-->
-    <div th:replace="/fragment/template1.html :: footer" style="z-index: 1000;" ></div>
-    <!--footer-->
+        <!--footer嵌入-->
+        <div th:replace="~{/fragment/template1.html :: footer}"></div>
+        <!--footer-->
 
 
 
