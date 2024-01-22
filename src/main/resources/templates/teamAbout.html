@@ -75,7 +75,7 @@
 
 <body>
 <!--header嵌入-->
-<div th:replace="/fragment/template1.html :: header"></div>
+<div th:replace="~{/fragment/template1.html :: header}"></div>
 <!--header-->
 <div id="topArea" >
     <h1><span style="color: #ffffff; text-shadow: 0.2rem 0.2rem 0.8rem #000000">TeamMember</span></h1>
@@ -177,7 +177,7 @@
 </script>
 
 <!--footer嵌入-->
-<div th:replace="/fragment/template1.html :: footer"></div>
+<div th:replace="~{/fragment/template1.html :: footer}"></div>
 <!--footer-->
 
 </body>

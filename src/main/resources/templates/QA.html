@@ -12,9 +12,9 @@
 
 </head>
 <body>
-    <!--header嵌入-->
-    <div th:replace="/fragment/template1.html :: header"></div>
-    <!--header-->
+<!--header嵌入-->
+<div th:replace="~{/fragment/template1.html :: header}"></div>
+<!--header-->
     <div id="topArea" >
         <h1><span style="color: #ffffff; text-shadow: 0.2rem 0.2rem 0.8rem #000000">FAQ</span></h1>
         <img class="imgArea" th:src="@{/images/qa_banner.jpg}" alt="banner-menu"/>
@@ -50,7 +50,7 @@
             </div>
     </main>
     <!--footer嵌入-->
-    <div th:replace="/fragment/template1.html :: footer"></div>
+    <div th:replace="~{/fragment/template1.html :: footer}"></div>
     <!--footer-->
 
 

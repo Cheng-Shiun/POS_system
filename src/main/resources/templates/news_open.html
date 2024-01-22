@@ -26,9 +26,9 @@
     </style>
 </head>
 <body>
-    <!--header嵌入-->
-    <div th:replace="/fragment/template1.html :: header"></div>
-    <!--header-->
+<!--header嵌入-->
+<div th:replace="~{/fragment/template1.html :: header}"></div>
+<!--header-->
     <!--banner-->
     <div id="topArea" >
         <h1><span>NEWS</span></h1>
@@ -100,9 +100,9 @@
         <hr>
     </main>
     <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
-    <!--footer嵌入-->
-    <div th:replace="/fragment/template1.html :: footer"></div>
-    <!--footer-->
+<!--footer嵌入-->
+<div th:replace="~{/fragment/template1.html :: footer}"></div>
+<!--footer-->
 
 </body>
 </html>
