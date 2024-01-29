@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>飲品項目</title>
@@ -14,7 +14,7 @@
 <body>
 
     <!--header嵌入-->
-    <div th:replace="/fragment/template1.html :: header"></div>
+    <div th:replace="~{fragment/template1.html :: header}"></div>
     <!--header-->
     <!-- banner-menu-->
     <div id="topArea" >
@@ -163,7 +163,7 @@
     <!--茶飲品項 與 加料品項 End-->
 
     <!--footer嵌入-->
-    <div th:replace="/fragment/template1.html :: footer"></div>
+    <div th:replace="~{fragment/template1.html :: footer}"></div>
     <!--footer-->
 
 </body>

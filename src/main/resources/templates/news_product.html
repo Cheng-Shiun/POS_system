@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>最新消息-新店開幕</title>
@@ -31,7 +31,7 @@
 </head>
 <body>
 <!--header嵌入-->
-<div th:replace="/fragment/template1.html :: header"></div>
+<div th:replace="~{fragment/template1.html :: header}"></div>
 <!--header-->
 <!--banner-->
 <div id="topArea" >
@@ -100,7 +100,7 @@
 </main>
 <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
 <!--footer嵌入-->
-<div th:replace="/fragment/template1.html :: footer"></div>
+<div th:replace="~{fragment/template1.html :: footer}"></div>
 <!--footer-->
 
 </body>

@@ -21,6 +21,7 @@ public class DrinkItemController {
         model.addAttribute ("cheeses", drinkItemService.getAllByType ("cheese"));
         model.addAttribute ("wintermelons", drinkItemService.getAllByType ("winterMelo"));
         model.addAttribute ("materials",drinkItemService.getAllByType ("addMateria"));
-        return "drink_item_list";
+        return "dkm661";
     }
+
 }

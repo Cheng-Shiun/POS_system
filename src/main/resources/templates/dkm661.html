@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>飲品項目</title>
+    <link rel="stylesheet"  th:href="@{/css/drink_item_list.css}" type="text/css" >
+    <link rel="shortcut icon" href="/images/icon_logo.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/drink.js"></script>
+    <link rel="stylesheet" href="/css/fragment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <!-- CDN /Animation style import -->
+
+
+
+
+
+
+
+
+    
+
+<style>
+    .bigger {
+      margin: 0;
+      font-size: 60px;
+      font-weight: 800;
+      /* padding: 20px; */
+      text-transform: uppercase;
+      color: #202020;
+      display: inline-block;
+      position: relative;
+    }
+    
+    
+    .has-animation {
+      position: relative;
+
+    }
+    .has-animation p, .has-animation img {
+      opacity: 0;
+    }
+    .has-animation.animate-in p, .has-animation.animate-in img {
+      animation: textHidden 0.1s 1.1s forwards;
+    }
+    .has-animation.animate-in:before, .has-animation.animate-in:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 90.5%;
+      z-index: 10;
+    }
+/* 
+
+    .has-animation.animate-in:before {
+      background-color: #586500;
+
+
+
+
+    }
+    .has-animation.animate-in:after {
+      background-color: #d6c4008e;
+
+      
+      background-image: url(https://www.spoton.com/blog/content/images/size/w1200/2023/08/Mocktail--zero-proof-cocktails--and-different-non-alcoholic-drinks.jpeg);
+     
+      background-blend-mode: multiply;
+      
+      animation-delay: 1.0s;
+    }
+ 
+ */
+
+
+    
+    
+    
+    
+    .has-animation.animation-ltr.animate-in:before {
+        background-color: rgba(128, 159, 0, 0.57);
+      animation: revealLTR 1.9s ease;
+      background-image: url(https://www.adm.com/globalassets/products--services/human-nutrition/categories/beverages/adobestock_435395998_updated.jpeg )  ;
+      background-repeat: no-repeat;
+      background-position: top 30% right 50% ;
+
+
+     background-blend-mode: multiply;
+     
+
+      
+    }
+    .has-animation.animation-ltr.animate-in:after {
+        background-color: #a5d13d91;
+      animation: revealLTR  1.1s ease;
+  
+     
+     background-blend-mode: multiply;
+     
+
+    }
+    .has-animation.animation-rtl.animate-in:before {
+        background-color: rgba(172, 210, 0, 0.264);
+      animation: revealRTL 1.5s ease;
+
+      background-image: url(https://www.spoton.com/blog/content/images/size/w1200/2023/08/Mocktail--zero-proof-cocktails--and-different-non-alcoholic-drinks.jpeg) ;
+      /* background-repeat: no-repeat; */
+      /* background-position: center; */
+     
+     background-blend-mode: multiply;
+     
+
+    }
+    .has-animation.animation-rtl.animate-in:after {
+        background-color: rgba(204, 245, 0, 0.798);
+      animation: revealRTL 0.5s  ease;
+
+      background-image: url(https://www.spoton.com/blog/content/images/size/w1200/2023/08/Mocktail--zero-proof-cocktails--and-different-non-alcoholic-drinks.jpeg) ;
+      /* background-repeat: no-repeat;
+      background-position: center; */
+     
+     background-blend-mode: multiply;
+     
+
+    }
+    
+    
+    
+    @keyframes revealRTL {
+      0% {
+        width: 0;
+        right: 0;
+      }
+      65% {
+        width: 100%;
+        right: 0;
+      }
+      100% {
+        width: 0;
+        right: 100%;
+      }
+    }
+    @keyframes revealLTR {
+      0% {
+        width: 0;
+        left: 0;
+      }
+      65% {
+        width: 100%;
+        left: 0;
+      }
+      100% {
+        width: 0;
+        left: 100%;
+      }
+    }
+    @keyframes textHidden {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+
+
+    </style>
+    
+    
+    
+    </style>
+    
+    
+  
+
+</head>
+<body>
+
+
+     
+    <!--header嵌入-->
+    <div th:replace="~{fragment/template1.html :: header}"></div>
+    <!--header-->
+    <!-- banner-menu-->
+
+    <div class="has-animation animation-ltr" data-delay="100">
+  
+        <div class="has-animation animation-rtl" data-delay="100">
+
+ 
+
+    <div id="topArea" >
+        <h1><span>Menu</span></h1>
+        <img class="imgArea" src="image/2.webp" alt="banner-menu"/>
+    </div>
+    <!--頁首nav-->
+
+
+    <div class="has-animation animation-rtl" data-delay="100">
+        </div>
+
+    </div>
+    <!--茶飲品項 與 加料品項-->
+    <main>
+    <div class="drink-section" >
+            <div class="drink-category">
+                <h2>原味茶</h2>
+                <hr>
+                <table class="original" th:each="item :${originals}" th:if="${item.type=='original'}" >
+                    <tr >
+                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                        <td class="tdprice" th:text="${item.getPrice()}"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div  class="drink-category">
+                <h2>風味茶</h2>
+                <hr>
+                <table class="flavor" th:each="item :${flavors}" th:if="${item.type=='flavor'}">
+                    <tr>
+                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                        <td class="tdprice" th:text="${item.getPrice()}"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="drink-category">
+                <h2>滋味茶</h2>
+                <hr>
+                <table class="taste" th:each="item :${tastes}" th:if="${item.type=='taste'}">
+                    <tr>
+                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                        <td class="tdprice" th:text="${item.getPrice()}"></td>
+                    </tr>
+                </table>
+            </div>
+    </div>
+
+    <div class="drink-section" >
+            <div class="drink-category">
+                <h2>香醇奶茶</h2>
+                <hr>
+                <table class="milk" th:each="item :${milks}" th:if="${item.type=='milk'}">
+                    <tr>
+                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                        <td class="tdprice" th:text="${item.getPrice()}"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="drink-category">
+                <h2>芝士奶蓋</h2>
+                <hr>
+                <table class="cheese"  th:each="item :${cheeses}" th:if="${item.type=='cheese'}">
+                    <tr>
+                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                        <td class="tdprice" th:text="${item.getPrice()}"></td>
+                    </tr>
+                </table>
+            </div >
+
+            <div class="drink-category">
+                <h2>鮮奶茶</h2>
+                <hr>
+                <table class="freshMilk"  th:each="item :${freshmilks}" th:if="${item.type=='freshMilk'}">
+                    <tr>
+                        <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                        <td class="tdprice" th:text="${item.getPrice()}"></td>
+                    </tr>
+                </table>
+            </div>
+    </div>
+
+    <div  class="wintermelon-section">
+            <div class="drink-category01" >
+                <h2>冬瓜茶系列</h2>
+                <hr>
+                    <table class="wintermelo" th:each="item :${wintermelons}" th:if="${item.type=='winterMelo'}">
+                        <tr>
+                            <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                            <td class="tdprice" th:text="${item.getPrice()}"></td>
+                        </tr>
+                    </table>
+            </div>
+
+            <div class="drink-category02">
+                <h2>加好料</h2>
+                <hr>
+                <div class="addsection"style="">
+                    <div class="addMateria add01">
+                        <table>
+                            <tr  th:each="item :${materials.subList(0,3)}" th:if="${item.type=='addMateria'}"><!--subList(0,3)從materials的陣列裡去抓出索引值0,1,2的資料-->
+                                <td class="tdproduct"  th:text="${item.getProduct()}"></td>
+                                <td class="tdprice" th:text="${item.getPrice()}"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="addMateria add02">
+                        <table>
+                            <tr  th:each="item :${materials.subList(3,6)}" th:if="${item.type=='addMateria'}"><!--subList(3,6)從materials的陣列裡去抓出索引值3,4,5的資料-->
+                                <td class="tdproduct" th:text="${item.getProduct()}"></td>
+                                <td class="tdprice" th:text="${item.getPrice()}"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div id="icesugar">
+            <div class="iceArea">
+                <h5>冰量：</h5>
+                    <div class="ice">
+                        <p>正常冰</p>
+                        <p>少    冰</p>
+                        <p>微    冰</p>
+                        <p>去冰(小碎冰)</p>
+                        <p>完全去冰</p>
+                    </div>
+                <h6 >冰飲-660ml / 熱飲-600ml</h6>
+            </div>
+
+            <div class="sugarArea">
+                <h5>甜度：</h5>
+                <div class="sugar">
+                    <p>正常甜</p>
+                    <p>七分甜</p>
+                    <p>五分甜</p>
+                    <p>三分甜</p>
+                    <p>無   糖</p>
+                </div>
+                <h6>無咖啡因飲品請諮詢店員/買10送1、買20送3</h6>
+            </div>
+    </div>
+
+ 
+
+    
+
+
+    <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
+
+
+    <div class="has-animation animation-ltr" data-delay="100">
+        <div class="has-animation animation-rtl" data-delay="100">
+
+
+            <div></div>
+
+
+
+
+    </main>
+
+
+
+
+
+
+
+    <!--茶飲品項 與 加料品項 End-->
+
+    <!--footer嵌入-->
+    <div th:replace="~{fragment/template1.html :: footer}" style="z-index: 1000;" ></div>
+    <!--footer-->
+
+
+
+
+
+
+
+
+
+
+    <!-- Function import -->
+
+
+
+
+
+     
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <script id="rendered-js" >
+$(document).ready(function () {
+$('.has-animation').each(function (index) {
+$(this).delay($(this).data('delay')).queue(function () {
+  $(this).addClass('animate-in');
+});
+});
+});
+//# sourceURL=pen.js
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

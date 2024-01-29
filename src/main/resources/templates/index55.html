@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hants-TW" xmlns="http://www.thymeleaf.org">
+<html lang="zh-Hants-TW" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -167,7 +167,7 @@
         
         text-transform: uppercase;
         /* color: #ffffff; */
-        font-size: 1rem;
+          font-size: 120px;
         white-space: nowrap;
         transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
         line-height: 1em;
@@ -290,9 +290,10 @@
             <a href="/drink_item">飲品資訊</a>
           </li>
           <li><a href="/aboutUs">關於我們</a></li>
+          <li><a href="/team">團隊介紹</a></li>
           <li><a href="/store">門市據點</a></li>
           <li><a href="/qa">常見問答</a></li>
-          <li><a href="/franchise">加盟專區</a></li>
+          <li><a href="/Franchise">加盟專區</a></li>
           <li><a id="member" href="#" onclick="openForm()">品牌會員</a></li>
           <li><span th:text="${name}"></span>歡迎您加入</li>
         </ul>
@@ -336,6 +337,8 @@
           <div class="triangle"><a href="/order_item"><span>點</span>餐去</a></div>
           <div class="triangle"><a href="/receiveOrder"><span>查</span>訂單</a></div>
           <div class="triangle"><a href="/store"><span>找</span>門市</a></div>
+          <div class="triangle"><a href="/newMember"><span>入</span>會員</a></div>
+          <div class="triangle"><a href="/memberList"><span>查</span>會員</a></div>
         </div>
       </div>
       <!--結束固定側邊選單-->
@@ -624,7 +627,7 @@
             我們相信要寫好程式，除了邏輯培養之外<br>
             還缺少一杯好茶，茶中所含的類黃酮能促進提高注意力、活化血管機能...等。
           </p>
-          <a href="#">READ MORE +</a>
+          <a href="/aboutUs">READ MORE +</a>
         </div>
         <div class="pic">
           <img id="tea1"

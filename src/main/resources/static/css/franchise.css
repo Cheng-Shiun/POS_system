@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif, Arial;
+    font-family:sans-serif, Arial;
 }
 
 /*Top指標*/
@@ -18,10 +18,15 @@ body {
     cursor: pointer;            /*滑鼠指標 變成手指形狀*/
     box-shadow: 2px 5px 5px #005707;
 }
+/*logo*/
+.logoimg{
+    float: left;
+}
 /*banner*/
 #topArea{
     position: relative;
 }
+
 #topArea img{
     width: 100%;
     border-radius: 0 0 80% 80% / 0 0 60% 60%;
@@ -30,16 +35,15 @@ body {
 
 #topArea h1{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-weight: 900;
-    font-family: sans-serif;
+    font-family: Arvo, sans-serif;
     font-size: 56px;
 }
 
 /*main開始*/
-
 #formArea{
     width: 58%;
     margin-left: auto;
@@ -125,10 +129,9 @@ input[type="reset"].sure
     cursor: pointer; /*設定指標樣式*/
     border-radius: 0.5rem;
 }
-input[type="submit"].sure
-{
+input[type="submit"].sure {
     font-size: 1.1rem;
-    border: 2px solid #f81d5f; /*設定邊框樣式*/
+    border: 2px solid #ff14a1; /*設定邊框樣式*/
     background: #f9e7bb;
     color: #000000;
     padding: 6px 12px; /*設定內邊距*/
@@ -136,24 +139,22 @@ input[type="submit"].sure
     border-radius: 0.5rem;
 }
 
+
 /*滑鼠移過時的樣式變化*/
 input[type="reset"].sure:hover
 {
     background: #70bf2d;
-    box-shadow: 0.1rem -0.1rem 0.5rem #6fab00;
+    box-shadow: 0.1rem -0.1rem 0.02rem #6fab00;
 }
 input[type="submit"].sure:hover
 {
-    background: #f81d5f;
-    box-shadow: 0.1rem -0.1rem 0.5rem #b41b4b;
-}
-#inputinfo {
-    margin-left: 20px;
-    width: 700px;
-    height: 100px;
+    background: #ff14a1;
+    box-shadow: 0.1rem -0.1rem 0.02rem #cb1182;
 }
 
-
+#phoneStatus,#nameError,#addError{
+    margin-left: 0.4rem;
+}
 /*RWD*/
 @media screen and (max-width: 768px) {
     #topArea h1 {
@@ -169,10 +170,12 @@ input[type="submit"].sure:hover
         width: 120px;
         height: 40px;
     }
+    #formArea {
+        width: 80%;
+    }
     #inputinfo {
-        margin-left: 30px;
-        width: 500px;
-        height: 100px;
+        width: 450px;
+
     }
     .sureArea {
         text-align: center;
@@ -183,29 +186,30 @@ input[type="submit"].sure:hover
     #topArea img{
         margin-bottom: 5%;
     }
-    #formArea {
-        width: 85%;
+    #btnQA {
+        flex-direction: column;
     }
-    .join {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
+    .btnAll, .btnDk, .btnMb, .btnOd {
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
     }
-    .join h1 span {
-        font-size: 2rem;
-    }
-    .spanInfo {
-        width: 40%;
-    }
-    .spanInfo h4{
+    #drinkqa, #memberqa, #orderqa {
         font-size: 0.8rem;
     }
-    #inputinfo {
-        margin-left: 50px;
-        width: 300px;
-        height: 100px;
+    .join_h1 {
+        font-size: 2rem;
     }
-
+    #formArea {
+        width: 80%;
+    }
+    .inputinfo {
+        width: 100px;
+        flex-wrap: wrap;
+    }
     .sureArea {
         text-align: center;
+    }
+    #inputinfo {
+        width: 250px;
     }
 }

@@ -72,11 +72,13 @@ public class WebController
     @GetMapping("/qa")
     public String getQA()
     {
-        return"QA";
+        return"qna44";
     }
 
-    @GetMapping("/test")
-    public String getTest(){ return "test";}
+    @GetMapping("/team")
+    public String getTeam(){ return "teamAbout";}
+    @GetMapping("/menu123")
+    public String getMenu(){ return "dkm661";}
 
 
 

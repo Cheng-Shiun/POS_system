@@ -54,5 +54,4 @@ public class MemberLoginController {
         return "index55";
     }
 
-
 }

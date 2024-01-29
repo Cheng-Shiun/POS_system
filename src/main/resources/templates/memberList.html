@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>後台會員處理系統</title>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-prototype.min.css">
 
     <style>
         #customers {
@@ -35,18 +39,29 @@
     <hr>
 </div>
 
-<table id="customers">
-    <form action="/memberByNo">
-        查詢編號: <input type="text" name="mid" value="請輸入編號">
-        <input type="submit" value="送出">
-    </form><br>
-    <form action="/memberByName">
-        查詢姓名: <input type="text" name="name" value="請輸入姓名">
-        <input type="submit" value="送出">
-    </form><br>
+<div id="sortable" class="row small-up-2 medium-up-3 large-up-6">
+<div class="column">
     <form action="/memberList">
-        <input type="submit" value="返回清單">
-    </form><br>
+        <button type="submit" value="返回清單" class="button small expanded hollow">返回清單</button>
+    </form>
+</div>
+</div>
+
+<div id="sortable" class="row small-up-2 medium-up-3 large-up-6">
+<div class="column">
+    <form action="/memberByNo">
+        查詢編號: <input type="text" name="mid" placeholder="請輸入編號">
+        <button type="submit" value="送出" class="button small expanded hollow">送出</button>
+    </form>
+</div>
+<div class="column">
+    <form action="/memberByName">
+        查詢姓名: <input type="text" name="name" placeholder="請輸入姓名">
+        <button type="submit" value="送出" class="button small expanded hollow">送出</button>
+    </form>
+</div>
+
+    <table id="customers">
     <tr>
         <th>會員編號</th>
         <th>會員姓名</th>
@@ -66,5 +81,7 @@
         <td th:text="${ member.getEmail() }"></td>
     </tr>
 </table>
+</div>
+
 </body>
 </html>

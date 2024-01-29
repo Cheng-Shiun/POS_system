@@ -1,10 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="shortcut icon" href="/images/icon_logo.svg" type="image/x-icon">
+    <link rel="stylesheet"  th:href="@{/css/team.css}" type="text/css" >
+    <link rel="stylesheet" href="/css/fragment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        main {
+            margin: 2rem;
+            text-align: center;
+        }
+        .contenter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        main h1 {
+            font-size: 2rem;
+            color: #775F46;
+        }
+        .collapsible {
+            background-color: #d0b79f;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: center;
+            outline: none;
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+
+        .active, .collapsible:hover {
+            background-color: #916a3f;
+        }
+
+        .collapsible:after {
+            content: '\002B';
+            color: white;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+        .person {
+            width: 30%;
+            margin: 1rem;
+        }
+        img {
+            width: 100%;
+        }
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #f1f1f1;
+        }
+        @media screen and (max-width: 390px){
+            .person {
+                width: 90%;
+                margin: 1rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
+<!--header嵌入-->
+<div th:replace="~{fragment/template1.html :: header}"></div>
+<!--header-->
+<div id="topArea" >
+    <h1><span style="color: #ffffff; text-shadow: 0.2rem 0.2rem 0.8rem #000000">TeamMember</span></h1>
+    <img class="imgArea" th:src="@{/images/team_banner.jpg}" alt="banner-menu"/>
+</div>
+
+<button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
+<main>
+    <h1>團隊介紹</h1>
+    <div class="contenter">
+        <section class="person">
+            <button class="collapsible">陳怡婷</button>
+            <div class="content">
+                <img src="/images/team/YiTing.svg" alt="Avatar">
+                <div class="details">
+                    <h3>負責項目：<span>前端 + 後端</span></h3>
+                    <p>負責頁面包含：飲品資訊、門市據點 資料建置並連接資料庫data</p><br>
+                    <p>負責頁面包含：加盟表單form製作與檢查欄位資料格式</p><br>
+                    <p>負責頁面包含：常見問答 與其CSS</p><br>
+                </div>
+            </div>
+        </section>
+
+        <section class="person">
+            <button class="collapsible">楊承勳</button>
+            <div class="content">
+                <img src="/images/team/ChengShiun.svg" alt="Avatar">
+                <div class="details">
+                    <h3>負責項目：<span>前端</span></h3>
+                    <p>負責項目包含：首頁介面製作、網站RWD(手機版390px、平板裝置768px)</p><br>
+                    <p>負責頁面包含：首頁、最新消息、團隊介紹</p><br>
+                </div>
+            </div>
+        </section>
+        <section class="person">
+            <button class="collapsible">林楙崴</button>
+            <div class="content">
+                <img src="/images/team/Mao.svg" alt="Avatar">
+                <div class="details">
+                    <h3>負責項目：<span>後端</span></h3>
+                    <p>負責項目包含：加盟專區 連接資料庫</p><br>
+                    <p>負責項目包含：訂單管理 訂單完成時綁定資料庫</p>
+                </div>
+            </div>
+        </section>
+        <section class="person">
+            <button class="collapsible">李新仁</button>
+            <div class="content">
+                <img src="/images/team/ShiRenli.svg" alt="Avatar">
+                <div class="details">
+                    <h3>負責項目：<span>前端 + 後端</span></h3>
+                    <p>負責頁面包含：網站Loading畫面製作</p><br>
+                    <p>負責項目包含：會員登入後端連接資料庫</p>
+                </div>
+            </div>
+        </section>
+        <section class="person">
+            <button class="collapsible">林俊傑</button>
+            <div class="content">
+                <img src="/images/team/JJ.svg" alt="Avatar">
+                <div class="details">
+                    <h3>負責項目：<span>前端特效</span></h3>
+                    <p>負責頁面包含：關於我們 頁面製作</p><br>
+                    <p>負責項目包含：所有頁面之文字特效動態效果</p>
+                </div>
+            </div>
+        </section>
+        <section class="person">
+            <button class="collapsible">蕭啟翔</button>
+            <div class="content">
+                <img src="/images/team/ChiShiang.svg" alt="Avatar">
+                <div class="details">
+                    <h3>負責項目：<span>後端</span></h3>
+                    <p>負責頁面包含：會員管理、訂單管理</p>
+                    <p>負責項目包含：會員、訂單資料庫資料建置、會員註冊登入功能</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+</main>
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+
+<!--footer嵌入-->
+<div th:replace="~{fragment/template1.html :: footer}"></div>
+<!--footer-->
 
 </body>
+
 </html>
